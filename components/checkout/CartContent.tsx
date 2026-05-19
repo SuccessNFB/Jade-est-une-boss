@@ -8,11 +8,12 @@ import { Button } from '@/components/ui/Button'
 import { useCartStore } from '@/store/cartStore'
 import { ArrowRight, Lock } from 'lucide-react'
 import { formatPrice } from '@/lib/utils/formatPrice'
+import toast from 'react-hot-toast'
 
 export function CartContent() {
   const [loading, setLoading] = useState(false)
-  const { items, totalPrice } = useCartStore()
-  const subtotal              = totalPrice()
+  const items    = useCartStore((s) => s.items)
+  const subtotal = useCartStore((s) => s.totalPrice())
 
   async function handleCheckout() {
     setLoading(true)
@@ -22,8 +23,22 @@ export function CartContent() {
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify({ items }),
       })
+
+      if (!res.ok) {
+        const { error } = await res.json().catch(() => ({}))
+        toast.error(error ?? 'Erreur lors du paiement. Veuillez réessayer.')
+        return
+      }
+
       const { url } = await res.json()
-      if (url) window.location.href = url
+      if (!url) {
+        toast.error('Lien de paiement introuvable. Veuillez réessayer.')
+        return
+      }
+
+      window.location.href = url
+    } catch {
+      toast.error('Impossible de contacter le serveur. Vérifiez votre connexion.')
     } finally {
       setLoading(false)
     }
@@ -33,12 +48,10 @@ export function CartContent() {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-      {/* Items */}
       <div className="lg:col-span-2">
         <CartSummary />
       </div>
 
-      {/* Order summary */}
       <div className="lg:col-span-1">
         <div className="sticky top-24 space-y-4">
           <div className="rounded-2xl border border-gray-100 p-6 space-y-4">

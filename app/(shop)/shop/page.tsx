@@ -3,6 +3,8 @@ import { Footer } from '@/components/layout/Footer'
 import { ProductGrid } from '@/components/product/ProductGrid'
 import type { Metadata } from 'next'
 
+export const revalidate = 60
+
 export const metadata: Metadata = { title: 'Boutique – Toute la collection ICEKEY' }
 
 interface ShopPageProps {

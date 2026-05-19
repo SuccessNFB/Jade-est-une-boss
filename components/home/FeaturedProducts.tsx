@@ -1,22 +1,21 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { useProducts } from '@/hooks/useProducts'
 import { ProductCard } from '@/components/product/ProductCard'
 import { Button } from '@/components/ui/Button'
-
-const TABS = [
-  { key: undefined,    label: 'Tout' },
-  { key: 'ring',       label: 'Bagues' },
-  { key: 'necklace',   label: 'Colliers' },
-  { key: 'pendant',    label: 'Pendentifs' },
-  { key: 'bracelet',   label: 'Bracelets' },
-] as const
-
-import { useState } from 'react'
 import type { Category } from '@/types'
+
+const TABS: { key: Category | undefined; label: string }[] = [
+  { key: undefined,   label: 'Tout' },
+  { key: 'chain',     label: 'Chaînes' },
+  { key: 'pendant',   label: 'Pendentifs' },
+  { key: 'ring',      label: 'Bagues' },
+  { key: 'bracelet',  label: 'Bracelets' },
+]
 
 export function FeaturedProducts() {
   const [activeTab, setActiveTab] = useState<Category | undefined>(undefined)
@@ -26,7 +25,6 @@ export function FeaturedProducts() {
     <section className="section-padding bg-white">
       <div className="section-container">
 
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,12 +40,11 @@ export function FeaturedProducts() {
             </h2>
           </div>
 
-          {/* Category tabs */}
           <div className="flex items-center gap-1.5 flex-wrap">
             {TABS.map((tab) => (
               <button
                 key={String(tab.key)}
-                onClick={() => setActiveTab(tab.key as Category | undefined)}
+                onClick={() => setActiveTab(tab.key)}
                 className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
                   activeTab === tab.key
                     ? 'bg-charcoal text-white'
@@ -60,7 +57,6 @@ export function FeaturedProducts() {
           </div>
         </motion.div>
 
-        {/* Grid */}
         {loading ? (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {Array.from({ length: 8 }).map((_, i) => (

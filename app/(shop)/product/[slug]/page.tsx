@@ -18,6 +18,8 @@ import { formatPrice }             from '@/lib/utils/formatPrice'
 import { METALS }                  from '@/types'
 import { Truck, Award, CheckCircle } from 'lucide-react'
 
+export const revalidate = 3600
+
 interface Props {
   params: Promise<{ slug: string }>
 }
