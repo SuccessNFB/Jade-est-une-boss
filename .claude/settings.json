@@ -38,16 +38,6 @@
       }
     },
 
-    "tiktok-ads": {
-      "command": "npx",
-      "args": ["-y", "@synterai/mcp-server"],
-      "env": {
-        "TIKTOK_APP_ID": "YOUR_TIKTOK_APP_ID",
-        "TIKTOK_APP_SECRET": "YOUR_TIKTOK_APP_SECRET",
-        "TIKTOK_ACCESS_TOKEN": "YOUR_TIKTOK_ACCESS_TOKEN"
-      }
-    },
-
     "posthog": {
       "command": "uvx",
       "args": ["posthog-mcp"],
