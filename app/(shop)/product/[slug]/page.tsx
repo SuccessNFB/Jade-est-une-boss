@@ -1,31 +1,42 @@
-import { createClient } from '@/lib/supabase/server'
-import { notFound } from 'next/navigation'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
-import { ProductCarousel } from '@/components/product/ProductCarousel'
-import { TierBadge } from '@/components/ui/Badge'
-import { AddToCartButton } from '@/components/product/AddToCartButton'
-import { TrustSignals } from '@/components/checkout/TrustSignals'
-import { formatPrice } from '@/lib/utils/formatPrice'
-import { Diamond, Award, Truck } from 'lucide-react'
-import type { Metadata } from 'next'
-import type { Product } from '@/types'
+import { createClient }            from '@/lib/supabase/server'
+import { notFound }                from 'next/navigation'
+import type { Metadata }           from 'next'
+import type { Product, Metal }     from '@/types'
+import { Header }                  from '@/components/layout/Header'
+import { Footer }                  from '@/components/layout/Footer'
+import { AnnouncementBar }         from '@/components/layout/AnnouncementBar'
+import { ProductCarousel }         from '@/components/product/ProductCarousel'
+import { ProductVariantSelector }  from '@/components/product/ProductVariantSelector'
+import { ProductFeatureTiles }     from '@/components/product/ProductFeatureTiles'
+import { ProductAccordion }        from '@/components/product/ProductAccordion'
+import { WhyMoissanite }           from '@/components/product/WhyMoissanite'
+import { ProductFAQ }              from '@/components/product/ProductFAQ'
+import { RelatedProducts }         from '@/components/product/RelatedProducts'
+import { ProductPageClient }       from '@/components/product/ProductPageClient'
+import { TierBadge }               from '@/components/ui/Badge'
+import { formatPrice }             from '@/lib/utils/formatPrice'
+import { METALS }                  from '@/types'
+import { Truck, Award, CheckCircle } from 'lucide-react'
 
 interface Props {
   params: Promise<{ slug: string }>
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug }  = await params
-  const supabase  = await createClient()
-  const { data }  = await supabase.from('products').select('name, description').eq('slug', slug).single()
+  const { slug } = await params
+  const supabase = await createClient()
+  const { data } = await supabase.from('products').select('name,description').eq('slug', slug).single()
   if (!data) return { title: 'Produit introuvable' }
-  return { title: data.name, description: data.description }
+  return {
+    title:       data.name,
+    description: data.description,
+    openGraph:   { title: data.name, description: data.description },
+  }
 }
 
 export default async function ProductPage({ params }: Props) {
-  const { slug }        = await params
-  const supabase        = await createClient()
+  const { slug }          = await params
+  const supabase          = await createClient()
   const { data: product } = await supabase
     .from('products')
     .select('*')
@@ -37,19 +48,54 @@ export default async function ProductPage({ params }: Props) {
 
   const p = product as unknown as Product
 
+  const accordionItems = [
+    {
+      title:   'Description',
+      content: <p>{p.description}</p>,
+    },
+    {
+      title:   'Caractéristiques techniques',
+      content: (
+        <div className="space-y-2">
+          {[
+            ['Type de pierre', `Moissanite ${p.stone_type !== 'moissanite' ? p.stone_type : ''}`],
+            ['Taille de pierre', p.stone_size ?? '—'],
+            ['Couleur',          p.stone_color ? `Grade ${p.stone_color}` : '—'],
+            ['Métal',            METALS[p.metal as Metal]?.label ?? p.metal],
+            ['Poids',            p.weight_grams ? `${p.weight_grams}g` : '—'],
+            ['Certification',    p.certificate_type ?? 'GRA'],
+            ['SKU',              p.sku],
+          ].map(([k, v]) => (
+            <div key={k} className="flex justify-between text-sm">
+              <span className="text-charcoal/50">{k}</span>
+              <span className="font-medium text-charcoal">{v}</span>
+            </div>
+          ))}
+        </div>
+      ),
+    },
+  ]
+
   return (
     <>
+      <AnnouncementBar />
       <Header />
-      <main className="pt-20">
-        <div className="section-container py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-            {/* Images */}
+
+      <main className="pt-16 pb-24">
+        <div className="section-container max-w-5xl py-10">
+
+          {/* ── TOP SECTION ──────────────────────────────── */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mb-12">
+
+            {/* LEFT — Carousel */}
             <ProductCarousel images={p.images} name={p.name} />
 
-            {/* Info */}
-            <div className="space-y-6">
+            {/* RIGHT — Product info */}
+            <div className="flex flex-col gap-5">
+
+              {/* Badge + Name */}
               <div>
-                <div className="flex items-center gap-3 mb-3">
+                <div className="flex items-center gap-2 mb-2">
                   <TierBadge tier={p.price_tier as any} />
                   {p.is_customizable && (
                     <span className="badge-tier bg-charcoal text-white text-[10px]">Sur mesure</span>
@@ -62,7 +108,7 @@ export default async function ProductPage({ params }: Props) {
 
               {/* Price */}
               <div className="flex items-baseline gap-3">
-                <span className="font-serif text-4xl font-bold text-charcoal">
+                <span className="font-serif text-3xl font-bold text-charcoal">
                   {formatPrice(p.price)}
                 </span>
                 {p.compare_at_price && p.compare_at_price > p.price && (
@@ -70,50 +116,51 @@ export default async function ProductPage({ params }: Props) {
                     {formatPrice(p.compare_at_price)}
                   </span>
                 )}
+                {p.compare_at_price && p.compare_at_price > p.price && (
+                  <span className="text-sm font-semibold text-green-600">
+                    -{Math.round((1 - p.price / p.compare_at_price) * 100)}%
+                  </span>
+                )}
               </div>
 
-              {/* Description */}
-              <p className="text-charcoal/70 leading-relaxed">{p.description}</p>
+              {/* Delivery badge */}
+              <div className="flex items-center gap-2 text-sm text-charcoal/70">
+                <Truck className="w-4 h-4 text-ice-500" />
+                <span>Livraison <strong>offerte en France</strong> · Expédié sous 48h</span>
+              </div>
 
-              {/* Specs */}
-              <div className="grid grid-cols-2 gap-3 p-5 rounded-2xl bg-gray-50">
+              {/* Bullet highlights */}
+              <ul className="space-y-1.5">
                 {[
-                  ['Pierre',   `Moissanite ${p.stone_size ?? ''} ${p.stone_color ? `· Couleur ${p.stone_color}` : ''}`],
-                  ['Métal',    p.metal],
-                  ['SKU',      p.sku],
-                  ['Poids',    p.weight_grams ? `${p.weight_grams}g` : '—'],
-                ].map(([label, value]) => (
-                  <div key={label}>
-                    <p className="text-xs text-charcoal/40 tracking-wide mb-0.5">{label}</p>
-                    <p className="text-sm font-semibold text-charcoal capitalize">{value}</p>
-                  </div>
+                  'Moissanite certifiée GRA · Clarté VVS · Couleur D',
+                  'Monture artisanale — chaque pièce est unique',
+                  'Certificat d\'authenticité inclus dans l\'écrin ICEKEY',
+                ].map((line) => (
+                  <li key={line} className="flex items-start gap-2 text-sm text-charcoal/70">
+                    <CheckCircle className="w-4 h-4 text-ice-500 flex-shrink-0 mt-0.5" />
+                    {line}
+                  </li>
                 ))}
-              </div>
+              </ul>
 
-              {/* Certifs */}
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2 text-sm text-charcoal/60">
-                  <Award className="w-4 h-4 text-gold-400" />
-                  <span>Certifié GRA</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-charcoal/60">
-                  <Truck className="w-4 h-4 text-ice-500" />
-                  <span>Livraison offerte</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-charcoal/60">
-                  <Diamond className="w-4 h-4 text-ice-400" fill="currentColor" />
-                  <span>{p.stone_type}</span>
-                </div>
-              </div>
+              {/* Variants + Qty + CTA (interactive — client component) */}
+              <ProductPageClient product={p} />
 
-              {/* Add to cart */}
-              <AddToCartButton product={p} />
+              {/* Feature tiles */}
+              <ProductFeatureTiles />
 
-              <TrustSignals />
+              {/* Accordion */}
+              <ProductAccordion items={accordionItems} />
             </div>
           </div>
+
+          {/* ── BOTTOM SECTIONS ──────────────────────────── */}
+          <WhyMoissanite />
+          <ProductFAQ />
+          <RelatedProducts currentId={p.id} category={p.category} />
         </div>
       </main>
+
       <Footer />
     </>
   )

@@ -1,0 +1,31 @@
+import { Award, RefreshCw, Truck, Gem, Settings, Shield } from 'lucide-react'
+
+const TILES = [
+  { icon: Award,    label: 'Certifié GRA',        sub: 'Authenticité garantie' },
+  { icon: Truck,    label: 'Livraison offerte',    sub: 'Dès €100 en France' },
+  { icon: RefreshCw,label: 'Retour 30 jours',      sub: 'Satisfait ou remboursé' },
+  { icon: Gem,      label: 'Moissanite VVS',       sub: 'Grade D · Clarté maximale' },
+  { icon: Settings, label: 'Sur mesure',            sub: 'Gravure & personnalisation' },
+  { icon: Shield,   label: 'Paiement sécurisé',    sub: 'Stripe 3D Secure' },
+]
+
+export function ProductFeatureTiles() {
+  return (
+    <div className="grid grid-cols-2 gap-2">
+      {TILES.slice(0, 4).map(({ icon: Icon, label, sub }) => (
+        <div
+          key={label}
+          className="flex items-start gap-3 p-3.5 rounded-xl bg-gray-50 border border-gray-100"
+        >
+          <div className="w-8 h-8 rounded-lg bg-white shadow-sm flex items-center justify-center flex-shrink-0">
+            <Icon className="w-4 h-4 text-ice-500" />
+          </div>
+          <div>
+            <p className="text-xs font-semibold text-charcoal leading-tight">{label}</p>
+            <p className="text-[11px] text-charcoal/50 mt-0.5 leading-tight">{sub}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
