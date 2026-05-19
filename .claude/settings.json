@@ -1,19 +1,76 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "mcpServers": {
+
     "@21st-dev/magic": {
       "command": "npx",
       "args": ["-y", "@21st-dev/magic@latest"],
-      "env": {
-        "API_KEY": "YOUR_21ST_DEV_API_KEY"
-      }
+      "env": { "API_KEY": "YOUR_21ST_DEV_API_KEY" }
     },
+
     "supabase": {
       "command": "npx",
       "args": ["-y", "@supabase/mcp-server-supabase@latest", "--read-only"],
+      "env": { "SUPABASE_ACCESS_TOKEN": "YOUR_SUPABASE_ACCESS_TOKEN" }
+    },
+
+    "resend": {
+      "command": "npx",
+      "args": ["-y", "resend-mcp"],
+      "env": { "RESEND_API_KEY": "re_DzCAtrmK_PtfgG6ut3Z7uTPPBrpANsAx3" }
+    },
+
+    "google-analytics": {
+      "command": "pipx",
+      "args": ["run", "analytics-mcp"],
       "env": {
-        "SUPABASE_ACCESS_TOKEN": "YOUR_SUPABASE_ACCESS_TOKEN"
+        "GOOGLE_APPLICATION_CREDENTIALS": "YOUR_PATH_TO_SERVICE_ACCOUNT_JSON",
+        "GOOGLE_PROJECT_ID": "YOUR_GCP_PROJECT_ID"
       }
+    },
+
+    "google-ads": {
+      "command": "pipx",
+      "args": ["run", "--spec", "git+https://github.com/googleads/google-ads-mcp.git", "google-ads-mcp"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "YOUR_PATH_TO_SERVICE_ACCOUNT_JSON",
+        "GOOGLE_ADS_DEVELOPER_TOKEN": "YOUR_GOOGLE_ADS_DEVELOPER_TOKEN"
+      }
+    },
+
+    "tiktok-ads": {
+      "command": "npx",
+      "args": ["-y", "@synterai/mcp-server"],
+      "env": {
+        "TIKTOK_APP_ID": "YOUR_TIKTOK_APP_ID",
+        "TIKTOK_APP_SECRET": "YOUR_TIKTOK_APP_SECRET",
+        "TIKTOK_ACCESS_TOKEN": "YOUR_TIKTOK_ACCESS_TOKEN"
+      }
+    },
+
+    "posthog": {
+      "command": "uvx",
+      "args": ["posthog-mcp"],
+      "env": {
+        "POSTHOG_API_KEY": "YOUR_POSTHOG_API_KEY",
+        "POSTHOG_PROJECT_ID": "YOUR_POSTHOG_PROJECT_ID"
+      }
+    },
+
+    "google-search-console": {
+      "command": "npx",
+      "args": ["-y", "suganthan-gsc-mcp"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "YOUR_PATH_TO_SERVICE_ACCOUNT_JSON"
+      }
+    },
+
+    "easyship": {
+      "command": "uvx",
+      "args": ["easyship-mcp"],
+      "env": { "EASYSHIP_API_ACCESS_TOKEN": "YOUR_EASYSHIP_TOKEN" }
     }
+
   }
 }
+
