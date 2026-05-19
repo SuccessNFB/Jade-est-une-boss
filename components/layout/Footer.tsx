@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Diamond, Instagram, Facebook } from 'lucide-react'
+import { Instagram, Facebook } from 'lucide-react'
+import { IcekeyLogo } from '@/components/ui/IcekeyLogo'
 
 export function Footer() {
   return (
@@ -8,9 +9,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <Diamond className="w-5 h-5 text-ice-400" fill="currentColor" />
-              <span className="font-serif text-xl font-bold tracking-widest text-white">ICEKEY</span>
+            <div className="mb-4">
+              <IcekeyLogo variant="full" height={72} color="#ffffff" />
             </div>
             <p className="text-sm leading-relaxed text-white/60 max-w-xs">
               Bijoux en moissanite certifiés. Chaque pièce est conçue pour durer une vie, à un prix qui respecte la vôtre.

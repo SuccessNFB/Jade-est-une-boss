@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ShoppingBag, Menu, X, Diamond } from 'lucide-react'
+import { ShoppingBag, Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useCartStore } from '@/store/cartStore'
+import { IcekeyLogo } from '@/components/ui/IcekeyLogo'
 import { cn } from '@/lib/utils/cn'
 
 const NAV_LINKS = [
@@ -38,14 +39,13 @@ export function Header() {
       <div className="section-container">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <Diamond
-              className="w-6 h-6 text-ice-500 transition-transform duration-300 group-hover:rotate-12"
-              fill="currentColor"
+          <Link href="/" className="flex items-center group">
+            <IcekeyLogo
+              variant="horizontal"
+              height={32}
+              color="#333333"
+              className="transition-opacity group-hover:opacity-70"
             />
-            <span className="font-serif text-xl font-bold tracking-widest text-charcoal">
-              ICEKEY
-            </span>
           </Link>
 
           {/* Desktop nav */}

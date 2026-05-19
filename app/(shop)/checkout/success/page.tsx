@@ -3,7 +3,8 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { CheckCircle, Diamond } from 'lucide-react'
+import { CheckCircle } from 'lucide-react'
+import { IcekeyLogo } from '@/components/ui/IcekeyLogo'
 import { Button } from '@/components/ui/Button'
 import { useCartStore } from '@/store/cartStore'
 
@@ -30,9 +31,8 @@ export default function CheckoutSuccessPage() {
           <CheckCircle className="w-10 h-10 text-ice-500" />
         </motion.div>
 
-        <div className="flex items-center justify-center gap-2 mb-4">
-          <Diamond className="w-5 h-5 text-ice-500" fill="currentColor" />
-          <span className="font-serif text-xl font-bold tracking-widest text-charcoal">ICEKEY</span>
+        <div className="flex justify-center mb-4">
+          <IcekeyLogo variant="full" height={56} color="#333333" />
         </div>
 
         <h1 className="font-serif text-3xl font-bold text-charcoal mb-3">
