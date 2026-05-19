@@ -3,11 +3,6 @@ import { stripe } from '@/lib/stripe/client'
 import { createClient } from '@supabase/supabase-js'
 import type Stripe from 'stripe'
 
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
-
 export async function POST(req: NextRequest) {
   const body      = await req.text()
   const signature = req.headers.get('stripe-signature')!
@@ -21,6 +16,10 @@ export async function POST(req: NextRequest) {
 
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as Stripe.Checkout.Session
+    const supabaseAdmin = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!
+    )
 
     await supabaseAdmin.from('orders').insert({
       stripe_session_id: session.id,

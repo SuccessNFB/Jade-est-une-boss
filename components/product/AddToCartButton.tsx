@@ -25,9 +25,12 @@ export function AddToCartButton({ product }: { product: Product }) {
         {product.stock === 0 ? 'Rupture de stock' : 'Ajouter au panier'}
       </Button>
       {product.is_customizable && (
-        <Button variant="gold" size="lg" asChild>
-          <a href="/builder">Personnaliser</a>
-        </Button>
+        <a
+          href="/builder"
+          className="inline-flex items-center justify-center px-7 py-3.5 rounded-full text-sm font-semibold tracking-wide bg-gold-300 text-charcoal hover:bg-gold-400 transition-all duration-300"
+        >
+          Personnaliser
+        </a>
       )}
     </div>
   )

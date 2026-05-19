@@ -10,11 +10,13 @@ import { PRICE_TIERS } from '@/types'
 
 const CATEGORIES: { value: Category | ''; label: string }[] = [
   { value: '',         label: 'Tout' },
-  { value: 'ring',     label: 'Bagues' },
-  { value: 'necklace', label: 'Colliers' },
+  { value: 'chain',    label: 'Chaînes' },
   { value: 'pendant',  label: 'Pendentifs' },
+  { value: 'ring',     label: 'Bagues' },
+  { value: 'watch',    label: 'Montres' },
   { value: 'bracelet', label: 'Bracelets' },
   { value: 'earring',  label: 'Boucles d\'oreille' },
+  { value: 'buff',     label: 'Iced Out Buffs' },
 ]
 
 interface ProductGridProps {

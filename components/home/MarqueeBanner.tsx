@@ -1,3 +1,5 @@
+'use client'
+
 import { Diamond } from 'lucide-react'
 
 const ITEMS = [
@@ -40,7 +42,7 @@ export function MarqueeBanner() {
         ))}
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes marquee {
           0%   { transform: translateX(0); }
           100% { transform: translateX(-50%); }

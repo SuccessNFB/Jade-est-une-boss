@@ -27,10 +27,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const supabase = await createClient()
   const { data } = await supabase.from('products').select('name,description').eq('slug', slug).single()
   if (!data) return { title: 'Produit introuvable' }
+  const row = data as { name: string; description: string }
   return {
-    title:       data.name,
-    description: data.description,
-    openGraph:   { title: data.name, description: data.description },
+    title:       row.name,
+    description: row.description,
+    openGraph:   { title: row.name, description: row.description },
   }
 }
 
