@@ -2,8 +2,15 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 import { getResend, FROM_EMAIL, ADMIN_EMAIL } from '@/lib/email/resend'
 import { customRequestNotificationHtml } from '@/lib/email/templates'
+import { escapeHtml } from '@/lib/utils/escapeHtml'
+import { rateLimit, rateLimitKey } from '@/lib/utils/rateLimit'
 
 export async function POST(req: NextRequest) {
+  const { allowed } = rateLimit(rateLimitKey(req), { limit: 5, windowMs: 60_000 })
+  if (!allowed) {
+    return NextResponse.json({ error: 'Trop de requêtes' }, { status: 429 })
+  }
+
   try {
     const { configuration, customer_email, customer_name, notes } = await req.json()
 
@@ -33,15 +40,16 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Erreur serveur' }, { status: 500 })
     }
 
-    // Notify admin
+    const safeName = escapeHtml(String(customer_name ?? '').slice(0, 100))
+    const ref      = data.id.slice(0, 8).toUpperCase()
+
     await getResend().emails.send({
       from:    FROM_EMAIL,
       to:      ADMIN_EMAIL,
-      subject: `[ICEKEY] Nouvelle demande sur mesure — ${customer_name ?? customer_email}`,
+      subject: `[ICEKEY] Nouvelle demande sur mesure — ${safeName || customer_email}`,
       html:    customRequestNotificationHtml({ customerName: customer_name ?? '', customerEmail: customer_email, configuration, notes }),
     })
 
-    // Confirm to customer
     await getResend().emails.send({
       from:    FROM_EMAIL,
       to:      customer_email,
@@ -54,8 +62,8 @@ export async function POST(req: NextRequest) {
           <div style="padding: 40px;">
             <h2 style="margin-top:0;">Demande reçue ✓</h2>
             <p style="color: #555; font-size: 14px; line-height: 1.7;">
-              Bonjour ${customer_name ?? ''},<br/>
-              Votre demande de pendentif sur mesure a bien été enregistrée (réf. <strong>#${data.id.slice(0, 8).toUpperCase()}</strong>).<br/><br/>
+              Bonjour ${safeName},<br/>
+              Votre demande de pendentif sur mesure a bien été enregistrée (réf. <strong>#${ref}</strong>).<br/><br/>
               Un membre de l'équipe vous contactera sous <strong>48h ouvrées</strong> avec un devis personnalisé.
             </p>
           </div>

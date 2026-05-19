@@ -16,6 +16,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://icekey.shop'),
   title: {
     default:  'ICEKEY – Cold is the new gold',
     template: '%s | ICEKEY',
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     type:        'website',
     locale:      'fr_FR',
-    url:         'https://icekey.fr',
+    url:         'https://icekey.shop',
     siteName:    'ICEKEY',
     title:       'ICEKEY – Cold is the new gold',
     description: 'Bijoux en moissanite premium certifiés. Éclat maximal, prix honnête.',

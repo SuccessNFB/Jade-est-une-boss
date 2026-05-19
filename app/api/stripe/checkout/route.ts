@@ -17,7 +17,9 @@ export async function POST(req: NextRequest) {
         product_data: {
           name:        item.product.name,
           description: item.product.description?.substring(0, 500),
-          images:      item.product.images[0]?.url ? [item.product.images[0].url] : [],
+          images:      item.product.images[0]?.url
+            ? [`${process.env.NEXT_PUBLIC_SITE_URL}${item.product.images[0].url}`]
+            : [],
           metadata: {
             product_id:   item.product.id,
             sku:          item.product.sku,

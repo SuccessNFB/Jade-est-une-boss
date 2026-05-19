@@ -2,12 +2,18 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 import { getResend, FROM_EMAIL } from '@/lib/email/resend'
 import { newsletterWelcomeHtml } from '@/lib/email/templates'
+import { rateLimit, rateLimitKey } from '@/lib/utils/rateLimit'
 
 const DISCOUNT_CODE = 'BIENVENUE10'
 
 export async function POST(req: NextRequest) {
+  const { allowed } = rateLimit(rateLimitKey(req), { limit: 3, windowMs: 60_000 })
+  if (!allowed) {
+    return NextResponse.json({ error: 'Trop de requêtes' }, { status: 429 })
+  }
+
   try {
-    const { email } = await req.json()
+    const { email, source } = await req.json()
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json({ error: 'Email invalide' }, { status: 400 })
@@ -20,7 +26,7 @@ export async function POST(req: NextRequest) {
 
     const { error } = await supabase
       .from('newsletter_subscribers')
-      .insert({ email, source: 'homepage' })
+      .insert({ email, source: source ?? 'homepage' })
 
     // Duplicate = already subscribed, not an error for the user
     if (error && error.code !== '23505') {

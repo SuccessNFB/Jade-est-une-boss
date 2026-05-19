@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
     const customerEmail = session.customer_details?.email ?? ''
     const customerName  = session.customer_details?.name  ?? ''
 
-    await supabase.from('orders').insert({
+    const { error: insertError } = await supabase.from('orders').insert({
       stripe_session_id: session.id,
       customer_email:    customerEmail,
       customer_name:     customerName,
@@ -51,6 +51,8 @@ export async function POST(req: NextRequest) {
       shipping_address:  session.shipping_details?.address ?? null,
       items,
     })
+
+    if (insertError) throw new Error(`Order insert failed: ${insertError.message}`)
 
     // Send order confirmation email
     if (customerEmail) {
