@@ -1,20 +1,21 @@
-import type { Metadata }        from 'next'
-import { AnnouncementBar }      from '@/components/layout/AnnouncementBar'
-import { Header }               from '@/components/layout/Header'
-import { Footer }               from '@/components/layout/Footer'
-import { HeroSection }          from '@/components/home/HeroSection'
-import { MarqueeBanner }        from '@/components/home/MarqueeBanner'
-import { FeaturedProducts }     from '@/components/home/FeaturedProducts'
-import { BrandStory }           from '@/components/home/BrandStory'
-import { PriceTiers }           from '@/components/home/PriceTiers'
-import { BuilderCTA }           from '@/components/home/BuilderCTA'
-import { Testimonials }         from '@/components/home/Testimonials'
-import { TrustBadges }          from '@/components/home/TrustBadges'
-import { NewsletterSection }    from '@/components/home/NewsletterSection'
+import type { Metadata }     from 'next'
+import { AnnouncementBar }   from '@/components/layout/AnnouncementBar'
+import { Header }            from '@/components/layout/Header'
+import { Footer }            from '@/components/layout/Footer'
+import { HeroSection }       from '@/components/home/HeroSection'
+import { MarqueeBanner }     from '@/components/home/MarqueeBanner'
+import { FeaturedProducts }  from '@/components/home/FeaturedProducts'
+import { BrandStory }        from '@/components/home/BrandStory'
+import { PriceTiers }        from '@/components/home/PriceTiers'
+import { BuilderCTA }        from '@/components/home/BuilderCTA'
+import { Testimonials }      from '@/components/home/Testimonials'
+import { TrustBadges }       from '@/components/home/TrustBadges'
+import { NewsletterSection } from '@/components/home/NewsletterSection'
 
 export const metadata: Metadata = {
-  title:       'ICEKEY – Bijoux Moissanite Premium | Cold is the new gold',
-  description: 'Bijoux en moissanite certifiée GRA. 350+ créations, de €79 à €700+. Livraison offerte en France.',
+  title:       'ICEKEY – Cold is the new gold | Bijoux Moissanite VVS Premium',
+  description: 'Bijoux moissanite VVS certifiés GRA. Chaînes iced-out, pendentifs, bagues, montres. De €79 à €700+. Livraison express 4-7j en France.',
+  keywords:    ['moissanite', 'iced out', 'chaîne moissanite', 'bijoux hip hop', 'VVS', 'chaîne cubaine', 'pendentif moissanite', 'bijoux rap'],
 }
 
 export default function HomePage() {
@@ -22,36 +23,34 @@ export default function HomePage() {
     <>
       <AnnouncementBar />
       <Header />
-
       <main>
-        {/* 1 — Hero plein écran animé */}
+        {/* 1 — Hero : chaîne rotative, tagline ICE BLUE, badges VVS/Ethical/30j */}
         <HeroSection />
 
-        {/* 2 — Défilé de promesses de marque */}
+        {/* 2 — Marquee : Cold is the new gold · VVS · Livraison offerte… */}
         <MarqueeBanner />
 
-        {/* 3 — Bestsellers avec onglets catégories */}
+        {/* 3 — Bestsellers avec onglets Chaînes / Pendentifs / Bagues / Montres */}
         <FeaturedProducts />
 
-        {/* 4 — Pourquoi la moissanite ICEKEY */}
+        {/* 4 — 3 personas + opportunité marché (dark) */}
         <BrandStory />
 
-        {/* 5 — 5 gammes de prix */}
+        {/* 5 — 5 tiers avec CTAs différenciées (dark) */}
         <PriceTiers />
 
-        {/* 6 — CTA configurateur sur mesure */}
+        {/* 6 — Custom Pendant Builder (sur fond charcoal inset) */}
         <BuilderCTA />
 
-        {/* 7 — Avis clients vérifiés */}
+        {/* 7 — 4 avis clients vérifiés */}
         <Testimonials />
 
-        {/* 8 — Engagements & certifications */}
+        {/* 8 — 6 engagements : GRA · VVS · Livraison · Retour · Paiement */}
         <TrustBadges />
 
-        {/* 9 — Newsletter -10% */}
+        {/* 9 — Newsletter -10% first order */}
         <NewsletterSection />
       </main>
-
       <Footer />
     </>
   )

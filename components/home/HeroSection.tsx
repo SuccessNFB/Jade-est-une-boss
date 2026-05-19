@@ -3,266 +3,255 @@
 import { useRef } from 'react'
 import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowRight, Diamond } from 'lucide-react'
+import { ArrowRight, ShieldCheck, Leaf, RotateCcw } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 
-const PARTICLES = Array.from({ length: 20 }, (_, i) => ({
+/* ── Sparkle particle ──────────────────────────────────────── */
+const SPARKLES = Array.from({ length: 24 }, (_, i) => ({
   id:    i,
-  size:  Math.random() * 7 + 3,
-  left:  Math.random() * 100,
-  delay: Math.random() * 10,
-  dur:   Math.random() * 8 + 7,
-  drift: (Math.random() - 0.5) * 80,
+  size:  Math.random() * 5 + 2,
+  x:     40 + Math.random() * 20,   // groupées autour du centre
+  y:     15 + Math.random() * 70,
+  delay: Math.random() * 4,
+  dur:   Math.random() * 2 + 1.5,
+  color: i % 3 === 0 ? '#FFD700' : i % 3 === 1 ? '#00D9FF' : '#ffffff',
 }))
 
-const STATS = [
-  { value: '350+',   label: 'Créations' },
-  { value: '4.9 ★',  label: 'Note moyenne' },
-  { value: '2 400+', label: 'Clients' },
-  { value: 'GRA',    label: 'Certifié' },
+/* ── Animated chain (SVG) ──────────────────────────────────── */
+function ChainDisplay() {
+  return (
+    <div className="relative flex items-center justify-center w-full h-full">
+      {/* Glow halo */}
+      <div className="absolute w-72 h-72 rounded-full bg-ice-400/10 blur-3xl animate-pulse" />
+      <div className="absolute w-48 h-48 rounded-full bg-gold-300/10 blur-2xl"
+           style={{ animation: 'pulse 4s ease-in-out 1s infinite alternate' }} />
+
+      {/* Chain SVG — rotating 360° */}
+      <motion.div
+        animate={{ rotateY: 360 }}
+        transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+        style={{ perspective: 800 }}
+        className="relative z-10"
+      >
+        <svg viewBox="0 0 220 440" fill="none" xmlns="http://www.w3.org/2000/svg"
+             className="w-36 h-72 drop-shadow-[0_0_24px_rgba(0,217,255,0.4)]">
+          {/* Cuban link chain — stylized */}
+          {Array.from({ length: 10 }, (_, i) => {
+            const y    = i * 40 + 20
+            const even = i % 2 === 0
+            return (
+              <g key={i}>
+                {/* Outer link */}
+                <ellipse cx={even ? 90 : 130} cy={y} rx={even ? 36 : 30} ry={18}
+                  fill="none" stroke="#FFD700" strokeWidth="7" strokeLinecap="round"/>
+                {/* Inner link cut-out illusion */}
+                <ellipse cx={even ? 90 : 130} cy={y} rx={even ? 22 : 18} ry={10}
+                  fill="none" stroke="#FFD700" strokeWidth="3" strokeOpacity="0.6"/>
+                {/* Highlights */}
+                <ellipse cx={(even ? 90 : 130) - 8} cy={y - 5} rx={8} ry={4}
+                  fill="#FFFDE7" fillOpacity="0.35"/>
+              </g>
+            )
+          })}
+          {/* Central pendant placeholder */}
+          <g transform="translate(85,220)">
+            <polygon points="25,0 50,20 25,50 0,20"
+              fill="none" stroke="#00D9FF" strokeWidth="2.5"/>
+            <polygon points="25,8 42,20 25,42 8,20"
+              fill="none" stroke="#00D9FF" strokeWidth="1.5" strokeOpacity="0.5"/>
+            <text x="25" y="30" textAnchor="middle"
+              fontFamily="Georgia, serif" fontSize="10" fontWeight="700"
+              fill="#00D9FF" letterSpacing="0.5">VVS</text>
+          </g>
+        </svg>
+      </motion.div>
+
+      {/* Sparkles */}
+      {SPARKLES.map((s) => (
+        <motion.div
+          key={s.id}
+          className="absolute pointer-events-none rounded-full"
+          style={{
+            width:           s.size,
+            height:          s.size,
+            left:            `${s.x}%`,
+            top:             `${s.y}%`,
+            background:      s.color,
+            boxShadow:       `0 0 ${s.size * 2}px ${s.color}`,
+          }}
+          animate={{ opacity: [0, 1, 0], scale: [0.5, 1.4, 0.5] }}
+          transition={{ duration: s.dur, delay: s.delay, repeat: Infinity }}
+        />
+      ))}
+    </div>
+  )
+}
+
+/* ── Trust badges ──────────────────────────────────────────── */
+const BADGES = [
+  { icon: ShieldCheck, label: '100% VVS Certified',    color: 'text-ice-500',  bg: 'bg-ice-50 border-ice-200' },
+  { icon: Leaf,        label: 'Lab-Created · Ethical',  color: 'text-ice-500',  bg: 'bg-ice-50 border-ice-200' },
+  { icon: RotateCcw,   label: '30-Day Guarantee',       color: 'text-gold-400', bg: 'bg-gold-300/10 border-gold-300/30' },
 ]
 
+/* ── Main component ────────────────────────────────────────── */
 export function HeroSection() {
-  const ref                  = useRef<HTMLElement>(null)
-  const { scrollYProgress }  = useScroll({ target: ref, offset: ['start start', 'end start'] })
-  const y                    = useTransform(scrollYProgress, [0, 1], ['0%', '25%'])
-  const opacity              = useTransform(scrollYProgress, [0, 0.7], [1, 0])
+  const ref                 = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
+  const y                   = useTransform(scrollYProgress, [0, 1], ['0%', '20%'])
+  const opacity             = useTransform(scrollYProgress, [0, 0.7], [1, 0])
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden bg-white">
 
-      {/* ── Animated gradient background ─────────── */}
+      {/* Background — subtle gold gradient overlay */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Main gradient sweep */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-ice-50 to-ice-100 opacity-70" />
-
-        {/* Orb 1 — ice */}
-        <motion.div
-          className="absolute top-1/4 right-1/3 w-[500px] h-[500px] rounded-full blur-3xl opacity-25"
-          style={{ background: 'radial-gradient(circle, #00D9FF 0%, transparent 70%)' }}
-          animate={{ scale: [1, 1.15, 1], x: [-30, 30, -30], y: [-20, 20, -20] }}
-          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-        />
-        {/* Orb 2 — gold */}
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] rounded-full blur-3xl opacity-15"
-          style={{ background: 'radial-gradient(circle, #FFD700 0%, transparent 70%)' }}
-          animate={{ scale: [1.1, 1, 1.1], x: [20, -20, 20] }}
-          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
-        />
-        {/* Subtle grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: 'linear-gradient(#00D9FF 1px, transparent 1px), linear-gradient(90deg, #00D9FF 1px, transparent 1px)',
-            backgroundSize:  '60px 60px',
-          }}
-        />
+        <div className="absolute inset-0"
+             style={{ background: 'radial-gradient(ellipse 80% 60% at 60% 50%, rgba(0,217,255,0.06) 0%, transparent 70%)' }} />
+        <div className="absolute inset-0"
+             style={{ background: 'radial-gradient(ellipse 60% 40% at 65% 70%, rgba(255,215,0,0.05) 0%, transparent 60%)' }} />
       </div>
 
-      {/* ── Floating particles ────────────────────── */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {PARTICLES.map((p) => (
-          <motion.div
-            key={p.id}
-            className="absolute"
-            style={{ left: `${p.left}%`, bottom: -20 }}
-            animate={{
-              y:       [0, -(typeof window !== 'undefined' ? window.innerHeight + 100 : 900)],
-              x:       [0, p.drift],
-              opacity: [0, 0.7, 0.7, 0],
-              rotate:  [0, 360],
-            }}
-            transition={{ duration: p.dur, delay: p.delay, repeat: Infinity, ease: 'linear' }}
-          >
-            <Diamond
-              fill="currentColor"
-              className="text-ice-300"
-              style={{ width: p.size, height: p.size }}
-            />
-          </motion.div>
-        ))}
-      </div>
-
-      {/* ── Content ───────────────────────────────── */}
       <motion.div
         style={{ y, opacity }}
-        className="relative z-10 section-container w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-24 pb-16"
+        className="relative z-10 section-container w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-center pt-24 pb-16"
       >
-        {/* Left — text */}
+        {/* ── LEFT — copy ──────────────────────────────── */}
         <div className="max-w-xl">
 
-          {/* Eyebrow */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full
-                       bg-white/80 backdrop-blur-sm border border-ice-200 shadow-sm mb-8"
-          >
-            <Diamond className="w-3 h-3 text-ice-500" fill="currentColor" />
-            <span className="text-xs font-semibold tracking-[0.2em] text-ice-600 uppercase">
-              Moissanite Premium · Certifié GRA
-            </span>
-          </motion.div>
-
-          {/* Headline */}
+          {/* 0.5s — Tagline ICE BLUE */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-serif text-5xl sm:text-6xl xl:text-7xl font-bold leading-[1.06] text-charcoal mb-6"
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="font-serif font-bold leading-[1.05] text-5xl sm:text-6xl xl:text-7xl mb-6"
           >
-            L&apos;éclat du{' '}
-            <span className="relative">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-ice-500 via-ice-400 to-ice-600 bg-[length:200%_auto] animate-shimmer">
-                diamant
-              </span>
-            </span>
+            <span style={{ color: '#00D9FF' }}>Cold</span>{' '}
+            <span className="text-charcoal">is the</span>
             <br />
-            sans le{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-gold-400 via-gold-300 to-gold-400 bg-[length:200%_auto] animate-shimmer">
-              prix
-            </span>
+            <span className="text-charcoal">new </span>
+            <span style={{ color: '#FFD700' }}>gold</span>
           </motion.h1>
 
-          {/* Tagline */}
+          {/* 1.5s — Subheading */}
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="font-serif text-xl sm:text-2xl italic text-charcoal/35 tracking-wide mb-3"
+            transition={{ duration: 0.6, delay: 1.5 }}
+            className="text-base sm:text-lg text-charcoal/60 mb-8 leading-relaxed"
           >
-            "Cold is the new gold"
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
-            className="text-base text-charcoal/55 mb-10 leading-relaxed"
-          >
-            350+ bijoux en moissanite certifiée. De 79€ à plus de 700€.<br />
-            Livraison offerte · Retour 30 jours · Certificat GRA inclus.
+            Moissanite VVS · Premium · Ethical
+            <br />
+            <span className="text-charcoal/40 text-sm">
+              350+ pièces. De €79 à €700+. Certifié GRA. Livraison express 4-7j.
+            </span>
           </motion.p>
 
-          {/* CTAs */}
+          {/* 2.0-2.6s — Trust badges staggered */}
+          <div className="flex flex-wrap gap-2.5 mb-10">
+            {BADGES.map((b, i) => {
+              const Icon = b.icon
+              return (
+                <motion.div
+                  key={b.label}
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.4, delay: 2.0 + i * 0.3 }}
+                  whileHover={{ scale: 1.05 }}
+                  className={`flex items-center gap-2 px-3 py-2 rounded-full border text-xs font-semibold ${b.bg} ${b.color}`}
+                >
+                  <Icon className="w-3.5 h-3.5" />
+                  {b.label}
+                </motion.div>
+              )
+            })}
+          </div>
+
+          {/* 3.0s — CTA buttons */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.45 }}
+            transition={{ duration: 0.6, delay: 3.0 }}
             className="flex flex-wrap gap-4 mb-14"
           >
+            {/* Primary — ICE BLUE, pulse */}
             <Link href="/shop">
-              <Button variant="primary" size="lg" className="group shadow-lg">
-                Découvrir la collection
+              <motion.button
+                animate={{ boxShadow: ['0 0 0px rgba(0,217,255,0)', '0 0 20px rgba(0,217,255,0.5)', '0 0 0px rgba(0,217,255,0)'] }}
+                transition={{ duration: 2, repeat: Infinity, delay: 3.5 }}
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-sm tracking-wide
+                           text-white transition-all duration-300 hover:scale-105 group"
+                style={{ background: '#00D9FF' }}
+              >
+                Browse Collection
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              </motion.button>
             </Link>
-            <Link href="/builder">
-              <Button variant="gold" size="lg" className="shadow-lg">
-                Créer ma pièce
-              </Button>
+
+            {/* Secondary — outline ICE BLUE */}
+            <Link href="/shop">
+              <motion.button
+                whileHover={{ background: '#00D9FF', color: '#ffffff' }}
+                transition={{ duration: 0.3 }}
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-sm tracking-wide
+                           text-ice-500 border-2 border-ice-500 transition-all duration-300 hover:scale-105"
+              >
+                Shop Now
+              </motion.button>
             </Link>
           </motion.div>
 
-          {/* Stats */}
+          {/* Stats row */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-wrap items-center gap-8 pt-8 border-t border-charcoal/10"
+            transition={{ duration: 0.8, delay: 3.5 }}
+            className="flex flex-wrap items-center gap-8 pt-6 border-t border-charcoal/10"
           >
-            {STATS.map((s) => (
-              <div key={s.label}>
-                <div className="font-serif text-xl font-bold text-charcoal">{s.value}</div>
-                <div className="text-xs text-charcoal/40 tracking-wide">{s.label}</div>
+            {[
+              { v: '350+',   l: 'SKUs' },
+              { v: '<30',    l: 'Concurrents FR' },
+              { v: '71-82%', l: 'Marge brute' },
+              { v: 'GRA',    l: 'Certifié' },
+            ].map((s) => (
+              <div key={s.l}>
+                <div className="font-serif text-xl font-bold text-charcoal">{s.v}</div>
+                <div className="text-xs text-charcoal/40 tracking-wide">{s.l}</div>
               </div>
             ))}
           </motion.div>
         </div>
 
-        {/* Right — decorative visual */}
+        {/* ── RIGHT — chain animée ──────────────────────── */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.3 }}
-          className="hidden lg:flex items-center justify-center relative"
+          transition={{ duration: 0.8, delay: 1.0 }}
+          className="hidden lg:flex items-center justify-center h-[520px]"
         >
-          {/* Outer glow ring */}
-          <div className="absolute w-[420px] h-[420px] rounded-full border border-ice-200 animate-pulse" />
-          <div className="absolute w-[340px] h-[340px] rounded-full border border-ice-300/50" />
-
-          {/* Central diamond cluster */}
-          <div className="relative w-64 h-64 flex items-center justify-center">
-            {/* Center */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-              className="absolute inset-0"
-            >
-              {Array.from({ length: 8 }, (_, i) => (
-                <Diamond
-                  key={i}
-                  fill="currentColor"
-                  className="absolute text-ice-300"
-                  style={{
-                    width:     14 + (i % 3) * 6,
-                    height:    14 + (i % 3) * 6,
-                    top:       `${50 + 42 * Math.sin((i / 8) * Math.PI * 2)}%`,
-                    left:      `${50 + 42 * Math.cos((i / 8) * Math.PI * 2)}%`,
-                    transform: 'translate(-50%, -50%)',
-                    opacity:   0.4 + (i % 3) * 0.2,
-                  }}
-                />
-              ))}
-            </motion.div>
-
-            {/* Center diamond */}
-            <motion.div
-              animate={{ scale: [1, 1.08, 1] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              className="relative z-10 w-28 h-28 flex items-center justify-center"
-            >
-              <Diamond
-                fill="currentColor"
-                className="w-24 h-24 text-ice-400 drop-shadow-[0_0_24px_rgba(0,217,255,0.5)]"
-              />
-            </motion.div>
-          </div>
-
-          {/* Floating product card preview */}
-          <motion.div
-            animate={{ y: [-6, 6, -6] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute bottom-4 right-0 glass rounded-2xl p-4 shadow-ice w-44"
-          >
-            <div className="w-10 h-10 rounded-xl bg-ice-100 flex items-center justify-center mb-2">
-              <Diamond className="w-5 h-5 text-ice-500" fill="currentColor" />
-            </div>
-            <p className="font-serif text-xs font-bold text-charcoal leading-tight">
-              Solitaire Or 14k
-            </p>
-            <p className="text-ice-500 text-sm font-bold mt-1">249 €</p>
-          </motion.div>
-
-          <motion.div
-            animate={{ y: [6, -6, 6] }}
-            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-            className="absolute top-8 left-0 glass rounded-2xl p-4 shadow-gold w-40"
-          >
-            <p className="text-xs text-charcoal/50 mb-0.5">Certifié</p>
-            <p className="font-serif text-xs font-bold text-charcoal">GRA ✦ VVS · D</p>
-            <div className="flex gap-0.5 mt-1.5">
-              {[...Array(5)].map((_, i) => (
-                <span key={i} className="text-gold-300 text-xs">★</span>
-              ))}
-            </div>
-          </motion.div>
+          <ChainDisplay />
         </motion.div>
       </motion.div>
 
+      {/* 4s+ — Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 4 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.4, repeat: Infinity }}
+          className="w-5 h-8 rounded-full border-2 border-ice-400 flex items-start justify-center pt-1.5"
+        >
+          <div className="w-1 h-2 rounded-full bg-ice-400" />
+        </motion.div>
+        <span className="text-[10px] tracking-widest text-charcoal/30 uppercase">Scroll</span>
+      </motion.div>
+
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent pointer-events-none" />
     </section>
   )
 }
