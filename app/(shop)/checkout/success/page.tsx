@@ -1,0 +1,63 @@
+'use client'
+
+import { useEffect } from 'react'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { CheckCircle, Diamond } from 'lucide-react'
+import { Button } from '@/components/ui/Button'
+import { useCartStore } from '@/store/cartStore'
+
+export default function CheckoutSuccessPage() {
+  const { clearCart } = useCartStore()
+
+  useEffect(() => {
+    clearCart()
+  }, [clearCart])
+
+  return (
+    <div className="min-h-screen bg-gradient-hero flex items-center justify-center p-6">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="bg-white rounded-3xl shadow-product p-10 max-w-md w-full text-center"
+      >
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
+          className="w-20 h-20 rounded-full bg-ice-50 flex items-center justify-center mx-auto mb-6"
+        >
+          <CheckCircle className="w-10 h-10 text-ice-500" />
+        </motion.div>
+
+        <div className="flex items-center justify-center gap-2 mb-4">
+          <Diamond className="w-5 h-5 text-ice-500" fill="currentColor" />
+          <span className="font-serif text-xl font-bold tracking-widest text-charcoal">ICEKEY</span>
+        </div>
+
+        <h1 className="font-serif text-3xl font-bold text-charcoal mb-3">
+          Commande confirmée !
+        </h1>
+        <p className="text-charcoal/60 mb-2">
+          Merci pour votre confiance. Un email de confirmation vous a été envoyé.
+        </p>
+        <p className="text-charcoal/40 text-sm mb-8">
+          Votre bijou sera expédié sous 2–3 jours ouvrés avec suivi.
+        </p>
+
+        <div className="space-y-3">
+          <Link href="/" className="block">
+            <Button variant="primary" size="lg" className="w-full">
+              Retour à l&apos;accueil
+            </Button>
+          </Link>
+          <Link href="/shop" className="block">
+            <Button variant="ghost" size="lg" className="w-full">
+              Continuer mes achats
+            </Button>
+          </Link>
+        </div>
+      </motion.div>
+    </div>
+  )
+}
