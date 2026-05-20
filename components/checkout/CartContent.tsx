@@ -6,7 +6,8 @@ import { CartSummary } from './CartSummary'
 import { TrustSignals } from './TrustSignals'
 import { Button }       from '@/components/ui/Button'
 import { useCartStore } from '@/store/cartStore'
-import { ArrowRight, Lock, ShoppingBag, Tag } from 'lucide-react'
+import { useAuthGuard } from '@/components/auth/useAuthGuard'
+import { ArrowRight, Lock, ShoppingBag, Tag, User } from 'lucide-react'
 import { formatPrice } from '@/lib/utils/formatPrice'
 import toast from 'react-hot-toast'
 
@@ -33,10 +34,12 @@ export function CartContent() {
   const [promoCode,  setPromoCode]  = useState('')
   const [promoApplied, setPromoApplied] = useState(false)
 
+  const { user, requireAuth } = useAuthGuard()
   const items    = useCartStore((s) => s.items)
   const subtotal = useCartStore((s) => s.totalPrice())
 
   async function handleCheckout() {
+    if (!requireAuth('/cart')) return
     setLoading(true)
     try {
       const res = await fetch('/api/stripe/checkout', {
@@ -153,6 +156,21 @@ export function CartContent() {
                 >
                   Appliquer
                 </button>
+              </div>
+            )}
+
+            {/* Auth nudge — shown when not logged in */}
+            {!user && (
+              <div className="rounded-xl bg-charcoal/5 border border-charcoal/10 p-4 text-center">
+                <User className="w-5 h-5 text-charcoal/30 mx-auto mb-1.5" />
+                <p className="text-xs font-semibold text-charcoal mb-0.5">Compte requis pour commander</p>
+                <p className="text-[10px] text-charcoal/50 mb-3">Créez votre compte gratuitement et recevez -10% sur votre première commande.</p>
+                <Link
+                  href="/auth/signup?redirect=/cart"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00D9FF] hover:underline"
+                >
+                  Rejoindre la famille ❄️ →
+                </Link>
               </div>
             )}
 

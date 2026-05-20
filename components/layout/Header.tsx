@@ -2,11 +2,12 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
-import { ShoppingBag, Search, User, Menu, X } from 'lucide-react'
+import { ShoppingBag, Search, Menu, X, User } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useCartStore } from '@/store/cartStore'
 import { IcekeyLogo } from '@/components/ui/IcekeyLogo'
 import { LocaleSwitcher } from '@/components/ui/LocaleSwitcher'
+import { UserMenu } from '@/components/auth/UserMenu'
 import { cn } from '@/lib/utils/cn'
 
 /* ── Megamenu data ──────────────────────────────────────────── */
@@ -230,14 +231,8 @@ export function Header() {
                 <Search className="w-4.5 h-4.5" style={{ width: 18, height: 18 }} />
               </button>
 
-              {/* Account */}
-              <Link
-                href="/account"
-                className="p-2.5 text-white/60 hover:text-white transition-colors rounded-lg hover:bg-white/10 hidden sm:flex"
-                aria-label="Mon compte"
-              >
-                <User style={{ width: 18, height: 18 }} />
-              </Link>
+              {/* Account / UserMenu */}
+              <UserMenu />
 
               {/* Cart */}
               <button
