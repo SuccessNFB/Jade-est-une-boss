@@ -4,7 +4,7 @@ import { forwardRef } from 'react'
 import { cn } from '@/lib/utils/cn'
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'gold' | 'ghost' | 'outline-ice'
+  variant?: 'primary' | 'gold' | 'ghost' | 'outline-ice' | 'ice'
   size?:    'sm' | 'md' | 'lg'
   loading?: boolean
 }
@@ -18,6 +18,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       gold:         'bg-gold-300 text-charcoal hover:bg-gold-400 hover:shadow-gold focus-visible:ring-gold-400',
       ghost:        'border border-charcoal/20 text-charcoal hover:border-ice-500 hover:text-ice-600 focus-visible:ring-ice-500',
       'outline-ice':'border border-ice-500 text-ice-600 hover:bg-ice-500 hover:text-white focus-visible:ring-ice-500',
+      'ice':         'bg-[#00D9FF] text-charcoal font-bold hover:bg-[#00EEFF] hover:shadow-[0_0_24px_rgba(0,217,255,0.5)] focus-visible:ring-[#00D9FF]',
     }
 
     const sizes = {

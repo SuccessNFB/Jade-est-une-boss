@@ -6,17 +6,16 @@ import { Header }                  from '@/components/layout/Header'
 import { Footer }                  from '@/components/layout/Footer'
 import { AnnouncementBar }         from '@/components/layout/AnnouncementBar'
 import { ProductCarousel }         from '@/components/product/ProductCarousel'
-import { ProductVariantSelector }  from '@/components/product/ProductVariantSelector'
 import { ProductFeatureTiles }     from '@/components/product/ProductFeatureTiles'
 import { ProductAccordion }        from '@/components/product/ProductAccordion'
-import { WhyMoissanite }           from '@/components/product/WhyMoissanite'
 import { ProductFAQ }              from '@/components/product/ProductFAQ'
+import { ProductReviews }          from '@/components/product/ProductReviews'
 import { RelatedProducts }         from '@/components/product/RelatedProducts'
 import { ProductPageClient }       from '@/components/product/ProductPageClient'
 import { TierBadge }               from '@/components/ui/Badge'
 import { formatPrice }             from '@/lib/utils/formatPrice'
-import { METALS }                  from '@/types'
-import { Truck, Award, CheckCircle } from 'lucide-react'
+import { METALS, PRICE_TIERS }     from '@/types'
+import { Truck, CheckCircle }      from 'lucide-react'
 
 export const revalidate = 3600
 
@@ -35,6 +34,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: row.description,
     openGraph:   { title: row.name, description: row.description },
   }
+}
+
+function buildSubheading(p: Product): string {
+  const parts: string[] = []
+  if (p.chain_length_in) parts.push(`${p.chain_length_in}"`)
+  if (p.stone_size)      parts.push(`VVS Moissanite ${p.stone_size}`)
+  const metalLabel = METALS[p.metal as Metal]?.label
+  if (metalLabel)        parts.push(metalLabel)
+  return parts.join(' · ') || 'VVS Moissanite · Certifié GRA'
 }
 
 export default async function ProductPage({ params }: Props) {
@@ -96,7 +104,7 @@ export default async function ProductPage({ params }: Props) {
             {/* RIGHT — Product info */}
             <div className="flex flex-col gap-5">
 
-              {/* Badge + Name */}
+              {/* Badge + Name + Subheading */}
               <div>
                 <div className="flex items-center gap-2 mb-2">
                   <TierBadge tier={p.price_tier as any} />
@@ -107,6 +115,9 @@ export default async function ProductPage({ params }: Props) {
                 <h1 className="font-serif text-3xl sm:text-4xl font-bold text-charcoal leading-tight">
                   {p.name}
                 </h1>
+                <p className="text-sm text-charcoal/50 mt-1 font-medium">
+                  {buildSubheading(p)}
+                </p>
               </div>
 
               {/* Price */}
@@ -115,52 +126,52 @@ export default async function ProductPage({ params }: Props) {
                   {formatPrice(p.price)}
                 </span>
                 {p.compare_at_price && p.compare_at_price > p.price && (
-                  <span className="text-lg text-charcoal/40 line-through">
-                    {formatPrice(p.compare_at_price)}
-                  </span>
-                )}
-                {p.compare_at_price && p.compare_at_price > p.price && (
-                  <span className="text-sm font-semibold text-green-600">
-                    -{Math.round((1 - p.price / p.compare_at_price) * 100)}%
-                  </span>
+                  <>
+                    <span className="text-lg text-charcoal/40 line-through">
+                      {formatPrice(p.compare_at_price)}
+                    </span>
+                    <span className="text-sm font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">
+                      -{Math.round((1 - p.price / p.compare_at_price) * 100)}%
+                    </span>
+                  </>
                 )}
               </div>
 
               {/* Delivery badge */}
-              <div className="flex items-center gap-2 text-sm text-charcoal/70">
-                <Truck className="w-4 h-4 text-ice-500" />
-                <span>Livraison <strong>offerte en France</strong> · Expédié sous 48h</span>
+              <div className="flex items-center gap-2 text-sm text-charcoal/70 bg-gray-50 px-4 py-2.5 rounded-xl">
+                <Truck className="w-4 h-4 text-[#00D9FF]" />
+                <span>Livraison <strong>offerte en France</strong> · FREE · 4–7 jours</span>
               </div>
 
-              {/* Bullet highlights */}
+              {/* Emotional bullets */}
               <ul className="space-y-1.5">
                 {[
-                  'Moissanite certifiée GRA · Clarté VVS · Couleur D',
-                  'Monture artisanale — chaque pièce est unique',
-                  'Certificat d\'authenticité inclus dans l\'écrin ICEKEY',
+                  'Sparkles brighter than diamonds — VVS certified',
+                  'Confidence that lasts forever — guaranteed for life',
+                  'Your flex, certified — GRA authentication included',
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-2 text-sm text-charcoal/70">
-                    <CheckCircle className="w-4 h-4 text-ice-500 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 text-[#00D9FF] flex-shrink-0 mt-0.5" />
                     {line}
                   </li>
                 ))}
               </ul>
 
-              {/* Variants + Qty + CTA (interactive — client component) */}
+              {/* Variants + Qty + CTA + Trust (client component) */}
               <ProductPageClient product={p} />
 
               {/* Feature tiles */}
               <ProductFeatureTiles />
 
-              {/* Accordion */}
+              {/* Accordion — Description + Specs */}
               <ProductAccordion items={accordionItems} />
             </div>
           </div>
 
           {/* ── BOTTOM SECTIONS ──────────────────────────── */}
-          <WhyMoissanite />
+          <ProductReviews />
           <ProductFAQ />
-          <RelatedProducts currentId={p.id} category={p.category} />
+          <RelatedProducts currentId={p.id} category={p.category} priceTier={p.price_tier} />
         </div>
       </main>
 

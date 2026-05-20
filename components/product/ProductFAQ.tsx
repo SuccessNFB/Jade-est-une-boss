@@ -2,37 +2,59 @@ import { ProductAccordion } from './ProductAccordion'
 
 const FAQ_ITEMS = [
   {
-    title:   'Quelle est la politique de retour ?',
-    content: 'Vous disposez de 30 jours à compter de la réception pour nous retourner votre bijou, sans justification. Le retour est gratuit en France. Le remboursement est effectué sous 5 jours ouvrés.',
+    title:   "C'est quoi le moissanite ?",
+    content: (
+      <p>
+        Lab-created brilliance that sparkles brighter than diamonds. Durable, ethical, and built to last forever.
+        Same sparkle, fraction of the cost — and a conscience that's crystal clear.
+      </p>
+    ),
   },
   {
-    title:   'La moissanite est-elle visible différemment du diamant ?',
-    content: 'La moissanite a un indice de réfraction supérieur au diamant (2.65 vs 2.42), ce qui lui donne un éclat encore plus intense. À l\'œil nu, elle est indiscernable. Seul un testeur de pierre spécialisé peut faire la différence.',
+    title:   'Ça passe les diamond tests ?',
+    content: (
+      <p>
+        Moissanite passes 99% of diamond tests because it&apos;s <em>that</em> close.
+        Notre certification VVS prouve que c&apos;est le vrai deal. Brillance : 2.65 (vs 2.42 pour le diamant).
+      </p>
+    ),
   },
   {
-    title:   'Quand vais-je recevoir ma commande ?',
-    content: 'Les bijoux en stock sont expédiés sous 24–48h en colissimo suivi. Les pièces sur mesure nécessitent 7 à 10 jours ouvrés de fabrication avant expédition.',
+    title:   'Ça va durer combien de temps ?',
+    content: (
+      <p>
+        Forever. 9.25 sur l&apos;échelle de Mohs (les diamants sont à 10). Ton flex est fait pour durer une vie.
+        C&apos;est exactement pour ça qu&apos;on le garantit à vie.
+      </p>
+    ),
   },
   {
-    title:   'Où sont fabriqués vos bijoux ?',
-    content: 'Nos bijoux sont fabriqués par des artisans joailliers partenaires certifiés. Chaque pierre moissanite est certifiée GRA (Gemological Research Association) avec son propre numéro de certificat.',
+    title:   "Comment j'entretiens ma chaîne ?",
+    content: (
+      <p>
+        Easy. Eau tiède + chiffon doux chaque semaine. Évite les produits chimiques agressifs.
+        On t&apos;inclut un guide d&apos;entretien + un chiffon microfibre dans chaque commande.
+      </p>
+    ),
   },
   {
-    title:   'Quels sont les frais d\'expédition ?',
-    content: 'La livraison est offerte en France dès 100€ d\'achat. En dessous, les frais sont de 9.90€. Pour la Belgique, Suisse et Luxembourg : 14.90€. Pour le reste de l\'Europe : 19.90€.',
-  },
-  {
-    title:   'Puis-je faire graver mon bijou ?',
-    content: 'Oui, tous nos bijoux compatibles peuvent être gravés (jusqu\'à 20 caractères). Utilisez notre configurateur sur la page "Sur Mesure" ou ajoutez une note lors de votre commande.',
+    title:   "Et si j'aime pas ?",
+    content: (
+      <p>
+        30 jours, remboursement complet, sans questions. On est <em>tellement</em> confiants que tu vas adorer.
+        Si c&apos;est pas le cas — on te rembourse direct. We got you.
+      </p>
+    ),
   },
 ]
 
 export function ProductFAQ() {
   return (
     <section className="py-12 border-t border-gray-100">
-      <h2 className="font-serif text-xl font-bold text-charcoal mb-6">
-        Vous avez une question ?
+      <h2 className="font-serif text-2xl font-bold text-charcoal mb-2">
+        Questions Fréquentes
       </h2>
+      <p className="text-sm text-charcoal/50 mb-6">Tout ce que tu dois savoir avant de sécuriser ta pièce.</p>
       <ProductAccordion items={FAQ_ITEMS} />
     </section>
   )
