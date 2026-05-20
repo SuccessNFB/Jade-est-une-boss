@@ -146,9 +146,9 @@ export default async function ProductPage({ params }: Props) {
               {/* Emotional bullets */}
               <ul className="space-y-1.5">
                 {[
-                  'Sparkles brighter than diamonds — VVS certified',
-                  'Confidence that lasts forever — guaranteed for life',
-                  'Your flex, certified — GRA authentication included',
+                  'Diamond-grade sparkle verified',
+                  'Hand-finished 925 silver',
+                  'Lifetime guarantee included',
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-2 text-sm text-charcoal/70">
                     <CheckCircle className="w-4 h-4 text-[#00D9FF] flex-shrink-0 mt-0.5" />

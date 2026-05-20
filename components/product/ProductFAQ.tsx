@@ -4,46 +4,31 @@ const FAQ_ITEMS = [
   {
     title:   "C'est quoi le moissanite ?",
     content: (
-      <p>
-        Lab-created brilliance that sparkles brighter than diamonds. Durable, ethical, and built to last forever.
-        Same sparkle, fraction of the cost — and a conscience that's crystal clear.
-      </p>
+      <p>Lab-created brilliance. Sparkles like diamonds. Built forever. VVS certified.</p>
     ),
   },
   {
     title:   'Ça passe les diamond tests ?',
     content: (
-      <p>
-        Moissanite passes 99% of diamond tests because it&apos;s <em>that</em> close.
-        Notre certification VVS prouve que c&apos;est le vrai deal. Brillance : 2.65 (vs 2.42 pour le diamant).
-      </p>
+      <p>Yes. Our VVS certification proves it&apos;s real moissanite.</p>
     ),
   },
   {
     title:   'Ça va durer combien de temps ?',
     content: (
-      <p>
-        Forever. 9.25 sur l&apos;échelle de Mohs (les diamants sont à 10). Ton flex est fait pour durer une vie.
-        C&apos;est exactement pour ça qu&apos;on le garantit à vie.
-      </p>
+      <p>Forever. 9.25 Mohs hardness. Lifetime guarantee.</p>
     ),
   },
   {
     title:   "Comment j'entretiens ma chaîne ?",
     content: (
-      <p>
-        Easy. Eau tiède + chiffon doux chaque semaine. Évite les produits chimiques agressifs.
-        On t&apos;inclut un guide d&apos;entretien + un chiffon microfibre dans chaque commande.
-      </p>
+      <p>Warm water + soft cloth. Care guide included.</p>
     ),
   },
   {
     title:   "Et si j'aime pas ?",
     content: (
-      <p>
-        30 jours, remboursement complet, sans questions. On est <em>tellement</em> confiants que tu vas adorer.
-        Si c&apos;est pas le cas — on te rembourse direct. We got you.
-      </p>
+      <p>30 days, full refund. No questions asked.</p>
     ),
   },
 ]
