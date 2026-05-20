@@ -6,6 +6,7 @@ import { ShoppingBag, Search, User, Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useCartStore } from '@/store/cartStore'
 import { IcekeyLogo } from '@/components/ui/IcekeyLogo'
+import { LocaleSwitcher } from '@/components/ui/LocaleSwitcher'
 import { cn } from '@/lib/utils/cn'
 
 /* ── Megamenu data ──────────────────────────────────────────── */
@@ -260,6 +261,11 @@ export function Header() {
                   )}
                 </AnimatePresence>
               </button>
+
+              {/* Locale switcher */}
+              <div className="hidden sm:block">
+                <LocaleSwitcher />
+              </div>
 
               {/* Mobile hamburger */}
               <button

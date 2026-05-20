@@ -1,0 +1,220 @@
+{
+  "common": {
+    "shopNow": "Shop Now",
+    "addToCart": "Add to Cart",
+    "viewDetails": "View Details",
+    "continueShopping": "← Continue Shopping",
+    "loading": "Loading…",
+    "soldOut": "Sold Out",
+    "freeShipping": "Free Shipping",
+    "securePayment": "Secure Payment",
+    "new": "New",
+    "sale": "Sale",
+    "from": "From",
+    "learnMore": "Learn more",
+    "close": "Close",
+    "search": "Search"
+  },
+
+  "nav": {
+    "shop": "Shop",
+    "chains": "Chains",
+    "pendants": "Pendants",
+    "rings": "Rings",
+    "watches": "Watches",
+    "men": "Men",
+    "women": "Women",
+    "builder": "Custom",
+    "about": "About",
+    "cart": "Cart",
+    "account": "My Account",
+    "search": "Search",
+    "searchPlaceholder": "Search jewelry…",
+    "megaByStyle": "By Style",
+    "megaBySize": "By Size",
+    "megaByType": "By Type",
+    "megaCollections": "Collections",
+    "megaNewArrivals": "New Arrivals",
+    "megaBestSellers": "Best Sellers",
+    "megaCustom": "Custom"
+  },
+
+  "announcement": {
+    "text": "🚀 Free shipping from €100 · GRA Certified · 30-day money-back guarantee"
+  },
+
+  "hero": {
+    "eyebrow": "VVS Moissanite · GRA Certified · Made in France",
+    "headline1": "Cold is the",
+    "headline2": "new gold",
+    "subheading": "VVS Moissanite jewelry — brighter than diamonds, ethical, GRA certified.",
+    "priceRange": "From {min} to {max}+.",
+    "browseCta": "Browse Collection",
+    "shopCta": "Shop Now",
+    "badge0": "100% VVS Certified",
+    "badge1": "Lab-Created · Ethical",
+    "badge2": "30-Day Guarantee",
+    "stat0value": "350+",
+    "stat0label": "Models",
+    "stat1value": "4.8★",
+    "stat1label": "230+ reviews",
+    "stat2value": "GRA",
+    "stat2label": "Certified",
+    "stat3value": "4–7d",
+    "stat3label": "Delivery",
+    "scroll": "Scroll"
+  },
+
+  "shop": {
+    "title": "Our Collection",
+    "subtitle": "GRA-certified VVS moissanite jewelry. Find the piece that represents you.",
+    "filters": "Filters",
+    "sort": "Sort",
+    "sortNewest": "Newest",
+    "sortPriceLow": "Price: Low to High",
+    "sortPriceHigh": "Price: High to Low",
+    "sortPopular": "Popular",
+    "results": "{count} results",
+    "noResults": "No results",
+    "noResultsDesc": "Try different filters.",
+    "clearFilters": "Clear filters",
+    "allCategories": "All categories",
+    "viewGrid": "Grid",
+    "viewList": "List",
+    "filterBy": "Filter by",
+    "priceRange": "Price",
+    "category": "Category",
+    "metal": "Metal",
+    "seeResults": "See {count} results"
+  },
+
+  "product": {
+    "addToCart": "Secure Your Piece",
+    "addingToCart": "Adding…",
+    "addedToCart": "Added to cart!",
+    "outOfStock": "Sold Out",
+    "wishlist": "Wishlist",
+    "share": "Share",
+    "delivery": "Free shipping in France · 4–7 days",
+    "bullet0": "Diamond-grade sparkle verified",
+    "bullet1": "Hand-finished 925 silver",
+    "bullet2": "Lifetime guarantee included",
+    "customizable": "Custom",
+    "quantity": "Quantity",
+    "length": "Length",
+    "color": "Color",
+    "totalPrice": "Total: {price}",
+    "trustBadge0": "GRA Certified",
+    "trustBadge0sub": "Authentic VVS",
+    "trustBadge1": "VVS Certified",
+    "trustBadge1sub": "Diamond quality",
+    "trustBadge2": "Secured",
+    "trustBadge2sub": "SSL Payment",
+    "trustBadge3": "30-day return",
+    "trustBadge3sub": "No questions asked",
+    "paymentMethods": "Accepted payment methods",
+    "faqTitle": "Frequently Asked Questions",
+    "faqSubtitle": "Everything you need to know before securing your piece.",
+    "faq0q": "What is moissanite?",
+    "faq0a": "Lab-created brilliance. Sparkles like diamonds. Built forever. VVS certified.",
+    "faq1q": "Does it pass diamond tests?",
+    "faq1a": "Yes. Our VVS certification proves it's real moissanite.",
+    "faq2q": "How long will it last?",
+    "faq2a": "Forever. 9.25 Mohs hardness. Lifetime guarantee.",
+    "faq3q": "How do I care for it?",
+    "faq3a": "Warm water + soft cloth. Care guide included.",
+    "faq4q": "What if I don't like it?",
+    "faq4a": "30 days, full refund. No questions asked.",
+    "reviews": "Customer Reviews",
+    "reviewsSubtitle": "What our customers say",
+    "shareYourMoment": "Share Your Moment",
+    "relatedTitle": "Complete Your Look",
+    "relatedSubtitle": "Pieces that pair perfectly",
+    "bundleBadge": "-10% Bundle"
+  },
+
+  "cart": {
+    "title": "My Cart",
+    "emptyTitle": "Your cart is empty",
+    "emptySubtitle": "Start building your collection.",
+    "emptyCta": "Shop Now",
+    "summary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "shippingFree": "Free ✓",
+    "total": "Total",
+    "checkout": "Secure Checkout",
+    "checkoutLoading": "Redirecting…",
+    "promoPlaceholder": "Promo code",
+    "promoApply": "Apply",
+    "freeShippingNudge": "Only {amount} away from free shipping!",
+    "continueShopping": "← Continue Shopping",
+    "sslNote": "Secured SSL payment · Stripe",
+    "remove": "Remove",
+    "itemCount": "{count, plural, one {# item} other {# items}}"
+  },
+
+  "footer": {
+    "tagline": "Cold is the new gold.",
+    "newsletterTitle": "Stay in the loop",
+    "newsletterSubtitle": "-10% on your first order",
+    "newsletterPlaceholder": "Your email",
+    "newsletterCta": "Join",
+    "newsletterSuccess": "Welcome to the family ❄️",
+    "col1Title": "Policies",
+    "col2Title": "About",
+    "col3Title": "Support",
+    "col4Title": "Connect",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "shipping": "Shipping",
+    "returns": "Returns",
+    "about": "Our Story",
+    "careGuide": "Care Guide",
+    "blog": "Blog",
+    "press": "Press",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "tracking": "Order Tracking",
+    "custom": "Custom",
+    "copyright": "© {year} ICEKEY · All rights reserved",
+    "madeIn": "Made with ❤️ in France"
+  },
+
+  "pages": {
+    "about": {
+      "title": "Our Story",
+      "description": "ICEKEY — premium French moissanite."
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Frequently asked questions."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Get in touch."
+    },
+    "shipping": {
+      "title": "Shipping",
+      "description": "Shipping information."
+    },
+    "careGuide": {
+      "title": "Care Guide",
+      "description": "How to care for your jewelry."
+    }
+  },
+
+  "trust": {
+    "badge0": "GRA Certified",
+    "badge1": "Free Shipping",
+    "badge2": "30-day Return",
+    "badge3": "Secure Payment",
+    "badge4": "Customer Service"
+  },
+
+  "notFound": {
+    "title": "Page Not Found",
+    "subtitle": "The page you're looking for doesn't exist.",
+    "cta": "Back to Home"
+  }
+}

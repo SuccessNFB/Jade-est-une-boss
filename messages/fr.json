@@ -1,0 +1,220 @@
+{
+  "common": {
+    "shopNow": "Acheter maintenant",
+    "addToCart": "Ajouter au panier",
+    "viewDetails": "Voir le produit",
+    "continueShopping": "← Continuer mes achats",
+    "loading": "Chargement…",
+    "soldOut": "Rupture de stock",
+    "freeShipping": "Livraison offerte",
+    "securePayment": "Paiement sécurisé",
+    "new": "Nouveau",
+    "sale": "Promo",
+    "from": "À partir de",
+    "learnMore": "En savoir plus",
+    "close": "Fermer",
+    "search": "Rechercher"
+  },
+
+  "nav": {
+    "shop": "Boutique",
+    "chains": "Chaînes",
+    "pendants": "Pendentifs",
+    "rings": "Bagues",
+    "watches": "Montres",
+    "men": "Homme",
+    "women": "Femme",
+    "builder": "Sur mesure",
+    "about": "À propos",
+    "cart": "Panier",
+    "account": "Mon compte",
+    "search": "Rechercher",
+    "searchPlaceholder": "Rechercher un bijou…",
+    "megaByStyle": "Par style",
+    "megaBySize": "Par taille",
+    "megaByType": "Par type",
+    "megaCollections": "Collections",
+    "megaNewArrivals": "Nouveautés",
+    "megaBestSellers": "Best Sellers",
+    "megaCustom": "Sur mesure"
+  },
+
+  "announcement": {
+    "text": "🚀 Livraison offerte dès 100€ · Certifié GRA · Satisfait ou remboursé 30j"
+  },
+
+  "hero": {
+    "eyebrow": "Moissanite VVS · Certifié GRA · Made in France",
+    "headline1": "Cold is the",
+    "headline2": "new gold",
+    "subheading": "Bijoux moissanite VVS — brillance supérieure au diamant, éthiques, certifiés GRA.",
+    "priceRange": "De {min} à {max}+.",
+    "browseCta": "Voir la collection",
+    "shopCta": "Acheter",
+    "badge0": "100% VVS Certified",
+    "badge1": "Lab-Created · Ethical",
+    "badge2": "30-Day Guarantee",
+    "stat0value": "350+",
+    "stat0label": "Modèles",
+    "stat1value": "4.8★",
+    "stat1label": "230+ avis",
+    "stat2value": "GRA",
+    "stat2label": "Certifié",
+    "stat3value": "4–7j",
+    "stat3label": "Livraison",
+    "scroll": "Défiler"
+  },
+
+  "shop": {
+    "title": "Notre Collection",
+    "subtitle": "Bijoux moissanite VVS certifiés GRA. Trouvez la pièce qui vous représente.",
+    "filters": "Filtres",
+    "sort": "Trier",
+    "sortNewest": "Nouveautés",
+    "sortPriceLow": "Prix croissant",
+    "sortPriceHigh": "Prix décroissant",
+    "sortPopular": "Populaires",
+    "results": "{count} résultats",
+    "noResults": "Aucun résultat",
+    "noResultsDesc": "Essayez d'autres filtres.",
+    "clearFilters": "Effacer les filtres",
+    "allCategories": "Toutes catégories",
+    "viewGrid": "Grille",
+    "viewList": "Liste",
+    "filterBy": "Filtrer par",
+    "priceRange": "Prix",
+    "category": "Catégorie",
+    "metal": "Métal",
+    "seeResults": "Voir {count} résultats"
+  },
+
+  "product": {
+    "addToCart": "Sécuriser ma pièce",
+    "addingToCart": "Ajout en cours…",
+    "addedToCart": "Ajouté au panier !",
+    "outOfStock": "Rupture de stock",
+    "wishlist": "Favoris",
+    "share": "Partager",
+    "delivery": "Livraison offerte en France · 4–7 jours",
+    "bullet0": "Éclat niveau diamant, certifié VVS",
+    "bullet1": "Argent 925 fini à la main",
+    "bullet2": "Garantie à vie incluse",
+    "customizable": "Sur mesure",
+    "quantity": "Quantité",
+    "length": "Longueur",
+    "color": "Couleur",
+    "totalPrice": "Total : {price}",
+    "trustBadge0": "Certifié GRA",
+    "trustBadge0sub": "Authentique VVS",
+    "trustBadge1": "Certifié VVS",
+    "trustBadge1sub": "Qualité diamant",
+    "trustBadge2": "Sécurisé",
+    "trustBadge2sub": "Paiement SSL",
+    "trustBadge3": "Retour 30j",
+    "trustBadge3sub": "Sans conditions",
+    "paymentMethods": "Méthodes de paiement acceptées",
+    "faqTitle": "Questions Fréquentes",
+    "faqSubtitle": "Tout ce que tu dois savoir avant de sécuriser ta pièce.",
+    "faq0q": "C'est quoi le moissanite ?",
+    "faq0a": "Lab-created brilliance. Sparkles like diamonds. Built forever. VVS certified.",
+    "faq1q": "Ça passe les diamond tests ?",
+    "faq1a": "Yes. Notre certification VVS prouve que c'est du vrai moissanite.",
+    "faq2q": "Ça va durer combien de temps ?",
+    "faq2a": "Forever. Dureté 9.25 Mohs. Garantie à vie.",
+    "faq3q": "Comment j'entretiens ma chaîne ?",
+    "faq3a": "Eau tiède + chiffon doux. Guide d'entretien inclus.",
+    "faq4q": "Et si j'aime pas ?",
+    "faq4a": "30 jours, remboursement complet. Aucune question posée.",
+    "reviews": "Avis clients",
+    "reviewsSubtitle": "Ce que disent nos clients",
+    "shareYourMoment": "Partage ton moment",
+    "relatedTitle": "Complète ton look",
+    "relatedSubtitle": "Pièces qui se marient parfaitement",
+    "bundleBadge": "-10% Bundle"
+  },
+
+  "cart": {
+    "title": "Mon Panier",
+    "emptyTitle": "Ton panier est vide",
+    "emptySubtitle": "Commence à construire ta collection.",
+    "emptyCta": "Shop Now",
+    "summary": "Récapitulatif",
+    "subtotal": "Sous-total",
+    "shipping": "Livraison",
+    "shippingFree": "Gratuite ✓",
+    "total": "Total",
+    "checkout": "Paiement sécurisé",
+    "checkoutLoading": "Redirection…",
+    "promoPlaceholder": "Code promo",
+    "promoApply": "Appliquer",
+    "freeShippingNudge": "Plus que {amount} pour la livraison offerte !",
+    "continueShopping": "← Continuer mes achats",
+    "sslNote": "Paiement sécurisé SSL · Stripe",
+    "remove": "Supprimer",
+    "itemCount": "{count, plural, one {# article} other {# articles}}"
+  },
+
+  "footer": {
+    "tagline": "Cold is the new gold.",
+    "newsletterTitle": "Restez dans la boucle",
+    "newsletterSubtitle": "-10% sur votre première commande",
+    "newsletterPlaceholder": "Votre email",
+    "newsletterCta": "Rejoindre",
+    "newsletterSuccess": "Bienvenue dans la famille ❄️",
+    "col1Title": "Politiques",
+    "col2Title": "À propos",
+    "col3Title": "Support",
+    "col4Title": "Connect",
+    "privacy": "Confidentialité",
+    "terms": "CGV",
+    "shipping": "Livraison",
+    "returns": "Retours",
+    "about": "Notre histoire",
+    "careGuide": "Guide d'entretien",
+    "blog": "Blog",
+    "press": "Presse",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "tracking": "Suivi commande",
+    "custom": "Sur mesure",
+    "copyright": "© {year} ICEKEY · Tous droits réservés",
+    "madeIn": "Fait avec ❤️ en France"
+  },
+
+  "pages": {
+    "about": {
+      "title": "Notre Histoire",
+      "description": "ICEKEY — la moissanite premium française."
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Questions fréquentes."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Nous contacter."
+    },
+    "shipping": {
+      "title": "Livraison",
+      "description": "Informations de livraison."
+    },
+    "careGuide": {
+      "title": "Guide d'entretien",
+      "description": "Entretenir vos bijoux."
+    }
+  },
+
+  "trust": {
+    "badge0": "Certifié GRA",
+    "badge1": "Livraison offerte",
+    "badge2": "Retour 30j",
+    "badge3": "Paiement sécurisé",
+    "badge4": "Service client"
+  },
+
+  "notFound": {
+    "title": "Page introuvable",
+    "subtitle": "La page que vous cherchez n'existe pas.",
+    "cta": "Retour à l'accueil"
+  }
+}
