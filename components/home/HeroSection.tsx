@@ -5,6 +5,14 @@ import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight, ShieldCheck, Leaf, RotateCcw } from 'lucide-react'
 
+/*
+ * HERO VIDEO — pour activer la vidéo :
+ * 1. Dépose ton fichier MP4 dans /public/videos/hero.mp4
+ * 2. Passe HERO_VIDEO_ENABLED à true
+ */
+const HERO_VIDEO_ENABLED = false
+const HERO_VIDEO_SRC     = '/videos/hero.mp4'
+
 /* ─── Seeded "random" so server/client match (no hydration mismatch) ── */
 function seeded(seed: number) {
   const x = Math.sin(seed + 1) * 10000
@@ -74,9 +82,26 @@ export function HeroSection() {
       className="relative min-h-screen flex items-center overflow-hidden"
       style={{ background: 'linear-gradient(135deg, #07090F 0%, #0D1220 40%, #090C16 70%, #060810 100%)' }}
     >
+      {/* ── Hero video (activé dès que /public/videos/hero.mp4 existe) ── */}
+      {HERO_VIDEO_ENABLED && (
+        <>
+          <video
+            autoPlay muted loop playsInline
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            style={{ zIndex: 1 }}
+          >
+            <source src={HERO_VIDEO_SRC} type="video/mp4" />
+          </video>
+          {/* Overlay sombre pour lisibilité du texte */}
+          <div
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(to right, rgba(7,9,15,0.85) 0%, rgba(7,9,15,0.45) 60%, rgba(7,9,15,0.2) 100%)', zIndex: 2 }}
+          />
+        </>
+      )}
 
-      {/* ── Aurora blobs ──────────────────────────────────────────── */}
-      {ORBS.map((orb, i) => (
+      {/* ── Aurora blobs (masqués quand vidéo active) ───────────────── */}
+      {!HERO_VIDEO_ENABLED && ORBS.map((orb, i) => (
         <motion.div
           key={i}
           className="absolute rounded-full pointer-events-none"
