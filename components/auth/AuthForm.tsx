@@ -111,7 +111,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
                 </p>
                 {/* Benefits */}
                 <div className="flex flex-wrap justify-center gap-2 mt-4">
-                  {['-10% première commande', 'Offres exclusives', 'Suivi commandes'].map((b) => (
+                  {['-5% sur ta 1ère commande ✓', 'Offres exclusives membres', 'Suivi de commandes'].map((b) => (
                     <span key={b} className="text-[10px] font-semibold text-[#00D9FF] bg-[#00D9FF]/10 border border-[#00D9FF]/20 px-3 py-1 rounded-full">
                       {b}
                     </span>

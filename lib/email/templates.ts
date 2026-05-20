@@ -113,7 +113,8 @@ export function orderConfirmationHtml(opts: {
 </body></html>`
 }
 
-export function newsletterWelcomeHtml(opts: { email: string; discountCode: string }) {
+export function newsletterWelcomeHtml(opts: { email: string; firstName?: string; discountCode?: string }) {
+  const name = opts.firstName ?? 'toi'
   return `<!DOCTYPE html>
 <html><body style="${BASE_STYLES}">
 <div style="${CARD_STYLES}">
@@ -123,27 +124,35 @@ export function newsletterWelcomeHtml(opts: { email: string; discountCode: strin
   </div>
 
   <div style="${BODY_STYLES}">
-    <h2 style="margin-top: 0; font-size: 22px;">Bienvenue dans la famille ❄️</h2>
+    <h2 style="margin-top: 0; font-size: 22px;">Bienvenue dans la famille, ${name} ❄️</h2>
     <p style="color: #555; font-size: 14px; line-height: 1.7;">
-      Vous faites maintenant partie des insiders ICEKEY.<br/>
-      En remerciement, voici votre code de bienvenue pour <strong>-10%</strong> sur votre première commande :
+      Tu fais maintenant partie des insiders ICEKEY.<br/>
+      Bonne nouvelle — ta <strong>remise de -5%</strong> est déjà activée sur ta première commande.<br/>
+      Aucun code à saisir. Elle s'applique automatiquement au moment du paiement.
     </p>
 
+    ${opts.discountCode ? `
     <div style="background: #1C1B1F; border-radius: 12px; padding: 20px; text-align: center; margin: 24px 0;">
-      <p style="margin: 0; font-size: 11px; letter-spacing: 0.2em; color: #888; font-family: sans-serif;">VOTRE CODE</p>
+      <p style="margin: 0; font-size: 11px; letter-spacing: 0.2em; color: #888; font-family: sans-serif;">TON CODE PROMO</p>
       <p style="margin: 8px 0 0; font-size: 28px; font-weight: 700; letter-spacing: 0.15em; color: #00D9FF;">${opts.discountCode}</p>
-    </div>
+      <p style="margin: 8px 0 0; font-size: 12px; color: #666; font-family: sans-serif;">Valable 30 jours · Sans minimum d'achat</p>
+    </div>` : `
+    <div style="background: #1C1B1F; border-radius: 12px; padding: 24px; text-align: center; margin: 24px 0;">
+      <p style="margin: 0; font-size: 11px; letter-spacing: 0.2em; color: #888; font-family: sans-serif;">TA REMISE BIENVENUE</p>
+      <p style="margin: 10px 0 0; font-size: 52px; font-weight: 700; color: #00D9FF; line-height: 1;">-5%</p>
+      <p style="margin: 8px 0 0; font-size: 13px; color: #555; font-family: sans-serif;">Appliquée automatiquement · Première commande uniquement</p>
+    </div>`}
 
-    <p style="font-size: 13px; color: #888; text-align: center; margin-bottom: 28px;">
-      Valable 30 jours · Sans minimum d'achat
-    </p>
-
-    <div style="text-align: center;">
+    <div style="text-align: center; margin-top: 28px;">
       <a href="https://icekey.shop/shop"
-         style="display: inline-block; background: #00D9FF; color: #1C1B1F; padding: 14px 36px; border-radius: 50px; font-weight: 700; font-family: sans-serif; font-size: 14px; letter-spacing: 0.05em; text-decoration: none;">
-        Découvrir la collection
+         style="display: inline-block; background: #00D9FF; color: #1C1B1F; padding: 16px 40px; border-radius: 50px; font-weight: 700; font-family: sans-serif; font-size: 14px; letter-spacing: 0.05em; text-decoration: none;">
+        Profiter de ma remise →
       </a>
     </div>
+
+    <p style="font-size: 12px; color: #aaa; text-align: center; margin-top: 20px;">
+      VVS certified · GRA certified · Livraison offerte dès 100€
+    </p>
   </div>
 
   <div style="${FOOTER_STYLES}">

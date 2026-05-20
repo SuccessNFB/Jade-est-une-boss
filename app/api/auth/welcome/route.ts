@@ -18,10 +18,10 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from:    'ICEKEY <bienvenue@icekey.shop>',
       to:      safeEmail,
-      subject: `Bienvenue dans la famille ICEKEY ❄️ — ton code -10%`,
+      subject: `Bienvenue dans la famille ICEKEY ❄️ — ta remise -5% est activée`,
       html:    newsletterWelcomeHtml({
-        email:        safeEmail,
-        discountCode: 'BIENVENUE10',
+        email:     safeEmail,
+        firstName: safeName !== 'là' ? safeName : undefined,
       }),
     })
 

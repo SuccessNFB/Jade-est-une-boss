@@ -1,13 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { CartSummary } from './CartSummary'
 import { TrustSignals } from './TrustSignals'
 import { Button }       from '@/components/ui/Button'
 import { useCartStore } from '@/store/cartStore'
 import { useAuthGuard } from '@/components/auth/useAuthGuard'
-import { ArrowRight, Lock, ShoppingBag, Tag, User } from 'lucide-react'
+import { ArrowRight, Lock, ShoppingBag, Tag, User, Sparkles } from 'lucide-react'
 import { formatPrice } from '@/lib/utils/formatPrice'
 import toast from 'react-hot-toast'
 
@@ -35,8 +35,18 @@ export function CartContent() {
   const [promoApplied, setPromoApplied] = useState(false)
 
   const { user, requireAuth } = useAuthGuard()
+  const [isFirstOrder, setIsFirstOrder] = useState(false)
   const items    = useCartStore((s) => s.items)
   const subtotal = useCartStore((s) => s.totalPrice())
+
+  /* Check if first-time buyer → auto -5% welcome discount */
+  useEffect(() => {
+    if (!user) { setIsFirstOrder(false); return }
+    fetch('/api/user/order-count')
+      .then((r) => r.json())
+      .then((d) => setIsFirstOrder(d.isFirstOrder ?? false))
+      .catch(() => {})
+  }, [user])
 
   async function handleCheckout() {
     if (!requireAuth('/cart')) return
@@ -86,9 +96,11 @@ export function CartContent() {
     )
   }
 
-  const discount = promoApplied ? subtotal * 0.1 : 0
-  const shipping = subtotal >= 100 ? 0 : 9.90
-  const total    = subtotal - discount + shipping
+  const welcomeDiscount = isFirstOrder ? subtotal * 0.05 : 0
+  const promoDiscount   = promoApplied ? subtotal * 0.1 : 0
+  const discount        = welcomeDiscount + promoDiscount
+  const shipping        = subtotal >= 100 ? 0 : 9.90
+  const total           = subtotal - discount + shipping
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-5xl mx-auto">
@@ -113,15 +125,32 @@ export function CartContent() {
           <div className="rounded-2xl border border-gray-100 p-6 space-y-4 bg-white shadow-sm">
             <h3 className="font-serif text-lg font-bold text-charcoal">Récapitulatif</h3>
 
+            {/* Welcome discount banner */}
+            {isFirstOrder && (
+              <div className="flex items-center gap-2 bg-[#00D9FF]/10 border border-[#00D9FF]/30 rounded-xl px-3 py-2.5">
+                <Sparkles className="w-4 h-4 text-[#00D9FF] flex-shrink-0" />
+                <div>
+                  <p className="text-xs font-bold text-[#00D9FF]">Bienvenue ❄️ — -5% offerts</p>
+                  <p className="text-[10px] text-charcoal/50">Appliqués automatiquement sur votre 1ère commande</p>
+                </div>
+              </div>
+            )}
+
             <div className="space-y-2.5 text-sm">
               <div className="flex justify-between">
                 <span className="text-charcoal/60">Sous-total</span>
                 <span className="font-semibold">{formatPrice(subtotal)}</span>
               </div>
+              {isFirstOrder && (
+                <div className="flex justify-between text-[#00D9FF]">
+                  <span className="font-semibold">Bienvenue ❄️ -5%</span>
+                  <span className="font-semibold">-{formatPrice(welcomeDiscount)}</span>
+                </div>
+              )}
               {promoApplied && (
                 <div className="flex justify-between text-green-600">
                   <span>Code BIENVENUE10</span>
-                  <span className="font-semibold">-{formatPrice(discount)}</span>
+                  <span className="font-semibold">-{formatPrice(promoDiscount)}</span>
                 </div>
               )}
               <div className="flex justify-between">
