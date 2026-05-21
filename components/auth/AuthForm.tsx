@@ -5,9 +5,10 @@ import { useRouter }       from 'next/navigation'
 import Link                from 'next/link'
 import { motion }          from 'framer-motion'
 import { Eye, EyeOff, Loader2, ArrowRight } from 'lucide-react'
-import { createClient }    from '@/lib/supabase/client'
-import { IcekeyLogo }      from '@/components/ui/IcekeyLogo'
-import toast               from 'react-hot-toast'
+import { createClient }  from '@/lib/supabase/client'
+import { IcekeyLogo }    from '@/components/ui/IcekeyLogo'
+import { trackSignUp }   from '@/lib/analytics/gtag'
+import toast             from 'react-hot-toast'
 
 interface Props {
   mode:        'login' | 'signup'
@@ -39,6 +40,8 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
           },
         })
         if (error) throw error
+
+        trackSignUp()
 
         /* Trigger welcome email server-side */
         await fetch('/api/auth/welcome', {

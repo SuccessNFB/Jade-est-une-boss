@@ -11,6 +11,8 @@ import { formatPrice } from '@/lib/utils/formatPrice'
 import type { Product } from '@/types'
 import toast from 'react-hot-toast'
 
+import { trackAddToCart } from '@/lib/analytics/gtag'
+
 interface ProductCardProps {
   product: Product
 }
@@ -28,6 +30,13 @@ export function ProductCard({ product }: ProductCardProps) {
     e.stopPropagation()
     addItem(product)
     toast.success(`${product.name} ajouté au panier`)
+    trackAddToCart({
+      id:       product.id,
+      name:     product.name,
+      price:    product.price,
+      quantity: 1,
+      category: product.category,
+    })
   }
 
   return (

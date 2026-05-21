@@ -6,7 +6,8 @@ import { CartSummary } from './CartSummary'
 import { TrustSignals } from './TrustSignals'
 import { Button }       from '@/components/ui/Button'
 import { useCartStore } from '@/store/cartStore'
-import { useAuthGuard } from '@/components/auth/useAuthGuard'
+import { useAuthGuard }      from '@/components/auth/useAuthGuard'
+import { trackBeginCheckout } from '@/lib/analytics/gtag'
 import { ArrowRight, Lock, ShoppingBag, Tag, User, Sparkles } from 'lucide-react'
 import { formatPrice } from '@/lib/utils/formatPrice'
 import toast from 'react-hot-toast'
@@ -50,6 +51,15 @@ export function CartContent() {
 
   async function handleCheckout() {
     if (!requireAuth('/cart')) return
+    trackBeginCheckout({
+      value: total,
+      items: items.map((i) => ({
+        id:       i.product.id,
+        name:     i.product.name,
+        price:    i.product.price,
+        quantity: i.quantity,
+      })),
+    })
     setLoading(true)
     try {
       const res = await fetch('/api/stripe/checkout', {

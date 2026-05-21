@@ -1,19 +1,45 @@
 'use client'
 
-import { useEffect } from 'react'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { CheckCircle } from 'lucide-react'
-import { IcekeyLogo } from '@/components/ui/IcekeyLogo'
-import { Button } from '@/components/ui/Button'
-import { useCartStore } from '@/store/cartStore'
+import { useEffect, useRef } from 'react'
+import { useSearchParams }   from 'next/navigation'
+import Link                  from 'next/link'
+import { motion }            from 'framer-motion'
+import { CheckCircle }       from 'lucide-react'
+import { IcekeyLogo }        from '@/components/ui/IcekeyLogo'
+import { Button }            from '@/components/ui/Button'
+import { useCartStore }      from '@/store/cartStore'
+import { trackPurchase, trackSignUp } from '@/lib/analytics/gtag'
 
 export default function CheckoutSuccessPage() {
-  const { clearCart } = useCartStore()
+  const { clearCart }  = useCartStore()
+  const searchParams   = useSearchParams()
+  const firedRef       = useRef(false)   /* fire conversion once only */
 
   useEffect(() => {
     clearCart()
   }, [clearCart])
+
+  useEffect(() => {
+    if (firedRef.current) return
+    const sessionId = searchParams.get('session_id')
+    if (!sessionId) return
+
+    firedRef.current = true
+
+    fetch(`/api/stripe/session?id=${sessionId}`)
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.value) {
+          trackPurchase({
+            transactionId: data.id,
+            value:         data.value,
+            currency:      data.currency,
+            items:         data.items,
+          })
+        }
+      })
+      .catch(() => {})
+  }, [searchParams])
 
   return (
     <div className="min-h-screen bg-gradient-hero flex items-center justify-center p-6">

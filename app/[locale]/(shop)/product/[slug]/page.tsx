@@ -15,7 +15,8 @@ import { ProductPageClient }       from '@/components/product/ProductPageClient'
 import { TierBadge }               from '@/components/ui/Badge'
 import { formatPrice }             from '@/lib/utils/formatPrice'
 import { METALS, PRICE_TIERS }     from '@/types'
-import { Truck, CheckCircle }      from 'lucide-react'
+import { Truck, CheckCircle }          from 'lucide-react'
+import { ProductViewTracker }          from '@/components/analytics/ProductViewTracker'
 
 export const revalidate = 3600
 
@@ -92,6 +93,7 @@ export default async function ProductPage({ params }: Props) {
       <AnnouncementBar />
       <Header />
 
+      <ProductViewTracker id={p.id} name={p.name} price={p.price} category={p.category} />
       <main className="pt-16 pb-24">
         <div className="section-container max-w-5xl py-10">
 
