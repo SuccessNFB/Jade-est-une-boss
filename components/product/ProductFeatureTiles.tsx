@@ -1,12 +1,12 @@
 import { Award, RefreshCw, Truck, Gem, Settings, Shield } from 'lucide-react'
 
 const TILES = [
-  { icon: Award,    label: 'Certifié GRA',        sub: 'Authenticité garantie' },
-  { icon: Truck,    label: 'Livraison offerte',    sub: 'Dès €100 en France' },
-  { icon: RefreshCw,label: 'Retour 30 jours',      sub: 'Satisfait ou remboursé' },
-  { icon: Gem,      label: 'Moissanite VVS',       sub: 'Grade D · Clarté maximale' },
-  { icon: Settings, label: 'Sur mesure',            sub: 'Gravure & personnalisation' },
-  { icon: Shield,   label: 'Paiement sécurisé',    sub: 'Stripe 3D Secure' },
+  { icon: Award,    label: 'Certifié GRA',         sub: 'Diamond test ✓ — prouvé' },
+  { icon: Truck,    label: 'Ships depuis la France', sub: '4–7 jours · livraison offerte' },
+  { icon: RefreshCw,label: 'Retour 30 jours',       sub: 'Satisfait ou remboursé' },
+  { icon: Gem,      label: 'VVS Grade D',            sub: 'Éclat maximal garanti' },
+  { icon: Settings, label: 'Sur mesure',             sub: 'Gravure & personnalisation' },
+  { icon: Shield,   label: 'Paiement sécurisé',     sub: 'Stripe 3D Secure' },
 ]
 
 export function ProductFeatureTiles() {

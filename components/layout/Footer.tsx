@@ -57,10 +57,10 @@ export function Footer() {
         <div className="section-container py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="font-serif text-2xl font-bold text-charcoal">
-              Join the Ice Age 🧊
+              Sois dans le game 🧊
             </h3>
             <p className="text-sm text-charcoal/60 mt-1">
-              Early access + <strong>10% off</strong> your first order
+              Drops en avant-première + <strong>-10%</strong> sur ta 1ère commande
             </p>
           </div>
           <form onSubmit={handleNewsletter} className="flex items-center gap-2 w-full sm:w-auto">
@@ -77,7 +77,7 @@ export function Footer() {
               disabled={loading}
               className="px-5 py-3 rounded-full bg-charcoal text-white text-sm font-semibold hover:bg-charcoal/80 transition-colors disabled:opacity-60 whitespace-nowrap"
             >
-              {loading ? '...' : 'Get Exclusive Drops'}
+              {loading ? '...' : "J'en suis"}
             </button>
           </form>
         </div>
@@ -93,7 +93,7 @@ export function Footer() {
               <IcekeyLogo variant="full" height={64} color="#ffffff" />
             </div>
             <p className="text-sm leading-relaxed text-white/50 max-w-xs">
-              Bijoux en moissanite certifiés VVS. Chaque pièce est conçue pour durer une vie, à un prix qui respecte la vôtre.
+              Moissanite VVS certifié GRA. Diamond test validé. Ships depuis la France en 4–7 jours.
             </p>
             <p className="mt-4 text-xs font-bold tracking-[0.3em] text-[#00D9FF]">
               COLD IS THE NEW GOLD

@@ -148,9 +148,9 @@ export default async function ProductPage({ params }: Props) {
               {/* Emotional bullets */}
               <ul className="space-y-1.5">
                 {[
-                  'Diamond-grade sparkle verified',
-                  'Hand-finished 925 silver',
-                  'Lifetime guarantee included',
+                  'VVS certifié · passe le diamond test',
+                  'Argent 925 finition main · qualité FR',
+                  'Garantie à vie · retour 30 jours',
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-2 text-sm text-charcoal/70">
                     <CheckCircle className="w-4 h-4 text-[#00D9FF] flex-shrink-0 mt-0.5" />

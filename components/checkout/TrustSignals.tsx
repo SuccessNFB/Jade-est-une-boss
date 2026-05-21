@@ -5,8 +5,8 @@ export function TrustSignals() {
     <div className="flex flex-wrap justify-center gap-6 text-sm text-charcoal/50">
       {[
         { icon: Lock,      text: 'Paiement SSL sécurisé' },
-        { icon: RefreshCw, text: 'Retour 30 jours offert' },
-        { icon: Award,     text: 'Certificat GRA inclus' },
+        { icon: RefreshCw, text: '30 jours · zéro question' },
+        { icon: Award,     text: 'Certif GRA · diamond test ✓' },
       ].map(({ icon: Icon, text }) => (
         <div key={text} className="flex items-center gap-2">
           <Icon className="w-4 h-4 text-ice-500" />

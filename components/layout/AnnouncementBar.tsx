@@ -5,10 +5,10 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const MESSAGES = [
-  '✦ Livraison offerte en France dès €100',
-  '✦ Certifié GRA — authenticité garantie',
-  '✦ Retour gratuit sous 30 jours',
-  '✦ Paiement sécurisé Stripe',
+  '✦ Livré depuis la France en 4–7 jours · pas depuis la Chine',
+  '✦ Certifié GRA · Diamond test ✓ — prouvé à la réception',
+  '✦ Satisfait ou remboursé 30 jours · zéro question posée',
+  '✦ Paiement sécurisé Stripe · livraison offerte dès €100',
 ]
 
 export function AnnouncementBar() {

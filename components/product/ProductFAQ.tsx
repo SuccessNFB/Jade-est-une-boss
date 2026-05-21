@@ -4,31 +4,31 @@ const FAQ_ITEMS = [
   {
     title:   "C'est quoi le moissanite ?",
     content: (
-      <p>Lab-created brilliance. Sparkles like diamonds. Built forever. VVS certified.</p>
+      <p>Une pierre certifiée VVS créée en laboratoire — même éclat qu&apos;un diamant, dureté 9.25 Mohs. Le flex sans le prix d&apos;une maison.</p>
     ),
   },
   {
     title:   'Ça passe les diamond tests ?',
     content: (
-      <p>Yes. Our VVS certification proves it&apos;s real moissanite.</p>
+      <p>Oui, ça passe. Notre certification GRA le prouve — tu peux tester toi-même à la réception, on assume.</p>
     ),
   },
   {
     title:   'Ça va durer combien de temps ?',
     content: (
-      <p>Forever. 9.25 Mohs hardness. Lifetime guarantee.</p>
+      <p>À vie. 9.25 Mohs de dureté, quasiment aussi résistant qu&apos;un diamant. Chaque pièce est livrée avec une garantie à vie.</p>
     ),
   },
   {
     title:   "Comment j'entretiens ma chaîne ?",
     content: (
-      <p>Warm water + soft cloth. Care guide included.</p>
+      <p>Eau tiède + chiffon doux, c&apos;est tout ce qu&apos;il faut. Un guide d&apos;entretien complet est glissé dans ton colis.</p>
     ),
   },
   {
     title:   "Et si j'aime pas ?",
     content: (
-      <p>30 days, full refund. No questions asked.</p>
+      <p>30 jours pour changer d&apos;avis. Remboursement complet, aucune question posée. C&apos;est notre promesse.</p>
     ),
   },
 ]

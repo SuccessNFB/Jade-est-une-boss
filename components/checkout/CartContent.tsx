@@ -202,8 +202,8 @@ export function CartContent() {
             {!user && (
               <div className="rounded-xl bg-charcoal/5 border border-charcoal/10 p-4 text-center">
                 <User className="w-5 h-5 text-charcoal/30 mx-auto mb-1.5" />
-                <p className="text-xs font-semibold text-charcoal mb-0.5">Compte requis pour commander</p>
-                <p className="text-[10px] text-charcoal/50 mb-3">Créez votre compte gratuitement et recevez -10% sur votre première commande.</p>
+                <p className="text-xs font-semibold text-charcoal mb-0.5">Rejoins pour commander</p>
+                <p className="text-[10px] text-charcoal/50 mb-3">Crée ton compte — c&apos;est gratuit — et sécurise -5% sur cette commande.</p>
                 <Link
                   href="/auth/signup?redirect=/cart"
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00D9FF] hover:underline"
