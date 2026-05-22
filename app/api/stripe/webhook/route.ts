@@ -5,8 +5,9 @@ import { getResend, FROM_EMAIL }    from '@/lib/email/resend'
 import { orderConfirmationHtml, supplierOrderHtml } from '@/lib/email/templates'
 import type Stripe from 'stripe'
 
-const SITE_URL      = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://icekey.shop'
-const SUPPLIER_EMAIL = process.env.SUPPLIER_EMAIL
+const SITE_URL        = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://icekey.shop'
+const SUPPLIER_EMAIL  = process.env.SUPPLIER_EMAIL
+const SUPPLIER_PAYPAL = process.env.SUPPLIER_PAYPAL_EMAIL ?? (SUPPLIER_EMAIL ?? '')
 
 export async function POST(req: NextRequest) {
   const body      = await req.text()
@@ -79,7 +80,7 @@ export async function POST(req: NextRequest) {
 
     /* ── Supplier forwarding email ── */
     if (SUPPLIER_EMAIL && addr) {
-      /* Collect product_ids from Stripe metadata to look up images + supplier_sku */
+      /* Collect product_ids from Stripe metadata to look up images + supplier data */
       const productIds: string[] = []
       for (const li of lineItemsResponse.data) {
         const prod = li.price?.product
@@ -89,19 +90,24 @@ export async function POST(req: NextRequest) {
         }
       }
 
-      /* Fetch product data from Supabase */
-      const dbMap = new Map<string, { images: { url: string }[]; sku: string; supplier_sku?: string }>()
+      /* Fetch product data from Supabase including supplier_price_usd */
+      const dbMap = new Map<string, {
+        images:              { url: string }[]
+        sku:                 string
+        supplier_sku?:       string
+        supplier_price_usd?: number | null
+      }>()
       if (productIds.length) {
         const { data: dbProducts } = await supabase
           .from('products')
-          .select('id, images, sku, supplier_sku')
+          .select('id, images, sku, supplier_sku, supplier_price_usd')
           .in('id', productIds)
         for (const p of dbProducts ?? []) {
           dbMap.set(p.id, p)
         }
       }
 
-      /* Build supplier items with images */
+      /* Build supplier items with images + pricing */
       const supplierItems = lineItemsResponse.data.map((li) => {
         const prod    = li.price?.product
         const pid     = (typeof prod === 'object' && prod && 'metadata' in prod)
@@ -114,11 +120,12 @@ export async function POST(req: NextRequest) {
           : undefined
 
         return {
-          name:         li.description ?? '',
-          quantity:     li.quantity ?? 1,
-          sku:          dbProd?.sku ?? '',
-          supplierSku:  dbProd?.supplier_sku ?? undefined,
-          imageUrl:     imgUrl,
+          name:              li.description ?? '',
+          quantity:          li.quantity ?? 1,
+          sku:               dbProd?.sku ?? '',
+          supplierSku:       dbProd?.supplier_sku ?? undefined,
+          imageUrl:          imgUrl,
+          supplierPriceUsd:  dbProd?.supplier_price_usd ?? null,
         }
       })
 
@@ -127,8 +134,9 @@ export async function POST(req: NextRequest) {
         to:      SUPPLIER_EMAIL,
         subject: `New Order #${session.id.slice(-8).toUpperCase()} — Please ship`,
         html:    supplierOrderHtml({
-          orderId:  session.id,
-          items:    supplierItems,
+          orderId:     session.id,
+          items:       supplierItems,
+          paypalEmail: SUPPLIER_PAYPAL,
           shipping: {
             name:         customerName,
             line1:        addr.line1 ?? '',

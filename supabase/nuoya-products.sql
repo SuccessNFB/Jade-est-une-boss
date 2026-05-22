@@ -1,7 +1,8 @@
 -- ═══════════════════════════════════════════════════════════
 -- NUOYA x ICEKEY — Product catalog seed
--- Run in Supabase SQL Editor AFTER setup.sql
+-- Run in Supabase SQL Editor AFTER setup.sql + add-supplier-price.sql
 -- Images: replace /images/products/XXX.jpg with real photos
+-- supplier_price_usd: chains/earrings/rings TBD — update once Benny sends full price list
 -- ═══════════════════════════════════════════════════════════
 
 -- Clear existing seed products (keeps orders / users intact)
@@ -11,11 +12,13 @@ INSERT INTO products (
   slug, name, description, category, price, compare_at_price,
   price_tier, images, stone_type, stone_size, stone_color,
   metal, stock, sku, supplier_sku, is_featured, is_active, tags,
-  chain_width_mm, chain_length_in, weight_grams, certificate_type
+  chain_width_mm, chain_length_in, weight_grams, certificate_type,
+  supplier_price_usd
 ) VALUES
 
 -- ─────────────────────────────────────────────
 -- CHAINS — Cuban Link 15mm
+-- supplier_price_usd: NULL — update with Benny's price list
 -- ─────────────────────────────────────────────
 (
   'cuban-link-15mm-18-argent',
@@ -25,7 +28,8 @@ INSERT INTO products (
   '[{"url":"/images/products/cuban-15mm-silver.jpg","alt":"Cuban Link 15mm Argent","position":0}]',
   'moissanite', 'VVS', 'D', 'silver-925', 50,
   'ICK-C-15S-18', 'NUOYA-CHAIN-15MM', true, true,
-  ARRAY['cuban','chaîne','iced-out','argent','15mm'], 15, 18, 85, 'GRA'
+  ARRAY['cuban','chaîne','iced-out','argent','15mm'], 15, 18, 85, 'GRA',
+  NULL
 ),
 (
   'cuban-link-15mm-18-or',
@@ -35,7 +39,8 @@ INSERT INTO products (
   '[{"url":"/images/products/cuban-15mm-gold.jpg","alt":"Cuban Link 15mm Or","position":0}]',
   'moissanite', 'VVS', 'D', 'gold-plated', 50,
   'ICK-C-15G-18', 'NUOYA-CHAIN-15MM', true, true,
-  ARRAY['cuban','chaîne','iced-out','or','gold','15mm'], 15, 18, 85, 'GRA'
+  ARRAY['cuban','chaîne','iced-out','or','gold','15mm'], 15, 18, 85, 'GRA',
+  NULL
 ),
 (
   'cuban-link-15mm-22-argent',
@@ -45,7 +50,8 @@ INSERT INTO products (
   '[{"url":"/images/products/cuban-15mm-silver.jpg","alt":"Cuban Link 15mm Argent 22","position":0}]',
   'moissanite', 'VVS', 'D', 'silver-925', 30,
   'ICK-C-15S-22', 'NUOYA-CHAIN-15MM', false, true,
-  ARRAY['cuban','chaîne','iced-out','argent','15mm'], 15, 22, 100, 'GRA'
+  ARRAY['cuban','chaîne','iced-out','argent','15mm'], 15, 22, 100, 'GRA',
+  NULL
 ),
 (
   'cuban-link-15mm-22-or',
@@ -55,11 +61,13 @@ INSERT INTO products (
   '[{"url":"/images/products/cuban-15mm-gold.jpg","alt":"Cuban Link 15mm Or 22","position":0}]',
   'moissanite', 'VVS', 'D', 'gold-plated', 30,
   'ICK-C-15G-22', 'NUOYA-CHAIN-15MM', false, true,
-  ARRAY['cuban','chaîne','iced-out','or','gold','15mm'], 15, 22, 100, 'GRA'
+  ARRAY['cuban','chaîne','iced-out','or','gold','15mm'], 15, 22, 100, 'GRA',
+  NULL
 ),
 
 -- ─────────────────────────────────────────────
 -- CHAINS — Cuban Link 18mm
+-- supplier_price_usd: NULL — update with Benny's price list
 -- ─────────────────────────────────────────────
 (
   'cuban-link-18mm-18-argent',
@@ -69,7 +77,8 @@ INSERT INTO products (
   '[{"url":"/images/products/cuban-18mm-silver.jpg","alt":"Cuban Link 18mm Argent","position":0}]',
   'moissanite', 'VVS', 'D', 'silver-925', 40,
   'ICK-C-18S-18', 'NUOYA-CHAIN-18MM', true, true,
-  ARRAY['cuban','chaîne','iced-out','argent','18mm','statement'], 18, 18, 110, 'GRA'
+  ARRAY['cuban','chaîne','iced-out','argent','18mm','statement'], 18, 18, 110, 'GRA',
+  NULL
 ),
 (
   'cuban-link-18mm-18-or',
@@ -79,7 +88,8 @@ INSERT INTO products (
   '[{"url":"/images/products/cuban-18mm-gold.jpg","alt":"Cuban Link 18mm Or","position":0}]',
   'moissanite', 'VVS', 'D', 'gold-plated', 40,
   'ICK-C-18G-18', 'NUOYA-CHAIN-18MM', true, true,
-  ARRAY['cuban','chaîne','iced-out','or','gold','18mm','statement'], 18, 18, 110, 'GRA'
+  ARRAY['cuban','chaîne','iced-out','or','gold','18mm','statement'], 18, 18, 110, 'GRA',
+  NULL
 ),
 (
   'cuban-link-18mm-22-argent',
@@ -89,7 +99,8 @@ INSERT INTO products (
   '[{"url":"/images/products/cuban-18mm-silver.jpg","alt":"Cuban Link 18mm Argent 22","position":0}]',
   'moissanite', 'VVS', 'D', 'silver-925', 25,
   'ICK-C-18S-22', 'NUOYA-CHAIN-18MM', false, true,
-  ARRAY['cuban','chaîne','iced-out','argent','18mm'], 18, 22, 130, 'GRA'
+  ARRAY['cuban','chaîne','iced-out','argent','18mm'], 18, 22, 130, 'GRA',
+  NULL
 ),
 (
   'cuban-link-18mm-22-or',
@@ -99,11 +110,12 @@ INSERT INTO products (
   '[{"url":"/images/products/cuban-18mm-gold.jpg","alt":"Cuban Link 18mm Or 22","position":0}]',
   'moissanite', 'VVS', 'D', 'gold-plated', 25,
   'ICK-C-18G-22', 'NUOYA-CHAIN-18MM', false, true,
-  ARRAY['cuban','chaîne','iced-out','or','gold','18mm'], 18, 22, 130, 'GRA'
+  ARRAY['cuban','chaîne','iced-out','or','gold','18mm'], 18, 22, 130, 'GRA',
+  NULL
 ),
 
 -- ─────────────────────────────────────────────
--- PENDANTS
+-- PENDANTS — prices confirmed from NUOYA catalog
 -- ─────────────────────────────────────────────
 (
   'pendentif-croix-moissanite-argent',
@@ -113,7 +125,8 @@ INSERT INTO products (
   '[{"url":"/images/products/cross-small-silver.jpg","alt":"Croix moissanite argent","position":0}]',
   'moissanite', '1.1ct', 'D', 'silver-925', 60,
   'ICK-P-CRS-S', 'NUOYA-CROSS-SMALL', true, true,
-  ARRAY['croix','pendentif','iced-out','argent','religieux'], null, null, 8, 'GRA'
+  ARRAY['croix','pendentif','iced-out','argent','religieux'], null, null, 8, 'GRA',
+  22.90
 ),
 (
   'pendentif-grosse-croix-moissanite',
@@ -123,7 +136,8 @@ INSERT INTO products (
   '[{"url":"/images/products/cross-large-silver.jpg","alt":"Grande croix moissanite","position":0}]',
   'moissanite', 'VVS full', 'D', 'silver-925', 20,
   'ICK-P-CRL-S', 'NUOYA-CROSS-LARGE', true, true,
-  ARRAY['croix','pendentif','premium','iced-out','argent','religieux'], null, null, 28, 'GRA'
+  ARRAY['croix','pendentif','premium','iced-out','argent','religieux'], null, null, 28, 'GRA',
+  113.38
 ),
 (
   'pendentif-jesus-piece-laiton-moissanite',
@@ -133,7 +147,8 @@ INSERT INTO products (
   '[{"url":"/images/products/jesus-piece-gold.jpg","alt":"Jesus piece moissanite gold","position":0}]',
   'moissanite', 'VVS full', 'D', 'gold-plated', 15,
   'ICK-P-JP-G', 'NUOYA-JP-BRASS', true, true,
-  ARRAY['jesus','pendentif','luxury','iced-out','gold','hip-hop'], null, 24, 65, 'GRA'
+  ARRAY['jesus','pendentif','luxury','iced-out','gold','hip-hop'], null, 24, 65, 'GRA',
+  204.08
 ),
 (
   'pendentif-jesus-piece-argent-moissanite',
@@ -143,11 +158,12 @@ INSERT INTO products (
   '[{"url":"/images/products/jesus-piece-silver.jpg","alt":"Jesus piece moissanite argent","position":0}]',
   'moissanite', 'VVS full', 'D', 'silver-925', 10,
   'ICK-P-JP-S', 'NUOYA-JP-925', true, true,
-  ARRAY['jesus','pendentif','ultra','iced-out','argent','hip-hop','925'], null, 24, 75, 'GRA'
+  ARRAY['jesus','pendentif','ultra','iced-out','argent','hip-hop','925'], null, 24, 75, 'GRA',
+  294.78
 ),
 
 -- ─────────────────────────────────────────────
--- EARRINGS
+-- EARRINGS — supplier_price_usd: NULL — update with Benny's price list
 -- ─────────────────────────────────────────────
 (
   'boucles-moissanite-6mm-argent',
@@ -157,7 +173,8 @@ INSERT INTO products (
   '[{"url":"/images/products/earrings-6mm.jpg","alt":"Boucles moissanite 6mm","position":0}]',
   'moissanite', '6mm', 'D', 'silver-925', 80,
   'ICK-E-6MM', 'NUOYA-EARRING-6MM', true, true,
-  ARRAY['boucles','earrings','puces','moissanite','6mm'], null, null, 3, 'GRA'
+  ARRAY['boucles','earrings','puces','moissanite','6mm'], null, null, 3, 'GRA',
+  NULL
 ),
 (
   'boucles-moissanite-8mm-argent',
@@ -167,7 +184,8 @@ INSERT INTO products (
   '[{"url":"/images/products/earrings-8mm.jpg","alt":"Boucles moissanite 8mm","position":0}]',
   'moissanite', '8mm', 'D', 'silver-925', 60,
   'ICK-E-8MM', 'NUOYA-EARRING-8MM', true, true,
-  ARRAY['boucles','earrings','puces','moissanite','8mm','statement'], null, null, 4, 'GRA'
+  ARRAY['boucles','earrings','puces','moissanite','8mm','statement'], null, null, 4, 'GRA',
+  NULL
 ),
 (
   'boucles-moissanite-9mm-argent',
@@ -177,7 +195,8 @@ INSERT INTO products (
   '[{"url":"/images/products/earrings-9mm.jpg","alt":"Boucles moissanite 9mm","position":0}]',
   'moissanite', '9mm', 'D', 'silver-925', 40,
   'ICK-E-9MM', 'NUOYA-EARRING-9MM', false, true,
-  ARRAY['boucles','earrings','puces','moissanite','9mm'], null, null, 5, 'GRA'
+  ARRAY['boucles','earrings','puces','moissanite','9mm'], null, null, 5, 'GRA',
+  NULL
 ),
 (
   'boucles-moissanite-10mm-argent',
@@ -187,11 +206,12 @@ INSERT INTO products (
   '[{"url":"/images/products/earrings-10mm.jpg","alt":"Boucles moissanite 10mm","position":0}]',
   'moissanite', '10mm', 'D', 'silver-925', 30,
   'ICK-E-10MM', 'NUOYA-EARRING-10MM', false, true,
-  ARRAY['boucles','earrings','puces','moissanite','10mm','ultra'], null, null, 6, 'GRA'
+  ARRAY['boucles','earrings','puces','moissanite','10mm','ultra'], null, null, 6, 'GRA',
+  NULL
 ),
 
 -- ─────────────────────────────────────────────
--- RINGS
+-- RINGS — supplier_price_usd: NULL — update with Benny's price list
 -- ─────────────────────────────────────────────
 (
   'bague-solitaire-moissanite-argent',
@@ -201,7 +221,8 @@ INSERT INTO products (
   '[{"url":"/images/products/ring-solitaire.jpg","alt":"Bague solitaire moissanite","position":0}]',
   'moissanite', 'VVS', 'D', 'silver-925', 50,
   'ICK-R-SOL', 'NUOYA-RING-SOL', true, true,
-  ARRAY['bague','ring','solitaire','moissanite','argent'], null, null, 5, 'GRA'
+  ARRAY['bague','ring','solitaire','moissanite','argent'], null, null, 5, 'GRA',
+  NULL
 ),
 (
   'bague-lettre-moissanite-argent',
@@ -211,5 +232,6 @@ INSERT INTO products (
   '[{"url":"/images/products/ring-letter.jpg","alt":"Bague lettre moissanite","position":0}]',
   'moissanite', 'VVS', 'D', 'silver-925', 40,
   'ICK-R-LET', 'NUOYA-RING-LETTER', false, true,
-  ARRAY['bague','ring','lettre','personnalisé','moissanite'], null, null, 6, 'GRA'
+  ARRAY['bague','ring','lettre','personnalisé','moissanite'], null, null, 6, 'GRA',
+  NULL
 );

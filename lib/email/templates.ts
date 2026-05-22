@@ -380,11 +380,12 @@ const COUNTRY_FLAG: Record<string, string> = {
 export function supplierOrderHtml(opts: {
   orderId: string
   items: {
-    name:         string
-    imageUrl?:    string
-    supplierSku?: string
-    sku:          string
-    quantity:     number
+    name:              string
+    imageUrl?:         string
+    supplierSku?:      string
+    sku:               string
+    quantity:          number
+    supplierPriceUsd?: number | null
   }[]
   shipping: {
     name:         string
@@ -395,10 +396,18 @@ export function supplierOrderHtml(opts: {
     country:      string
     phone?:       string | null
   }
+  paypalEmail: string
 }): string {
-  const { orderId, items, shipping } = opts
+  const { orderId, items, shipping, paypalEmail } = opts
   const flag = COUNTRY_FLAG[shipping.country] ?? ''
   const ref  = orderId.slice(-8).toUpperCase()
+
+  const productTotal = items.reduce((sum, i) => {
+    return sum + (i.supplierPriceUsd != null ? i.supplierPriceUsd * i.quantity : 0)
+  }, 0)
+  const hasAllPrices = items.every((i) => i.supplierPriceUsd != null)
+  const shippingUsd  = 30
+  const grandTotal   = productTotal + shippingUsd
 
   const itemRows = items.map((item) => `
     <tr>
@@ -414,7 +423,7 @@ export function supplierOrderHtml(opts: {
           ? `<p style="margin:0 0 2px;font-size:12px;color:#888;">AliExpress ref: <strong style="color:#555;">${item.supplierSku}</strong></p>`
           : `<p style="margin:0 0 2px;font-size:12px;color:#888;">ICEKEY SKU: ${item.sku}</p>`
         }
-        <p style="margin:4px 0 0;font-size:13px;color:#333;">Qty: <strong>${item.quantity}</strong></p>
+        <p style="margin:4px 0 0;font-size:13px;color:#333;">Qty: <strong>${item.quantity}</strong>${item.supplierPriceUsd != null ? ` · <strong>$${(item.supplierPriceUsd * item.quantity).toFixed(2)}</strong>` : ''}</p>
       </td>
     </tr>
   `).join('')
@@ -444,6 +453,16 @@ export function supplierOrderHtml(opts: {
         ${shipping.country}${shipping.phone ? '<br/>' + shipping.phone : ''}
       </p>
     </div>
+  </div>
+
+  <div style="padding:20px 32px;background:#fff8e1;border-top:3px solid #FFC107;">
+    <p style="margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#888;">💰 PayPal Payment</p>
+    ${hasAllPrices
+      ? `<p style="margin:0 0 4px;font-size:22px;font-weight:700;color:#1C1B1F;">Send $${grandTotal.toFixed(2)} USD</p>
+         <p style="margin:0;font-size:12px;color:#555;">Products $${productTotal.toFixed(2)} + Shipping $${shippingUsd}.00 · To: <strong>${paypalEmail}</strong></p>`
+      : `<p style="margin:0 0 4px;font-size:16px;font-weight:700;color:#e65100;">⚠️ Some prices not configured — calculate manually</p>
+         <p style="margin:0;font-size:12px;color:#555;">Send payment to: <strong>${paypalEmail}</strong> · Include $${shippingUsd} shipping</p>`
+    }
   </div>
 
   <div style="padding:16px 32px;background:#f5f5f3;text-align:center;font-size:12px;color:#aaa;">
