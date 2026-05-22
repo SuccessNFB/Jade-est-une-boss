@@ -371,3 +371,84 @@ export function customRequestNotificationHtml(opts: {
 </div>
 </body></html>`
 }
+
+const COUNTRY_FLAG: Record<string, string> = {
+  FR: '🇫🇷', BE: '🇧🇪', CH: '🇨🇭', LU: '🇱🇺',
+  DE: '🇩🇪', ES: '🇪🇸', IT: '🇮🇹', GB: '🇬🇧', US: '🇺🇸',
+}
+
+export function supplierOrderHtml(opts: {
+  orderId: string
+  items: {
+    name:         string
+    imageUrl?:    string
+    supplierSku?: string
+    sku:          string
+    quantity:     number
+  }[]
+  shipping: {
+    name:         string
+    line1:        string
+    line2?:       string | null
+    city:         string
+    postal_code:  string
+    country:      string
+    phone?:       string | null
+  }
+}): string {
+  const { orderId, items, shipping } = opts
+  const flag = COUNTRY_FLAG[shipping.country] ?? ''
+  const ref  = orderId.slice(-8).toUpperCase()
+
+  const itemRows = items.map((item) => `
+    <tr>
+      <td style="padding:16px 12px;border-bottom:1px solid #f0f0ee;vertical-align:top;width:80px;">
+        ${item.imageUrl
+          ? `<img src="${item.imageUrl}" alt="${item.name}" width="72" height="72" style="border-radius:8px;object-fit:cover;display:block;" />`
+          : `<div style="width:72px;height:72px;background:#f5f5f3;border-radius:8px;"></div>`
+        }
+      </td>
+      <td style="padding:16px 12px;border-bottom:1px solid #f0f0ee;vertical-align:top;">
+        <p style="margin:0 0 4px;font-size:15px;font-weight:700;color:#1C1B1F;">${item.name}</p>
+        ${item.supplierSku
+          ? `<p style="margin:0 0 2px;font-size:12px;color:#888;">AliExpress ref: <strong style="color:#555;">${item.supplierSku}</strong></p>`
+          : `<p style="margin:0 0 2px;font-size:12px;color:#888;">ICEKEY SKU: ${item.sku}</p>`
+        }
+        <p style="margin:4px 0 0;font-size:13px;color:#333;">Qty: <strong>${item.quantity}</strong></p>
+      </td>
+    </tr>
+  `).join('')
+
+  return `<!DOCTYPE html>
+<html><body style="font-family:sans-serif;background:#f9f9f7;margin:0;padding:0;">
+<div style="max-width:560px;margin:32px auto;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+
+  <div style="background:#1C1B1F;padding:24px 32px;">
+    <p style="margin:0;color:#00D9FF;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;">New Order</p>
+    <h1 style="margin:4px 0 0;color:#ffffff;font-size:22px;letter-spacing:0.05em;">ICEKEY &nbsp;<span style="font-size:15px;font-weight:400;color:#ffffff80;">#${ref}</span></h1>
+    <p style="margin:4px 0 0;color:#ffffff60;font-size:11px;">${new Date().toLocaleDateString('en-GB', { day:'2-digit', month:'short', year:'numeric' })}</p>
+  </div>
+
+  <div style="padding:24px 32px 8px;">
+    <p style="margin:0 0 12px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#888;">Items to ship</p>
+    <table style="width:100%;border-collapse:collapse;">${itemRows}</table>
+  </div>
+
+  <div style="padding:20px 32px 28px;">
+    <p style="margin:0 0 12px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#888;">Ship to ${flag}</p>
+    <div style="background:#f9f9f7;border-radius:10px;padding:16px 20px;">
+      <p style="margin:0 0 4px;font-size:15px;font-weight:700;color:#1C1B1F;">${shipping.name}</p>
+      <p style="margin:0;font-size:14px;color:#555;line-height:1.7;">
+        ${shipping.line1}${shipping.line2 ? '<br/>' + shipping.line2 : ''}<br/>
+        ${shipping.postal_code} ${shipping.city}<br/>
+        ${shipping.country}${shipping.phone ? '<br/>' + shipping.phone : ''}
+      </p>
+    </div>
+  </div>
+
+  <div style="padding:16px 32px;background:#f5f5f3;text-align:center;font-size:12px;color:#aaa;">
+    Reply to this email with any questions · <a href="https://icekey.shop" style="color:#00D9FF;">icekey.shop</a>
+  </div>
+</div>
+</body></html>`
+}
