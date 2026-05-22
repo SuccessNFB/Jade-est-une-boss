@@ -9,7 +9,7 @@ import { AnnouncementBar }       from '@/components/layout/AnnouncementBar'
 import { Header }                from '@/components/layout/Header'
 import { Footer }                from '@/components/layout/Footer'
 import { formatPrice }           from '@/lib/utils/formatPrice'
-import { Package, LogOut, User, ChevronRight, ShoppingBag } from 'lucide-react'
+import { Package, LogOut, User, ChevronRight, ShoppingBag, MessageSquare } from 'lucide-react'
 import type { User as SupaUser } from '@supabase/supabase-js'
 import toast                     from 'react-hot-toast'
 
@@ -34,8 +34,9 @@ interface Order {
 
 export default function AccountPage() {
   const router  = useRouter()
-  const [user,   setUser]   = useState<SupaUser | null>(null)
-  const [orders, setOrders] = useState<Order[]>([])
+  const [user,    setUser]    = useState<SupaUser | null>(null)
+  const [orders,  setOrders]  = useState<Order[]>([])
+  const [tickets, setTickets] = useState<{ id: string; category: string; status: string; message: string; created_at: string }[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -48,11 +49,10 @@ export default function AccountPage() {
       }
       setUser(data.user)
 
-      fetch('/api/user/orders')
-        .then((r) => r.json())
-        .then((d) => setOrders(d.orders ?? []))
-        .catch(() => {})
-        .finally(() => setLoading(false))
+      Promise.all([
+        fetch('/api/user/orders').then((r) => r.json()).then((d) => setOrders(d.orders ?? [])),
+        fetch('/api/support/tickets').then((r) => r.json()).then((d) => setTickets(d.tickets ?? [])),
+      ]).catch(() => {}).finally(() => setLoading(false))
     })
   }, [router])
 
@@ -112,8 +112,9 @@ export default function AccountPage() {
           {/* Quick links */}
           <div className="grid grid-cols-2 gap-3 mb-10">
             {[
-              { icon: User,        label: 'Mes infos',      href: '#infos' },
-              { icon: ShoppingBag, label: 'Continuer mes achats', href: '/shop' },
+              { icon: User,          label: 'Mes infos',           href: '#infos' },
+              { icon: MessageSquare, label: 'Contacter le support', href: '/support' },
+              { icon: ShoppingBag,   label: 'Continuer mes achats', href: '/shop' },
             ].map(({ icon: Icon, label, href }) => (
               <Link
                 key={label}
@@ -189,6 +190,33 @@ export default function AccountPage() {
               </div>
             )}
           </section>
+
+          {/* Support tickets */}
+          {tickets.length > 0 && (
+            <section className="mt-10">
+              <h2 className="font-serif text-xl font-bold text-charcoal mb-4 flex items-center gap-2">
+                <MessageSquare className="w-5 h-5 text-[#00D9FF]" />
+                Mes demandes SAV
+              </h2>
+              <div className="space-y-3">
+                {tickets.map((t) => (
+                  <div key={t.id} className="rounded-2xl border border-gray-100 p-4 bg-white shadow-sm flex items-start justify-between gap-4">
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs text-charcoal/40 mb-0.5 capitalize">{t.category}</p>
+                      <p className="text-sm text-charcoal/70 truncate">{t.message}</p>
+                    </div>
+                    <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full border flex-shrink-0 ${
+                      t.status === 'resolved' ? 'bg-green-50 text-green-700 border-green-200' :
+                      t.status === 'in_progress' ? 'bg-amber-50 text-amber-700 border-amber-200' :
+                      'bg-blue-50 text-blue-700 border-blue-200'
+                    }`}>
+                      {t.status === 'open' ? 'Ouvert' : t.status === 'in_progress' ? 'En cours' : t.status === 'resolved' ? 'Résolu ✓' : 'Fermé'}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
         </div>
       </main>
       <Footer />
