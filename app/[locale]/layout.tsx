@@ -6,7 +6,6 @@ import { Toaster }                from 'react-hot-toast'
 import { notFound }               from 'next/navigation'
 import { routing }                from '@/i18n/routing'
 import { GoogleTag }              from '@/components/analytics/GoogleTag'
-import { ChatWidget }            from '@/components/support/ChatWidget'
 
 interface Props {
   children: React.ReactNode
@@ -74,7 +73,6 @@ export default async function LocaleLayout({ children, params }: Props) {
         <GoogleTag />
         <NextIntlClientProvider messages={messages}>
           {children}
-          <ChatWidget />
           <Toaster
             position="top-center"
             toastOptions={{
