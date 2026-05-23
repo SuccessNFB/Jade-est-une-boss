@@ -5,8 +5,9 @@
 @layer base {
   :root {
     --font-playfair:    'Playfair Display', Georgia, serif;
-    --font-inter:       'Inter', system-ui, sans-serif;
-    --font-barlow:      'Barlow Condensed', system-ui, sans-serif;
+    'Syne', system-ui, sans-serif;
+    'Syne', system-ui, sans-serif;
+    --font-syne:       'Syne', system-ui, sans-serif;
     --font-space-mono:  'Space Mono', monospace;
 
     /* Brand tokens */
@@ -28,7 +29,7 @@
   body {
     background: #0A0A0A;
     color: #FFFFFF;
-    font-family: var(--font-inter), system-ui, sans-serif;
+    font-family: var(--font-syne), system-ui, sans-serif;
   }
 
   ::selection {
@@ -54,7 +55,7 @@
            active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]/60;
     background: #D4AF37;
     color: #0A0A0A;
-    font-family: var(--font-barlow), system-ui, sans-serif;
+    font-family: var(--font-syne), system-ui, sans-serif;
     letter-spacing: 0.15em;
   }
   .btn-gold:hover {
@@ -69,7 +70,7 @@
            active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]/60;
     background: #D4AF37;
     color: #0A0A0A;
-    font-family: var(--font-barlow), system-ui, sans-serif;
+    font-family: var(--font-syne), system-ui, sans-serif;
     letter-spacing: 0.15em;
   }
   .btn-ice:hover {
@@ -84,7 +85,7 @@
            transition-all duration-300
            active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30;
     border-color: rgba(255, 255, 255, 0.22);
-    font-family: var(--font-barlow), system-ui, sans-serif;
+    font-family: var(--font-syne), system-ui, sans-serif;
     letter-spacing: 0.15em;
   }
   .btn-outline:hover {

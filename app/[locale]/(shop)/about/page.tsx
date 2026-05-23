@@ -71,7 +71,7 @@ export default function AboutPage() {
       <main className="pt-28">
 
         {/* ── Hero ── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-charcoal via-[#1a1a2e] to-[#16213e] min-h-[480px] flex items-center">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#0A0A0A] via-[#141414] to-[#121210] min-h-[480px] flex items-center">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(212,175,55,0.15),transparent_60%)]" />
           <div className="section-container relative z-10 py-24 text-center">
             <p className="text-ice-400 text-xs tracking-[0.35em] uppercase font-semibold mb-4">
@@ -110,7 +110,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-3xl bg-gradient-to-br from-charcoal to-[#1a1a2e] flex items-center justify-center shadow-ice-lg">
+              <div className="aspect-square rounded-3xl bg-gradient-to-br from-[#141414] to-[#1A1A1A] flex items-center justify-center shadow-ice-lg">
                 <div className="text-center">
                   <div className="text-[80px] mb-4">💎</div>
                   <p className="text-white/60 text-sm font-medium tracking-widest uppercase">Moissanite</p>
@@ -124,7 +124,7 @@ export default function AboutPage() {
         </section>
 
         {/* ── Comparison table ── */}
-        <section className="bg-[#F5F5F5] py-20">
+        <section className="bg-[#121210] py-20">
           <div className="section-container">
             <div className="text-center mb-12">
               <p className="text-ice-500 text-xs tracking-[0.3em] uppercase font-semibold mb-3">
@@ -144,7 +144,7 @@ export default function AboutPage() {
                   <tr className="border-b border-white/[0.06]">
                     <th className="text-left px-6 py-4 font-semibold text-white/60 w-1/4">Critère</th>
                     <th className="px-6 py-4 font-semibold text-white/70 text-center">Diamant</th>
-                    <th className="px-6 py-4 font-bold text-ice-600 text-center bg-[#E0F7FF]">
+                    <th className="px-6 py-4 font-bold text-[#D4AF37] text-center">
                       Moissanite ✦
                     </th>
                     <th className="px-6 py-4 font-semibold text-white/70 text-center">Or 9K</th>
@@ -155,7 +155,7 @@ export default function AboutPage() {
                     <tr key={row.label} className="hover:bg-[#121210] transition-colors">
                       <td className="px-6 py-4 font-medium text-white">{row.label}</td>
                       <td className="px-6 py-4 text-white/65 text-center">{row.diamond}</td>
-                      <td className="px-6 py-4 text-ice-700 font-semibold text-center bg-[#E0F7FF]">
+                      <td className="px-6 py-4 text-[#D4AF37] font-semibold text-center">
                         {row.moissanite}
                       </td>
                       <td className="px-6 py-4 text-white/65 text-center">{row.gold9k}</td>
@@ -200,7 +200,7 @@ export default function AboutPage() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="bg-[#E0F7FF] py-20">
+        <section className="bg-[#121210] py-20">
           <div className="section-container text-center">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white/70 mb-4">
               Prêt à briller autrement ?

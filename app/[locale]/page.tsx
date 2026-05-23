@@ -18,9 +18,32 @@ export const metadata: Metadata = {
   keywords:    ['moissanite', 'iced out', 'chaîne moissanite', 'bijoux hip hop', 'VVS', 'chaîne cubaine', 'pendentif moissanite', 'bijoux rap'],
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Store',
+  name: 'ICEKEY',
+  url: 'https://icekey.shop',
+  logo: 'https://icekey.shop/logo.png',
+  description: 'Bijoux moissanite VVS certifiés GRA. Chaînes, pendentifs, bagues, bracelets.',
+  priceRange: '€€',
+  servesCuisine: undefined,
+  address: { '@type': 'PostalAddress', addressCountry: 'FR' },
+  sameAs: ['https://www.instagram.com/icekey'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Collection ICEKEY',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Chaînes Moissanite VVS' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Pendentifs Moissanite' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Bagues Moissanite' } },
+    ],
+  },
+}
+
 export default function HomePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
       <main>
         <HeroSection />

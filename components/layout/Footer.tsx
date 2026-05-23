@@ -48,11 +48,11 @@ export function Footer() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
               <h3 className="font-serif text-xl font-bold text-white">
-                Sois dans le game 🧊
+                Avant-premières &amp; offres exclusives
               </h3>
               <p className="text-sm text-white/70 mt-1">
-                Drops en avant-première +{' '}
-                <span className="text-white/55 font-semibold">–10%</span> sur ta 1ère commande
+                Nouveautés en exclusivité ·{' '}
+                <span className="text-[#D4AF37] font-semibold">-10%</span> sur ta première commande
               </p>
             </div>
             <form onSubmit={handleNewsletter} className="flex items-center gap-2 w-full sm:w-auto">
@@ -90,7 +90,7 @@ export function Footer() {
               <IcekeyLogo variant="full" height={56} color="#ffffff" />
             </div>
             <p className="text-sm leading-relaxed text-white/70 max-w-xs mb-4">
-              Moissanite VVS certifié GRA. Diamond test validé. Ships depuis la France en 4–7 jours.
+              Moissanite VVS certifiée GRA. Diamond test validé. Expédié depuis la France en 4–7 jours.
             </p>
             <p className="text-[10px] font-black tracking-[0.35em] text-[#D4AF37] mb-5 uppercase">
               Cold is the new gold

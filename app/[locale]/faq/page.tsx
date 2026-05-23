@@ -103,7 +103,7 @@ export default function FAQPage() {
       <main className="pt-28">
 
         {/* ── Hero ── */}
-        <section className="bg-[#F5F5F5] py-16 text-center">
+        <section className="bg-[#121210] py-16 text-center">
           <div className="section-container">
             <p className="text-ice-500 text-xs tracking-[0.35em] uppercase font-semibold mb-3">
               Toutes vos questions
@@ -141,7 +141,7 @@ export default function FAQPage() {
         </section>
 
         {/* ── Still got questions CTA ── */}
-        <section className="bg-[#E0F7FF] py-16">
+        <section className="bg-[#121210] py-16">
           <div className="section-container text-center">
             <h2 className="font-serif text-3xl font-bold text-white/70 mb-3">
               Toujours une question ?

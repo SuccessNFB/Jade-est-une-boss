@@ -79,7 +79,7 @@ export const PRICE_TIERS: PriceTierConfig[] = [
     min:         0,
     max:         100,
     description: 'Entre dans l\'univers ICEKEY. Earrings, starter rings, pendants.',
-    cta:         'Start Your Collection',
+    cta:         'Découvrir la gamme',
     roas_target: '2.0-2.5x',
   },
   {
@@ -89,7 +89,7 @@ export const PRICE_TIERS: PriceTierConfig[] = [
     min:         100,
     max:         200,
     description: 'Le sweet spot. Chaînes 8-12mm, bracelets, pendants.',
-    cta:         'Shop the Flex',
+    cta:         'Explorer le Flex',
     roas_target: '2.5-3.5x',
   },
   {
@@ -99,7 +99,7 @@ export const PRICE_TIERS: PriceTierConfig[] = [
     min:         200,
     max:         400,
     description: 'Chaînes 14-18mm, custom pendants, montres premium.',
-    cta:         'Upgrade Your Game',
+    cta:         'Passer Premium',
     roas_target: '3.0-4.0x',
   },
   {
@@ -109,7 +109,7 @@ export const PRICE_TIERS: PriceTierConfig[] = [
     min:         400,
     max:         700,
     description: 'Bust-downs 18mm+, luxury watches. Pour les sérieux.',
-    cta:         'Own the Room',
+    cta:         'Dominer la pièce',
     roas_target: '4.0-5.0x',
   },
   {
@@ -119,7 +119,7 @@ export const PRICE_TIERS: PriceTierConfig[] = [
     min:         700,
     max:         null,
     description: 'Ultra-premium bust-downs 24mm+. Full custom. Éditions limitées.',
-    cta:         'Secure Your Piece',
+    cta:         'Acquérir la pièce',
     roas_target: '5.0x+',
   },
 ]

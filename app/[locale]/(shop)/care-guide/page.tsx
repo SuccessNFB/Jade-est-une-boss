@@ -142,7 +142,7 @@ export default function CareGuidePage() {
         </section>
 
         {/* ── What to avoid ── */}
-        <section className="bg-[#F5F5F5] py-16">
+        <section className="bg-[#121210] py-16">
           <div className="section-container">
             <div className="text-center mb-12">
               <p className="text-ice-500 text-xs tracking-[0.3em] uppercase font-semibold mb-3">
@@ -189,7 +189,7 @@ export default function CareGuidePage() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="bg-charcoal py-16">
+        <section className="bg-[#121210] py-16">
           <div className="section-container text-center">
             <p className="text-ice-400 text-xs tracking-[0.35em] uppercase font-semibold mb-3">
               Ton éclat, forever.

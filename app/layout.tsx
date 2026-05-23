@@ -1,23 +1,17 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display, Barlow_Condensed, Space_Mono } from 'next/font/google'
+import { Syne, Playfair_Display, Space_Mono } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({
+const syne = Syne({
   subsets:  ['latin'],
-  variable: '--font-inter',
+  weight:   ['400', '500', '600', '700', '800'],
+  variable: '--font-syne',
   display:  'swap',
 })
 
 const playfair = Playfair_Display({
   subsets:  ['latin'],
   variable: '--font-playfair',
-  display:  'swap',
-})
-
-const barlow = Barlow_Condensed({
-  subsets:  ['latin'],
-  weight:   ['400', '600', '700', '800', '900'],
-  variable: '--font-barlow',
   display:  'swap',
 })
 
@@ -42,7 +36,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={`${inter.variable} ${playfair.variable} ${barlow.variable} ${spaceMono.variable}`}>
+    <html className={`${syne.variable} ${playfair.variable} ${spaceMono.variable}`}>
       <body>{children}</body>
     </html>
   )

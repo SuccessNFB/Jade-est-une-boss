@@ -23,34 +23,45 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       template: '%s | ICEKEY',
     },
     description: isFr
-      ? 'Bijoux en moissanite premium. Diamants de synthèse certifiés, montures or & argent. Livraison offerte en France.'
-      : 'Premium moissanite jewelry. VVS certified lab-created diamonds. Free shipping. GRA certified.',
+      ? 'Bijoux moissanite VVS certifiés GRA — bagues, chaînes, pendentifs, bracelets. Éclat de diamant, prix honnête. Livraison offerte en France dès 100 €. Retour gratuit 30 jours.'
+      : 'VVS moissanite jewelry — rings, chains, pendants, bracelets. GRA certified. Free shipping. 30-day returns. Diamond-grade brilliance at honest prices.',
     keywords: isFr
-      ? ['moissanite', 'bijoux', 'bagues', 'colliers', 'pendentifs', 'or', 'argent', 'luxe', 'france']
-      : ['moissanite', 'jewelry', 'rings', 'necklaces', 'pendants', 'gold', 'silver', 'luxury', 'vvs'],
+      ? [
+          'moissanite', 'bijoux moissanite', 'bague moissanite', 'collier moissanite',
+          'pendentif moissanite', 'bracelet moissanite', 'chaîne cubaine', 'VVS certifié',
+          'certifié GRA', 'bijoux or', 'bijoux argent', 'bijoux hip hop', 'bijoux luxe france',
+          'icekey', 'moissanite france',
+        ]
+      : [
+          'moissanite jewelry', 'moissanite ring', 'moissanite necklace', 'VVS moissanite',
+          'GRA certified', 'cuban chain', 'iced out jewelry', 'moissanite pendant',
+          'lab diamond alternative', 'icekey',
+        ],
     openGraph: {
       type:        'website',
       locale:      isFr ? 'fr_FR' : 'en_US',
       url:         'https://icekey.shop',
       siteName:    'ICEKEY',
-      title:       'ICEKEY – Cold is the new gold',
+      title:       'ICEKEY – Bijoux Moissanite VVS | Cold is the new gold',
       description: isFr
-        ? 'Bijoux en moissanite premium certifiés. Éclat maximal, prix honnête.'
-        : 'Premium VVS moissanite jewelry. Maximum brilliance, honest price.',
-      images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'ICEKEY Jewelry' }],
+        ? 'Bijoux moissanite VVS certifiés GRA. Chaînes, bagues, pendentifs. Livraison offerte en France.'
+        : 'VVS moissanite jewelry GRA certified. Chains, rings, pendants. Free shipping.',
+      images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'ICEKEY — Bijoux Moissanite VVS' }],
     },
     twitter: {
       card:        'summary_large_image',
-      title:       'ICEKEY – Cold is the new gold',
+      title:       'ICEKEY – Bijoux Moissanite VVS | Cold is the new gold',
       description: isFr
-        ? 'Bijoux en moissanite premium certifiés.'
-        : 'Premium VVS moissanite jewelry.',
+        ? 'Bijoux moissanite VVS certifiés GRA. Livraison offerte en France dès 100 €.'
+        : 'VVS moissanite jewelry GRA certified. Free shipping.',
+      images: ['/og-image.jpg'],
     },
     alternates: {
-      canonical:  'https://icekey.shop',
+      canonical:  isFr ? 'https://icekey.shop' : 'https://icekey.shop/en',
       languages:  {
-        'fr': 'https://icekey.shop',
-        'en': 'https://icekey.shop/en',
+        'fr':    'https://icekey.shop',
+        'en':    'https://icekey.shop/en',
+        'x-default': 'https://icekey.shop',
       },
     },
   }
@@ -81,7 +92,7 @@ export default async function LocaleLayout({ children, params }: Props) {
                 background:   '#333',
                 color:        '#fff',
                 borderRadius: '12px',
-                fontFamily:   'var(--font-inter)',
+                fontFamily:   'var(--font-syne)',
               },
               success: { iconTheme: { primary: '#D4AF37', secondary: '#fff' } },
             }}

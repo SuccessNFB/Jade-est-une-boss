@@ -56,7 +56,7 @@ export default function ContactPage() {
       <main className="pt-28">
 
         {/* ── Hero ── */}
-        <section className="bg-[#F5F5F5] py-14 text-center">
+        <section className="bg-[#121210] py-14 text-center">
           <div className="section-container">
             <p className="text-ice-500 text-xs tracking-[0.35em] uppercase font-semibold mb-3">
               On est là
@@ -152,7 +152,7 @@ export default function ContactPage() {
 
             {/* ── Sidebar ── */}
             <div className="lg:col-span-2 space-y-6">
-              <div className="bg-[#F5F5F5] rounded-2xl p-7">
+              <div className="bg-[#121210] rounded-2xl p-7">
                 <h3 className="font-serif text-lg font-bold text-white/70 mb-5">Infos pratiques</h3>
 
                 <div className="space-y-5">
@@ -187,7 +187,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="bg-[#E0F7FF] rounded-2xl p-7">
+              <div className="bg-[#121210] rounded-2xl p-7">
                 <h3 className="font-serif text-lg font-bold text-white/70 mb-2">On est aussi là-bas</h3>
                 <p className="text-white/65 text-sm mb-5">
                   DM, story, tag — on répond sur les réseaux aussi.
