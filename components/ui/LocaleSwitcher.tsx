@@ -22,7 +22,7 @@ export function LocaleSwitcher() {
   }
 
   return (
-    <div className="flex items-center gap-0.5 rounded-full border border-white/15 bg-[#0E0F16]/5 p-0.5 text-[11px] font-bold tracking-wider select-none">
+    <div className="flex items-center gap-0.5 rounded-full border border-white/15 bg-[#1A1A17]/5 p-0.5 text-[11px] font-bold tracking-wider select-none">
       {(['fr', 'en'] as const).map((l) => (
         <button
           key={l}
@@ -31,7 +31,7 @@ export function LocaleSwitcher() {
           className={cn(
             'px-2.5 py-1 rounded-full transition-all duration-200 uppercase',
             locale === l
-              ? 'bg-[#00D9FF] text-white/70 shadow-sm'
+              ? 'bg-[#F5C542] text-white/70 shadow-sm'
               : 'text-white/70 hover:text-white'
           )}
         >

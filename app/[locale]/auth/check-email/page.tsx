@@ -22,8 +22,8 @@ export default async function CheckEmailPage({ searchParams }: Props) {
           <IcekeyLogo variant="horizontal" height={24} color="#ffffff" />
         </div>
 
-        <div className="w-16 h-16 rounded-2xl bg-[#00D9FF]/10 border border-[#00D9FF]/20 flex items-center justify-center mx-auto mb-6">
-          <Mail className="w-7 h-7 text-[#00D9FF]" />
+        <div className="w-16 h-16 rounded-2xl bg-[#F5C542]/10 border border-[#F5C542]/20 flex items-center justify-center mx-auto mb-6">
+          <Mail className="w-7 h-7 text-[#F5C542]" />
         </div>
 
         <h1 className="font-serif text-3xl font-bold text-white mb-3">
@@ -33,7 +33,7 @@ export default async function CheckEmailPage({ searchParams }: Props) {
           On a envoyé un lien de confirmation à
         </p>
         {email && (
-          <p className="text-[#00D9FF] font-semibold text-sm mb-6">{email}</p>
+          <p className="text-[#F5C542] font-semibold text-sm mb-6">{email}</p>
         )}
         <p className="text-white/60 text-xs mb-8">
           Clique sur le lien dans l&apos;email pour activer ton compte.<br />
@@ -42,7 +42,7 @@ export default async function CheckEmailPage({ searchParams }: Props) {
 
         <Link
           href="/auth/login"
-          className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-white/15 text-white/60 text-sm font-semibold hover:border-[#00D9FF]/40 hover:text-white transition-all"
+          className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-white/15 text-white/60 text-sm font-semibold hover:border-[#F5C542]/40 hover:text-white transition-all"
         >
           Retour à la connexion
         </Link>

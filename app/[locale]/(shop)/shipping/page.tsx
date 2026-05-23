@@ -95,7 +95,7 @@ export default function ShippingPage() {
                 }`}
               >
                 {option.highlight && (
-                  <span className="inline-block bg-[#00D9FF] text-charcoal text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-wide">
+                  <span className="inline-block bg-[#F5C542] text-charcoal text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-wide">
                     RECOMMANDÉ
                   </span>
                 )}
@@ -225,7 +225,7 @@ export default function ShippingPage() {
             </p>
             <Link
               href="/shop"
-              className="inline-flex items-center gap-2 px-10 py-4 bg-[#00D9FF] text-charcoal font-semibold text-sm tracking-wide rounded-full hover:scale-[1.03] hover:shadow-ice transition-all duration-300"
+              className="inline-flex items-center gap-2 px-10 py-4 bg-[#F5C542] text-charcoal font-semibold text-sm tracking-wide rounded-full hover:scale-[1.03] hover:shadow-ice transition-all duration-300"
             >
               Commander maintenant →
             </Link>

@@ -192,7 +192,7 @@ export function Header() {
                     className={cn(
                       'block px-3.5 py-2 text-[10px] font-black tracking-[0.18em] uppercase whitespace-nowrap transition-colors duration-150',
                       item.accent
-                        ? 'text-[#00D9FF] hover:text-white'
+                        ? 'text-[#F5C542] hover:text-white'
                         : 'text-white/60 hover:text-white',
                       megaOpen === item.label && 'text-white'
                     )}
@@ -202,7 +202,7 @@ export function Header() {
                   {megaOpen === item.label && (
                     <motion.div
                       layoutId="nav-line"
-                      className="absolute bottom-0 left-3.5 right-3.5 h-px bg-[#00D9FF]"
+                      className="absolute bottom-0 left-3.5 right-3.5 h-px bg-[#F5C542]"
                       transition={{ duration: 0.15 }}
                     />
                   )}
@@ -249,7 +249,7 @@ export function Header() {
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       exit={{ scale: 0 }}
-                      className="absolute -top-0.5 -right-0.5 flex items-center justify-center rounded-full bg-[#00D9FF] text-[#08090E] text-[9px] font-black"
+                      className="absolute -top-0.5 -right-0.5 flex items-center justify-center rounded-full bg-[#F5C542] text-[#08090E] text-[9px] font-black"
                       style={{ width: 16, height: 16 }}
                     >
                       {count > 9 ? '9+' : count}
@@ -348,7 +348,7 @@ export function Header() {
                     <Link
                       href={NAV.find((n) => n.label === megaOpen)?.href ?? '/shop'}
                       onClick={() => setMegaOpen(null)}
-                      className="inline-flex items-center gap-1.5 mt-5 text-[9px] font-black tracking-[0.2em] uppercase text-[#00D9FF] hover:text-white transition-colors"
+                      className="inline-flex items-center gap-1.5 mt-5 text-[9px] font-black tracking-[0.2em] uppercase text-[#F5C542] hover:text-white transition-colors"
                     >
                       Voir tout →
                     </Link>
@@ -362,29 +362,29 @@ export function Header() {
                     onClick={() => setMegaOpen(null)}
                     className="group block w-52 p-5 rounded-2xl transition-all duration-300"
                     style={{
-                      background: 'linear-gradient(135deg, rgba(0,217,255,0.07) 0%, rgba(201,168,76,0.05) 100%)',
-                      border: '1px solid rgba(0,217,255,0.12)',
+                      background: 'linear-gradient(135deg, rgba(245,197,66,0.07) 0%, rgba(201,168,76,0.05) 100%)',
+                      border: '1px solid rgba(245,197,66,0.12)',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = 'rgba(0,217,255,0.28)'
-                      e.currentTarget.style.background = 'linear-gradient(135deg, rgba(0,217,255,0.1) 0%, rgba(201,168,76,0.07) 100%)'
+                      e.currentTarget.style.borderColor = 'rgba(245,197,66,0.28)'
+                      e.currentTarget.style.background = 'linear-gradient(135deg, rgba(245,197,66,0.1) 0%, rgba(201,168,76,0.07) 100%)'
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'rgba(0,217,255,0.12)'
-                      e.currentTarget.style.background = 'linear-gradient(135deg, rgba(0,217,255,0.07) 0%, rgba(201,168,76,0.05) 100%)'
+                      e.currentTarget.style.borderColor = 'rgba(245,197,66,0.12)'
+                      e.currentTarget.style.background = 'linear-gradient(135deg, rgba(245,197,66,0.07) 0%, rgba(201,168,76,0.05) 100%)'
                     }}
                   >
                     <div
                       className="w-9 h-9 rounded-xl flex items-center justify-center text-sm mb-4"
-                      style={{ background: 'rgba(0,217,255,0.1)', color: '#00D9FF' }}
+                      style={{ background: 'rgba(245,197,66,0.1)', color: '#F5C542' }}
                     >
                       ◆
                     </div>
-                    <p className="text-sm font-bold text-white group-hover:text-[#00D9FF] transition-colors">
+                    <p className="text-sm font-bold text-white group-hover:text-[#F5C542] transition-colors">
                       {MEGA[megaOpen].promo.label}
                     </p>
                     <p className="text-xs text-white/70 mt-1">{MEGA[megaOpen].promo.sub}</p>
-                    <span className="inline-block mt-4 text-[9px] font-black tracking-[0.2em] uppercase text-[#00D9FF]">
+                    <span className="inline-block mt-4 text-[9px] font-black tracking-[0.2em] uppercase text-[#F5C542]">
                       Découvrir →
                     </span>
                   </Link>
@@ -415,7 +415,7 @@ export function Header() {
               exit={{ x: '-100%' }}
               transition={{ type: 'tween', duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
               className="fixed top-0 left-0 bottom-0 z-50 w-[82vw] max-w-[320px] flex flex-col overflow-y-auto"
-              style={{ background: '#0A0B12', borderRight: '1px solid rgba(255,255,255,0.06)' }}
+              style={{ background: '#141412', borderRight: '1px solid rgba(255,255,255,0.06)' }}
             >
               <div className="flex items-center justify-between px-6 py-5 border-b border-white/[0.06]">
                 <IcekeyLogo variant="horizontal" height={22} color="#ffffff" />
@@ -449,7 +449,7 @@ export function Header() {
                     className={cn(
                       'flex items-center justify-between py-3.5 border-b text-sm font-black tracking-[0.12em] transition-colors',
                       'border-white/[0.04]',
-                      item.accent ? 'text-[#00D9FF]' : 'text-white/70 hover:text-white'
+                      item.accent ? 'text-[#F5C542]' : 'text-white/70 hover:text-white'
                     )}
                   >
                     {item.label}

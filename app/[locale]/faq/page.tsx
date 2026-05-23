@@ -134,7 +134,7 @@ export default function FAQPage() {
                     </p>
                   </div>
                 </div>
-                <div className="bg-[#0E0F16] rounded-2xl shadow-card px-6">
+                <div className="bg-[#1A1A17] rounded-2xl shadow-card px-6">
                   <ProductAccordion items={cat.items} />
                 </div>
               </div>
@@ -154,7 +154,7 @@ export default function FAQPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#00D9FF] text-white/70 font-semibold text-sm tracking-wide rounded-full hover:scale-[1.03] hover:shadow-ice transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#F5C542] text-white/70 font-semibold text-sm tracking-wide rounded-full hover:scale-[1.03] hover:shadow-ice transition-all duration-300"
               >
                 Nous contacter
               </Link>

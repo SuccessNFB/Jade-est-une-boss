@@ -16,7 +16,7 @@ export function TrustBadges() {
   return (
     <section
       className="section-pad border-t"
-      style={{ background: '#0A0B12', borderColor: 'rgba(255,255,255,0.04)' }}
+      style={{ background: '#141412', borderColor: 'rgba(255,255,255,0.04)' }}
     >
       <div className="section-container">
 
@@ -26,7 +26,7 @@ export function TrustBadges() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#00D9FF] mb-4">
+          <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#F5C542] mb-4">
             Nos engagements
           </p>
           <h2 className="font-serif text-3xl font-bold text-white">
@@ -50,8 +50,8 @@ export function TrustBadges() {
                   border: '1px solid rgba(255,255,255,0.05)',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(0,217,255,0.04)'
-                  e.currentTarget.style.borderColor = 'rgba(0,217,255,0.1)'
+                  e.currentTarget.style.background = 'rgba(245,197,66,0.04)'
+                  e.currentTarget.style.borderColor = 'rgba(245,197,66,0.1)'
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = 'rgba(255,255,255,0.02)'
@@ -60,9 +60,9 @@ export function TrustBadges() {
               >
                 <div
                   className="w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300"
-                  style={{ background: 'rgba(0,217,255,0.08)' }}
+                  style={{ background: 'rgba(245,197,66,0.08)' }}
                 >
-                  <Icon style={{ width: 18, height: 18, color: '#00D9FF' }} />
+                  <Icon style={{ width: 18, height: 18, color: '#F5C542' }} />
                 </div>
                 <div>
                   <p className="font-semibold text-sm text-white leading-tight mb-1.5">{b.title}</p>

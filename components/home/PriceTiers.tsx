@@ -6,8 +6,8 @@ import { ArrowRight } from 'lucide-react'
 import { PRICE_TIERS } from '@/types'
 
 const ACCENTS = [
-  { bg: 'rgba(0,217,255,0.06)',  border: 'rgba(0,217,255,0.12)',  color: '#00D9FF' },
-  { bg: 'rgba(0,217,255,0.08)',  border: 'rgba(0,217,255,0.16)',  color: '#00D9FF' },
+  { bg: 'rgba(245,197,66,0.06)',  border: 'rgba(245,197,66,0.12)',  color: '#F5C542' },
+  { bg: 'rgba(245,197,66,0.08)',  border: 'rgba(245,197,66,0.16)',  color: '#F5C542' },
   { bg: 'rgba(201,168,76,0.06)', border: 'rgba(201,168,76,0.12)', color: '#C9A84C' },
   { bg: 'rgba(201,168,76,0.08)', border: 'rgba(201,168,76,0.16)', color: '#C9A84C' },
   { bg: 'rgba(201,168,76,0.10)', border: 'rgba(201,168,76,0.22)', color: '#E8C878' },
@@ -17,7 +17,7 @@ export function PriceTiers() {
   return (
     <section
       className="section-pad overflow-hidden"
-      style={{ background: '#0A0B12' }}
+      style={{ background: '#141412' }}
     >
       <div className="section-container">
 
@@ -27,7 +27,7 @@ export function PriceTiers() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#00D9FF] mb-4">
+          <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#F5C542] mb-4">
             5 gammes
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">

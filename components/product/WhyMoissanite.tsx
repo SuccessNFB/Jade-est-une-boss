@@ -33,7 +33,7 @@ export function WhyMoissanite() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
         {STEPS.map((step) => (
           <div key={step.num} className="text-center">
-            <div className="relative aspect-square rounded-2xl overflow-hidden bg-[#0E0F16] mb-5">
+            <div className="relative aspect-square rounded-2xl overflow-hidden bg-[#1A1A17] mb-5">
               <Image
                 src={step.img}
                 alt={step.alt}

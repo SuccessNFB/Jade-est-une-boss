@@ -25,10 +25,10 @@ export default function TrackPage() {
         <div className="section-container max-w-2xl py-12">
 
           <div className="text-center mb-12">
-            <div className="w-16 h-16 rounded-2xl bg-[#00D9FF]/10 border border-[#00D9FF]/20 flex items-center justify-center mx-auto mb-5">
-              <Package className="w-7 h-7 text-[#00D9FF]" />
+            <div className="w-16 h-16 rounded-2xl bg-[#F5C542]/10 border border-[#F5C542]/20 flex items-center justify-center mx-auto mb-5">
+              <Package className="w-7 h-7 text-[#F5C542]" />
             </div>
-            <p className="text-xs font-bold tracking-widest uppercase text-[#00D9FF] mb-3">Livraison</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#F5C542] mb-3">Livraison</p>
             <h1 className="font-serif text-4xl font-bold text-charcoal mb-4">
               Suivi de commande
             </h1>
@@ -43,12 +43,12 @@ export default function TrackPage() {
             <div className="space-y-6">
               {STEPS.map(({ icon: Icon, title, desc }, i) => (
                 <div key={title} className="flex gap-5">
-                  <div className="relative z-10 w-10 h-10 rounded-full bg-white border-2 border-[#00D9FF]/30 flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-4 h-4 text-[#00D9FF]" />
+                  <div className="relative z-10 w-10 h-10 rounded-full bg-white border-2 border-[#F5C542]/30 flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-4 h-4 text-[#F5C542]" />
                   </div>
                   <div className="pt-1.5">
                     <p className="text-sm font-bold text-charcoal mb-0.5">
-                      <span className="text-[#00D9FF] mr-2 font-black">{String(i + 1).padStart(2, '0')}</span>
+                      <span className="text-[#F5C542] mr-2 font-black">{String(i + 1).padStart(2, '0')}</span>
                       {title}
                     </p>
                     <p className="text-sm text-charcoal/55">{desc}</p>
@@ -70,7 +70,7 @@ export default function TrackPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#00D9FF] text-charcoal font-bold text-sm hover:bg-[#00EEFF] hover:shadow-[0_0_20px_rgba(0,217,255,0.4)] transition-all"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#F5C542] text-charcoal font-bold text-sm hover:bg-[#00EEFF] hover:shadow-[0_0_20px_rgba(245,197,66,0.4)] transition-all"
               >
                 Nous contacter
               </Link>
@@ -85,7 +85,7 @@ export default function TrackPage() {
 
           <p className="text-center text-xs text-charcoal/30 mt-8">
             Tu as un compte ICEKEY ?{' '}
-            <Link href="/account" className="text-[#00D9FF] hover:underline font-semibold">
+            <Link href="/account" className="text-[#F5C542] hover:underline font-semibold">
               Consulte tes commandes →
             </Link>
           </p>

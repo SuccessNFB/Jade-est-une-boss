@@ -10,23 +10,23 @@ const config: Config = {
     extend: {
       colors: {
         /* Brand darks */
-        void:    '#08090E',
-        surface: '#0E0F16',
-        panel:   '#141622',
+        void:    '#0F0F0D',
+        surface: '#1A1A17',
+        panel:   '#222220',
         rim:     'rgba(255,255,255,0.07)',
 
-        /* Ice — primary accent */
+        /* Ice — primary accent (yellow-gold) */
         ice: {
-          50:  '#f0fbff',
-          100: '#e0f7fe',
-          200: '#baf0fd',
-          300: '#7ee4fb',
-          400: '#38d0f5',
-          500: '#00D9FF',
-          600: '#00b8d9',
-          700: '#0090a8',
-          800: '#006e8a',
-          900: '#005b72',
+          50:  '#fffbea',
+          100: '#fff4c2',
+          200: '#ffe87a',
+          300: '#ffd84a',
+          400: '#F5C542',
+          500: '#F5C542',
+          600: '#d4a318',
+          700: '#a87c0e',
+          800: '#7a5b0a',
+          900: '#4a3606',
         },
 
         /* Gold — secondary accent (richer) */

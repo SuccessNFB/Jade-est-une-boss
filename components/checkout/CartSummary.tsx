@@ -33,10 +33,10 @@ export function CartSummary() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="flex gap-4 p-4 rounded-2xl border border-white/[0.06] bg-[#0E0F16]"
+            className="flex gap-4 p-4 rounded-2xl border border-white/[0.06] bg-[#1A1A17]"
           >
             {/* Image */}
-            <div className="relative w-20 h-20 flex-shrink-0 rounded-xl overflow-hidden bg-[#0A0B12]">
+            <div className="relative w-20 h-20 flex-shrink-0 rounded-xl overflow-hidden bg-[#141412]">
               <Image
                 src={item.product.images[0]?.url ?? '/images/placeholder.jpg'}
                 alt={item.product.name}
@@ -92,7 +92,7 @@ export function CartSummary() {
       </AnimatePresence>
 
       {/* Totals */}
-      <div className="rounded-2xl bg-[#0A0B12] p-5 space-y-3">
+      <div className="rounded-2xl bg-[#141412] p-5 space-y-3">
         <div className="flex justify-between text-sm">
           <span className="text-white/65">Sous-total</span>
           <span className="font-semibold">{formatPrice(subtotal)}</span>

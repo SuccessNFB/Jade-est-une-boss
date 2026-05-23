@@ -18,20 +18,20 @@
   }
 
   body {
-    background: #08090E;
+    background: #0F0F0D;
     color: #FFFFFF;
     font-family: var(--font-inter), system-ui, sans-serif;
   }
 
   ::selection {
-    background: rgba(0, 217, 255, 0.15);
+    background: rgba(245, 197, 66, 0.15);
     color: #fff;
   }
 
   ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: #08090E; }
+  ::-webkit-scrollbar-track { background: #0F0F0D; }
   ::-webkit-scrollbar-thumb {
-    background: rgba(0, 217, 255, 0.25);
+    background: rgba(245, 197, 66, 0.25);
     border-radius: 2px;
   }
 }
@@ -42,10 +42,10 @@
   .btn-ice {
     @apply inline-flex items-center justify-center gap-2
            px-8 py-4 rounded-full font-black text-sm tracking-widest uppercase
-           bg-[#00D9FF] text-[#080910]
+           bg-[#F5C542] text-[#080910]
            transition-all duration-300
-           hover:bg-[#33E4FF] hover:shadow-[0_0_40px_rgba(0,217,255,0.55)]
-           active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D9FF]/60;
+           hover:bg-[#FAD555] hover:shadow-[0_0_40px_rgba(245,197,66,0.55)]
+           active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5C542]/60;
     font-family: var(--font-barlow), system-ui, sans-serif;
     letter-spacing: 0.15em;
   }
@@ -55,7 +55,7 @@
            px-8 py-4 rounded-full font-black text-sm tracking-widest uppercase
            border-2 text-white
            transition-all duration-300
-           hover:border-[#00D9FF] hover:text-[#00D9FF] hover:bg-[rgba(0,217,255,0.05)]
+           hover:border-[#F5C542] hover:text-[#F5C542] hover:bg-[rgba(245,197,66,0.05)]
            active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30;
     border-color: rgba(255, 255, 255, 0.25);
     font-family: var(--font-barlow), system-ui, sans-serif;
@@ -84,7 +84,7 @@
   /* ─── Text gradients ─────────────────────────────────────────── */
   .text-ice {
     @apply bg-clip-text text-transparent
-           bg-gradient-to-r from-[#00D9FF] via-[#80EEFF] to-[#00D9FF]
+           bg-gradient-to-r from-[#F5C542] via-[#FAD86E] to-[#F5C542]
            bg-[length:200%_auto] animate-shimmer;
   }
 
@@ -96,7 +96,7 @@
 
   /* ─── Cards ─────────────────────────────────────────────────── */
   .card-dark {
-    @apply bg-[#0E0F16] border border-white/[0.06] rounded-2xl overflow-hidden
+    @apply bg-[#1A1A17] border border-white/[0.06] rounded-2xl overflow-hidden
            transition-all duration-500
            hover:border-white/[0.12] hover:shadow-[0_8px_48px_rgba(0,0,0,0.5)];
   }
@@ -124,11 +124,11 @@
 
   /* Ice glow */
   .glow-ice {
-    box-shadow: 0 0 40px rgba(0, 217, 255, 0.2), 0 0 80px rgba(0, 217, 255, 0.08);
+    box-shadow: 0 0 40px rgba(245, 197, 66, 0.2), 0 0 80px rgba(245, 197, 66, 0.08);
   }
 
   .glow-ice-sm {
-    box-shadow: 0 0 20px rgba(0, 217, 255, 0.15);
+    box-shadow: 0 0 20px rgba(245, 197, 66, 0.15);
   }
 
   /* Shimmer overlay */
@@ -141,7 +141,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(105deg, transparent 40%, rgba(0, 217, 255, 0.08) 50%, transparent 60%);
+    background: linear-gradient(105deg, transparent 40%, rgba(245, 197, 66, 0.08) 50%, transparent 60%);
     background-size: 200% auto;
     animation: shimmer 3s linear infinite;
     pointer-events: none;

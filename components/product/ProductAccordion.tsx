@@ -29,7 +29,7 @@ export function ProductAccordion({ items, defaultOpen }: Props) {
               {item.title}
             </span>
             {open === i
-              ? <Minus className="w-4 h-4 text-[#00D9FF] flex-shrink-0" />
+              ? <Minus className="w-4 h-4 text-[#F5C542] flex-shrink-0" />
               : <Plus  className="w-4 h-4 text-white/65 flex-shrink-0" />
             }
           </button>

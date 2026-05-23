@@ -109,7 +109,7 @@ export default function AdminSupportPage() {
             onClick={() => setFilter(s)}
             className={`px-4 py-3 text-xs font-bold tracking-wide uppercase whitespace-nowrap border-b-2 transition-colors ${
               filter === s
-                ? 'border-[#00D9FF] text-charcoal'
+                ? 'border-[#F5C542] text-charcoal'
                 : 'border-transparent text-charcoal/40 hover:text-charcoal'
             }`}
           >
@@ -175,8 +175,8 @@ export default function AdminSupportPage() {
 
                   {/* Previous reply */}
                   {ticket.admin_reply && (
-                    <div className="bg-[#00D9FF]/5 border border-[#00D9FF]/20 rounded-xl p-4">
-                      <p className="text-[10px] font-bold text-[#00D9FF] mb-1 uppercase tracking-wider">Ta réponse précédente</p>
+                    <div className="bg-[#F5C542]/5 border border-[#F5C542]/20 rounded-xl p-4">
+                      <p className="text-[10px] font-bold text-[#F5C542] mb-1 uppercase tracking-wider">Ta réponse précédente</p>
                       <p className="text-sm text-charcoal/70 whitespace-pre-wrap">{ticket.admin_reply}</p>
                     </div>
                   )}
@@ -187,7 +187,7 @@ export default function AdminSupportPage() {
                     onChange={(e) => setReply(e.target.value)}
                     rows={4}
                     placeholder="Réponds au client…"
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-charcoal placeholder-charcoal/25 outline-none focus:border-[#00D9FF]/60 transition-all resize-none"
+                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-charcoal placeholder-charcoal/25 outline-none focus:border-[#F5C542]/60 transition-all resize-none"
                   />
 
                   {/* Actions */}
@@ -195,7 +195,7 @@ export default function AdminSupportPage() {
                     <button
                       onClick={() => updateTicket(ticket.id, undefined, reply)}
                       disabled={!reply.trim() || saving}
-                      className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#00D9FF] text-charcoal text-xs font-bold hover:bg-[#00EEFF] transition-colors disabled:opacity-50"
+                      className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#F5C542] text-charcoal text-xs font-bold hover:bg-[#00EEFF] transition-colors disabled:opacity-50"
                     >
                       {saving ? <Loader2 className="w-3 h-3 animate-spin" /> : <Send className="w-3 h-3" />}
                       Envoyer réponse

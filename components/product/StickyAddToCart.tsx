@@ -40,7 +40,7 @@ export function StickyAddToCart({ product, triggerRef }: Props) {
           <div className="section-container max-w-5xl py-3">
             <div className="flex items-center gap-4">
               {/* Thumbnail */}
-              <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-[#0E0F16] flex-shrink-0">
+              <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-[#1A1A17] flex-shrink-0">
                 <Image
                   src={product.images[0]?.url ?? '/images/placeholder.jpg'}
                   alt={product.name}

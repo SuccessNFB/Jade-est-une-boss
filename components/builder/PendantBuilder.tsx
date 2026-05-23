@@ -96,7 +96,7 @@ export function PendantBuilder() {
                   ? 'bg-ice-500 text-white shadow-ice'
                   : i < step
                   ? 'bg-ice-100 text-ice-600 cursor-pointer hover:bg-ice-200'
-                  : 'bg-[#0E0F16] text-gray-400 cursor-not-allowed'
+                  : 'bg-[#1A1A17] text-gray-400 cursor-not-allowed'
               }`}
             >
               {i < step ? <Check className="w-3.5 h-3.5" /> : <span className="text-xs">{i + 1}</span>}

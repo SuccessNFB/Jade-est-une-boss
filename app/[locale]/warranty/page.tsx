@@ -34,10 +34,10 @@ export default function WarrantyPage() {
 
           {/* Header */}
           <div className="text-center mb-12">
-            <div className="w-16 h-16 rounded-2xl bg-[#00D9FF]/10 border border-[#00D9FF]/20 flex items-center justify-center mx-auto mb-5">
-              <Shield className="w-7 h-7 text-[#00D9FF]" />
+            <div className="w-16 h-16 rounded-2xl bg-[#F5C542]/10 border border-[#F5C542]/20 flex items-center justify-center mx-auto mb-5">
+              <Shield className="w-7 h-7 text-[#F5C542]" />
             </div>
-            <p className="text-xs font-bold tracking-widest uppercase text-[#00D9FF] mb-3">Notre promesse</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#F5C542] mb-3">Notre promesse</p>
             <h1 className="font-serif text-4xl font-bold text-charcoal mb-4">
               Garantie à vie
             </h1>
@@ -89,8 +89,8 @@ export default function WarrantyPage() {
                 { step: '03', title: 'Retour & remplacement', desc: 'On te fournit une étiquette retour gratuite. La pièce est réparée ou remplacée, expédiée sous 5–7 jours.' },
               ].map(({ step, title, desc }) => (
                 <div key={step} className="flex gap-4">
-                  <div className="w-9 h-9 rounded-full bg-[#00D9FF]/10 border border-[#00D9FF]/20 flex items-center justify-center flex-shrink-0">
-                    <span className="text-[10px] font-black text-[#00D9FF]">{step}</span>
+                  <div className="w-9 h-9 rounded-full bg-[#F5C542]/10 border border-[#F5C542]/20 flex items-center justify-center flex-shrink-0">
+                    <span className="text-[10px] font-black text-[#F5C542]">{step}</span>
                   </div>
                   <div>
                     <p className="text-sm font-bold text-charcoal mb-0.5">{title}</p>
@@ -104,7 +104,7 @@ export default function WarrantyPage() {
           <div className="text-center">
             <a
               href="mailto:contact@icekey.shop"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#00D9FF] text-charcoal font-bold text-sm hover:bg-[#00EEFF] hover:shadow-[0_0_20px_rgba(0,217,255,0.4)] transition-all"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#F5C542] text-charcoal font-bold text-sm hover:bg-[#00EEFF] hover:shadow-[0_0_20px_rgba(245,197,66,0.4)] transition-all"
             >
               Contacter le support garantie
             </a>

@@ -15,7 +15,7 @@ export function BuilderCTA() {
   return (
     <section
       className="section-pad"
-      style={{ background: '#08090E' }}
+      style={{ background: '#0F0F0D' }}
     >
       <div className="section-container">
         <motion.div
@@ -25,14 +25,14 @@ export function BuilderCTA() {
           className="relative rounded-3xl overflow-hidden p-10 sm:p-14"
           style={{
             background: 'linear-gradient(135deg, #0D1122 0%, #0C0E18 50%, #111626 100%)',
-            border: '1px solid rgba(0,217,255,0.1)',
+            border: '1px solid rgba(245,197,66,0.1)',
           }}
         >
           {/* Grid overlay */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
-              backgroundImage: 'linear-gradient(rgba(0,217,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,217,255,0.03) 1px, transparent 1px)',
+              backgroundImage: 'linear-gradient(rgba(245,197,66,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(245,197,66,0.03) 1px, transparent 1px)',
               backgroundSize: '64px 64px',
             }}
           />
@@ -40,7 +40,7 @@ export function BuilderCTA() {
           <div
             className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] pointer-events-none"
             style={{
-              background: 'radial-gradient(ellipse, rgba(0,217,255,0.08) 0%, transparent 70%)',
+              background: 'radial-gradient(ellipse, rgba(245,197,66,0.08) 0%, transparent 70%)',
               filter: 'blur(40px)',
             }}
           />
@@ -49,7 +49,7 @@ export function BuilderCTA() {
 
             {/* Left — copy */}
             <div>
-              <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#00D9FF] mb-5">
+              <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#F5C542] mb-5">
                 Custom Pendants
               </p>
               <h2
@@ -103,7 +103,7 @@ export function BuilderCTA() {
                   >
                     <div
                       className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
-                      style={{ background: 'rgba(0,217,255,0.08)', color: '#00D9FF' }}
+                      style={{ background: 'rgba(245,197,66,0.08)', color: '#F5C542' }}
                     >
                       <Icon style={{ width: 16, height: 16 }} />
                     </div>

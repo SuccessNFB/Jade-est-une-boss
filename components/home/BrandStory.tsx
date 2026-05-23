@@ -15,13 +15,13 @@ export function BrandStory() {
   return (
     <section
       className="relative section-pad overflow-hidden"
-      style={{ background: '#0A0B12' }}
+      style={{ background: '#141412' }}
     >
       {/* Background accent */}
       <div
         className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse, rgba(0,217,255,0.05) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse, rgba(245,197,66,0.05) 0%, transparent 70%)',
           filter: 'blur(60px)',
         }}
       />
@@ -36,7 +36,7 @@ export function BrandStory() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#00D9FF] mb-5">
+            <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#F5C542] mb-5">
               Notre histoire
             </p>
             <h2
@@ -85,14 +85,14 @@ export function BrandStory() {
                 transition={{ delay: 0.1 + i * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className="p-7 rounded-2xl relative overflow-hidden group"
                 style={{
-                  background: '#0E0F16',
+                  background: '#1A1A17',
                   border: '1px solid rgba(255,255,255,0.06)',
                 }}
               >
                 <div
                   className="font-serif text-4xl font-bold mb-2"
                   style={{
-                    color: f.accent === 'ice' ? '#00D9FF' : '#C9A84C',
+                    color: f.accent === 'ice' ? '#F5C542' : '#C9A84C',
                   }}
                 >
                   {f.value}
@@ -103,7 +103,7 @@ export function BrandStory() {
                 <div
                   className="absolute top-0 right-0 w-16 h-16 pointer-events-none opacity-20"
                   style={{
-                    background: `radial-gradient(ellipse at top right, ${f.accent === 'ice' ? '#00D9FF' : '#C9A84C'}, transparent)`,
+                    background: `radial-gradient(ellipse at top right, ${f.accent === 'ice' ? '#F5C542' : '#C9A84C'}, transparent)`,
                   }}
                 />
               </motion.div>

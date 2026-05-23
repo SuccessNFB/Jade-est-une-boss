@@ -15,9 +15,9 @@ export function ProductFeatureTiles() {
       {TILES.slice(0, 4).map(({ icon: Icon, label, sub }) => (
         <div
           key={label}
-          className="flex items-start gap-3 p-3.5 rounded-xl bg-[#0A0B12] border border-white/[0.06]"
+          className="flex items-start gap-3 p-3.5 rounded-xl bg-[#141412] border border-white/[0.06]"
         >
-          <div className="w-8 h-8 rounded-lg bg-[#0E0F16] shadow-sm flex items-center justify-center flex-shrink-0">
+          <div className="w-8 h-8 rounded-lg bg-[#1A1A17] shadow-sm flex items-center justify-center flex-shrink-0">
             <Icon className="w-4 h-4 text-ice-500" />
           </div>
           <div>

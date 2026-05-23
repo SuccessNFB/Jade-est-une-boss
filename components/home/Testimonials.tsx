@@ -35,7 +35,7 @@ const REVIEWS = [
 
 export function Testimonials() {
   return (
-    <section className="section-pad" style={{ background: '#08090E' }}>
+    <section className="section-pad" style={{ background: '#0F0F0D' }}>
       <div className="section-container">
 
         {/* Header */}
@@ -45,7 +45,7 @@ export function Testimonials() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#00D9FF] mb-4">
+          <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#F5C542] mb-4">
             Avis clients
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-5">
@@ -72,7 +72,7 @@ export function Testimonials() {
               transition={{ delay: i * 0.09 }}
               className="flex flex-col gap-5 p-6 rounded-2xl transition-all duration-300"
               style={{
-                background: '#0E0F16',
+                background: '#1A1A17',
                 border: '1px solid rgba(255,255,255,0.06)',
               }}
               onMouseEnter={(e) => {
@@ -104,7 +104,7 @@ export function Testimonials() {
                   </span>
                 </div>
                 <p className="text-[11px] text-white/65">{r.city} · {r.date}</p>
-                <p className="text-[10px] text-[#00D9FF]/50 mt-1 font-medium">{r.product}</p>
+                <p className="text-[10px] text-[#F5C542]/50 mt-1 font-medium">{r.product}</p>
               </div>
             </motion.div>
           ))}

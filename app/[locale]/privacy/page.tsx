@@ -55,7 +55,7 @@ export default function PrivacyPage() {
         <div className="section-container max-w-3xl py-12">
 
           <div className="mb-10">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#00D9FF] mb-3">Légal</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#F5C542] mb-3">Légal</p>
             <h1 className="font-serif text-4xl font-bold text-charcoal mb-4">
               Politique de confidentialité
             </h1>
@@ -73,7 +73,7 @@ export default function PrivacyPage() {
 
           <div className="mt-12 p-6 rounded-2xl bg-gray-50 border border-gray-100 text-center">
             <p className="text-sm text-charcoal/60 mb-2">Une question sur vos données ?</p>
-            <a href="mailto:contact@icekey.shop" className="text-sm font-bold text-[#00D9FF] hover:underline">
+            <a href="mailto:contact@icekey.shop" className="text-sm font-bold text-[#F5C542] hover:underline">
               contact@icekey.shop
             </a>
           </div>

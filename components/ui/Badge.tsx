@@ -2,8 +2,8 @@ import { cn } from '@/lib/utils/cn'
 import type { PriceTier } from '@/types'
 
 const TIER_STYLES: Record<PriceTier, { bg: string; text: string; border: string }> = {
-  entry:   { bg: 'rgba(0,217,255,0.08)',    text: '#00D9FF',  border: 'rgba(0,217,255,0.2)' },
-  mid:     { bg: 'rgba(0,217,255,0.12)',    text: '#00D9FF',  border: 'rgba(0,217,255,0.25)' },
+  entry:   { bg: 'rgba(245,197,66,0.08)',    text: '#F5C542',  border: 'rgba(245,197,66,0.2)' },
+  mid:     { bg: 'rgba(245,197,66,0.12)',    text: '#F5C542',  border: 'rgba(245,197,66,0.25)' },
   premium: { bg: 'rgba(201,168,76,0.1)',    text: '#C9A84C',  border: 'rgba(201,168,76,0.2)' },
   luxury:  { bg: 'rgba(201,168,76,0.14)',   text: '#E8C878',  border: 'rgba(201,168,76,0.28)' },
   ultra:   { bg: 'rgba(201,168,76,0.18)',   text: '#E8C878',  border: 'rgba(232,200,120,0.35)' },
