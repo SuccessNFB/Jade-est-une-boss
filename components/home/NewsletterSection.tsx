@@ -2,8 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Diamond, ArrowRight, CheckCircle } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
+import { ArrowRight, CheckCircle } from 'lucide-react'
 
 export function NewsletterSection() {
   const [email,     setEmail]     = useState('')
@@ -20,26 +19,38 @@ export function NewsletterSection() {
   }
 
   return (
-    <section className="section-padding bg-gradient-to-br from-ice-50 via-white to-gold-300/10">
-      <div className="section-container max-w-2xl text-center">
-
+    <section
+      className="section-pad border-t"
+      style={{ background: '#0A0B12', borderColor: 'rgba(255,255,255,0.04)' }}
+    >
+      <div className="section-container max-w-xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <Diamond className="w-8 h-8 text-ice-400 mx-auto mb-6" fill="currentColor" />
+          {/* Diamond icon */}
+          <div
+            className="w-12 h-12 rounded-2xl mx-auto mb-7 flex items-center justify-center"
+            style={{ background: 'rgba(0,217,255,0.08)', color: '#00D9FF' }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2 L22 9 L18 22 H6 L2 9 Z" stroke="currentColor" strokeWidth="1.5" fill="none" />
+              <path d="M2 9 L22 9" stroke="currentColor" strokeWidth="1.5" />
+              <path d="M12 2 L6 9 L12 22 L18 9 Z" stroke="currentColor" strokeWidth="0.75" fill="none" opacity="0.5" />
+            </svg>
+          </div>
 
-          <p className="text-ice-500 text-xs tracking-[0.3em] uppercase font-semibold mb-3">
-            Restez informés
+          <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#00D9FF] mb-4">
+            Ice Age Newsletter
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-charcoal mb-3">
-            Soyez les premiers
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-3">
+            Sois dans le game
           </h2>
-          <p className="text-charcoal/55 mb-8 leading-relaxed">
-            Nouvelles collections, offres exclusives et avant-premières.
+          <p className="text-white/35 mb-8 leading-relaxed">
+            Drops en avant-première, offres exclusives.
             <br />
-            <strong className="text-charcoal/70">-10% sur votre première commande</strong> en vous inscrivant.
+            <span className="text-white/60 font-semibold">–10% sur ta 1ère commande.</span>
           </p>
 
           {submitted ? (
@@ -48,35 +59,50 @@ export function NewsletterSection() {
               animate={{ scale: 1, opacity: 1 }}
               className="flex flex-col items-center gap-3"
             >
-              <div className="w-14 h-14 rounded-full bg-ice-100 flex items-center justify-center">
-                <CheckCircle className="w-7 h-7 text-ice-500" />
+              <div
+                className="w-14 h-14 rounded-2xl flex items-center justify-center"
+                style={{ background: 'rgba(0,217,255,0.1)' }}
+              >
+                <CheckCircle style={{ width: 26, height: 26, color: '#00D9FF' }} />
               </div>
-              <p className="font-serif text-xl font-semibold text-charcoal">Merci !</p>
-              <p className="text-sm text-charcoal/55">
-                Votre code -10% arrive dans votre boîte mail.
+              <p className="font-serif text-xl font-semibold text-white">Bienvenue dans l'Ice Age</p>
+              <p className="text-sm text-white/40">
+                Ton code –10% arrive dans ta boîte mail.
               </p>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2.5 max-w-sm mx-auto">
               <input
                 type="email"
                 required
-                placeholder="votre@email.fr"
+                placeholder="ton@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 px-5 py-3.5 rounded-full border border-gray-200
-                           focus:border-ice-500 focus:outline-none text-sm text-charcoal
-                           placeholder:text-charcoal/30 bg-white shadow-sm"
+                className="flex-1 px-5 py-3.5 rounded-full text-sm text-white placeholder-white/25 focus:outline-none focus:ring-1 focus:ring-[#00D9FF]/40"
+                style={{
+                  background: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                }}
               />
-              <Button type="submit" variant="primary" size="md" loading={loading} className="flex-shrink-0">
-                S&apos;inscrire
-                <ArrowRight className="w-4 h-4" />
-              </Button>
+              <button
+                type="submit"
+                disabled={loading}
+                className="btn-ice flex-shrink-0 flex items-center gap-2 px-6 py-3.5 disabled:opacity-50"
+              >
+                {loading ? (
+                  <span className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
+                ) : (
+                  <>
+                    Rejoindre
+                    <ArrowRight style={{ width: 15, height: 15 }} />
+                  </>
+                )}
+              </button>
             </form>
           )}
 
-          <p className="text-xs text-charcoal/30 mt-4">
-            Pas de spam. Désabonnement en un clic. Données protégées (RGPD).
+          <p className="text-[11px] text-white/18 mt-5">
+            Pas de spam. Désabonnement en 1 clic. RGPD.
           </p>
         </motion.div>
       </div>

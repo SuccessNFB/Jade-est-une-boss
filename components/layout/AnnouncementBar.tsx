@@ -25,7 +25,7 @@ export function AnnouncementBar() {
   if (!visible) return null
 
   return (
-    <div className="relative bg-charcoal text-white text-xs py-2.5 px-10 text-center font-medium tracking-wide">
+    <div className="relative text-white text-xs py-2.5 px-10 text-center font-semibold tracking-widest" style={{ background: '#0A0B12', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
       <button
         onClick={() => setIndex((i) => (i - 1 + MESSAGES.length) % MESSAGES.length)}
         className="absolute left-3 top-1/2 -translate-y-1/2 text-white/50 hover:text-white"
@@ -40,7 +40,7 @@ export function AnnouncementBar() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -6 }}
           transition={{ duration: 0.3 }}
-          className="inline-block text-ice-300"
+          className="inline-block text-white/50"
         >
           {MESSAGES[index]}
         </motion.span>

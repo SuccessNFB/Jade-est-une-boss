@@ -4,34 +4,37 @@ import { motion } from 'framer-motion'
 import { Shield, RefreshCw, Truck, Award, Gem, Zap } from 'lucide-react'
 
 const BADGES = [
-  { icon: Award,     title: 'Certifié GRA',         desc: 'Chaque pierre livrée avec certificat d\'authenticité numéroté.' },
-  { icon: Gem,       title: 'VVS · Couleur D',       desc: 'Clarté VVS, couleur D — le top de la gamme. Passe tous les tests.' },
-  { icon: Zap,       title: 'Livraison 4-7 jours',   desc: 'Expédition express depuis notre partenaire NUOYA. Suivi inclus.' },
-  { icon: Truck,     title: 'Livraison offerte',      desc: 'Gratuite dès €100 d\'achat en France, Belgique, Suisse.' },
-  { icon: RefreshCw, title: 'Retour 30 jours',        desc: 'Satisfait ou remboursé, sans justification. Retour gratuit.' },
-  { icon: Shield,    title: 'Paiement sécurisé',      desc: 'Stripe 3D Secure. CB, Apple Pay, PayPal, Klarna.' },
+  { icon: Award,     title: 'Certifié GRA',       desc: 'Chaque pierre livrée avec certificat numéroté.' },
+  { icon: Gem,       title: 'VVS · Couleur D',     desc: 'Le top de la gamme. Passe tous les diamond tests.' },
+  { icon: Zap,       title: 'Livraison 4–7 jours', desc: 'Expédition express depuis notre partenaire. Suivi inclus.' },
+  { icon: Truck,     title: 'Livraison offerte',   desc: 'Gratuite dès €100 en France, Belgique, Suisse.' },
+  { icon: RefreshCw, title: 'Retour 30 jours',     desc: 'Satisfait ou remboursé, sans justification.' },
+  { icon: Shield,    title: 'Paiement sécurisé',   desc: 'Stripe 3D Secure. CB, Apple Pay, PayPal, Klarna.' },
 ]
 
 export function TrustBadges() {
   return (
-    <section className="section-padding bg-white">
+    <section
+      className="section-pad border-t"
+      style={{ background: '#0A0B12', borderColor: 'rgba(255,255,255,0.04)' }}
+    >
       <div className="section-container">
 
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-14"
         >
-          <p className="text-ice-500 text-xs tracking-[0.3em] uppercase font-semibold mb-3">
+          <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#00D9FF] mb-4">
             Nos engagements
           </p>
-          <h2 className="font-serif text-3xl font-bold text-charcoal">
+          <h2 className="font-serif text-3xl font-bold text-white">
             Zéro compromis
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
           {BADGES.map((b, i) => {
             const Icon = b.icon
             return (
@@ -40,15 +43,30 @@ export function TrustBadges() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="flex flex-col items-center text-center gap-3 p-4 rounded-2xl hover:bg-gray-50 transition-colors"
+                transition={{ delay: i * 0.07 }}
+                className="flex flex-col items-center text-center gap-4 p-5 rounded-2xl transition-all duration-300 group cursor-default"
+                style={{
+                  background: 'rgba(255,255,255,0.02)',
+                  border: '1px solid rgba(255,255,255,0.05)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(0,217,255,0.04)'
+                  e.currentTarget.style.borderColor = 'rgba(0,217,255,0.1)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.02)'
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'
+                }}
               >
-                <div className="w-12 h-12 rounded-2xl bg-white shadow-product flex items-center justify-center">
-                  <Icon className="w-5 h-5 text-ice-500" />
+                <div
+                  className="w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300"
+                  style={{ background: 'rgba(0,217,255,0.08)' }}
+                >
+                  <Icon style={{ width: 18, height: 18, color: '#00D9FF' }} />
                 </div>
                 <div>
-                  <p className="font-semibold text-sm text-charcoal leading-tight">{b.title}</p>
-                  <p className="text-xs text-charcoal/50 mt-1 leading-relaxed">{b.desc}</p>
+                  <p className="font-semibold text-sm text-white leading-tight mb-1.5">{b.title}</p>
+                  <p className="text-xs text-white/30 leading-relaxed">{b.desc}</p>
                 </div>
               </motion.div>
             )

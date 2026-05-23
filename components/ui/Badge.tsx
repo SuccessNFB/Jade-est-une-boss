@@ -1,12 +1,12 @@
 import { cn } from '@/lib/utils/cn'
 import type { PriceTier } from '@/types'
 
-const TIER_STYLES: Record<PriceTier, string> = {
-  entry:   'bg-ice-100 text-ice-700',
-  mid:     'bg-ice-500/10 text-ice-600 border border-ice-500/30',
-  premium: 'bg-gold-300/20 text-amber-700',
-  luxury:  'bg-gold-300/30 text-amber-800 border border-gold-300/50',
-  ultra:   'bg-gradient-to-r from-gold-300/30 to-gold-400/30 text-amber-900 border border-gold-300',
+const TIER_STYLES: Record<PriceTier, { bg: string; text: string; border: string }> = {
+  entry:   { bg: 'rgba(0,217,255,0.08)',    text: '#00D9FF',  border: 'rgba(0,217,255,0.2)' },
+  mid:     { bg: 'rgba(0,217,255,0.12)',    text: '#00D9FF',  border: 'rgba(0,217,255,0.25)' },
+  premium: { bg: 'rgba(201,168,76,0.1)',    text: '#C9A84C',  border: 'rgba(201,168,76,0.2)' },
+  luxury:  { bg: 'rgba(201,168,76,0.14)',   text: '#E8C878',  border: 'rgba(201,168,76,0.28)' },
+  ultra:   { bg: 'rgba(201,168,76,0.18)',   text: '#E8C878',  border: 'rgba(232,200,120,0.35)' },
 }
 
 const TIER_LABELS: Record<PriceTier, string> = {
@@ -23,8 +23,15 @@ interface BadgeProps {
 }
 
 export function TierBadge({ tier, className }: BadgeProps) {
+  const s = TIER_STYLES[tier]
   return (
-    <span className={cn('badge-tier', TIER_STYLES[tier], className)}>
+    <span
+      className={cn(
+        'inline-flex items-center px-2.5 py-0.5 rounded-md text-[10px] font-black tracking-widest uppercase',
+        className
+      )}
+      style={{ background: s.bg, color: s.text, border: `1px solid ${s.border}` }}
+    >
       {TIER_LABELS[tier]}
     </span>
   )
@@ -37,7 +44,17 @@ interface TagBadgeProps {
 
 export function TagBadge({ children, className }: TagBadgeProps) {
   return (
-    <span className={cn('badge-tier bg-gray-100 text-gray-600', className)}>
+    <span
+      className={cn(
+        'inline-flex items-center px-2.5 py-0.5 rounded-md text-[10px] font-semibold tracking-wide',
+        className
+      )}
+      style={{
+        background: 'rgba(255,255,255,0.06)',
+        color: 'rgba(255,255,255,0.5)',
+        border: '1px solid rgba(255,255,255,0.08)',
+      }}
+    >
       {children}
     </span>
   )

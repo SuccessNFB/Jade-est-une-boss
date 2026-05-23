@@ -15,13 +15,13 @@ import toast from 'react-hot-toast'
 function EmptyCart() {
   return (
     <div className="text-center py-20">
-      <div className="w-20 h-20 rounded-3xl bg-gray-50 flex items-center justify-center mx-auto mb-5">
-        <ShoppingBag className="w-9 h-9 text-charcoal/20" />
+      <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}>
+        <ShoppingBag className="w-9 h-9 text-white/20" />
       </div>
-      <h2 className="font-serif text-2xl font-bold text-charcoal mb-2">Ton panier est vide</h2>
-      <p className="text-charcoal/50 text-sm mb-8">Start building your collection.</p>
+      <h2 className="font-serif text-2xl font-bold text-white mb-2">Ton panier est vide</h2>
+      <p className="text-white/35 text-sm mb-8">Start building your collection.</p>
       <Link href="/shop">
-        <button className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#00D9FF] text-charcoal font-bold text-sm hover:bg-[#00EEFF] hover:shadow-[0_0_20px_rgba(0,217,255,0.4)] transition-all">
+        <button className="btn-ice inline-flex items-center gap-2">
           <ShoppingBag className="w-4 h-4" />
           Shop Now
         </button>
@@ -132,8 +132,8 @@ export function CartContent() {
         <div className="sticky top-24 space-y-4">
 
           {/* Summary card */}
-          <div className="rounded-2xl border border-gray-100 p-6 space-y-4 bg-white shadow-sm">
-            <h3 className="font-serif text-lg font-bold text-charcoal">Récapitulatif</h3>
+          <div className="rounded-2xl p-6 space-y-4" style={{ background: '#0E0F16', border: '1px solid rgba(255,255,255,0.08)' }}>
+            <h3 className="font-serif text-lg font-bold text-white">Récapitulatif</h3>
 
             {/* Welcome discount banner */}
             {isFirstOrder && (
@@ -148,7 +148,7 @@ export function CartContent() {
 
             <div className="space-y-2.5 text-sm">
               <div className="flex justify-between">
-                <span className="text-charcoal/60">Sous-total</span>
+                <span className="text-white/50">Sous-total</span>
                 <span className="font-semibold">{formatPrice(subtotal)}</span>
               </div>
               {isFirstOrder && (
@@ -164,14 +164,14 @@ export function CartContent() {
                 </div>
               )}
               <div className="flex justify-between">
-                <span className="text-charcoal/60">Livraison</span>
+                <span className="text-white/50">Livraison</span>
                 <span className={shipping === 0 ? 'text-green-600 font-semibold' : 'font-semibold'}>
                   {shipping === 0 ? 'Gratuite ✓' : formatPrice(shipping)}
                 </span>
               </div>
             </div>
 
-            <div className="flex justify-between pt-4 border-t border-gray-100 font-bold text-charcoal">
+            <div className="flex justify-between pt-4 border-t border-white/[0.06] font-bold text-white">
               <span>Total</span>
               <span className="font-serif text-xl text-[#00D9FF]">{formatPrice(total)}</span>
             </div>
@@ -179,31 +179,32 @@ export function CartContent() {
             {/* Promo code */}
             {!promoApplied && (
               <div className="flex gap-2">
-                <div className="flex-1 flex items-center gap-2 px-3 py-2 rounded-xl border border-gray-200 text-sm">
-                  <Tag className="w-3.5 h-3.5 text-charcoal/30" />
+                <div className="flex-1 flex items-center gap-2 px-3 py-2 rounded-xl text-sm" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                  <Tag className="w-3.5 h-3.5 text-white/25" />
                   <input
                     type="text"
                     placeholder="Code promo"
                     value={promoCode}
                     onChange={(e) => setPromoCode(e.target.value)}
-                    className="flex-1 bg-transparent outline-none text-charcoal placeholder-charcoal/30 text-xs"
+                    className="flex-1 bg-transparent outline-none text-white placeholder-white/25 text-xs"
                   />
                 </div>
                 <button
                   onClick={handlePromoApply}
-                  className="px-3 py-2 rounded-xl bg-charcoal text-white text-xs font-semibold hover:bg-charcoal/80 transition-colors whitespace-nowrap"
+                  className="px-3 py-2 rounded-xl text-[#08090E] text-xs font-bold transition-colors whitespace-nowrap"
+                  style={{ background: '#00D9FF' }}
                 >
                   Appliquer
                 </button>
               </div>
             )}
 
-            {/* Auth nudge — shown when not logged in */}
+            {/* Auth nudge */}
             {!user && (
-              <div className="rounded-xl bg-charcoal/5 border border-charcoal/10 p-4 text-center">
-                <User className="w-5 h-5 text-charcoal/30 mx-auto mb-1.5" />
-                <p className="text-xs font-semibold text-charcoal mb-0.5">Rejoins pour commander</p>
-                <p className="text-[10px] text-charcoal/50 mb-3">Crée ton compte — c&apos;est gratuit — et sécurise -5% sur cette commande.</p>
+              <div className="rounded-xl p-4 text-center" style={{ background: 'rgba(0,217,255,0.05)', border: '1px solid rgba(0,217,255,0.12)' }}>
+                <User className="w-5 h-5 text-[#00D9FF]/40 mx-auto mb-1.5" />
+                <p className="text-xs font-semibold text-white mb-0.5">Rejoins pour commander</p>
+                <p className="text-[10px] text-white/40 mb-3">Crée ton compte gratuitement et sécurise -5% sur cette commande.</p>
                 <Link
                   href="/auth/signup?redirect=/cart"
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00D9FF] hover:underline"
@@ -231,7 +232,7 @@ export function CartContent() {
 
           {/* Free shipping nudge */}
           {shipping > 0 && (
-            <div className="rounded-xl bg-[#E0F7FF] border border-[#00D9FF]/20 p-4 text-xs text-charcoal/70">
+            <div className="rounded-xl p-4 text-xs text-white/50" style={{ background: 'rgba(0,217,255,0.06)', border: '1px solid rgba(0,217,255,0.12)' }}>
               Plus que <strong className="text-[#00D9FF]">{formatPrice(100 - subtotal)}</strong> pour la livraison offerte !
             </div>
           )}
