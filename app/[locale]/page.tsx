@@ -3,6 +3,7 @@ import { AnnouncementBar }   from '@/components/layout/AnnouncementBar'
 import { Header }            from '@/components/layout/Header'
 import { Footer }            from '@/components/layout/Footer'
 import { HeroSection }       from '@/components/home/HeroSection'
+import { PaymentBrands }     from '@/components/home/PaymentBrands'
 import { MarqueeBanner }     from '@/components/home/MarqueeBanner'
 import { FeaturedProducts }  from '@/components/home/FeaturedProducts'
 import { BrandStory }        from '@/components/home/BrandStory'
@@ -24,10 +25,12 @@ export default function HomePage() {
       <AnnouncementBar />
       <Header />
       <main>
-        {/* 1 — Hero : chaîne rotative, tagline ICE BLUE, badges VVS/Ethical/30j */}
         <HeroSection />
 
-        {/* 2 — Marquee : Cold is the new gold · VVS · Livraison offerte… */}
+        {/* Logos paiement animés */}
+        <PaymentBrands />
+
+        {/* Marquee */}
         <MarqueeBanner />
 
         {/* 3 — Bestsellers avec onglets Chaînes / Pendentifs / Bagues / Montres */}

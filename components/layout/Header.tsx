@@ -28,9 +28,9 @@ const MEGA: Record<string, {
       {
         title: 'Taille',
         links: [
-          { label: '8mm — Starter',    href: '/shop?cat=chain' },
-          { label: '12mm — Statement', href: '/shop?cat=chain' },
-          { label: '18mm — Premium',   href: '/shop?cat=chain' },
+          { label: '8mm · Starter',    href: '/shop?cat=chain' },
+          { label: '12mm · Statement', href: '/shop?cat=chain' },
+          { label: '18mm · Premium',   href: '/shop?cat=chain' },
         ],
       },
     ],

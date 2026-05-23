@@ -80,7 +80,7 @@ function HeroProductCard() {
               Chaîne Cuban Link
             </p>
             <p className="text-white text-xs font-semibold leading-snug mb-2.5">
-              Cuban 12mm — Or Gold VVS
+              Cuban 12mm · Or Gold VVS
             </p>
             <div className="flex items-center justify-between mb-3">
               <span
@@ -197,7 +197,7 @@ export function HeroSection() {
                 className="text-[10px] font-semibold tracking-widest uppercase"
                 style={{ color: 'rgba(255,255,255,0.55)' }}
               >
-                Découvrez l'univers ICEKEY — Moissanite VVS · Certifié GRA
+                Découvrez l'univers ICEKEY · Moissanite VVS · Certifié GRA
               </span>
             </motion.div>
 

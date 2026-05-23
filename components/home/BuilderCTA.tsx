@@ -49,8 +49,11 @@ export function BuilderCTA() {
 
             {/* Left — copy */}
             <div>
-              <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#D4AF37] mb-5">
-                Custom Pendants
+              <p
+                className="text-[10px] font-bold tracking-[0.3em] uppercase mb-5"
+                style={{ color: '#D4AF37', fontFamily: 'var(--font-space-mono), monospace' }}
+              >
+                Pendentifs sur mesure
               </p>
               <h2
                 className="font-serif font-bold text-white leading-tight mb-5"
@@ -69,8 +72,8 @@ export function BuilderCTA() {
                 </span>
               </h2>
               <p className="text-white/60 leading-relaxed mb-8 max-w-sm text-base">
-                Pendentif lettre, logo, prénom, silhouette — tout est possible.
-                Made-to-order en 7–10 jours ouvrés. Prix calculé en temps réel.
+                Pendentif lettre, logo, prénom, silhouette. Tout est possible.
+                Fabriqué en 7 à 10 jours ouvrés. Prix calculé en temps réel.
               </p>
               <Link href="/builder">
                 <motion.span

@@ -88,7 +88,7 @@ export function FeaturedProducts() {
           {/* Description + filter tabs */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <p className="text-sm max-w-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>
-              Pendentifs, chaînes, bagues, bracelets — toutes nos pièces
+              Pendentifs, chaînes, bagues, bracelets. Toutes nos pièces
               moissanite VVS certifiées GRA. Portez-vous avec éclat.
             </p>
 

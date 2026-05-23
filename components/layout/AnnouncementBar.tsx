@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const MESSAGES = [
   '✦ Livré depuis la France en 4–7 jours · pas depuis la Chine',
-  '✦ Certifié GRA · Diamond test ✓ — prouvé à la réception',
+  '✦ Certifié GRA · Diamond test ✓ · prouvé à la réception',
   '✦ Satisfait ou remboursé 30 jours · zéro question posée',
   '✦ Paiement sécurisé Stripe · livraison offerte dès €100',
 ]
