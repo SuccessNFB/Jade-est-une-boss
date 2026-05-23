@@ -22,7 +22,7 @@ export function ProductFeatureTiles() {
           </div>
           <div>
             <p className="text-xs font-semibold text-white/70 leading-tight">{label}</p>
-            <p className="text-[11px] text-white/40 mt-0.5 leading-tight">{sub}</p>
+            <p className="text-[11px] text-white/60 mt-0.5 leading-tight">{sub}</p>
           </div>
         </div>
       ))}

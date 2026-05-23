@@ -108,7 +108,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
                 <h1 className="font-serif text-3xl font-bold text-white mb-2">
                   Rejoignez la famille ❄️
                 </h1>
-                <p className="text-white/50 text-sm leading-relaxed">
+                <p className="text-white/70 text-sm leading-relaxed">
                   Créez votre compte pour passer commande<br />
                   et accéder aux offres exclusives membres.
                 </p>
@@ -126,7 +126,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
                 <h1 className="font-serif text-3xl font-bold text-white mb-2">
                   Bon retour 👋
                 </h1>
-                <p className="text-white/50 text-sm">
+                <p className="text-white/70 text-sm">
                   Connectez-vous pour continuer.
                 </p>
               </>
@@ -137,7 +137,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
           <form onSubmit={handleSubmit} className="space-y-4">
             {isSignup && (
               <div>
-                <label className="block text-xs font-semibold text-white/50 mb-1.5 uppercase tracking-wider">
+                <label className="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wider">
                   Prénom
                 </label>
                 <input
@@ -152,7 +152,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
             )}
 
             <div>
-              <label className="block text-xs font-semibold text-white/50 mb-1.5 uppercase tracking-wider">
+              <label className="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wider">
                 Email
               </label>
               <input
@@ -167,7 +167,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-white/50 mb-1.5 uppercase tracking-wider">
+              <label className="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wider">
                 Mot de passe
               </label>
               <div className="relative">
@@ -184,14 +184,14 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
                 <button
                   type="button"
                   onClick={() => setShowPwd(!showPwd)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60 transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-white/70 hover:text-white/60 transition-colors"
                 >
                   {showPwd ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
               </div>
               {!isSignup && (
                 <div className="flex justify-end mt-1.5">
-                  <Link href="/auth/reset-password" className="text-xs text-white/40 hover:text-[#00D9FF] transition-colors">
+                  <Link href="/auth/reset-password" className="text-xs text-white/60 hover:text-[#00D9FF] transition-colors">
                     Mot de passe oublié ?
                   </Link>
                 </div>
@@ -215,7 +215,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
           </form>
 
           {/* Switch mode */}
-          <p className="text-center text-sm text-white/40 mt-6">
+          <p className="text-center text-sm text-white/60 mt-6">
             {isSignup ? (
               <>
                 Déjà membre ?{' '}
@@ -235,11 +235,11 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
 
           {/* Legal */}
           {isSignup && (
-            <p className="text-center text-[10px] text-white/20 mt-4 leading-relaxed">
+            <p className="text-center text-[10px] text-white/60 mt-4 leading-relaxed">
               En créant un compte, vous acceptez nos{' '}
-              <Link href="/terms" className="underline hover:text-white/40">CGV</Link>{' '}
+              <Link href="/terms" className="underline hover:text-white/60">CGV</Link>{' '}
               et notre{' '}
-              <Link href="/privacy" className="underline hover:text-white/40">politique de confidentialité</Link>.
+              <Link href="/privacy" className="underline hover:text-white/60">politique de confidentialité</Link>.
             </p>
           )}
         </div>

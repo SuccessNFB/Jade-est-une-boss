@@ -96,7 +96,7 @@ export function PriceTiers() {
                   <h3 className="font-serif text-xl font-bold text-white mb-2">{tier.label}</h3>
 
                   {/* Description */}
-                  <p className="text-white/35 text-xs leading-relaxed flex-1 mb-6">
+                  <p className="text-white/55 text-xs leading-relaxed flex-1 mb-6">
                     {tier.description}
                   </p>
 

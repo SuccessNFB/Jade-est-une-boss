@@ -68,7 +68,7 @@ export function BuilderCTA() {
                   En moissanite.
                 </span>
               </h2>
-              <p className="text-white/40 leading-relaxed mb-8 max-w-sm text-base">
+              <p className="text-white/60 leading-relaxed mb-8 max-w-sm text-base">
                 Pendentif lettre, logo, prénom, silhouette — tout est possible.
                 Made-to-order en 7–10 jours ouvrés. Prix calculé en temps réel.
               </p>

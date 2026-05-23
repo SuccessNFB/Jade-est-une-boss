@@ -16,10 +16,10 @@ function EmptyCart() {
   return (
     <div className="text-center py-20">
       <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}>
-        <ShoppingBag className="w-9 h-9 text-white/20" />
+        <ShoppingBag className="w-9 h-9 text-white/60" />
       </div>
       <h2 className="font-serif text-2xl font-bold text-white mb-2">Ton panier est vide</h2>
-      <p className="text-white/35 text-sm mb-8">Start building your collection.</p>
+      <p className="text-white/55 text-sm mb-8">Start building your collection.</p>
       <Link href="/shop">
         <button className="btn-ice inline-flex items-center gap-2">
           <ShoppingBag className="w-4 h-4" />
@@ -148,7 +148,7 @@ export function CartContent() {
 
             <div className="space-y-2.5 text-sm">
               <div className="flex justify-between">
-                <span className="text-white/50">Sous-total</span>
+                <span className="text-white/70">Sous-total</span>
                 <span className="font-semibold">{formatPrice(subtotal)}</span>
               </div>
               {isFirstOrder && (
@@ -164,7 +164,7 @@ export function CartContent() {
                 </div>
               )}
               <div className="flex justify-between">
-                <span className="text-white/50">Livraison</span>
+                <span className="text-white/70">Livraison</span>
                 <span className={shipping === 0 ? 'text-green-600 font-semibold' : 'font-semibold'}>
                   {shipping === 0 ? 'Gratuite ✓' : formatPrice(shipping)}
                 </span>
@@ -180,7 +180,7 @@ export function CartContent() {
             {!promoApplied && (
               <div className="flex gap-2">
                 <div className="flex-1 flex items-center gap-2 px-3 py-2 rounded-xl text-sm" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                  <Tag className="w-3.5 h-3.5 text-white/25" />
+                  <Tag className="w-3.5 h-3.5 text-white/65" />
                   <input
                     type="text"
                     placeholder="Code promo"
@@ -204,7 +204,7 @@ export function CartContent() {
               <div className="rounded-xl p-4 text-center" style={{ background: 'rgba(0,217,255,0.05)', border: '1px solid rgba(0,217,255,0.12)' }}>
                 <User className="w-5 h-5 text-[#00D9FF]/40 mx-auto mb-1.5" />
                 <p className="text-xs font-semibold text-white mb-0.5">Rejoins pour commander</p>
-                <p className="text-[10px] text-white/40 mb-3">Crée ton compte gratuitement et sécurise -5% sur cette commande.</p>
+                <p className="text-[10px] text-white/60 mb-3">Crée ton compte gratuitement et sécurise -5% sur cette commande.</p>
                 <Link
                   href="/auth/signup?redirect=/cart"
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00D9FF] hover:underline"
@@ -232,7 +232,7 @@ export function CartContent() {
 
           {/* Free shipping nudge */}
           {shipping > 0 && (
-            <div className="rounded-xl p-4 text-xs text-white/50" style={{ background: 'rgba(0,217,255,0.06)', border: '1px solid rgba(0,217,255,0.12)' }}>
+            <div className="rounded-xl p-4 text-xs text-white/70" style={{ background: 'rgba(0,217,255,0.06)', border: '1px solid rgba(0,217,255,0.12)' }}>
               Plus que <strong className="text-[#00D9FF]">{formatPrice(100 - subtotal)}</strong> pour la livraison offerte !
             </div>
           )}

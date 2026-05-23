@@ -49,7 +49,7 @@ export function RelatedProducts({ currentId, category, priceTier }: Props) {
         </div>
         <Link
           href={`/shop?cat=${category}`}
-          className="text-sm font-medium text-white/30 hover:text-[#00D9FF] transition-colors"
+          className="text-sm font-medium text-white/70 hover:text-[#00D9FF] transition-colors"
         >
           Tout voir →
         </Link>
@@ -113,7 +113,7 @@ export function RelatedProducts({ currentId, category, priceTier }: Props) {
       </div>
 
       {/* Vous apprécierez également label */}
-      <p className="text-center text-xs text-white/20 mt-6 tracking-wide">
+      <p className="text-center text-xs text-white/60 mt-6 tracking-wide">
         Vous apprécierez également — sélection basée sur votre panier
       </p>
     </section>

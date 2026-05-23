@@ -32,7 +32,7 @@ export function LocaleSwitcher() {
             'px-2.5 py-1 rounded-full transition-all duration-200 uppercase',
             locale === l
               ? 'bg-[#00D9FF] text-white/70 shadow-sm'
-              : 'text-white/50 hover:text-white'
+              : 'text-white/70 hover:text-white'
           )}
         >
           {l}

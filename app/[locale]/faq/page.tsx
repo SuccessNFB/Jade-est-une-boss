@@ -113,7 +113,7 @@ export default function FAQPage() {
             <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white/70 mb-4">
               FAQ — On répond à tout.
             </h1>
-            <p className="text-white/40 max-w-xl mx-auto text-lg">
+            <p className="text-white/60 max-w-xl mx-auto text-lg">
               Moissanite, livraison, entretien, retours — on n&apos;a rien à cacher.
               Your peace of mind, guaranteed.
             </p>
@@ -148,7 +148,7 @@ export default function FAQPage() {
             <h2 className="font-serif text-3xl font-bold text-white/70 mb-3">
               Toujours une question ?
             </h2>
-            <p className="text-white/45 mb-8 max-w-md mx-auto">
+            <p className="text-white/65 mb-8 max-w-md mx-auto">
               Notre équipe répond sous 24h, du lundi au vendredi. On est là.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

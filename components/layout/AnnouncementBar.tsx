@@ -28,7 +28,7 @@ export function AnnouncementBar() {
     <div className="relative text-white text-xs py-2.5 px-10 text-center font-semibold tracking-widest" style={{ background: '#0A0B12', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
       <button
         onClick={() => setIndex((i) => (i - 1 + MESSAGES.length) % MESSAGES.length)}
-        className="absolute left-3 top-1/2 -translate-y-1/2 text-white/50 hover:text-white"
+        className="absolute left-3 top-1/2 -translate-y-1/2 text-white/70 hover:text-white"
       >
         <ChevronLeft className="w-4 h-4" />
       </button>
@@ -40,7 +40,7 @@ export function AnnouncementBar() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -6 }}
           transition={{ duration: 0.3 }}
-          className="inline-block text-white/50"
+          className="inline-block text-white/70"
         >
           {MESSAGES[index]}
         </motion.span>
@@ -48,13 +48,13 @@ export function AnnouncementBar() {
 
       <button
         onClick={() => setIndex((i) => (i + 1) % MESSAGES.length)}
-        className="absolute right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white"
+        className="absolute right-8 top-1/2 -translate-y-1/2 text-white/70 hover:text-white"
       >
         <ChevronRight className="w-4 h-4" />
       </button>
       <button
         onClick={() => setVisible(false)}
-        className="absolute right-2 top-1/2 -translate-y-1/2 text-white/30 hover:text-white"
+        className="absolute right-2 top-1/2 -translate-y-1/2 text-white/70 hover:text-white"
       >
         <X className="w-3.5 h-3.5" />
       </button>

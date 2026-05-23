@@ -50,7 +50,7 @@ export function Footer() {
               <h3 className="font-serif text-xl font-bold text-white">
                 Sois dans le game 🧊
               </h3>
-              <p className="text-sm text-white/30 mt-1">
+              <p className="text-sm text-white/70 mt-1">
                 Drops en avant-première +{' '}
                 <span className="text-white/55 font-semibold">–10%</span> sur ta 1ère commande
               </p>
@@ -89,7 +89,7 @@ export function Footer() {
             <div className="mb-5">
               <IcekeyLogo variant="full" height={56} color="#ffffff" />
             </div>
-            <p className="text-sm leading-relaxed text-white/30 max-w-xs mb-4">
+            <p className="text-sm leading-relaxed text-white/70 max-w-xs mb-4">
               Moissanite VVS certifié GRA. Diamond test validé. Ships depuis la France en 4–7 jours.
             </p>
             <p className="text-[10px] font-black tracking-[0.35em] text-[#00D9FF] mb-5 uppercase">
@@ -145,7 +145,7 @@ export function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-sm text-white/35 hover:text-white transition-colors duration-150"
+                    className="text-sm text-white/55 hover:text-white transition-colors duration-150"
                   >
                     {label}
                   </Link>
@@ -172,7 +172,7 @@ export function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-sm text-white/35 hover:text-white transition-colors duration-150"
+                    className="text-sm text-white/55 hover:text-white transition-colors duration-150"
                   >
                     {label}
                   </Link>
@@ -198,7 +198,7 @@ export function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-sm text-white/35 hover:text-white transition-colors duration-150"
+                    className="text-sm text-white/55 hover:text-white transition-colors duration-150"
                   >
                     {label}
                   </Link>
@@ -230,7 +230,7 @@ export function Footer() {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/20">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/60">
             <span>© {new Date().getFullYear()} ICEKEY. Tous droits réservés.</span>
             <div className="flex items-center gap-5">
               <Link href="/privacy" className="hover:text-[#00D9FF] transition-colors">Confidentialité</Link>

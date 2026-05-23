@@ -118,7 +118,7 @@ export function PendantBuilder() {
           className="inline-flex items-baseline gap-2"
         >
           <span className="font-serif text-5xl font-bold text-charcoal">{formatPrice(totalPrice)}</span>
-          <span className="text-sm text-white/30">prix estimé</span>
+          <span className="text-sm text-white/70">prix estimé</span>
         </motion.div>
       </div>
 
@@ -143,7 +143,7 @@ export function PendantBuilder() {
                     className={`p-3 rounded-xl border-2 text-xs font-medium transition-all ${
                       shape === s.value
                         ? 'border-ice-500 bg-ice-50 text-ice-600'
-                        : 'border-white/[0.1] text-white/45 hover:border-ice-300'
+                        : 'border-white/[0.1] text-white/65 hover:border-ice-300'
                     }`}
                   >
                     <Diamond className="w-5 h-5 mx-auto mb-1 text-ice-400" fill="currentColor" />
@@ -168,7 +168,7 @@ export function PendantBuilder() {
                     }`}
                   >
                     <div className="font-bold text-white/70 text-sm">{s.label}</div>
-                    <div className="text-xs text-white/40">{s.carat}</div>
+                    <div className="text-xs text-white/60">{s.carat}</div>
                     {s.surcharge > 0 && (
                       <div className="text-xs text-ice-500 font-semibold mt-1">+{formatPrice(s.surcharge)}</div>
                     )}
@@ -197,7 +197,7 @@ export function PendantBuilder() {
                     />
                     <div className="text-sm">
                       <span className="font-bold text-charcoal">{c.value}</span>
-                      <span className="text-white/40 ml-1">{c.label.split('–')[1]}</span>
+                      <span className="text-white/60 ml-1">{c.label.split('–')[1]}</span>
                     </div>
                   </button>
                 ))}
@@ -232,7 +232,7 @@ export function PendantBuilder() {
                   <div className="font-semibold text-charcoal">{val.label}</div>
                   {val.surcharge > 0
                     ? <div className="text-sm text-ice-500 font-medium mt-1">+{formatPrice(val.surcharge)}</div>
-                    : <div className="text-sm text-white/30 mt-1">Inclus</div>
+                    : <div className="text-sm text-white/70 mt-1">Inclus</div>
                   }
                 </button>
               ))}
@@ -250,7 +250,7 @@ export function PendantBuilder() {
                 onChange={(e) => setChainLength(Number(e.target.value))}
                 className="w-full accent-ice-500"
               />
-              <div className="flex justify-between text-xs text-white/30 mt-1">
+              <div className="flex justify-between text-xs text-white/70 mt-1">
                 <span>40 cm</span><span>55 cm</span><span>70 cm</span>
               </div>
             </div>
@@ -266,7 +266,7 @@ export function PendantBuilder() {
             className="max-w-lg mx-auto"
           >
             <h3 className="font-serif text-lg font-semibold text-white/70 mb-2">Gravure personnalisée</h3>
-            <p className="text-sm text-white/40 mb-6">Optionnel — jusqu&apos;à 20 caractères au revers de la pièce.</p>
+            <p className="text-sm text-white/60 mb-6">Optionnel — jusqu&apos;à 20 caractères au revers de la pièce.</p>
             <div className="space-y-3">
               <input
                 type="text"
@@ -274,14 +274,14 @@ export function PendantBuilder() {
                 placeholder="Ex : Pour toujours · 14.02 · JM"
                 value={engraving}
                 onChange={(e) => setEngraving(e.target.value)}
-                className="w-full px-5 py-4 rounded-xl border border-white/[0.1] focus:border-ice-500 focus:outline-none text-white/70 placeholder:text-white/20 font-serif text-sm"
+                className="w-full px-5 py-4 rounded-xl border border-white/[0.1] focus:border-ice-500 focus:outline-none text-white/70 placeholder:text-white/60 font-serif text-sm"
               />
-              <div className="text-right text-xs text-white/30">{engraving.length}/20</div>
+              <div className="text-right text-xs text-white/70">{engraving.length}/20</div>
             </div>
             {engraving && (
               <div className="mt-6 p-5 rounded-2xl bg-charcoal text-center">
                 <p className="font-serif text-white text-lg italic tracking-widest">"{engraving}"</p>
-                <p className="text-white/40 text-xs mt-2">Aperçu gravure</p>
+                <p className="text-white/60 text-xs mt-2">Aperçu gravure</p>
               </div>
             )}
           </motion.div>
@@ -305,7 +305,7 @@ export function PendantBuilder() {
                 ['Gravure',   engraving || '—'],
               ].map(([label, value]) => (
                 <div key={label} className="flex justify-between items-center py-3 border-b border-white/[0.06]">
-                  <span className="text-sm text-white/40">{label}</span>
+                  <span className="text-sm text-white/60">{label}</span>
                   <span className="text-sm font-semibold text-charcoal">{value}</span>
                 </div>
               ))}

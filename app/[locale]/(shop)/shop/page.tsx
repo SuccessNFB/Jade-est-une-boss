@@ -43,9 +43,9 @@ export default async function ShopPage({ searchParams }: ShopPageProps) {
               {catLabel ?? 'Bijoux Moissanite'}
             </h1>
             {params.q && (
-              <p className="text-white/35 text-sm mt-2">Résultats pour &ldquo;{params.q}&rdquo;</p>
+              <p className="text-white/55 text-sm mt-2">Résultats pour &ldquo;{params.q}&rdquo;</p>
             )}
-            <p className="text-white/20 text-xs mt-3">
+            <p className="text-white/60 text-xs mt-3">
               Accueil{catLabel ? ` › ${catLabel}` : ' › Collection'}
             </p>
           </div>

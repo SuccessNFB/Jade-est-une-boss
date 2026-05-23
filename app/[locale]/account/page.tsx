@@ -97,12 +97,12 @@ export default function AccountPage() {
                 <h1 className="font-serif text-2xl font-bold text-charcoal">
                   {firstName ? `Salut ${firstName} 👋` : 'Mon compte'}
                 </h1>
-                <p className="text-sm text-white/30">{user?.email}</p>
+                <p className="text-sm text-white/70">{user?.email}</p>
               </div>
             </div>
             <button
               onClick={handleSignOut}
-              className="flex items-center gap-2 text-sm text-white/30 hover:text-charcoal transition-colors"
+              className="flex items-center gap-2 text-sm text-white/70 hover:text-charcoal transition-colors"
             >
               <LogOut className="w-4 h-4" />
               Déconnexion
@@ -122,7 +122,7 @@ export default function AccountPage() {
                 className="flex items-center gap-3 p-4 rounded-2xl border border-white/[0.06] bg-[#0A0B12] hover:border-[#00D9FF]/30 hover:bg-[#00D9FF]/5 transition-all group"
               >
                 <div className="w-9 h-9 rounded-xl bg-[#0E0F16] shadow-sm flex items-center justify-center">
-                  <Icon className="w-4 h-4 text-white/30 group-hover:text-[#00D9FF] transition-colors" />
+                  <Icon className="w-4 h-4 text-white/70 group-hover:text-[#00D9FF] transition-colors" />
                 </div>
                 <span className="text-sm font-semibold text-charcoal">{label}</span>
                 <ChevronRight className="w-4 h-4 text-charcoal/20 ml-auto" />
@@ -140,7 +140,7 @@ export default function AccountPage() {
             {orders.length === 0 ? (
               <div className="text-center py-16 rounded-2xl border border-dashed border-white/[0.1]">
                 <ShoppingBag className="w-10 h-10 text-charcoal/15 mx-auto mb-3" />
-                <p className="text-sm font-semibold text-white/30 mb-1">Aucune commande pour l&apos;instant</p>
+                <p className="text-sm font-semibold text-white/70 mb-1">Aucune commande pour l&apos;instant</p>
                 <Link href="/shop" className="text-sm text-[#00D9FF] font-semibold hover:underline">
                   Découvrir la collection →
                 </Link>
@@ -159,12 +159,12 @@ export default function AccountPage() {
                     >
                       <div className="flex items-start justify-between gap-4 mb-3">
                         <div>
-                          <p className="text-xs text-white/30 mb-0.5">
+                          <p className="text-xs text-white/70 mb-0.5">
                             {new Date(order.created_at).toLocaleDateString('fr-FR', {
                               day: '2-digit', month: 'long', year: 'numeric',
                             })}
                           </p>
-                          <p className="text-xs font-mono text-white/20">#{order.stripe_session_id.slice(-8).toUpperCase()}</p>
+                          <p className="text-xs font-mono text-white/60">#{order.stripe_session_id.slice(-8).toUpperCase()}</p>
                         </div>
                         <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full border ${s.color}`}>
                           {s.label}
@@ -174,14 +174,14 @@ export default function AccountPage() {
                       <ul className="space-y-1 mb-3">
                         {order.items.map((item, j) => (
                           <li key={j} className="flex justify-between text-sm">
-                            <span className="text-white/50">{item.name} × {item.quantity}</span>
+                            <span className="text-white/70">{item.name} × {item.quantity}</span>
                             <span className="font-semibold text-charcoal">{formatPrice(item.price * item.quantity)}</span>
                           </li>
                         ))}
                       </ul>
 
                       <div className="flex justify-between pt-3 border-t border-gray-50">
-                        <span className="text-sm text-white/40">Total</span>
+                        <span className="text-sm text-white/60">Total</span>
                         <span className="font-bold font-serif text-charcoal">{formatPrice(order.total_amount)}</span>
                       </div>
                     </motion.div>
@@ -202,8 +202,8 @@ export default function AccountPage() {
                 {tickets.map((t) => (
                   <div key={t.id} className="rounded-2xl border border-white/[0.06] p-4 bg-[#0E0F16] shadow-sm flex items-start justify-between gap-4">
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs text-white/30 mb-0.5 capitalize">{t.category}</p>
-                      <p className="text-sm text-white/50 truncate">{t.message}</p>
+                      <p className="text-xs text-white/70 mb-0.5 capitalize">{t.category}</p>
+                      <p className="text-sm text-white/70 truncate">{t.message}</p>
                     </div>
                     <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full border flex-shrink-0 ${
                       t.status === 'resolved' ? 'bg-green-50 text-green-700 border-green-200' :

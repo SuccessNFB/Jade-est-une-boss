@@ -94,9 +94,9 @@ export default function AdminSupportPage() {
       <div className="bg-charcoal text-white px-6 py-4 flex items-center justify-between">
         <div>
           <h1 className="font-serif text-xl font-bold">ICEKEY Admin · SAV</h1>
-          <p className="text-white/40 text-xs">{tickets.length} ticket{tickets.length !== 1 ? 's' : ''} · filtre : {filter}</p>
+          <p className="text-white/60 text-xs">{tickets.length} ticket{tickets.length !== 1 ? 's' : ''} · filtre : {filter}</p>
         </div>
-        <button onClick={() => setFilter(filter)} className="text-white/40 hover:text-white transition-colors">
+        <button onClick={() => setFilter(filter)} className="text-white/60 hover:text-white transition-colors">
           <RefreshCw className="w-4 h-4" />
         </button>
       </div>

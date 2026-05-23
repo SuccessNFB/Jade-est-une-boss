@@ -29,13 +29,13 @@ export default async function CheckEmailPage({ searchParams }: Props) {
         <h1 className="font-serif text-3xl font-bold text-white mb-3">
           Vérifie tes emails 📬
         </h1>
-        <p className="text-white/50 text-sm leading-relaxed mb-2">
+        <p className="text-white/70 text-sm leading-relaxed mb-2">
           On a envoyé un lien de confirmation à
         </p>
         {email && (
           <p className="text-[#00D9FF] font-semibold text-sm mb-6">{email}</p>
         )}
-        <p className="text-white/40 text-xs mb-8">
+        <p className="text-white/60 text-xs mb-8">
           Clique sur le lien dans l&apos;email pour activer ton compte.<br />
           Vérifie aussi tes spams si tu ne le vois pas.
         </p>

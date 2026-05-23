@@ -24,44 +24,57 @@ export function FeaturedProducts() {
     <section className="section-pad" style={{ background: '#08090E' }}>
       <div className="section-container">
 
-        {/* Header */}
+        {/* Header — editorial style */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12"
+          className="mb-12"
         >
-          <div>
-            <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#00D9FF] mb-3">
-              Bestsellers
-            </p>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
-              Les coups de cœur
-            </h2>
-          </div>
+          {/* Eyebrow */}
+          <p
+            className="text-[10px] font-bold tracking-[0.35em] uppercase mb-4"
+            style={{ color: '#00D9FF' }}
+          >
+            Bestsellers
+          </p>
 
-          {/* Filter tabs */}
-          <div className="flex items-center gap-1.5 flex-wrap">
-            {TABS.map((tab) => (
-              <button
-                key={String(tab.key)}
-                onClick={() => setActiveTab(tab.key)}
-                className="px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wide transition-all duration-200"
+          {/* Title + tabs row */}
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+            <h2
+              className="font-display font-black text-white uppercase leading-none"
+              style={{ fontSize: 'clamp(36px, 5vw, 60px)' }}
+            >
+              Nos pièces<br />
+              <span
                 style={{
-                  background: activeTab === tab.key
-                    ? '#00D9FF'
-                    : 'rgba(255,255,255,0.05)',
-                  color: activeTab === tab.key
-                    ? '#08090E'
-                    : 'rgba(255,255,255,0.45)',
-                  border: activeTab === tab.key
-                    ? '1px solid transparent'
-                    : '1px solid rgba(255,255,255,0.07)',
+                  background: 'linear-gradient(90deg, #00D9FF, #C9A84C)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
                 }}
               >
-                {tab.label}
-              </button>
-            ))}
+                signature
+              </span>
+            </h2>
+
+            {/* Filter tabs */}
+            <div className="flex items-center gap-2 flex-wrap">
+              {TABS.map((tab) => (
+                <button
+                  key={String(tab.key)}
+                  onClick={() => setActiveTab(tab.key)}
+                  className="px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-200"
+                  style={{
+                    background: activeTab === tab.key ? '#00D9FF' : 'rgba(255,255,255,0.07)',
+                    color:      activeTab === tab.key ? '#08090E'  : 'rgba(255,255,255,0.65)',
+                    border:     activeTab === tab.key ? '1px solid transparent' : '1px solid rgba(255,255,255,0.1)',
+                  }}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
           </div>
         </motion.div>
 
@@ -87,7 +100,7 @@ export function FeaturedProducts() {
             {products.map((product, i) => (
               <motion.div
                 key={product.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
@@ -105,12 +118,23 @@ export function FeaturedProducts() {
           viewport={{ once: true }}
           className="flex justify-center mt-12"
         >
-          <Link
-            href="/shop"
-            className="group inline-flex items-center gap-2.5 text-sm font-semibold text-white/40 hover:text-white transition-colors duration-200"
-          >
-            Voir toute la collection
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          <Link href="/shop">
+            <motion.span
+              className="group inline-flex items-center gap-2.5 cursor-pointer
+                         px-8 py-3.5 rounded-full text-sm font-bold uppercase tracking-wider
+                         transition-all duration-300"
+              style={{
+                border: '1px solid rgba(255,255,255,0.15)',
+                color: 'rgba(255,255,255,0.75)',
+              }}
+              whileHover={{
+                borderColor: 'rgba(0,217,255,0.4)',
+                color: '#00D9FF',
+              }}
+            >
+              Voir toute la collection
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </motion.span>
           </Link>
         </motion.div>
       </div>

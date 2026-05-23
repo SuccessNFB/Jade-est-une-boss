@@ -47,7 +47,7 @@ export function NewsletterSection() {
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-3">
             Sois dans le game
           </h2>
-          <p className="text-white/35 mb-8 leading-relaxed">
+          <p className="text-white/55 mb-8 leading-relaxed">
             Drops en avant-première, offres exclusives.
             <br />
             <span className="text-white/60 font-semibold">–10% sur ta 1ère commande.</span>
@@ -66,7 +66,7 @@ export function NewsletterSection() {
                 <CheckCircle style={{ width: 26, height: 26, color: '#00D9FF' }} />
               </div>
               <p className="font-serif text-xl font-semibold text-white">Bienvenue dans l'Ice Age</p>
-              <p className="text-sm text-white/40">
+              <p className="text-sm text-white/60">
                 Ton code –10% arrive dans ta boîte mail.
               </p>
             </motion.div>

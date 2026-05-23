@@ -23,8 +23,8 @@ function FilterSection({ title, children }: { title: string; children: React.Rea
         onClick={() => setOpen(!open)}
         className="flex items-center justify-between w-full mb-3"
       >
-        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40">{title}</p>
-        <ChevronDown className={cn('w-3 h-3 text-white/25 transition-transform', open && 'rotate-180')} />
+        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/60">{title}</p>
+        <ChevronDown className={cn('w-3 h-3 text-white/65 transition-transform', open && 'rotate-180')} />
       </button>
       {open && children}
     </div>
@@ -78,7 +78,7 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
     return (
       <div className="space-y-0">
         <div className="flex items-center justify-between mb-5">
-          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40">Filtres</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/60">Filtres</p>
           {hasActiveFilters && (
             <button
               onClick={resetFilters}
@@ -100,9 +100,9 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
                     onChange={() => setTier(tier === t.id ? undefined : t.id)}
                     className="w-3.5 h-3.5 accent-[#00D9FF]"
                   />
-                  <span className="text-xs text-white/45 group-hover:text-white/80 transition-colors">{t.label}</span>
+                  <span className="text-xs text-white/65 group-hover:text-white/80 transition-colors">{t.label}</span>
                 </div>
-                <span className="text-[10px] text-white/20">{t.range}</span>
+                <span className="text-[10px] text-white/60">{t.range}</span>
               </label>
             ))}
           </div>
@@ -122,7 +122,7 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
                   className="w-3.5 h-3.5 rounded-full flex-shrink-0"
                   style={{ background: val.color, border: '1px solid rgba(255,255,255,0.15)' }}
                 />
-                <span className="text-xs text-white/45 group-hover:text-white/80 transition-colors">{val.label}</span>
+                <span className="text-xs text-white/65 group-hover:text-white/80 transition-colors">{val.label}</span>
               </label>
             ))}
           </div>
@@ -157,7 +157,7 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
                 onChange={(e) => setInStockOnly(e.target.checked)}
                 className="w-3.5 h-3.5 accent-[#00D9FF]"
               />
-              <span className="text-xs text-white/45">En stock uniquement</span>
+              <span className="text-xs text-white/65">En stock uniquement</span>
             </label>
             <label className="flex items-center gap-2.5 cursor-pointer">
               <input
@@ -166,13 +166,13 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
                 onChange={(e) => setOnSaleOnly(e.target.checked)}
                 className="w-3.5 h-3.5 accent-[#00D9FF]"
               />
-              <span className="text-xs text-white/45">En promotion</span>
+              <span className="text-xs text-white/65">En promotion</span>
             </label>
           </div>
         </FilterSection>
 
         <div>
-          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 mb-3">Recherche</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/60 mb-3">Recherche</p>
           <input
             type="search"
             placeholder="Cuban, tennis, pendentif..."
@@ -201,7 +201,7 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
         <div className="flex items-center gap-3 mb-6 flex-wrap">
           <button
             onClick={() => setSidebarOpen(true)}
-            className="lg:hidden flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-white/50 hover:text-white transition-colors"
+            className="lg:hidden flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-white/70 hover:text-white transition-colors"
             style={{ border: '1px solid rgba(255,255,255,0.1)' }}
           >
             <SlidersHorizontal className="w-3.5 h-3.5" />
@@ -216,7 +216,7 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
             )}
           </button>
 
-          <span className="text-sm text-white/25">
+          <span className="text-sm text-white/65">
             {loading ? '…' : `${sorted.length} bijou${sorted.length !== 1 ? 'x' : ''}`}
           </span>
 
@@ -329,7 +329,7 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
                 <h3 className="font-semibold text-white text-sm">Filtres</h3>
                 <button
                   onClick={() => setSidebarOpen(false)}
-                  className="text-white/30 hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -374,7 +374,7 @@ function EmptyState({ onReset }: { onReset: () => void }) {
         📦
       </div>
       <h3 className="font-serif text-xl font-bold text-white mb-2">Aucun produit trouvé</h3>
-      <p className="text-sm text-white/35 mb-6">Modifiez vos filtres pour plus de résultats.</p>
+      <p className="text-sm text-white/55 mb-6">Modifiez vos filtres pour plus de résultats.</p>
       <button
         onClick={onReset}
         className="px-6 py-3 rounded-full text-[#08090E] font-bold text-sm transition-colors"

@@ -193,7 +193,7 @@ export function Header() {
                       'block px-3.5 py-2 text-[10px] font-black tracking-[0.18em] uppercase whitespace-nowrap transition-colors duration-150',
                       item.accent
                         ? 'text-[#00D9FF] hover:text-white'
-                        : 'text-white/40 hover:text-white',
+                        : 'text-white/60 hover:text-white',
                       megaOpen === item.label && 'text-white'
                     )}
                   >
@@ -216,7 +216,7 @@ export function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="text-[10px] font-black tracking-[0.18em] uppercase text-white/40 hover:text-white whitespace-nowrap transition-colors"
+                  className="text-[10px] font-black tracking-[0.18em] uppercase text-white/60 hover:text-white whitespace-nowrap transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -228,7 +228,7 @@ export function Header() {
 
               <button
                 onClick={() => setSearchOpen(!searchOpen)}
-                className="p-2.5 text-white/40 hover:text-white transition-colors rounded-lg"
+                className="p-2.5 text-white/60 hover:text-white transition-colors rounded-lg"
                 aria-label="Recherche"
               >
                 <Search style={{ width: 17, height: 17 }} />
@@ -238,7 +238,7 @@ export function Header() {
 
               <button
                 onClick={toggleCart}
-                className="relative p-2.5 text-white/40 hover:text-white transition-colors rounded-lg"
+                className="relative p-2.5 text-white/60 hover:text-white transition-colors rounded-lg"
                 aria-label="Panier"
               >
                 <ShoppingBag style={{ width: 17, height: 17 }} />
@@ -264,7 +264,7 @@ export function Header() {
 
               <button
                 onClick={() => setMobileOpen(true)}
-                className="xl:hidden p-2.5 text-white/40 hover:text-white transition-colors rounded-lg ml-1"
+                className="xl:hidden p-2.5 text-white/60 hover:text-white transition-colors rounded-lg ml-1"
                 aria-label="Menu"
               >
                 <Menu style={{ width: 19, height: 19 }} />
@@ -286,7 +286,7 @@ export function Header() {
             >
               <div className="section-container py-3.5">
                 <form onSubmit={handleSearchSubmit} className="flex items-center gap-3">
-                  <Search style={{ width: 15, height: 15 }} className="text-white/25 flex-shrink-0" />
+                  <Search style={{ width: 15, height: 15 }} className="text-white/65 flex-shrink-0" />
                   <input
                     ref={searchRef}
                     type="text"
@@ -298,7 +298,7 @@ export function Header() {
                   <button
                     type="button"
                     onClick={() => setSearchOpen(false)}
-                    className="text-white/25 hover:text-white transition-colors"
+                    className="text-white/65 hover:text-white transition-colors"
                   >
                     <X style={{ width: 15, height: 15 }} />
                   </button>
@@ -329,7 +329,7 @@ export function Header() {
               <div className="flex gap-14">
                 {MEGA[megaOpen].cols.map((col) => (
                   <div key={col.title} className="min-w-[130px]">
-                    <p className="text-[9px] font-black tracking-[0.25em] uppercase text-white/20 mb-4">
+                    <p className="text-[9px] font-black tracking-[0.25em] uppercase text-white/60 mb-4">
                       {col.title}
                     </p>
                     <ul className="space-y-2.5">
@@ -383,7 +383,7 @@ export function Header() {
                     <p className="text-sm font-bold text-white group-hover:text-[#00D9FF] transition-colors">
                       {MEGA[megaOpen].promo.label}
                     </p>
-                    <p className="text-xs text-white/30 mt-1">{MEGA[megaOpen].promo.sub}</p>
+                    <p className="text-xs text-white/70 mt-1">{MEGA[megaOpen].promo.sub}</p>
                     <span className="inline-block mt-4 text-[9px] font-black tracking-[0.2em] uppercase text-[#00D9FF]">
                       Découvrir →
                     </span>
@@ -421,7 +421,7 @@ export function Header() {
                 <IcekeyLogo variant="horizontal" height={22} color="#ffffff" />
                 <button
                   onClick={() => setMobileOpen(false)}
-                  className="p-1.5 text-white/40 hover:text-white transition-colors"
+                  className="p-1.5 text-white/60 hover:text-white transition-colors"
                 >
                   <X style={{ width: 18, height: 18 }} />
                 </button>
@@ -429,7 +429,7 @@ export function Header() {
 
               <div className="px-5 py-4 border-b border-white/[0.06]">
                 <form onSubmit={handleSearchSubmit} className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl" style={{ background: 'rgba(255,255,255,0.05)' }}>
-                  <Search style={{ width: 14, height: 14 }} className="text-white/30" />
+                  <Search style={{ width: 14, height: 14 }} className="text-white/70" />
                   <input
                     type="text"
                     value={searchQuery}
@@ -449,11 +449,11 @@ export function Header() {
                     className={cn(
                       'flex items-center justify-between py-3.5 border-b text-sm font-black tracking-[0.12em] transition-colors',
                       'border-white/[0.04]',
-                      item.accent ? 'text-[#00D9FF]' : 'text-white/50 hover:text-white'
+                      item.accent ? 'text-[#00D9FF]' : 'text-white/70 hover:text-white'
                     )}
                   >
                     {item.label}
-                    <span className="text-white/15">›</span>
+                    <span className="text-white/55">›</span>
                   </Link>
                 ))}
               </nav>
@@ -462,14 +462,14 @@ export function Header() {
                 <Link
                   href="/account"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-3 text-sm text-white/40 hover:text-white transition-colors"
+                  className="flex items-center gap-3 text-sm text-white/60 hover:text-white transition-colors"
                 >
                   <User style={{ width: 15, height: 15 }} />
                   Mon compte
                 </Link>
                 <button
                   onClick={() => { setMobileOpen(false); toggleCart() }}
-                  className="flex items-center gap-3 text-sm text-white/40 hover:text-white transition-colors"
+                  className="flex items-center gap-3 text-sm text-white/60 hover:text-white transition-colors"
                 >
                   <ShoppingBag style={{ width: 15, height: 15 }} />
                   Mon panier {count > 0 && `(${count})`}

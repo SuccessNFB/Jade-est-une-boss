@@ -109,10 +109,10 @@ export function ProductReviews() {
           <StarRating rating={5} />
           <span className="text-sm font-bold text-charcoal">4.8/5</span>
         </div>
-        <span className="text-white/15">|</span>
-        <span className="text-sm text-white/40">230+ avis</span>
-        <span className="text-white/15">|</span>
-        <span className="text-sm text-white/40">98% recommandent</span>
+        <span className="text-white/55">|</span>
+        <span className="text-sm text-white/60">230+ avis</span>
+        <span className="text-white/55">|</span>
+        <span className="text-sm text-white/60">98% recommandent</span>
       </div>
 
       {/* Cards carousel */}
@@ -130,11 +130,11 @@ export function ProductReviews() {
               {/* Stars + rating */}
               <div className="flex items-center justify-between">
                 <StarRating rating={review.rating} />
-                <span className="text-[11px] font-bold text-white/30">{review.rating}.0/5</span>
+                <span className="text-[11px] font-bold text-white/70">{review.rating}.0/5</span>
               </div>
 
               {/* Text */}
-              <p className="text-sm text-white/50 leading-relaxed flex-1">
+              <p className="text-sm text-white/70 leading-relaxed flex-1">
                 &ldquo;{review.text}&rdquo;
               </p>
 
@@ -152,7 +152,7 @@ export function ProductReviews() {
                     <span className="text-[10px] text-[#00D9FF] font-medium">✓ Verified Purchase</span>
                   </div>
                 </div>
-                <span className="ml-auto text-[10px] text-white/20 italic">{review.product}</span>
+                <span className="ml-auto text-[10px] text-white/60 italic">{review.product}</span>
               </div>
             </motion.div>
           ))}
@@ -164,7 +164,7 @@ export function ProductReviews() {
         <button className="inline-flex items-center gap-2 bg-[#00D9FF] text-white/70 font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#00EEFF] hover:shadow-[0_0_20px_rgba(0,217,255,0.4)] transition-all">
           📸 Share Your Moment
         </button>
-        <p className="text-xs text-white/30 mt-2">
+        <p className="text-xs text-white/70 mt-2">
           Bought ICEKEY? Show us your flex + get featured
         </p>
       </div>

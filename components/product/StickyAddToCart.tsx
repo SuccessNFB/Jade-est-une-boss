@@ -56,7 +56,7 @@ export function StickyAddToCart({ product, triggerRef }: Props) {
                 <div className="flex items-baseline gap-2">
                   <span className="text-sm font-bold text-charcoal">{formatPrice(product.price)}</span>
                   {product.compare_at_price && (
-                    <span className="text-xs text-white/30 line-through">{formatPrice(product.compare_at_price)}</span>
+                    <span className="text-xs text-white/70 line-through">{formatPrice(product.compare_at_price)}</span>
                   )}
                 </div>
               </div>

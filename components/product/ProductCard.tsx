@@ -145,7 +145,7 @@ export function ProductCard({ product }: ProductCardProps) {
             >
               <Heart
                 style={{ width: 14, height: 14 }}
-                className={`transition-colors duration-200 ${liked ? 'fill-red-400 text-red-400' : 'text-white/40'}`}
+                className={`transition-colors duration-200 ${liked ? 'fill-red-400 text-red-400' : 'text-white/60'}`}
               />
             </button>
           </div>
@@ -183,25 +183,35 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {/* ── Info strip ────────────────────────────────────── */}
-        <div className="px-4 py-3.5">
+        <div className="px-4 pt-3 pb-4">
           <p
-            className="text-[10px] font-bold tracking-[0.2em] uppercase mb-1"
-            style={{ color: 'rgba(0,217,255,0.6)' }}
+            className="text-[9px] font-black tracking-[0.25em] uppercase mb-1.5"
+            style={{ color: '#00D9FF' }}
           >
             {product.category}
           </p>
-          <h3 className="font-serif text-sm font-semibold text-white/90 line-clamp-1 leading-snug mb-2.5">
+          <h3
+            className="font-serif text-sm font-semibold line-clamp-1 leading-snug mb-3"
+            style={{ color: 'rgba(255,255,255,0.92)' }}
+          >
             {product.name}
           </h3>
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-base text-white">
-              {formatPrice(product.price)}
-            </span>
-            {product.compare_at_price && product.compare_at_price > product.price && (
-              <span className="text-xs text-white/25 line-through">
-                {formatPrice(product.compare_at_price)}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="font-display font-black text-base text-white uppercase">
+                {formatPrice(product.price)}
               </span>
-            )}
+              {product.compare_at_price && product.compare_at_price > product.price && (
+                <span className="text-xs line-through" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                  {formatPrice(product.compare_at_price)}
+                </span>
+              )}
+            </div>
+            <div className="flex gap-0.5">
+              {[...Array(5)].map((_, i) => (
+                <span key={i} style={{ color: '#C9A84C', fontSize: 8 }}>★</span>
+              ))}
+            </div>
           </div>
         </div>
 

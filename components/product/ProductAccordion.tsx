@@ -30,7 +30,7 @@ export function ProductAccordion({ items, defaultOpen }: Props) {
             </span>
             {open === i
               ? <Minus className="w-4 h-4 text-[#00D9FF] flex-shrink-0" />
-              : <Plus  className="w-4 h-4 text-white/25 flex-shrink-0" />
+              : <Plus  className="w-4 h-4 text-white/65 flex-shrink-0" />
             }
           </button>
           <AnimatePresence initial={false}>
@@ -42,7 +42,7 @@ export function ProductAccordion({ items, defaultOpen }: Props) {
                 transition={{ duration: 0.25, ease: 'easeInOut' }}
                 className="overflow-hidden"
               >
-                <div className="pb-4 text-sm text-white/40 leading-relaxed">
+                <div className="pb-4 text-sm text-white/60 leading-relaxed">
                   {item.content}
                 </div>
               </motion.div>

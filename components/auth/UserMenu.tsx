@@ -85,7 +85,7 @@ export function UserMenu() {
                   ? `Bonjour ${supaUser.user_metadata.first_name} 👋`
                   : 'Mon compte'}
               </p>
-              <p className="text-[10px] text-white/30 truncate mt-0.5">{supaUser.email}</p>
+              <p className="text-[10px] text-white/70 truncate mt-0.5">{supaUser.email}</p>
             </div>
 
             {/* Links */}
@@ -100,7 +100,7 @@ export function UserMenu() {
               </Link>
               <button
                 onClick={handleLogout}
-                className="w-full flex items-center gap-2.5 px-4 py-2.5 text-sm text-white/50 hover:text-white hover:bg-[#0E0F16]/5 transition-colors"
+                className="w-full flex items-center gap-2.5 px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-[#0E0F16]/5 transition-colors"
               >
                 <LogOut className="w-3.5 h-3.5" />
                 Se déconnecter

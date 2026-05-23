@@ -152,7 +152,7 @@ export function ProductPageClient({ product }: Props) {
       {/* Stock */}
       <div className="flex items-center gap-2">
         <span className={`w-2 h-2 rounded-full ${product.stock > 0 ? 'bg-emerald-400' : 'bg-red-400'}`} />
-        <span className="text-sm text-white/45">
+        <span className="text-sm text-white/65">
           {product.stock > 0
             ? product.stock <= 5
               ? `⚡ Plus que ${product.stock} en stock — commandez vite`
@@ -167,14 +167,14 @@ export function ProductPageClient({ product }: Props) {
         <div className="flex items-center gap-1 rounded-full px-2 py-1" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
           <button
             onClick={() => setQty(Math.max(1, qty - 1))}
-            className="w-8 h-8 flex items-center justify-center text-white/35 hover:text-white transition-colors"
+            className="w-8 h-8 flex items-center justify-center text-white/55 hover:text-white transition-colors"
           >
             <Minus className="w-3.5 h-3.5" />
           </button>
           <span className="w-6 text-center text-sm font-semibold text-white">{qty}</span>
           <button
             onClick={() => setQty(Math.min(product.stock || 10, qty + 1))}
-            className="w-8 h-8 flex items-center justify-center text-white/35 hover:text-white transition-colors"
+            className="w-8 h-8 flex items-center justify-center text-white/55 hover:text-white transition-colors"
           >
             <Plus className="w-3.5 h-3.5" />
           </button>
@@ -211,7 +211,7 @@ export function ProductPageClient({ product }: Props) {
 
         <button
           onClick={handleShare}
-          className="flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full transition-all text-white/40 hover:text-[#00D9FF]"
+          className="flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full transition-all text-white/60 hover:text-[#00D9FF]"
           style={{ border: '1px solid rgba(255,255,255,0.1)' }}
           onMouseEnter={(e) => e.currentTarget.style.borderColor = 'rgba(0,217,255,0.3)'}
           onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'}
@@ -220,7 +220,7 @@ export function ProductPageClient({ product }: Props) {
           Partager
         </button>
 
-        <div className="flex items-center gap-1.5 text-xs text-white/35 ml-auto">
+        <div className="flex items-center gap-1.5 text-xs text-white/55 ml-auto">
           <ShieldCheck className="w-4 h-4 text-green-500" />
           Garantie 30 jours
         </div>
@@ -228,7 +228,7 @@ export function ProductPageClient({ product }: Props) {
 
       {/* Payment methods */}
       <div>
-        <p className="text-[10px] font-bold text-white/20 uppercase tracking-widest mb-2">
+        <p className="text-[10px] font-bold text-white/60 uppercase tracking-widest mb-2">
           Paiement sécurisé
         </p>
         <div className="flex items-center gap-2 flex-wrap">
@@ -276,7 +276,7 @@ export function ProductPageClient({ product }: Props) {
 
       {/* Price summary if variants add cost */}
       {(metalSurcharge > 0 || lengthSurcharge > 0) && (
-        <p className="text-xs text-center text-white/30">
+        <p className="text-xs text-center text-white/70">
           Prix total avec options sélectionnées :{' '}
           <strong className="text-white">{formatPrice(totalPrice)}</strong>
         </p>

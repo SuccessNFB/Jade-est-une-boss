@@ -219,7 +219,7 @@ export default function ShippingPage() {
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">
               Ton colis, tracé en temps réel.
             </h2>
-            <p className="text-white/50 max-w-lg mx-auto mb-8">
+            <p className="text-white/70 max-w-lg mx-auto mb-8">
               Dès l&apos;expédition, tu reçois un email avec ton numéro de suivi Colissimo ou Chronopost.
               Tu sais exactement où est ton bijou — à chaque étape.
             </p>

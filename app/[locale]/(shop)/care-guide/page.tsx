@@ -199,7 +199,7 @@ export default function CareGuidePage() {
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">
               Des questions sur ton bijou ?
             </h2>
-            <p className="text-white/50 max-w-md mx-auto mb-8">
+            <p className="text-white/70 max-w-md mx-auto mb-8">
               Notre équipe répond sous 24h. On est là pour que ton ICEKEY brille autant dans 10 ans que le premier jour.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

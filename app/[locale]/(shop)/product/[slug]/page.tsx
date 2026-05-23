@@ -79,7 +79,7 @@ export default async function ProductPage({ params }: Props) {
             ['SKU',              p.sku],
           ].map(([k, v]) => (
             <div key={k} className="flex justify-between text-sm">
-              <span className="text-white/35">{k}</span>
+              <span className="text-white/55">{k}</span>
               <span className="font-medium text-white/70">{v}</span>
             </div>
           ))}
@@ -117,7 +117,7 @@ export default async function ProductPage({ params }: Props) {
                 <h1 className="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
                   {p.name}
                 </h1>
-                <p className="text-sm text-white/40 mt-1 font-medium">
+                <p className="text-sm text-white/60 mt-1 font-medium">
                   {buildSubheading(p)}
                 </p>
               </div>
@@ -129,7 +129,7 @@ export default async function ProductPage({ params }: Props) {
                 </span>
                 {p.compare_at_price && p.compare_at_price > p.price && (
                   <>
-                    <span className="text-lg text-white/25 line-through">
+                    <span className="text-lg text-white/65 line-through">
                       {formatPrice(p.compare_at_price)}
                     </span>
                     <span className="text-sm font-bold px-2 py-0.5 rounded-full" style={{ background: 'rgba(0,217,255,0.12)', color: '#00D9FF' }}>
@@ -140,7 +140,7 @@ export default async function ProductPage({ params }: Props) {
               </div>
 
               {/* Delivery badge */}
-              <div className="flex items-center gap-2 text-sm text-white/50 px-4 py-2.5 rounded-xl" style={{ background: 'rgba(0,217,255,0.05)', border: '1px solid rgba(0,217,255,0.1)' }}>
+              <div className="flex items-center gap-2 text-sm text-white/70 px-4 py-2.5 rounded-xl" style={{ background: 'rgba(0,217,255,0.05)', border: '1px solid rgba(0,217,255,0.1)' }}>
                 <Truck className="w-4 h-4 text-[#00D9FF]" />
                 <span>Livraison <strong>offerte en France</strong> · FREE · 4–7 jours</span>
               </div>
@@ -152,7 +152,7 @@ export default async function ProductPage({ params }: Props) {
                   'Argent 925 finition main · qualité FR',
                   'Garantie à vie · retour 30 jours',
                 ].map((line) => (
-                  <li key={line} className="flex items-start gap-2 text-sm text-white/50">
+                  <li key={line} className="flex items-start gap-2 text-sm text-white/70">
                     <CheckCircle className="w-4 h-4 text-[#00D9FF] flex-shrink-0 mt-0.5" />
                     {line}
                   </li>

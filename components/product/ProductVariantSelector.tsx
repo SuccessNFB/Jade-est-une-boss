@@ -63,7 +63,7 @@ export function ProductVariantSelector({
       {/* Length — chains only */}
       {showLengths && (
         <div>
-          <p className="text-xs font-semibold text-white/40 uppercase tracking-widest mb-2.5">
+          <p className="text-xs font-semibold text-white/60 uppercase tracking-widest mb-2.5">
             Longueur — <span className="text-charcoal normal-case font-medium tracking-normal">
               {CHAIN_LENGTHS.find((l) => l.value === selectedLength)?.label}
             </span>
@@ -83,7 +83,7 @@ export function ProductVariantSelector({
                   )}
                 >
                   <span className="font-semibold">{l.label}</span>
-                  <span className={cn('text-[10px] mt-0.5', selectedLength === l.value ? 'text-white/45' : 'text-white/30')}>
+                  <span className={cn('text-[10px] mt-0.5', selectedLength === l.value ? 'text-white/65' : 'text-white/70')}>
                     {formatPrice(price)}
                   </span>
                 </button>
@@ -96,11 +96,11 @@ export function ProductVariantSelector({
       {/* Metal */}
       {availableMetals.length > 0 && (
         <div>
-          <p className="text-xs font-semibold text-white/40 uppercase tracking-widest mb-2.5">
+          <p className="text-xs font-semibold text-white/60 uppercase tracking-widest mb-2.5">
             Métal — <span className="text-charcoal normal-case font-medium tracking-normal">
               {METALS[selectedMetal]?.label}
               {metalSurcharge > 0 && (
-                <span className="text-white/30 ml-1">(+{formatPrice(metalSurcharge)})</span>
+                <span className="text-white/70 ml-1">(+{formatPrice(metalSurcharge)})</span>
               )}
             </span>
           </p>
@@ -129,7 +129,7 @@ export function ProductVariantSelector({
 
       {/* Color swatch — visual only */}
       <div>
-        <p className="text-xs font-semibold text-white/40 uppercase tracking-widest mb-2.5">
+        <p className="text-xs font-semibold text-white/60 uppercase tracking-widest mb-2.5">
           Coloris — <span className="text-charcoal normal-case font-medium tracking-normal">
             {COLOR_SWATCHES.find((c) => c.value === selectedColor)?.label}
           </span>
@@ -155,7 +155,7 @@ export function ProductVariantSelector({
       {/* Stone size */}
       {availableSizes.length > 0 && (
         <div>
-          <p className="text-xs font-semibold text-white/40 uppercase tracking-widest mb-2.5">
+          <p className="text-xs font-semibold text-white/60 uppercase tracking-widest mb-2.5">
             Taille pierre — <span className="text-charcoal normal-case font-medium tracking-normal">
               {STONE_SIZES.find((s) => s.value === selectedSize)?.label}
             </span>
@@ -176,7 +176,7 @@ export function ProductVariantSelector({
                 >
                   <span className="font-semibold">{s?.label ?? size}</span>
                   {s?.sub && (
-                    <span className={cn('text-[10px]', selectedSize === size ? 'text-white/45' : 'text-white/30')}>
+                    <span className={cn('text-[10px]', selectedSize === size ? 'text-white/65' : 'text-white/70')}>
                       {s.sub}
                     </span>
                   )}
@@ -189,7 +189,7 @@ export function ProductVariantSelector({
 
       {/* Total price summary */}
       {(metalSurcharge > 0 || lengthSurcharge > 0) && (
-        <div className="flex items-center justify-between text-xs text-white/40 bg-[#0A0B12] rounded-xl px-4 py-2.5">
+        <div className="flex items-center justify-between text-xs text-white/60 bg-[#0A0B12] rounded-xl px-4 py-2.5">
           <span>Total avec options</span>
           <span className="font-bold text-white/70 text-sm">
             {formatPrice(basePrice + metalSurcharge + lengthSurcharge)}

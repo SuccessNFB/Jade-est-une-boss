@@ -6,6 +6,7 @@
   :root {
     --font-playfair: 'Playfair Display', Georgia, serif;
     --font-inter:    'Inter', system-ui, sans-serif;
+    --font-barlow:   'Barlow Condensed', system-ui, sans-serif;
   }
 
   * { box-sizing: border-box; }
@@ -40,27 +41,31 @@
   /* ─── Buttons ──────────────────────────────────────────────── */
   .btn-ice {
     @apply inline-flex items-center justify-center gap-2
-           px-8 py-3.5 rounded-full font-bold text-sm tracking-wide
-           bg-[#00D9FF] text-[#08090E]
+           px-8 py-4 rounded-full font-black text-sm tracking-widest uppercase
+           bg-[#00D9FF] text-[#080910]
            transition-all duration-300
-           hover:bg-[#33E4FF] hover:shadow-[0_0_32px_rgba(0,217,255,0.45)]
-           active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D9FF]/50;
+           hover:bg-[#33E4FF] hover:shadow-[0_0_40px_rgba(0,217,255,0.55)]
+           active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D9FF]/60;
+    font-family: var(--font-barlow), system-ui, sans-serif;
+    letter-spacing: 0.15em;
   }
 
   .btn-outline {
     @apply inline-flex items-center justify-center gap-2
-           px-8 py-3.5 rounded-full font-semibold text-sm tracking-wide
-           border border-white/15 text-white/80
-           backdrop-blur-sm
+           px-8 py-4 rounded-full font-black text-sm tracking-widest uppercase
+           border-2 text-white
            transition-all duration-300
-           hover:border-[#00D9FF]/50 hover:text-white hover:bg-white/5
-           active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20;
+           hover:border-[#00D9FF] hover:text-[#00D9FF] hover:bg-[rgba(0,217,255,0.05)]
+           active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30;
+    border-color: rgba(255, 255, 255, 0.25);
+    font-family: var(--font-barlow), system-ui, sans-serif;
+    letter-spacing: 0.15em;
   }
 
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2
-           px-6 py-3 rounded-full font-medium text-sm
-           text-white/50
+           px-6 py-3 rounded-full font-semibold text-sm uppercase tracking-wider
+           text-white/70
            transition-all duration-200
            hover:text-white
            focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/20;

@@ -7,14 +7,16 @@ const ITEMS = [
   'LIVRAISON OFFERTE',
   'TAILLE D · CLARTÉ VVS',
   'RETOUR 30 JOURS',
-  'FABRIQUÉ SUR MESURE',
+  'SUR MESURE',
+  'DIAMOND TEST ✓',
   'COLD IS THE NEW GOLD',
   'MOISSANITE VVS',
   'GRA CERTIFIED',
   'LIVRAISON OFFERTE',
   'TAILLE D · CLARTÉ VVS',
   'RETOUR 30 JOURS',
-  'FABRIQUÉ SUR MESURE',
+  'SUR MESURE',
+  'DIAMOND TEST ✓',
 ]
 
 export function MarqueeBanner() {
@@ -26,15 +28,22 @@ export function MarqueeBanner() {
 
       <div
         className="flex whitespace-nowrap"
-        style={{ animation: 'marquee 36s linear infinite', willChange: 'transform' }}
+        style={{ animation: 'marquee 30s linear infinite', willChange: 'transform' }}
       >
         {ITEMS.map((item, i) => (
           <span
             key={i}
-            className="inline-flex items-center gap-3 px-4 text-[10px] font-black tracking-[0.3em] text-[#08090E]"
+            className="inline-flex items-center px-5"
+            style={{
+              fontSize: 10,
+              fontWeight: 800,
+              letterSpacing: '0.28em',
+              color: '#0A0800',
+              fontFamily: 'var(--font-barlow), system-ui, sans-serif',
+            }}
           >
             {item}
-            <span className="text-[#08090E]/40">◆</span>
+            <span style={{ margin: '0 12px', opacity: 0.4, fontSize: 8 }}>◆</span>
           </span>
         ))}
       </div>

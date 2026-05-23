@@ -15,8 +15,8 @@ export function CartSummary() {
   if (!items.length) {
     return (
       <div className="text-center py-16">
-        <ShoppingBag className="w-12 h-12 text-white/15 mx-auto mb-4" />
-        <p className="text-white/40 mb-6">Votre panier est vide</p>
+        <ShoppingBag className="w-12 h-12 text-white/55 mx-auto mb-4" />
+        <p className="text-white/60 mb-6">Votre panier est vide</p>
         <Link href="/shop">
           <Button variant="primary">Découvrir la collection</Button>
         </Link>
@@ -48,12 +48,12 @@ export function CartSummary() {
 
             {/* Details */}
             <div className="flex-1 min-w-0">
-              <p className="text-xs text-white/30 uppercase tracking-wider">{item.product.category}</p>
+              <p className="text-xs text-white/70 uppercase tracking-wider">{item.product.category}</p>
               <h4 className="font-serif font-semibold text-sm text-white/70 line-clamp-2 leading-snug">
                 {item.product.name}
               </h4>
               {item.customization && (
-                <p className="text-xs text-white/40 mt-0.5">
+                <p className="text-xs text-white/60 mt-0.5">
                   {item.customization.metal} · {item.customization.stone_size}
                 </p>
               )}
@@ -80,7 +80,7 @@ export function CartSummary() {
                   </span>
                   <button
                     onClick={() => removeItem(item.product.id)}
-                    className="text-white/20 hover:text-red-400 transition-colors"
+                    className="text-white/60 hover:text-red-400 transition-colors"
                   >
                     <Trash2 className="w-4 h-4" />
                   </button>
@@ -94,11 +94,11 @@ export function CartSummary() {
       {/* Totals */}
       <div className="rounded-2xl bg-[#0A0B12] p-5 space-y-3">
         <div className="flex justify-between text-sm">
-          <span className="text-white/45">Sous-total</span>
+          <span className="text-white/65">Sous-total</span>
           <span className="font-semibold">{formatPrice(subtotal)}</span>
         </div>
         <div className="flex justify-between text-sm">
-          <span className="text-white/45">Livraison</span>
+          <span className="text-white/65">Livraison</span>
           <span className="font-semibold text-green-600">
             {subtotal >= 100 ? 'Offerte' : formatPrice(9.90)}
           </span>

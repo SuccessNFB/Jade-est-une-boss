@@ -64,10 +64,10 @@ export default function CheckoutSuccessPage() {
         <h1 className="font-serif text-3xl font-bold text-white/70 mb-3">
           Commande confirmée !
         </h1>
-        <p className="text-white/45 mb-2">
+        <p className="text-white/65 mb-2">
           Merci pour votre confiance. Un email de confirmation vous a été envoyé.
         </p>
-        <p className="text-white/30 text-sm mb-8">
+        <p className="text-white/70 text-sm mb-8">
           Votre bijou sera expédié sous 2–3 jours ouvrés avec suivi.
         </p>
 

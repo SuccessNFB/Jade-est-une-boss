@@ -66,7 +66,7 @@ export function TrustBadges() {
                 </div>
                 <div>
                   <p className="font-semibold text-sm text-white leading-tight mb-1.5">{b.title}</p>
-                  <p className="text-xs text-white/30 leading-relaxed">{b.desc}</p>
+                  <p className="text-xs text-white/70 leading-relaxed">{b.desc}</p>
                 </div>
               </motion.div>
             )

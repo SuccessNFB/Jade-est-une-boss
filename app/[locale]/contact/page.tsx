@@ -66,7 +66,7 @@ export default function ContactPage() {
             <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white/70 mb-3">
               Contactez-nous
             </h1>
-            <p className="text-white/40 text-lg max-w-md mx-auto">
+            <p className="text-white/60 text-lg max-w-md mx-auto">
               Une question, un doute, un projet ? Écris-nous. On répond vite — pour de vrai.
             </p>
           </div>
@@ -93,7 +93,7 @@ export default function ContactPage() {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="Jade Dupont"
-                      className="w-full px-4 py-3 rounded-xl border border-white/[0.1] text-white/70 text-sm placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-ice-500 transition"
+                      className="w-full px-4 py-3 rounded-xl border border-white/[0.1] text-white/70 text-sm placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-ice-500 transition"
                     />
                   </div>
                   <div>
@@ -106,7 +106,7 @@ export default function ContactPage() {
                       value={form.email}
                       onChange={handleChange}
                       placeholder="jade@email.com"
-                      className="w-full px-4 py-3 rounded-xl border border-white/[0.1] text-white/70 text-sm placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-ice-500 transition"
+                      className="w-full px-4 py-3 rounded-xl border border-white/[0.1] text-white/70 text-sm placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-ice-500 transition"
                     />
                   </div>
                 </div>
@@ -138,7 +138,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     rows={6}
                     placeholder="Dis-nous tout…"
-                    className="w-full px-4 py-3 rounded-xl border border-white/[0.1] text-white/70 text-sm placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-ice-500 transition resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-white/[0.1] text-white/70 text-sm placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-ice-500 transition resize-none"
                   />
                 </div>
 
@@ -161,7 +161,7 @@ export default function ContactPage() {
                   <div className="flex items-start gap-3">
                     <span className="text-xl mt-0.5">✉️</span>
                     <div>
-                      <p className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-0.5">Email</p>
+                      <p className="text-xs font-semibold text-white/60 uppercase tracking-wider mb-0.5">Email</p>
                       <a
                         href="mailto:contact@icekey.shop"
                         className="text-charcoal font-medium text-sm hover:text-ice-600 transition-colors"
@@ -174,7 +174,7 @@ export default function ContactPage() {
                   <div className="flex items-start gap-3">
                     <span className="text-xl mt-0.5">⏱️</span>
                     <div>
-                      <p className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-0.5">Délai de réponse</p>
+                      <p className="text-xs font-semibold text-white/60 uppercase tracking-wider mb-0.5">Délai de réponse</p>
                       <p className="text-charcoal font-medium text-sm">Sous 24h</p>
                     </div>
                   </div>
@@ -182,7 +182,7 @@ export default function ContactPage() {
                   <div className="flex items-start gap-3">
                     <span className="text-xl mt-0.5">🕐</span>
                     <div>
-                      <p className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-0.5">Disponibilité</p>
+                      <p className="text-xs font-semibold text-white/60 uppercase tracking-wider mb-0.5">Disponibilité</p>
                       <p className="text-charcoal font-medium text-sm">Lun — Ven · 9h–18h</p>
                     </div>
                   </div>
@@ -191,7 +191,7 @@ export default function ContactPage() {
 
               <div className="bg-[#E0F7FF] rounded-2xl p-7">
                 <h3 className="font-serif text-lg font-bold text-white/70 mb-2">On est aussi là-bas</h3>
-                <p className="text-white/45 text-sm mb-5">
+                <p className="text-white/65 text-sm mb-5">
                   DM, story, tag — on répond sur les réseaux aussi.
                 </p>
                 <div className="space-y-3">

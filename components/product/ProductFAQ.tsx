@@ -39,7 +39,7 @@ export function ProductFAQ() {
       <h2 className="font-serif text-2xl font-bold text-white/70 mb-2">
         Questions Fréquentes
       </h2>
-      <p className="text-sm text-white/40 mb-6">Tout ce que tu dois savoir avant de sécuriser ta pièce.</p>
+      <p className="text-sm text-white/60 mb-6">Tout ce que tu dois savoir avant de sécuriser ta pièce.</p>
       <ProductAccordion items={FAQ_ITEMS} />
     </section>
   )

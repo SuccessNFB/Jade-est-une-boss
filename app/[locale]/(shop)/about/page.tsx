@@ -99,15 +99,15 @@ export default function AboutPage() {
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white/70 mb-6 leading-snug">
                 On en avait marre du luxe inaccessible.
               </h2>
-              <p className="text-white/45 leading-relaxed mb-4">
+              <p className="text-white/65 leading-relaxed mb-4">
                 L&apos;idée d&apos;ICEKEY est née dans un appartement parisien, en regardant les prix des bijoux de luxe
                 avec l&apos;impression que l&apos;éclat était réservé à ceux qui pouvaient se le permettre.
               </p>
-              <p className="text-white/45 leading-relaxed mb-4">
+              <p className="text-white/65 leading-relaxed mb-4">
                 Puis on a découvert la moissanite — une pierre créée en laboratoire, plus brillante que le diamant,
                 presque aussi dure, éthique par nature et accessible. Un game-changer.
               </p>
-              <p className="text-white/45 leading-relaxed">
+              <p className="text-white/65 leading-relaxed">
                 On a tout misé dessus. ICEKEY est né. <span className="text-charcoal font-semibold">Cold is the new gold.</span>
               </p>
             </div>
@@ -115,7 +115,7 @@ export default function AboutPage() {
               <div className="aspect-square rounded-3xl bg-gradient-to-br from-charcoal to-[#1a1a2e] flex items-center justify-center shadow-ice-lg">
                 <div className="text-center">
                   <div className="text-[80px] mb-4">💎</div>
-                  <p className="text-white/40 text-sm font-medium tracking-widest uppercase">Moissanite</p>
+                  <p className="text-white/60 text-sm font-medium tracking-widest uppercase">Moissanite</p>
                   <p className="text-ice-400 font-serif text-2xl font-bold mt-1">GRA Certified</p>
                 </div>
               </div>
@@ -135,7 +135,7 @@ export default function AboutPage() {
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-charcoal">
                 Pourquoi Moissanite ?
               </h2>
-              <p className="text-white/40 mt-3 max-w-xl mx-auto">
+              <p className="text-white/60 mt-3 max-w-xl mx-auto">
                 Les chiffres parlent d&apos;eux-mêmes. Compare et décide par toi-même.
               </p>
             </div>
@@ -144,7 +144,7 @@ export default function AboutPage() {
               <table className="w-full bg-[#0E0F16] text-sm">
                 <thead>
                   <tr className="border-b border-white/[0.06]">
-                    <th className="text-left px-6 py-4 font-semibold text-white/40 w-1/4">Critère</th>
+                    <th className="text-left px-6 py-4 font-semibold text-white/60 w-1/4">Critère</th>
                     <th className="px-6 py-4 font-semibold text-white/70 text-center">Diamant</th>
                     <th className="px-6 py-4 font-bold text-ice-600 text-center bg-[#E0F7FF]">
                       Moissanite ✦
@@ -156,18 +156,18 @@ export default function AboutPage() {
                   {comparisonRows.map((row) => (
                     <tr key={row.label} className="hover:bg-[#0A0B12] transition-colors">
                       <td className="px-6 py-4 font-medium text-charcoal">{row.label}</td>
-                      <td className="px-6 py-4 text-white/45 text-center">{row.diamond}</td>
+                      <td className="px-6 py-4 text-white/65 text-center">{row.diamond}</td>
                       <td className="px-6 py-4 text-ice-700 font-semibold text-center bg-[#E0F7FF]">
                         {row.moissanite}
                       </td>
-                      <td className="px-6 py-4 text-white/45 text-center">{row.gold9k}</td>
+                      <td className="px-6 py-4 text-white/65 text-center">{row.gold9k}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
 
-            <p className="text-center text-xs text-white/30 mt-4">
+            <p className="text-center text-xs text-white/70 mt-4">
               ✦ = meilleur de sa catégorie selon les critères objectifs du marché
             </p>
           </div>
@@ -195,7 +195,7 @@ export default function AboutPage() {
                 <p className="text-ice-500 text-xs font-semibold tracking-wider uppercase mb-4">
                   {val.tagline}
                 </p>
-                <p className="text-white/45 text-sm leading-relaxed">{val.body}</p>
+                <p className="text-white/65 text-sm leading-relaxed">{val.body}</p>
               </div>
             ))}
           </div>
@@ -207,7 +207,7 @@ export default function AboutPage() {
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white/70 mb-4">
               Prêt à briller autrement ?
             </h2>
-            <p className="text-white/45 mb-8 max-w-lg mx-auto">
+            <p className="text-white/65 mb-8 max-w-lg mx-auto">
               Explore notre collection et trouve la pièce qui te ressemble.
               Éthique, premium, accessible. Forever.
             </p>

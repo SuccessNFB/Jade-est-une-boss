@@ -55,12 +55,12 @@ export function BrandStory() {
                 L'éclat sans le prix.
               </span>
             </h2>
-            <p className="text-white/45 leading-[1.9] text-base mb-6">
+            <p className="text-white/65 leading-[1.9] text-base mb-6">
               Née de la frustration d'une génération qui refuse de choisir entre style et budget,
               ICEKEY démocratise les bijoux premium en France. La moissanite VVS offre un éclat
               supérieur au diamant — testée, certifiée GRA, et éthique.
             </p>
-            <p className="text-white/35 leading-[1.9] text-sm mb-10">
+            <p className="text-white/55 leading-[1.9] text-sm mb-10">
               Moins de 30 acteurs sérieux en France, 42&nbsp;700 recherches Google par mois sans
               offre à la hauteur. ICEKEY arrive en premier.
             </p>
@@ -97,7 +97,7 @@ export function BrandStory() {
                 >
                   {f.value}
                 </div>
-                <p className="text-white/45 text-sm leading-snug">{f.label}</p>
+                <p className="text-white/65 text-sm leading-snug">{f.label}</p>
 
                 {/* Corner accent */}
                 <div

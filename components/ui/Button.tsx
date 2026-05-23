@@ -21,7 +21,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const variants: Record<string, string> = {
       ice:     'bg-[#00D9FF] text-[#08090E] hover:bg-[#33E4FF] hover:shadow-[0_0_28px_rgba(0,217,255,0.4)] focus-visible:ring-[#00D9FF]/50',
       outline: 'bg-transparent text-white/75 border border-white/12 hover:border-white/25 hover:text-white backdrop-blur-sm focus-visible:ring-white/20',
-      ghost:   'bg-transparent text-white/40 hover:text-white focus-visible:ring-white/15',
+      ghost:   'bg-transparent text-white/60 hover:text-white focus-visible:ring-white/15',
       gold:    'bg-[#C9A84C] text-[#08090E] hover:bg-[#D4B565] hover:shadow-[0_0_28px_rgba(201,168,76,0.35)] focus-visible:ring-[#C9A84C]/50',
       primary: 'bg-[#00D9FF] text-[#08090E] hover:bg-[#33E4FF] focus-visible:ring-[#00D9FF]/50',
     }

@@ -57,7 +57,7 @@ export function Testimonials() {
                 <span key={i} style={{ color: '#C9A84C', fontSize: 16 }}>★</span>
               ))}
             </div>
-            <span className="text-sm text-white/30">4.9 / 5 · 300+ avis vérifiés</span>
+            <span className="text-sm text-white/70">4.9 / 5 · 300+ avis vérifiés</span>
           </div>
         </motion.div>
 
@@ -103,7 +103,7 @@ export function Testimonials() {
                     ✓ Vérifié
                   </span>
                 </div>
-                <p className="text-[11px] text-white/25">{r.city} · {r.date}</p>
+                <p className="text-[11px] text-white/65">{r.city} · {r.date}</p>
                 <p className="text-[10px] text-[#00D9FF]/50 mt-1 font-medium">{r.product}</p>
               </div>
             </motion.div>

@@ -82,11 +82,11 @@ export default function ResetPasswordPage() {
                   <Mail className="w-6 h-6 text-[#00D9FF]" />
                 </div>
                 <h1 className="font-serif text-2xl font-bold text-white mb-2">Mot de passe oublié</h1>
-                <p className="text-white/50 text-sm">Entre ton email, on t&apos;envoie un lien.</p>
+                <p className="text-white/70 text-sm">Entre ton email, on t&apos;envoie un lien.</p>
               </div>
               <form onSubmit={handleRequest} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-semibold text-white/50 mb-1.5 uppercase tracking-wider">Email</label>
+                  <label className="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wider">Email</label>
                   <input
                     type="email"
                     value={email}
@@ -114,9 +114,9 @@ export default function ResetPasswordPage() {
                 <Mail className="w-6 h-6 text-[#00D9FF]" />
               </div>
               <h2 className="font-serif text-2xl font-bold text-white mb-3">Vérifie tes emails 📬</h2>
-              <p className="text-white/50 text-sm mb-2">Lien envoyé à</p>
+              <p className="text-white/70 text-sm mb-2">Lien envoyé à</p>
               <p className="text-[#00D9FF] font-semibold text-sm mb-6">{email}</p>
-              <p className="text-white/30 text-xs">Pense à vérifier tes spams si tu ne le vois pas.</p>
+              <p className="text-white/70 text-xs">Pense à vérifier tes spams si tu ne le vois pas.</p>
             </div>
           )}
 
@@ -125,11 +125,11 @@ export default function ResetPasswordPage() {
             <>
               <div className="text-center mb-8">
                 <h1 className="font-serif text-2xl font-bold text-white mb-2">Nouveau mot de passe</h1>
-                <p className="text-white/50 text-sm">Choisis un mot de passe d&apos;au moins 8 caractères.</p>
+                <p className="text-white/70 text-sm">Choisis un mot de passe d&apos;au moins 8 caractères.</p>
               </div>
               <form onSubmit={handleUpdate} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-semibold text-white/50 mb-1.5 uppercase tracking-wider">Nouveau mot de passe</label>
+                  <label className="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wider">Nouveau mot de passe</label>
                   <div className="relative">
                     <input
                       type={showPwd ? 'text' : 'password'}
@@ -144,7 +144,7 @@ export default function ResetPasswordPage() {
                     <button
                       type="button"
                       onClick={() => setShowPwd(!showPwd)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60 transition-colors"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-white/70 hover:text-white/60 transition-colors"
                     >
                       {showPwd ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                     </button>
@@ -168,12 +168,12 @@ export default function ResetPasswordPage() {
                 <CheckCircle className="w-6 h-6 text-green-400" />
               </div>
               <h2 className="font-serif text-2xl font-bold text-white mb-3">Mot de passe mis à jour ✓</h2>
-              <p className="text-white/50 text-sm">Tu vas être redirigé automatiquement…</p>
+              <p className="text-white/70 text-sm">Tu vas être redirigé automatiquement…</p>
             </div>
           )}
 
           {state === 'request' && (
-            <p className="text-center text-sm text-white/40 mt-6">
+            <p className="text-center text-sm text-white/60 mt-6">
               <Link href="/auth/login" className="text-[#00D9FF] font-semibold hover:underline">
                 ← Retour à la connexion
               </Link>
