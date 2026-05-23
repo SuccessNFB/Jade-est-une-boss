@@ -74,7 +74,7 @@ export default function AboutPage() {
 
         {/* ── Hero ── */}
         <section className="relative overflow-hidden bg-gradient-to-br from-charcoal via-[#1a1a2e] to-[#16213e] min-h-[480px] flex items-center">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(245,197,66,0.15),transparent_60%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(212,175,55,0.15),transparent_60%)]" />
           <div className="section-container relative z-10 py-24 text-center">
             <p className="text-ice-400 text-xs tracking-[0.35em] uppercase font-semibold mb-4">
               Notre histoire
@@ -141,7 +141,7 @@ export default function AboutPage() {
             </div>
 
             <div className="overflow-x-auto rounded-2xl shadow-card">
-              <table className="w-full bg-[#1A1A17] text-sm">
+              <table className="w-full bg-[#141414] text-sm">
                 <thead>
                   <tr className="border-b border-white/[0.06]">
                     <th className="text-left px-6 py-4 font-semibold text-white/60 w-1/4">Critère</th>
@@ -154,7 +154,7 @@ export default function AboutPage() {
                 </thead>
                 <tbody className="divide-y divide-gray-50">
                   {comparisonRows.map((row) => (
-                    <tr key={row.label} className="hover:bg-[#141412] transition-colors">
+                    <tr key={row.label} className="hover:bg-[#121210] transition-colors">
                       <td className="px-6 py-4 font-medium text-charcoal">{row.label}</td>
                       <td className="px-6 py-4 text-white/65 text-center">{row.diamond}</td>
                       <td className="px-6 py-4 text-ice-700 font-semibold text-center bg-[#E0F7FF]">
@@ -188,7 +188,7 @@ export default function AboutPage() {
             {values.map((val) => (
               <div
                 key={val.title}
-                className="bg-[#1A1A17] rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 text-center"
+                className="bg-[#141414] rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 text-center"
               >
                 <div className="text-4xl mb-4">{val.icon}</div>
                 <h3 className="font-serif text-xl font-bold text-white/70 mb-1">{val.title}</h3>
@@ -213,7 +213,7 @@ export default function AboutPage() {
             </p>
             <Link
               href="/shop"
-              className="inline-flex items-center gap-2 px-10 py-4 bg-[#F5C542] text-white/70 font-semibold text-sm tracking-wide rounded-full hover:scale-[1.03] hover:shadow-ice transition-all duration-300"
+              className="inline-flex items-center gap-2 px-10 py-4 bg-[#D4AF37] text-white/70 font-semibold text-sm tracking-wide rounded-full hover:scale-[1.03] hover:shadow-ice transition-all duration-300"
             >
               Découvrir la collection →
             </Link>

@@ -46,7 +46,7 @@ export default function CheckoutSuccessPage() {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-[#1A1A17] rounded-3xl shadow-card p-10 max-w-md w-full text-center"
+        className="bg-[#141414] rounded-3xl shadow-card p-10 max-w-md w-full text-center"
       >
         <motion.div
           initial={{ scale: 0 }}

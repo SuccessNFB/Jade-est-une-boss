@@ -72,7 +72,7 @@ export async function PATCH(req: NextRequest) {
           </div>
           <p style="font-size:12px; color:#999;">
             Pour continuer la conversation, réponds directement à cet email ou contacte-nous à
-            <a href="mailto:contact@icekey.shop" style="color:#F5C542;">contact@icekey.shop</a>.
+            <a href="mailto:contact@icekey.shop" style="color:#D4AF37;">contact@icekey.shop</a>.
           </p>
         </div>
       `,

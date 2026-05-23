@@ -12,7 +12,7 @@ const REVIEWS = [
     text:       "This chain sparkles HARD. People ask if it's diamonds every single day. Confidence level: 1000% 🔥",
     product:    'Cuban Chain 16"',
     initials:   'MK',
-    color:      '#F5C542',
+    color:      '#D4AF37',
   },
   {
     name:       'Jade R.',
@@ -48,7 +48,7 @@ const REVIEWS = [
     text:       'Passed the diamond tester at the jewelry store. My jeweler was shook. Worth every cent.',
     product:    'Cuban Chain 12mm 18"',
     initials:   'AB',
-    color:      '#F5C542',
+    color:      '#D4AF37',
   },
 ]
 
@@ -79,7 +79,7 @@ export function ProductReviews() {
       {/* Header */}
       <div className="flex items-end justify-between mb-4">
         <div>
-          <p className="text-[#F5C542] text-xs tracking-[0.3em] uppercase font-semibold mb-1">
+          <p className="text-[#D4AF37] text-xs tracking-[0.3em] uppercase font-semibold mb-1">
             Avis vérifiés
           </p>
           <h2 className="font-serif text-2xl font-bold text-charcoal">
@@ -90,13 +90,13 @@ export function ProductReviews() {
         <div className="flex gap-2">
           <button
             onClick={() => setIdx((i) => (i - 1 + REVIEWS.length) % REVIEWS.length)}
-            className="w-9 h-9 rounded-full border-2 border-white/[0.1] flex items-center justify-center hover:border-[#F5C542] hover:text-[#F5C542] transition-all"
+            className="w-9 h-9 rounded-full border-2 border-white/[0.1] flex items-center justify-center hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
           <button
             onClick={() => setIdx((i) => (i + 1) % REVIEWS.length)}
-            className="w-9 h-9 rounded-full border-2 border-white/[0.1] flex items-center justify-center hover:border-[#F5C542] hover:text-[#F5C542] transition-all"
+            className="w-9 h-9 rounded-full border-2 border-white/[0.1] flex items-center justify-center hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all"
           >
             <ChevronRight className="w-4 h-4" />
           </button>
@@ -125,7 +125,7 @@ export function ProductReviews() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.25, delay: i * 0.05 }}
-              className="bg-[#1A1A17] border border-white/[0.06] rounded-2xl p-5 flex flex-col gap-3 hover:border-[#F5C542]/20 hover:shadow-[0_0_16px_rgba(245,197,66,0.08)] transition-all"
+              className="bg-[#141414] border border-white/[0.06] rounded-2xl p-5 flex flex-col gap-3 hover:border-[#D4AF37]/20 hover:shadow-[0_0_16px_rgba(212,175,55,0.08)] transition-all"
             >
               {/* Stars + rating */}
               <div className="flex items-center justify-between">
@@ -149,7 +149,7 @@ export function ProductReviews() {
                 <div>
                   <p className="text-xs font-semibold text-charcoal">{review.name}</p>
                   <div className="flex items-center gap-1">
-                    <span className="text-[10px] text-[#F5C542] font-medium">✓ Verified Purchase</span>
+                    <span className="text-[10px] text-[#D4AF37] font-medium">✓ Verified Purchase</span>
                   </div>
                 </div>
                 <span className="ml-auto text-[10px] text-white/60 italic">{review.product}</span>
@@ -161,7 +161,7 @@ export function ProductReviews() {
 
       {/* CTA */}
       <div className="text-center mt-8">
-        <button className="inline-flex items-center gap-2 bg-[#F5C542] text-white/70 font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#00EEFF] hover:shadow-[0_0_20px_rgba(245,197,66,0.4)] transition-all">
+        <button className="inline-flex items-center gap-2 bg-[#D4AF37] text-white/70 font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#00EEFF] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all">
           📸 Share Your Moment
         </button>
         <p className="text-xs text-white/70 mt-2">

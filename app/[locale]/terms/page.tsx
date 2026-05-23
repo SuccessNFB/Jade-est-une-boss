@@ -59,7 +59,7 @@ export default function TermsPage() {
         <div className="section-container max-w-3xl py-12">
 
           <div className="mb-10">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#F5C542] mb-3">Légal</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#D4AF37] mb-3">Légal</p>
             <h1 className="font-serif text-4xl font-bold text-charcoal mb-4">
               Conditions Générales de Vente
             </h1>
@@ -77,7 +77,7 @@ export default function TermsPage() {
 
           <div className="mt-12 p-6 rounded-2xl bg-gray-50 border border-gray-100 text-center">
             <p className="text-sm text-charcoal/60 mb-2">Service client</p>
-            <a href="mailto:contact@icekey.shop" className="text-sm font-bold text-[#F5C542] hover:underline">
+            <a href="mailto:contact@icekey.shop" className="text-sm font-bold text-[#D4AF37] hover:underline">
               contact@icekey.shop
             </a>
           </div>

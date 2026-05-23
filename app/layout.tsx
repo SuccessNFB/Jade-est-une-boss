@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display, Barlow_Condensed } from 'next/font/google'
+import { Inter, Playfair_Display, Barlow_Condensed, Space_Mono } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({
@@ -21,6 +21,13 @@ const barlow = Barlow_Condensed({
   display:  'swap',
 })
 
+const spaceMono = Space_Mono({
+  subsets:  ['latin'],
+  weight:   ['400', '700'],
+  variable: '--font-space-mono',
+  display:  'swap',
+})
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://icekey.shop'),
   title: {
@@ -35,7 +42,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={`${inter.variable} ${playfair.variable} ${barlow.variable}`}>
+    <html className={`${inter.variable} ${playfair.variable} ${barlow.variable} ${spaceMono.variable}`}>
       <body>{children}</body>
     </html>
   )

@@ -59,7 +59,7 @@ export default function ResetPasswordPage() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
           className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full opacity-15"
-          style={{ background: 'radial-gradient(ellipse, #F5C542 0%, transparent 70%)', filter: 'blur(80px)' }}
+          style={{ background: 'radial-gradient(ellipse, #D4AF37 0%, transparent 70%)', filter: 'blur(80px)' }}
         />
       </div>
 
@@ -78,8 +78,8 @@ export default function ResetPasswordPage() {
           {state === 'request' && (
             <>
               <div className="text-center mb-8">
-                <div className="w-14 h-14 rounded-2xl bg-[#F5C542]/10 border border-[#F5C542]/20 flex items-center justify-center mx-auto mb-4">
-                  <Mail className="w-6 h-6 text-[#F5C542]" />
+                <div className="w-14 h-14 rounded-2xl bg-[#D4AF37]/10 border border-[#D4AF37]/20 flex items-center justify-center mx-auto mb-4">
+                  <Mail className="w-6 h-6 text-[#D4AF37]" />
                 </div>
                 <h1 className="font-serif text-2xl font-bold text-white mb-2">Mot de passe oublié</h1>
                 <p className="text-white/70 text-sm">Entre ton email, on t&apos;envoie un lien.</p>
@@ -93,13 +93,13 @@ export default function ResetPasswordPage() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="ton@email.com"
                     required
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm outline-none focus:border-[#F5C542]/60 transition-all"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm outline-none focus:border-[#D4AF37]/60 transition-all"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full flex items-center justify-center gap-2.5 py-4 rounded-full bg-[#F5C542] text-charcoal font-bold text-sm hover:bg-[#00EEFF] hover:shadow-[0_0_28px_rgba(245,197,66,0.5)] transition-all disabled:opacity-60"
+                  className="w-full flex items-center justify-center gap-2.5 py-4 rounded-full bg-[#D4AF37] text-charcoal font-bold text-sm hover:bg-[#00EEFF] hover:shadow-[0_0_28px_rgba(212,175,55,0.5)] transition-all disabled:opacity-60"
                 >
                   {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <>Envoyer le lien <ArrowRight className="w-4 h-4" /></>}
                 </button>
@@ -110,12 +110,12 @@ export default function ResetPasswordPage() {
           {/* ── Sent state ── */}
           {state === 'sent' && (
             <div className="text-center">
-              <div className="w-14 h-14 rounded-2xl bg-[#F5C542]/10 border border-[#F5C542]/20 flex items-center justify-center mx-auto mb-5">
-                <Mail className="w-6 h-6 text-[#F5C542]" />
+              <div className="w-14 h-14 rounded-2xl bg-[#D4AF37]/10 border border-[#D4AF37]/20 flex items-center justify-center mx-auto mb-5">
+                <Mail className="w-6 h-6 text-[#D4AF37]" />
               </div>
               <h2 className="font-serif text-2xl font-bold text-white mb-3">Vérifie tes emails 📬</h2>
               <p className="text-white/70 text-sm mb-2">Lien envoyé à</p>
-              <p className="text-[#F5C542] font-semibold text-sm mb-6">{email}</p>
+              <p className="text-[#D4AF37] font-semibold text-sm mb-6">{email}</p>
               <p className="text-white/70 text-xs">Pense à vérifier tes spams si tu ne le vois pas.</p>
             </div>
           )}
@@ -139,7 +139,7 @@ export default function ResetPasswordPage() {
                       required
                       minLength={8}
                       autoComplete="new-password"
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 pr-12 text-white placeholder-white/20 text-sm outline-none focus:border-[#F5C542]/60 transition-all"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 pr-12 text-white placeholder-white/20 text-sm outline-none focus:border-[#D4AF37]/60 transition-all"
                     />
                     <button
                       type="button"
@@ -153,7 +153,7 @@ export default function ResetPasswordPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full flex items-center justify-center gap-2.5 py-4 rounded-full bg-[#F5C542] text-charcoal font-bold text-sm hover:bg-[#00EEFF] hover:shadow-[0_0_28px_rgba(245,197,66,0.5)] transition-all disabled:opacity-60"
+                  className="w-full flex items-center justify-center gap-2.5 py-4 rounded-full bg-[#D4AF37] text-charcoal font-bold text-sm hover:bg-[#00EEFF] hover:shadow-[0_0_28px_rgba(212,175,55,0.5)] transition-all disabled:opacity-60"
                 >
                   {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <>Mettre à jour <ArrowRight className="w-4 h-4" /></>}
                 </button>
@@ -174,7 +174,7 @@ export default function ResetPasswordPage() {
 
           {state === 'request' && (
             <p className="text-center text-sm text-white/60 mt-6">
-              <Link href="/auth/login" className="text-[#F5C542] font-semibold hover:underline">
+              <Link href="/auth/login" className="text-[#D4AF37] font-semibold hover:underline">
                 ← Retour à la connexion
               </Link>
             </p>

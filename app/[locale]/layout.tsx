@@ -83,7 +83,7 @@ export default async function LocaleLayout({ children, params }: Props) {
                 borderRadius: '12px',
                 fontFamily:   'var(--font-inter)',
               },
-              success: { iconTheme: { primary: '#F5C542', secondary: '#fff' } },
+              success: { iconTheme: { primary: '#D4AF37', secondary: '#fff' } },
             }}
           />
         </NextIntlClientProvider>

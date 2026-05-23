@@ -121,7 +121,7 @@ export function CartContent() {
 
         <Link
           href="/shop"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-[#F5C542] hover:underline"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-[#D4AF37] hover:underline"
         >
           ← Continuer mes achats
         </Link>
@@ -132,15 +132,15 @@ export function CartContent() {
         <div className="sticky top-24 space-y-4">
 
           {/* Summary card */}
-          <div className="rounded-2xl p-6 space-y-4" style={{ background: '#1A1A17', border: '1px solid rgba(255,255,255,0.08)' }}>
+          <div className="rounded-2xl p-6 space-y-4" style={{ background: '#141414', border: '1px solid rgba(255,255,255,0.08)' }}>
             <h3 className="font-serif text-lg font-bold text-white">Récapitulatif</h3>
 
             {/* Welcome discount banner */}
             {isFirstOrder && (
-              <div className="flex items-center gap-2 bg-[#F5C542]/10 border border-[#F5C542]/30 rounded-xl px-3 py-2.5">
-                <Sparkles className="w-4 h-4 text-[#F5C542] flex-shrink-0" />
+              <div className="flex items-center gap-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-xl px-3 py-2.5">
+                <Sparkles className="w-4 h-4 text-[#D4AF37] flex-shrink-0" />
                 <div>
-                  <p className="text-xs font-bold text-[#F5C542]">Bienvenue ❄️ — -5% offerts</p>
+                  <p className="text-xs font-bold text-[#D4AF37]">Bienvenue ❄️ — -5% offerts</p>
                   <p className="text-[10px] text-charcoal/50">Appliqués automatiquement sur votre 1ère commande</p>
                 </div>
               </div>
@@ -152,7 +152,7 @@ export function CartContent() {
                 <span className="font-semibold">{formatPrice(subtotal)}</span>
               </div>
               {isFirstOrder && (
-                <div className="flex justify-between text-[#F5C542]">
+                <div className="flex justify-between text-[#D4AF37]">
                   <span className="font-semibold">Bienvenue ❄️ -5%</span>
                   <span className="font-semibold">-{formatPrice(welcomeDiscount)}</span>
                 </div>
@@ -173,7 +173,7 @@ export function CartContent() {
 
             <div className="flex justify-between pt-4 border-t border-white/[0.06] font-bold text-white">
               <span>Total</span>
-              <span className="font-serif text-xl text-[#F5C542]">{formatPrice(total)}</span>
+              <span className="font-serif text-xl text-[#D4AF37]">{formatPrice(total)}</span>
             </div>
 
             {/* Promo code */}
@@ -192,7 +192,7 @@ export function CartContent() {
                 <button
                   onClick={handlePromoApply}
                   className="px-3 py-2 rounded-xl text-[#08090E] text-xs font-bold transition-colors whitespace-nowrap"
-                  style={{ background: '#F5C542' }}
+                  style={{ background: '#D4AF37' }}
                 >
                   Appliquer
                 </button>
@@ -201,13 +201,13 @@ export function CartContent() {
 
             {/* Auth nudge */}
             {!user && (
-              <div className="rounded-xl p-4 text-center" style={{ background: 'rgba(245,197,66,0.05)', border: '1px solid rgba(245,197,66,0.12)' }}>
-                <User className="w-5 h-5 text-[#F5C542]/40 mx-auto mb-1.5" />
+              <div className="rounded-xl p-4 text-center" style={{ background: 'rgba(212,175,55,0.05)', border: '1px solid rgba(212,175,55,0.12)' }}>
+                <User className="w-5 h-5 text-[#D4AF37]/40 mx-auto mb-1.5" />
                 <p className="text-xs font-semibold text-white mb-0.5">Rejoins pour commander</p>
                 <p className="text-[10px] text-white/60 mb-3">Crée ton compte gratuitement et sécurise -5% sur cette commande.</p>
                 <Link
                   href="/auth/signup?redirect=/cart"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#F5C542] hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#D4AF37] hover:underline"
                 >
                   Rejoindre la famille ❄️ →
                 </Link>
@@ -218,7 +218,7 @@ export function CartContent() {
             <button
               onClick={handleCheckout}
               disabled={loading}
-              className="w-full flex items-center justify-center gap-2 py-4 rounded-full bg-[#F5C542] text-charcoal font-bold text-sm hover:bg-[#00EEFF] hover:shadow-[0_0_20px_rgba(245,197,66,0.4)] transition-all disabled:opacity-60"
+              className="w-full flex items-center justify-center gap-2 py-4 rounded-full bg-[#D4AF37] text-charcoal font-bold text-sm hover:bg-[#00EEFF] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all disabled:opacity-60"
             >
               <Lock className="w-4 h-4" />
               {loading ? 'Redirection...' : 'Secure Checkout'}
@@ -232,8 +232,8 @@ export function CartContent() {
 
           {/* Free shipping nudge */}
           {shipping > 0 && (
-            <div className="rounded-xl p-4 text-xs text-white/70" style={{ background: 'rgba(245,197,66,0.06)', border: '1px solid rgba(245,197,66,0.12)' }}>
-              Plus que <strong className="text-[#F5C542]">{formatPrice(100 - subtotal)}</strong> pour la livraison offerte !
+            <div className="rounded-xl p-4 text-xs text-white/70" style={{ background: 'rgba(212,175,55,0.06)', border: '1px solid rgba(212,175,55,0.12)' }}>
+              Plus que <strong className="text-[#D4AF37]">{formatPrice(100 - subtotal)}</strong> pour la livraison offerte !
             </div>
           )}
 

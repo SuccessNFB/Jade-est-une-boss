@@ -78,8 +78,8 @@ export function ProductVariantSelector({
                   className={cn(
                     'flex flex-col items-center px-4 py-2 rounded-xl text-sm border-2 transition-all',
                     selectedLength === l.value
-                      ? 'border-[#F5C542] bg-[#E0F7FF] text-charcoal'
-                      : 'border-white/[0.1] text-white/70 hover:border-[#F5C542]/40'
+                      ? 'border-[#D4AF37] bg-[#E0F7FF] text-charcoal'
+                      : 'border-white/[0.1] text-white/70 hover:border-[#D4AF37]/40'
                   )}
                 >
                   <span className="font-semibold">{l.label}</span>
@@ -112,8 +112,8 @@ export function ProductVariantSelector({
                 className={cn(
                   'flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border-2 transition-all',
                   selectedMetal === m
-                    ? 'border-[#F5C542] bg-[#E0F7FF] text-charcoal'
-                    : 'border-white/[0.1] text-white/70 hover:border-[#F5C542]/40'
+                    ? 'border-[#D4AF37] bg-[#E0F7FF] text-charcoal'
+                    : 'border-white/[0.1] text-white/70 hover:border-[#D4AF37]/40'
                 )}
               >
                 <span
@@ -143,7 +143,7 @@ export function ProductVariantSelector({
               className={cn(
                 'w-8 h-8 rounded-full border-2 transition-all hover:scale-110',
                 selectedColor === c.value
-                  ? 'border-[#F5C542] shadow-[0_0_0_2px_#F5C54240]'
+                  ? 'border-[#D4AF37] shadow-[0_0_0_2px_#D4AF3740]'
                   : 'border-transparent'
               )}
               style={{ background: c.bg, outline: `2px solid ${c.border}20` }}
@@ -170,8 +170,8 @@ export function ProductVariantSelector({
                   className={cn(
                     'flex flex-col items-center px-4 py-2 rounded-xl text-sm border-2 transition-all',
                     selectedSize === size
-                      ? 'border-[#F5C542] bg-[#E0F7FF] text-charcoal'
-                      : 'border-white/[0.1] text-white/70 hover:border-[#F5C542]/40'
+                      ? 'border-[#D4AF37] bg-[#E0F7FF] text-charcoal'
+                      : 'border-white/[0.1] text-white/70 hover:border-[#D4AF37]/40'
                   )}
                 >
                   <span className="font-semibold">{s?.label ?? size}</span>
@@ -189,7 +189,7 @@ export function ProductVariantSelector({
 
       {/* Total price summary */}
       {(metalSurcharge > 0 || lengthSurcharge > 0) && (
-        <div className="flex items-center justify-between text-xs text-white/60 bg-[#141412] rounded-xl px-4 py-2.5">
+        <div className="flex items-center justify-between text-xs text-white/60 bg-[#121210] rounded-xl px-4 py-2.5">
           <span>Total avec options</span>
           <span className="font-bold text-white/70 text-sm">
             {formatPrice(basePrice + metalSurcharge + lengthSurcharge)}

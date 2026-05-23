@@ -9,38 +9,46 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        /* Brand darks */
-        void:    '#0F0F0D',
-        surface: '#1A1A17',
-        panel:   '#222220',
+        /* ── Brand darks ─────────────────────────────────── */
+        noir:    '#0A0A0A',
+        void:    '#0A0A0A',
+        surface: '#141414',
+        panel:   '#1A1A1A',
         rim:     'rgba(255,255,255,0.07)',
 
-        /* Ice — primary accent (yellow-gold) */
-        ice: {
-          50:  '#fffbea',
-          100: '#fff4c2',
-          200: '#ffe87a',
-          300: '#ffd84a',
-          400: '#F5C542',
-          500: '#F5C542',
-          600: '#d4a318',
-          700: '#a87c0e',
-          800: '#7a5b0a',
-          900: '#4a3606',
+        /* ── Champagne gold — primary accent ─────────────── */
+        gold: {
+          DEFAULT: '#D4AF37',
+          light:   '#E8C572',
+          deep:    '#A8842C',
+          50:  '#fefbee',
+          100: '#fcf5d0',
+          200: '#f8e99f',
+          300: '#f1d464',
+          400: '#D4AF37',
+          500: '#D4AF37',
+          600: '#b8912b',
+          700: '#8f6f1f',
+          800: '#6b531a',
+          900: '#3d2f0e',
         },
 
-        /* Gold — secondary accent (richer) */
-        gold: {
-          50:  '#fdf8ed',
-          100: '#f9edcc',
-          200: '#f2d88a',
-          300: '#E8C878',
-          400: '#C9A84C',
-          500: '#a8892d',
-          600: '#876b1e',
-          700: '#634f16',
-          800: '#42340e',
-          900: '#221b08',
+        /* ── Ice white — secondary accent ────────────────── */
+        ice: {
+          DEFAULT: '#F4F4F4',
+          gray:    '#8A8A8A',
+          blue:    '#BFE9FF',
+          muted:   'rgba(244,244,244,0.6)',
+          50:  '#fafafa',
+          100: '#f4f4f4',
+          200: '#e8e8e8',
+          300: '#d4d4d4',
+          400: '#a3a3a3',
+          500: '#8A8A8A',
+          600: '#636363',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
         },
 
         charcoal: '#333333',
@@ -50,6 +58,7 @@ const config: Config = {
         serif:   ['var(--font-playfair)', 'Georgia', 'serif'],
         sans:    ['var(--font-inter)',    'system-ui', 'sans-serif'],
         display: ['var(--font-barlow)',   'system-ui', 'sans-serif'],
+        mono:    ['var(--font-space-mono)', 'Space Mono', 'monospace'],
       },
 
       fontSize: {
@@ -105,26 +114,24 @@ const config: Config = {
       },
 
       backgroundImage: {
-        'gradient-void':  'linear-gradient(160deg, #08090E 0%, #0D0E18 50%, #08090E 100%)',
-        'gradient-ice':   'linear-gradient(135deg, #00D9FF 0%, #80EEFF 50%, #00D9FF 100%)',
-        'gradient-gold':  'linear-gradient(135deg, #C9A84C 0%, #E8C878 50%, #C9A84C 100%)',
-        'shimmer-ice':    'linear-gradient(90deg, transparent 0%, rgba(0,217,255,0.08) 50%, transparent 100%)',
-        'shimmer-gold':   'linear-gradient(90deg, transparent 0%, rgba(201,168,76,0.12) 50%, transparent 100%)',
+        'gradient-void':  'linear-gradient(160deg, #050505 0%, #0A0A0A 50%, #050505 100%)',
+        'gradient-gold':  'linear-gradient(135deg, #D4AF37 0%, #E8C572 50%, #D4AF37 100%)',
+        'gradient-ice':   'linear-gradient(135deg, #BFE9FF 0%, #F4F4F4 50%, #BFE9FF 100%)',
+        'shimmer-gold':   'linear-gradient(90deg, transparent 0%, rgba(212,175,55,0.10) 50%, transparent 100%)',
       },
 
       boxShadow: {
-        'ice':        '0 0 32px rgba(0,217,255,0.2)',
-        'ice-lg':     '0 0 64px rgba(0,217,255,0.3)',
-        'ice-glow':   '0 0 0 1px rgba(0,217,255,0.2), 0 0 32px rgba(0,217,255,0.15)',
-        'gold':       '0 0 32px rgba(201,168,76,0.2)',
-        'gold-lg':    '0 0 64px rgba(201,168,76,0.3)',
-        'card':       '0 4px 24px rgba(0,0,0,0.4)',
-        'card-hover': '0 12px 64px rgba(0,0,0,0.6)',
-        'lift':       '0 24px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06)',
+        'gold':       '0 0 32px rgba(212,175,55,0.25)',
+        'gold-lg':    '0 0 64px rgba(212,175,55,0.35)',
+        'gold-glow':  '0 0 0 1px rgba(212,175,55,0.25), 0 0 32px rgba(212,175,55,0.15)',
+        'card':       '0 4px 24px rgba(0,0,0,0.5)',
+        'card-hover': '0 16px 64px rgba(0,0,0,0.7)',
+        'lift':       '0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05)',
       },
 
       borderRadius: {
         '4xl': '2rem',
+        '5xl': '2.5rem',
       },
     },
   },

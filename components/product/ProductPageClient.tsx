@@ -211,9 +211,9 @@ export function ProductPageClient({ product }: Props) {
 
         <button
           onClick={handleShare}
-          className="flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full transition-all text-white/60 hover:text-[#F5C542]"
+          className="flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full transition-all text-white/60 hover:text-[#D4AF37]"
           style={{ border: '1px solid rgba(255,255,255,0.1)' }}
-          onMouseEnter={(e) => e.currentTarget.style.borderColor = 'rgba(245,197,66,0.3)'}
+          onMouseEnter={(e) => e.currentTarget.style.borderColor = 'rgba(212,175,55,0.3)'}
           onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'}
         >
           <Share2 className="w-4 h-4" />
@@ -257,11 +257,11 @@ export function ProductPageClient({ product }: Props) {
             <div
               className="flex items-center gap-2.5 p-3 rounded-xl cursor-default hover:scale-[1.02] transition-all"
               style={{
-                background: 'rgba(245,197,66,0.05)',
-                border: '1px solid rgba(245,197,66,0.12)',
+                background: 'rgba(212,175,55,0.05)',
+                border: '1px solid rgba(212,175,55,0.12)',
               }}
             >
-              <span className="text-[#F5C542] flex-shrink-0">{badge.icon}</span>
+              <span className="text-[#D4AF37] flex-shrink-0">{badge.icon}</span>
               <span className="text-xs font-semibold text-white/70 leading-tight">{badge.label}</span>
             </div>
             {tooltipIdx === i && (

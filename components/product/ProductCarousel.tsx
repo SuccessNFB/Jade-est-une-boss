@@ -36,7 +36,7 @@ export function ProductCarousel({ images, name }: ProductCarouselProps) {
   return (
     <div className="space-y-4">
       {/* Main image */}
-      <div className="relative aspect-square rounded-2xl overflow-hidden group" style={{ background: '#141412' }}>
+      <div className="relative aspect-square rounded-2xl overflow-hidden group" style={{ background: '#121210' }}>
         <div ref={emblaRef} className="overflow-hidden h-full">
           <div className="flex h-full">
             {images.map((img, i) => (

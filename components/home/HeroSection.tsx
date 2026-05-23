@@ -22,32 +22,32 @@ function HeroProductCard() {
         <div
           className="rounded-2xl overflow-hidden"
           style={{
-            background: '#1A1A17',
-            border: '1px solid rgba(245,197,66,0.2)',
-            boxShadow: '0 24px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(245,197,66,0.06)',
+            background: '#141414',
+            border: '1px solid rgba(212,175,55,0.2)',
+            boxShadow: '0 24px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(212,175,55,0.06)',
           }}
         >
           {/* Gem visual */}
           <div
             className="flex items-center justify-center"
-            style={{ height: 176, background: 'linear-gradient(145deg, #222220 0%, #141412 100%)' }}
+            style={{ height: 176, background: 'linear-gradient(145deg, #1A1A1A 0%, #121210 100%)' }}
           >
             <motion.div
               animate={{ rotate: [0, 6, -6, 0], scale: [1, 1.05, 0.97, 1] }}
               transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
             >
-              <svg viewBox="0 0 120 120" width="76" height="76" style={{ filter: 'drop-shadow(0 0 16px rgba(245,197,66,0.5))' }}>
+              <svg viewBox="0 0 120 120" width="76" height="76" style={{ filter: 'drop-shadow(0 0 16px rgba(212,175,55,0.5))' }}>
                 <defs>
                   <radialGradient id="hgemBg" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="rgba(245,197,66,0.2)" />
-                    <stop offset="100%" stopColor="rgba(245,197,66,0)" />
+                    <stop offset="0%" stopColor="rgba(212,175,55,0.2)" />
+                    <stop offset="100%" stopColor="rgba(212,175,55,0)" />
                   </radialGradient>
                 </defs>
                 <circle cx="60" cy="60" r="54" fill="url(#hgemBg)" />
                 <polygon points="108,60 94.4,94.4 60,108 25.6,94.4 12,60 25.6,25.6 60,12 94.4,25.6"
-                  stroke="rgba(245,197,66,0.75)" strokeWidth="1" fill="none" />
+                  stroke="rgba(212,175,55,0.75)" strokeWidth="1" fill="none" />
                 <polygon points="84,60 76.8,76.8 60,84 43.2,76.8 36,60 43.2,43.2 60,36 76.8,43.2"
-                  stroke="rgba(245,197,66,0.5)" strokeWidth="0.75" fill="rgba(245,197,66,0.05)" />
+                  stroke="rgba(212,175,55,0.5)" strokeWidth="0.75" fill="rgba(212,175,55,0.05)" />
                 {/* Facet lines */}
                 <line x1="108" y1="60" x2="76.8" y2="43.2" stroke="rgba(255,255,255,0.2)" strokeWidth="0.5" />
                 <line x1="108" y1="60" x2="84"   y2="60"   stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" />
@@ -65,25 +65,38 @@ function HeroProductCard() {
                 <line x1="60"   y1="12"   x2="76.8" y2="43.2" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" />
                 <line x1="94.4" y1="25.6" x2="76.8" y2="43.2" stroke="rgba(255,255,255,0.2)" strokeWidth="0.5" />
                 <line x1="94.4" y1="25.6" x2="84"   y2="60"   stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" />
-                <circle cx="60" cy="60" r="3" fill="#F5C542" />
-                <circle cx="60" cy="60" r="6" fill="rgba(245,197,66,0.3)" />
+                <circle cx="60" cy="60" r="3" fill="#D4AF37" />
+                <circle cx="60" cy="60" r="6" fill="rgba(212,175,55,0.3)" />
               </svg>
             </motion.div>
           </div>
 
           {/* Card info */}
           <div className="p-3.5">
-            <p className="font-display font-black text-[8px] tracking-[0.3em] uppercase mb-1" style={{ color: '#F5C542' }}>
+            <p
+              className="text-[8px] font-bold tracking-[0.25em] uppercase mb-1"
+              style={{ color: '#D4AF37', fontFamily: 'var(--font-space-mono), monospace' }}
+            >
               Chaîne Cuban Link
             </p>
-            <p className="text-white text-xs font-semibold leading-snug mb-3">
+            <p className="text-white text-xs font-semibold leading-snug mb-2.5">
               Cuban 12mm — Or Gold VVS
             </p>
             <div className="flex items-center justify-between mb-3">
-              <span className="font-display font-black text-2xl text-white">€199</span>
+              <span
+                className="text-2xl font-bold text-white"
+                style={{ fontFamily: 'var(--font-space-mono), monospace', letterSpacing: '-0.03em' }}
+              >
+                €199
+              </span>
               <div
-                className="flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-bold"
-                style={{ background: 'rgba(245,197,66,0.12)', color: '#F5C542', border: '1px solid rgba(245,197,66,0.2)' }}
+                className="flex items-center gap-1 px-2 py-0.5 rounded-full text-[8px] font-bold"
+                style={{
+                  background: 'rgba(212,175,55,0.12)',
+                  color: '#D4AF37',
+                  border: '1px solid rgba(212,175,55,0.2)',
+                  fontFamily: 'var(--font-space-mono), monospace',
+                }}
               >
                 <Gem style={{ width: 8, height: 8 }} />
                 VVS D
@@ -91,7 +104,11 @@ function HeroProductCard() {
             </div>
             <button
               className="w-full flex items-center justify-between py-2 px-3 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all hover:brightness-110"
-              style={{ background: '#F5C542', color: '#0F0F0D' }}
+              style={{
+                background: '#D4AF37',
+                color: '#0A0A0A',
+                fontFamily: 'var(--font-barlow), system-ui, sans-serif',
+              }}
             >
               Voir la pièce
               <ArrowUpRight style={{ width: 11, height: 11 }} />
@@ -121,12 +138,12 @@ export function HeroSection() {
     <section
       ref={ref}
       className="relative min-h-screen flex items-end overflow-hidden"
-      style={{ background: '#0F0F0D' }}
+      style={{ background: '#0A0A0A' }}
     >
       {/* ── Background: warm gold ambient glow ────────────── */}
       <div className="absolute pointer-events-none" style={{
         right: '-5%', top: '-5%', width: 700, height: 700,
-        background: 'radial-gradient(ellipse, rgba(245,197,66,0.09) 0%, transparent 65%)',
+        background: 'radial-gradient(ellipse, rgba(212,175,55,0.09) 0%, transparent 65%)',
         filter: 'blur(80px)',
       }} />
       <motion.div
@@ -135,7 +152,7 @@ export function HeroSection() {
         transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
         style={{
           left: '-10%', bottom: '0%', width: 600, height: 500,
-          background: 'radial-gradient(ellipse, rgba(245,197,66,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse, rgba(212,175,55,0.06) 0%, transparent 70%)',
           filter: 'blur(80px)',
         }}
       />
@@ -150,7 +167,7 @@ export function HeroSection() {
       {/* Vertical accent rule */}
       <div className="absolute hidden lg:block pointer-events-none" style={{
         left: '8%', top: 0, bottom: 0, width: 1,
-        background: 'linear-gradient(to bottom, transparent 10%, rgba(245,197,66,0.12) 40%, transparent 80%)',
+        background: 'linear-gradient(to bottom, transparent 10%, rgba(212,175,55,0.12) 40%, transparent 80%)',
       }} />
 
       {/* ── Main content ─────────────────────────────────── */}
@@ -172,9 +189,9 @@ export function HeroSection() {
             >
               <div
                 className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
-                style={{ border: '1px solid rgba(245,197,66,0.45)' }}
+                style={{ border: '1px solid rgba(212,175,55,0.45)' }}
               >
-                <div className="w-2 h-2 rounded-full" style={{ background: '#F5C542' }} />
+                <div className="w-2 h-2 rounded-full" style={{ background: '#D4AF37' }} />
               </div>
               <span
                 className="text-[10px] font-semibold tracking-widest uppercase"
@@ -194,7 +211,7 @@ export function HeroSection() {
             >
               Brille avec<br />
               nos bijoux<br />
-              <span style={{ color: '#F5C542' }}>moissanite</span>
+              <span style={{ color: '#D4AF37' }}>moissanite</span>
             </motion.h1>
 
             {/* CTAs */}
@@ -218,8 +235,8 @@ export function HeroSection() {
               <Link href="/shop">
                 <motion.span
                   className="inline-flex items-center gap-2 cursor-pointer px-7 py-3.5 rounded-full font-display font-black text-sm uppercase tracking-wider"
-                  style={{ background: '#F5C542', color: '#0F0F0D' }}
-                  whileHover={{ background: '#FAD555', boxShadow: '0 0 36px rgba(245,197,66,0.45)' }}
+                  style={{ background: '#D4AF37', color: '#0A0A0A' }}
+                  whileHover={{ background: '#E8C572', boxShadow: '0 0 36px rgba(212,175,55,0.45)' }}
                   whileTap={{ scale: 0.97 }}
                 >
                   Acheter maintenant
@@ -237,7 +254,7 @@ export function HeroSection() {
       {/* Bottom fade */}
       <div
         className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none"
-        style={{ background: 'linear-gradient(to top, #0F0F0D, transparent)' }}
+        style={{ background: 'linear-gradient(to top, #0A0A0A, transparent)' }}
       />
     </section>
   )

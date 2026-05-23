@@ -21,7 +21,7 @@ export function NewsletterSection() {
   return (
     <section
       className="section-pad border-t"
-      style={{ background: '#141412', borderColor: 'rgba(255,255,255,0.04)' }}
+      style={{ background: '#121210', borderColor: 'rgba(255,255,255,0.04)' }}
     >
       <div className="section-container max-w-xl text-center">
         <motion.div
@@ -32,7 +32,7 @@ export function NewsletterSection() {
           {/* Diamond icon */}
           <div
             className="w-12 h-12 rounded-2xl mx-auto mb-7 flex items-center justify-center"
-            style={{ background: 'rgba(245,197,66,0.08)', color: '#F5C542' }}
+            style={{ background: 'rgba(212,175,55,0.08)', color: '#D4AF37' }}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2 L22 9 L18 22 H6 L2 9 Z" stroke="currentColor" strokeWidth="1.5" fill="none" />
@@ -41,7 +41,7 @@ export function NewsletterSection() {
             </svg>
           </div>
 
-          <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#F5C542] mb-4">
+          <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#D4AF37] mb-4">
             Ice Age Newsletter
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-3">
@@ -61,9 +61,9 @@ export function NewsletterSection() {
             >
               <div
                 className="w-14 h-14 rounded-2xl flex items-center justify-center"
-                style={{ background: 'rgba(245,197,66,0.1)' }}
+                style={{ background: 'rgba(212,175,55,0.1)' }}
               >
-                <CheckCircle style={{ width: 26, height: 26, color: '#F5C542' }} />
+                <CheckCircle style={{ width: 26, height: 26, color: '#D4AF37' }} />
               </div>
               <p className="font-serif text-xl font-semibold text-white">Bienvenue dans l'Ice Age</p>
               <p className="text-sm text-white/60">
@@ -78,7 +78,7 @@ export function NewsletterSection() {
                 placeholder="ton@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 px-5 py-3.5 rounded-full text-sm text-white placeholder-white/25 focus:outline-none focus:ring-1 focus:ring-[#F5C542]/40"
+                className="flex-1 px-5 py-3.5 rounded-full text-sm text-white placeholder-white/25 focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/40"
                 style={{
                   background: 'rgba(255,255,255,0.05)',
                   border: '1px solid rgba(255,255,255,0.1)',

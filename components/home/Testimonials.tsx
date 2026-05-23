@@ -35,7 +35,7 @@ const REVIEWS = [
 
 export function Testimonials() {
   return (
-    <section className="section-pad" style={{ background: '#0F0F0D' }}>
+    <section className="section-pad" style={{ background: '#0A0A0A' }}>
       <div className="section-container">
 
         {/* Header */}
@@ -45,7 +45,7 @@ export function Testimonials() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#F5C542] mb-4">
+          <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#D4AF37] mb-4">
             Avis clients
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-5">
@@ -54,7 +54,7 @@ export function Testimonials() {
           <div className="flex items-center justify-center gap-2.5">
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => (
-                <span key={i} style={{ color: '#C9A84C', fontSize: 16 }}>★</span>
+                <span key={i} style={{ color: '#D4AF37', fontSize: 16 }}>★</span>
               ))}
             </div>
             <span className="text-sm text-white/70">4.9 / 5 · 300+ avis vérifiés</span>
@@ -72,11 +72,11 @@ export function Testimonials() {
               transition={{ delay: i * 0.09 }}
               className="flex flex-col gap-5 p-6 rounded-2xl transition-all duration-300"
               style={{
-                background: '#1A1A17',
+                background: '#141414',
                 border: '1px solid rgba(255,255,255,0.06)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(201,168,76,0.15)'
+                e.currentTarget.style.borderColor = 'rgba(212,175,55,0.15)'
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)'
@@ -85,7 +85,7 @@ export function Testimonials() {
               {/* Stars */}
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, j) => (
-                  <span key={j} style={{ color: '#C9A84C', fontSize: 12 }}>★</span>
+                  <span key={j} style={{ color: '#D4AF37', fontSize: 12 }}>★</span>
                 ))}
               </div>
 
@@ -104,7 +104,7 @@ export function Testimonials() {
                   </span>
                 </div>
                 <p className="text-[11px] text-white/65">{r.city} · {r.date}</p>
-                <p className="text-[10px] text-[#F5C542]/50 mt-1 font-medium">{r.product}</p>
+                <p className="text-[10px] text-[#D4AF37]/50 mt-1 font-medium">{r.product}</p>
               </div>
             </motion.div>
           ))}

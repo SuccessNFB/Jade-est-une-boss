@@ -83,7 +83,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
           className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full opacity-20"
-          style={{ background: 'radial-gradient(ellipse, #F5C542 0%, transparent 70%)', filter: 'blur(80px)' }}
+          style={{ background: 'radial-gradient(ellipse, #D4AF37 0%, transparent 70%)', filter: 'blur(80px)' }}
         />
       </div>
 
@@ -94,7 +94,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
         className="relative w-full max-w-md"
       >
         {/* Card */}
-        <div className="bg-[#1A1A17]/[0.04] border border-white/10 rounded-3xl p-8 sm:p-10 backdrop-blur-sm">
+        <div className="bg-[#141414]/[0.04] border border-white/10 rounded-3xl p-8 sm:p-10 backdrop-blur-sm">
 
           {/* Logo */}
           <div className="flex justify-center mb-8">
@@ -115,7 +115,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
                 {/* Benefits */}
                 <div className="flex flex-wrap justify-center gap-2 mt-4">
                   {['-5% sur ta 1ère commande ✓', 'Offres exclusives membres', 'Suivi de commandes'].map((b) => (
-                    <span key={b} className="text-[10px] font-semibold text-[#F5C542] bg-[#F5C542]/10 border border-[#F5C542]/20 px-3 py-1 rounded-full">
+                    <span key={b} className="text-[10px] font-semibold text-[#D4AF37] bg-[#D4AF37]/10 border border-[#D4AF37]/20 px-3 py-1 rounded-full">
                       {b}
                     </span>
                   ))}
@@ -146,7 +146,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
                   onChange={(e) => setFirstName(e.target.value)}
                   placeholder="Ton prénom"
                   required
-                  className="w-full bg-[#1A1A17]/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm outline-none focus:border-[#F5C542]/60 focus:bg-[#1A1A17]/8 transition-all"
+                  className="w-full bg-[#141414]/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm outline-none focus:border-[#D4AF37]/60 focus:bg-[#141414]/8 transition-all"
                 />
               </div>
             )}
@@ -162,7 +162,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
                 placeholder="ton@email.com"
                 required
                 autoComplete="email"
-                className="w-full bg-[#1A1A17]/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm outline-none focus:border-[#F5C542]/60 focus:bg-[#1A1A17]/8 transition-all"
+                className="w-full bg-[#141414]/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm outline-none focus:border-[#D4AF37]/60 focus:bg-[#141414]/8 transition-all"
               />
             </div>
 
@@ -179,7 +179,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
                   required
                   minLength={8}
                   autoComplete={isSignup ? 'new-password' : 'current-password'}
-                  className="w-full bg-[#1A1A17]/5 border border-white/10 rounded-xl px-4 py-3 pr-12 text-white placeholder-white/20 text-sm outline-none focus:border-[#F5C542]/60 focus:bg-[#1A1A17]/8 transition-all"
+                  className="w-full bg-[#141414]/5 border border-white/10 rounded-xl px-4 py-3 pr-12 text-white placeholder-white/20 text-sm outline-none focus:border-[#D4AF37]/60 focus:bg-[#141414]/8 transition-all"
                 />
                 <button
                   type="button"
@@ -191,7 +191,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
               </div>
               {!isSignup && (
                 <div className="flex justify-end mt-1.5">
-                  <Link href="/auth/reset-password" className="text-xs text-white/60 hover:text-[#F5C542] transition-colors">
+                  <Link href="/auth/reset-password" className="text-xs text-white/60 hover:text-[#D4AF37] transition-colors">
                     Mot de passe oublié ?
                   </Link>
                 </div>
@@ -201,7 +201,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
             <button
               type="submit"
               disabled={loading}
-              className="w-full flex items-center justify-center gap-2.5 py-4 rounded-full bg-[#F5C542] text-white/70 font-bold text-sm tracking-wide hover:bg-[#00EEFF] hover:shadow-[0_0_28px_rgba(245,197,66,0.5)] transition-all disabled:opacity-60 mt-2"
+              className="w-full flex items-center justify-center gap-2.5 py-4 rounded-full bg-[#D4AF37] text-white/70 font-bold text-sm tracking-wide hover:bg-[#00EEFF] hover:shadow-[0_0_28px_rgba(212,175,55,0.5)] transition-all disabled:opacity-60 mt-2"
             >
               {loading ? (
                 <Loader2 className="w-4 h-4 animate-spin" />
@@ -219,14 +219,14 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
             {isSignup ? (
               <>
                 Déjà membre ?{' '}
-                <Link href={`/auth/login${redirectTo !== '/' ? `?redirect=${encodeURIComponent(redirectTo)}` : ''}`} className="text-[#F5C542] font-semibold hover:underline">
+                <Link href={`/auth/login${redirectTo !== '/' ? `?redirect=${encodeURIComponent(redirectTo)}` : ''}`} className="text-[#D4AF37] font-semibold hover:underline">
                   Se connecter
                 </Link>
               </>
             ) : (
               <>
                 Pas encore membre ?{' '}
-                <Link href={`/auth/signup${redirectTo !== '/' ? `?redirect=${encodeURIComponent(redirectTo)}` : ''}`} className="text-[#F5C542] font-semibold hover:underline">
+                <Link href={`/auth/signup${redirectTo !== '/' ? `?redirect=${encodeURIComponent(redirectTo)}` : ''}`} className="text-[#D4AF37] font-semibold hover:underline">
                   Rejoindre la famille
                 </Link>
               </>

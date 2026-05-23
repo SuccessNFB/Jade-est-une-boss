@@ -205,7 +205,7 @@ export default function CareGuidePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#F5C542] text-charcoal font-semibold text-sm tracking-wide rounded-full hover:scale-[1.03] hover:shadow-ice transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#D4AF37] text-charcoal font-semibold text-sm tracking-wide rounded-full hover:scale-[1.03] hover:shadow-ice transition-all duration-300"
               >
                 Nous contacter
               </Link>

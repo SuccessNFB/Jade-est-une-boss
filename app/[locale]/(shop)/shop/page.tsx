@@ -31,12 +31,12 @@ export default async function ShopPage({ searchParams }: ShopPageProps) {
     <>
       <AnnouncementBar />
       <Header />
-      <main className="pt-[60px] lg:pt-[72px]" style={{ background: '#0F0F0D', minHeight: '100vh' }}>
+      <main className="pt-[60px] lg:pt-[72px]" style={{ background: '#0A0A0A', minHeight: '100vh' }}>
 
         {/* Page header */}
-        <div className="py-10" style={{ background: '#141412', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="py-10" style={{ background: '#121210', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
           <div className="section-container">
-            <p className="text-[11px] text-[#F5C542] tracking-[0.3em] uppercase font-bold mb-2">
+            <p className="text-[11px] text-[#D4AF37] tracking-[0.3em] uppercase font-bold mb-2">
               {catLabel ? 'Catégorie' : 'Toute la collection'}
             </p>
             <h1 className="font-serif text-3xl sm:text-4xl font-bold text-white">

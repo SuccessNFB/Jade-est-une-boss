@@ -33,7 +33,7 @@ function FilterSection({ title, children }: { title: string; children: React.Rea
 
 const COLOR_SWATCHES = [
   { value: 'silver', label: 'Argent',  bg: '#C0C0C0' },
-  { value: 'gold',   label: 'Or',      bg: '#C9A84C' },
+  { value: 'gold',   label: 'Or',      bg: '#D4AF37' },
   { value: 'rose',   label: 'Or Rose', bg: '#E8B4B8' },
 ]
 
@@ -82,7 +82,7 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
           {hasActiveFilters && (
             <button
               onClick={resetFilters}
-              className="text-[10px] font-bold text-[#F5C542] hover:underline tracking-wide"
+              className="text-[10px] font-bold text-[#D4AF37] hover:underline tracking-wide"
             >
               Réinitialiser
             </button>
@@ -98,7 +98,7 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
                     type="checkbox"
                     checked={tier === t.id}
                     onChange={() => setTier(tier === t.id ? undefined : t.id)}
-                    className="w-3.5 h-3.5 accent-[#F5C542]"
+                    className="w-3.5 h-3.5 accent-[#D4AF37]"
                   />
                   <span className="text-xs text-white/65 group-hover:text-white/80 transition-colors">{t.label}</span>
                 </div>
@@ -116,7 +116,7 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
                   type="checkbox"
                   checked={metal === key}
                   onChange={() => setMetal(metal === key ? undefined : key)}
-                  className="w-3.5 h-3.5 accent-[#F5C542]"
+                  className="w-3.5 h-3.5 accent-[#D4AF37]"
                 />
                 <span
                   className="w-3.5 h-3.5 rounded-full flex-shrink-0"
@@ -139,9 +139,9 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
                 style={{
                   background: c.bg,
                   border: color === c.value
-                    ? '2px solid #F5C542'
+                    ? '2px solid #D4AF37'
                     : '2px solid rgba(255,255,255,0.15)',
-                  boxShadow: color === c.value ? '0 0 0 2px rgba(245,197,66,0.25)' : 'none',
+                  boxShadow: color === c.value ? '0 0 0 2px rgba(212,175,55,0.25)' : 'none',
                 }}
               />
             ))}
@@ -155,7 +155,7 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
                 type="checkbox"
                 checked={inStockOnly}
                 onChange={(e) => setInStockOnly(e.target.checked)}
-                className="w-3.5 h-3.5 accent-[#F5C542]"
+                className="w-3.5 h-3.5 accent-[#D4AF37]"
               />
               <span className="text-xs text-white/65">En stock uniquement</span>
             </label>
@@ -164,7 +164,7 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
                 type="checkbox"
                 checked={onSaleOnly}
                 onChange={(e) => setOnSaleOnly(e.target.checked)}
-                className="w-3.5 h-3.5 accent-[#F5C542]"
+                className="w-3.5 h-3.5 accent-[#D4AF37]"
               />
               <span className="text-xs text-white/65">En promotion</span>
             </label>
@@ -178,7 +178,7 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
             placeholder="Cuban, tennis, pendentif..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full px-3 py-2.5 rounded-xl text-xs text-white placeholder-white/25 focus:outline-none focus:ring-1 focus:ring-[#F5C542]/40"
+            className="w-full px-3 py-2.5 rounded-xl text-xs text-white placeholder-white/25 focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/40"
             style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
           />
         </div>
@@ -209,7 +209,7 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
             {hasActiveFilters && (
               <span
                 className="w-4 h-4 rounded-full text-[#08090E] text-[9px] font-black flex items-center justify-center"
-                style={{ background: '#F5C542' }}
+                style={{ background: '#D4AF37' }}
               >
                 !
               </span>
@@ -244,8 +244,8 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
                 onClick={() => setViewMode('grid')}
                 className="p-2 transition-colors"
                 style={{
-                  background: viewMode === 'grid' ? 'rgba(245,197,66,0.15)' : 'transparent',
-                  color: viewMode === 'grid' ? '#F5C542' : 'rgba(255,255,255,0.3)',
+                  background: viewMode === 'grid' ? 'rgba(212,175,55,0.15)' : 'transparent',
+                  color: viewMode === 'grid' ? '#D4AF37' : 'rgba(255,255,255,0.3)',
                 }}
               >
                 <Grid3X3 className="w-3.5 h-3.5" />
@@ -254,8 +254,8 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
                 onClick={() => setViewMode('list')}
                 className="p-2 transition-colors"
                 style={{
-                  background: viewMode === 'list' ? 'rgba(245,197,66,0.15)' : 'transparent',
-                  color: viewMode === 'list' ? '#F5C542' : 'rgba(255,255,255,0.3)',
+                  background: viewMode === 'list' ? 'rgba(212,175,55,0.15)' : 'transparent',
+                  color: viewMode === 'list' ? '#D4AF37' : 'rgba(255,255,255,0.3)',
                 }}
               >
                 <List className="w-3.5 h-3.5" />
@@ -283,7 +283,7 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
               <div
                 key={i}
                 className={cn('rounded-2xl animate-pulse', viewMode === 'grid' ? 'aspect-[3/4]' : 'h-28')}
-                style={{ background: '#1A1A17' }}
+                style={{ background: '#141414' }}
               />
             ))}
           </div>
@@ -323,7 +323,7 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
               exit={{ x: '-100%' }}
               transition={{ type: 'tween', duration: 0.25 }}
               className="fixed top-0 left-0 bottom-0 z-50 w-72 p-6 overflow-y-auto lg:hidden"
-              style={{ background: '#141412', borderRight: '1px solid rgba(255,255,255,0.06)' }}
+              style={{ background: '#121210', borderRight: '1px solid rgba(255,255,255,0.06)' }}
             >
               <div className="flex items-center justify-between mb-6">
                 <h3 className="font-semibold text-white text-sm">Filtres</h3>
@@ -338,7 +338,7 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
               <button
                 onClick={() => setSidebarOpen(false)}
                 className="mt-6 w-full py-3 rounded-full text-[#08090E] font-bold text-sm transition-colors"
-                style={{ background: '#F5C542' }}
+                style={{ background: '#D4AF37' }}
               >
                 Voir {sorted.length} résultat{sorted.length !== 1 ? 's' : ''}
               </button>
@@ -353,11 +353,11 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
 function Chip({ label, onRemove }: { label: string; onRemove: () => void }) {
   return (
     <span
-      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold text-[#F5C542]"
-      style={{ background: 'rgba(245,197,66,0.08)', border: '1px solid rgba(245,197,66,0.2)' }}
+      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold text-[#D4AF37]"
+      style={{ background: 'rgba(212,175,55,0.08)', border: '1px solid rgba(212,175,55,0.2)' }}
     >
       {label}
-      <button onClick={onRemove} className="text-[#F5C542]/50 hover:text-[#F5C542] transition-colors">
+      <button onClick={onRemove} className="text-[#D4AF37]/50 hover:text-[#D4AF37] transition-colors">
         <X className="w-3 h-3" />
       </button>
     </span>
@@ -369,7 +369,7 @@ function EmptyState({ onReset }: { onReset: () => void }) {
     <div className="text-center py-20">
       <div
         className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl"
-        style={{ background: '#1A1A17', border: '1px solid rgba(255,255,255,0.06)' }}
+        style={{ background: '#141414', border: '1px solid rgba(255,255,255,0.06)' }}
       >
         📦
       </div>
@@ -378,7 +378,7 @@ function EmptyState({ onReset }: { onReset: () => void }) {
       <button
         onClick={onReset}
         className="px-6 py-3 rounded-full text-[#08090E] font-bold text-sm transition-colors"
-        style={{ background: '#F5C542' }}
+        style={{ background: '#D4AF37' }}
       >
         Voir toute la collection
       </button>

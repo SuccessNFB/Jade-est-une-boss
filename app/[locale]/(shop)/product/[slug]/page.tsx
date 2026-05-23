@@ -94,7 +94,7 @@ export default async function ProductPage({ params }: Props) {
       <Header />
 
       <ProductViewTracker id={p.id} name={p.name} price={p.price} category={p.category} />
-      <main className="pt-[60px] lg:pt-[72px] pb-24" style={{ background: '#0F0F0D', minHeight: '100vh' }}>
+      <main className="pt-[60px] lg:pt-[72px] pb-24" style={{ background: '#0A0A0A', minHeight: '100vh' }}>
         <div className="section-container max-w-5xl py-10">
 
           {/* ── TOP SECTION ──────────────────────────────── */}
@@ -132,7 +132,7 @@ export default async function ProductPage({ params }: Props) {
                     <span className="text-lg text-white/65 line-through">
                       {formatPrice(p.compare_at_price)}
                     </span>
-                    <span className="text-sm font-bold px-2 py-0.5 rounded-full" style={{ background: 'rgba(245,197,66,0.12)', color: '#F5C542' }}>
+                    <span className="text-sm font-bold px-2 py-0.5 rounded-full" style={{ background: 'rgba(212,175,55,0.12)', color: '#D4AF37' }}>
                       -{Math.round((1 - p.price / p.compare_at_price) * 100)}%
                     </span>
                   </>
@@ -140,8 +140,8 @@ export default async function ProductPage({ params }: Props) {
               </div>
 
               {/* Delivery badge */}
-              <div className="flex items-center gap-2 text-sm text-white/70 px-4 py-2.5 rounded-xl" style={{ background: 'rgba(245,197,66,0.05)', border: '1px solid rgba(245,197,66,0.1)' }}>
-                <Truck className="w-4 h-4 text-[#F5C542]" />
+              <div className="flex items-center gap-2 text-sm text-white/70 px-4 py-2.5 rounded-xl" style={{ background: 'rgba(212,175,55,0.05)', border: '1px solid rgba(212,175,55,0.1)' }}>
+                <Truck className="w-4 h-4 text-[#D4AF37]" />
                 <span>Livraison <strong>offerte en France</strong> · FREE · 4–7 jours</span>
               </div>
 
@@ -153,7 +153,7 @@ export default async function ProductPage({ params }: Props) {
                   'Garantie à vie · retour 30 jours',
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-2 text-sm text-white/70">
-                    <CheckCircle className="w-4 h-4 text-[#F5C542] flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 text-[#D4AF37] flex-shrink-0 mt-0.5" />
                     {line}
                   </li>
                 ))}

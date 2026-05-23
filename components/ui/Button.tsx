@@ -19,11 +19,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ].join(' ')
 
     const variants: Record<string, string> = {
-      ice:     'bg-[#F5C542] text-[#08090E] hover:bg-[#FAD555] hover:shadow-[0_0_28px_rgba(245,197,66,0.4)] focus-visible:ring-[#F5C542]/50',
+      ice:     'bg-[#D4AF37] text-[#08090E] hover:bg-[#E8C572] hover:shadow-[0_0_28px_rgba(212,175,55,0.4)] focus-visible:ring-[#D4AF37]/50',
       outline: 'bg-transparent text-white/75 border border-white/12 hover:border-white/25 hover:text-white backdrop-blur-sm focus-visible:ring-white/20',
       ghost:   'bg-transparent text-white/60 hover:text-white focus-visible:ring-white/15',
-      gold:    'bg-[#C9A84C] text-[#08090E] hover:bg-[#D4B565] hover:shadow-[0_0_28px_rgba(201,168,76,0.35)] focus-visible:ring-[#C9A84C]/50',
-      primary: 'bg-[#F5C542] text-[#08090E] hover:bg-[#FAD555] focus-visible:ring-[#F5C542]/50',
+      gold:    'bg-[#D4AF37] text-[#08090E] hover:bg-[#E8C572] hover:shadow-[0_0_28px_rgba(212,175,55,0.35)] focus-visible:ring-[#D4AF37]/50',
+      primary: 'bg-[#D4AF37] text-[#08090E] hover:bg-[#E8C572] focus-visible:ring-[#D4AF37]/50',
     }
 
     const sizes: Record<string, string> = {

@@ -119,7 +119,7 @@ export default function ContactPage() {
                     name="subject"
                     value={form.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-white/[0.1] text-white/70 text-sm focus:outline-none focus:ring-2 focus:ring-ice-500 transition bg-[#1A1A17] appearance-none"
+                    className="w-full px-4 py-3 rounded-xl border border-white/[0.1] text-white/70 text-sm focus:outline-none focus:ring-2 focus:ring-ice-500 transition bg-[#141414] appearance-none"
                   >
                     <option value="" disabled>Choisir un sujet…</option>
                     {subjects.map((s) => (
@@ -145,7 +145,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-4 bg-[#F5C542] text-white/70 font-semibold text-sm tracking-wide rounded-full hover:scale-[1.02] hover:shadow-ice transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
+                  className="w-full py-4 bg-[#D4AF37] text-white/70 font-semibold text-sm tracking-wide rounded-full hover:scale-[1.02] hover:shadow-ice transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
                 >
                   {loading ? 'Envoi en cours…' : 'Envoyer le message →'}
                 </button>
@@ -199,7 +199,7 @@ export default function ContactPage() {
                     href="https://instagram.com/icekey.shop"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-4 py-3 bg-[#1A1A17] rounded-xl text-white/70 text-sm font-semibold hover:shadow-ice transition-all duration-200 hover:text-ice-600"
+                    className="flex items-center gap-3 px-4 py-3 bg-[#141414] rounded-xl text-white/70 text-sm font-semibold hover:shadow-ice transition-all duration-200 hover:text-ice-600"
                   >
                     <span className="text-lg">📸</span>
                     @icekey.shop — Instagram
@@ -208,7 +208,7 @@ export default function ContactPage() {
                     href="https://tiktok.com/@icekey.shop"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-4 py-3 bg-[#1A1A17] rounded-xl text-white/70 text-sm font-semibold hover:shadow-ice transition-all duration-200 hover:text-ice-600"
+                    className="flex items-center gap-3 px-4 py-3 bg-[#141414] rounded-xl text-white/70 text-sm font-semibold hover:shadow-ice transition-all duration-200 hover:text-ice-600"
                   >
                     <span className="text-lg">🎵</span>
                     @icekey.shop — TikTok

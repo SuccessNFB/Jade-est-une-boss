@@ -40,10 +40,10 @@ export function Footer() {
   }
 
   return (
-    <footer style={{ background: '#0F0F0D', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
+    <footer style={{ background: '#0A0A0A', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
 
       {/* ── Newsletter strip ─────────────────────────────── */}
-      <div style={{ background: '#1A1A17', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+      <div style={{ background: '#141414', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="section-container py-10">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
@@ -62,7 +62,7 @@ export function Footer() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="ton@email.com"
                 required
-                className="flex-1 sm:w-60 px-4 py-2.5 rounded-full text-sm text-white placeholder-white/25 focus:outline-none focus:ring-1 focus:ring-[#F5C542]/30"
+                className="flex-1 sm:w-60 px-4 py-2.5 rounded-full text-sm text-white placeholder-white/25 focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/30"
                 style={{
                   background: 'rgba(255,255,255,0.05)',
                   border: '1px solid rgba(255,255,255,0.08)',
@@ -92,7 +92,7 @@ export function Footer() {
             <p className="text-sm leading-relaxed text-white/70 max-w-xs mb-4">
               Moissanite VVS certifié GRA. Diamond test validé. Ships depuis la France en 4–7 jours.
             </p>
-            <p className="text-[10px] font-black tracking-[0.35em] text-[#F5C542] mb-5 uppercase">
+            <p className="text-[10px] font-black tracking-[0.35em] text-[#D4AF37] mb-5 uppercase">
               Cold is the new gold
             </p>
             <div className="flex items-center gap-2">
@@ -111,9 +111,9 @@ export function Footer() {
                     color: 'rgba(255,255,255,0.4)',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = 'rgba(245,197,66,0.1)'
-                    e.currentTarget.style.color = '#F5C542'
-                    e.currentTarget.style.borderColor = 'rgba(245,197,66,0.2)'
+                    e.currentTarget.style.background = 'rgba(212,175,55,0.1)'
+                    e.currentTarget.style.color = '#D4AF37'
+                    e.currentTarget.style.borderColor = 'rgba(212,175,55,0.2)'
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.background = 'rgba(255,255,255,0.05)'
@@ -233,9 +233,9 @@ export function Footer() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/60">
             <span>© {new Date().getFullYear()} ICEKEY. Tous droits réservés.</span>
             <div className="flex items-center gap-5">
-              <Link href="/privacy" className="hover:text-[#F5C542] transition-colors">Confidentialité</Link>
-              <Link href="/terms"   className="hover:text-[#F5C542] transition-colors">CGV</Link>
-              <Link href="/contact" className="hover:text-[#F5C542] transition-colors">Contact</Link>
+              <Link href="/privacy" className="hover:text-[#D4AF37] transition-colors">Confidentialité</Link>
+              <Link href="/terms"   className="hover:text-[#D4AF37] transition-colors">CGV</Link>
+              <Link href="/contact" className="hover:text-[#D4AF37] transition-colors">Contact</Link>
             </div>
           </div>
         </div>

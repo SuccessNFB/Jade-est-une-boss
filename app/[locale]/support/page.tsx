@@ -63,7 +63,7 @@ export default function SupportPage() {
               <p className="text-charcoal/60 text-sm mb-2">On revient vers toi sous <strong>24h ouvrées</strong>.</p>
               <p className="text-charcoal/40 text-xs mb-8">Vérifie tes spams si tu ne reçois pas de réponse.</p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Link href="/shop" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#F5C542] text-charcoal font-bold text-sm hover:bg-[#00EEFF] transition-all">
+                <Link href="/shop" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#D4AF37] text-charcoal font-bold text-sm hover:bg-[#00EEFF] transition-all">
                   Retour à la boutique
                 </Link>
                 {user && (
@@ -76,7 +76,7 @@ export default function SupportPage() {
           ) : (
             <>
               <div className="mb-8">
-                <p className="text-xs font-bold tracking-widest uppercase text-[#F5C542] mb-2">Support</p>
+                <p className="text-xs font-bold tracking-widest uppercase text-[#D4AF37] mb-2">Support</p>
                 <h1 className="font-serif text-4xl font-bold text-charcoal mb-3">On est là pour toi</h1>
                 <p className="text-charcoal/55 text-sm">Dis-nous ce qui se passe, on répond sous 24h.</p>
               </div>
@@ -96,11 +96,11 @@ export default function SupportPage() {
                         onClick={() => setCategory(value)}
                         className={`flex items-center gap-2 px-3 py-3 rounded-xl border text-sm font-semibold transition-all text-left ${
                           category === value
-                            ? 'border-[#F5C542] bg-[#F5C542]/10 text-charcoal'
+                            ? 'border-[#D4AF37] bg-[#D4AF37]/10 text-charcoal'
                             : 'border-gray-200 bg-white text-charcoal/60 hover:border-gray-300'
                         }`}
                       >
-                        <Icon className={`w-4 h-4 flex-shrink-0 ${category === value ? 'text-[#F5C542]' : 'text-charcoal/30'}`} />
+                        <Icon className={`w-4 h-4 flex-shrink-0 ${category === value ? 'text-[#D4AF37]' : 'text-charcoal/30'}`} />
                         <span className="text-xs leading-tight">{label}</span>
                       </button>
                     ))}
@@ -117,7 +117,7 @@ export default function SupportPage() {
                     value={orderId}
                     onChange={(e) => setOrderId(e.target.value)}
                     placeholder="ex: cs_live_..."
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-charcoal placeholder-charcoal/25 outline-none focus:border-[#F5C542]/60 transition-all"
+                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-charcoal placeholder-charcoal/25 outline-none focus:border-[#D4AF37]/60 transition-all"
                   />
                 </div>
 
@@ -132,7 +132,7 @@ export default function SupportPage() {
                         onChange={(e) => setName(e.target.value)}
                         required
                         placeholder="Ton prénom"
-                        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-charcoal placeholder-charcoal/25 outline-none focus:border-[#F5C542]/60 transition-all"
+                        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-charcoal placeholder-charcoal/25 outline-none focus:border-[#D4AF37]/60 transition-all"
                       />
                     </div>
                     <div>
@@ -143,7 +143,7 @@ export default function SupportPage() {
                         onChange={(e) => setEmail(e.target.value)}
                         required
                         placeholder="ton@email.com"
-                        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-charcoal placeholder-charcoal/25 outline-none focus:border-[#F5C542]/60 transition-all"
+                        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-charcoal placeholder-charcoal/25 outline-none focus:border-[#D4AF37]/60 transition-all"
                       />
                     </div>
                   </div>
@@ -160,14 +160,14 @@ export default function SupportPage() {
                     required
                     rows={5}
                     placeholder="Décris ton problème en détail…"
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-charcoal placeholder-charcoal/25 outline-none focus:border-[#F5C542]/60 transition-all resize-none"
+                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-charcoal placeholder-charcoal/25 outline-none focus:border-[#D4AF37]/60 transition-all resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading || !category || !message.trim()}
-                  className="w-full flex items-center justify-center gap-2 py-4 rounded-full bg-[#F5C542] text-charcoal font-bold text-sm hover:bg-[#00EEFF] hover:shadow-[0_0_20px_rgba(245,197,66,0.4)] transition-all disabled:opacity-50"
+                  className="w-full flex items-center justify-center gap-2 py-4 rounded-full bg-[#D4AF37] text-charcoal font-bold text-sm hover:bg-[#00EEFF] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all disabled:opacity-50"
                 >
                   {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Envoyer ma demande'}
                 </button>

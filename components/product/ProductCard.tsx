@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ShoppingBag, Heart, Zap, ArrowUpRight } from 'lucide-react'
+import { ShoppingBag, Heart, Zap } from 'lucide-react'
 import { useCartStore } from '@/store/cartStore'
 import { formatPrice } from '@/lib/utils/formatPrice'
 import type { Product } from '@/types'
@@ -13,6 +13,17 @@ import { trackAddToCart } from '@/lib/analytics/gtag'
 
 interface ProductCardProps {
   product: Product
+}
+
+const CATEGORY_LABELS: Record<string, string> = {
+  chain:    'Chaîne',
+  pendant:  'Pendentif',
+  ring:     'Bague',
+  bracelet: 'Bracelet',
+  earring:  'Boucle',
+  watch:    'Montre',
+  buff:     'Buff',
+  set:      'Set',
 }
 
 export function ProductCard({ product }: ProductCardProps) {
@@ -37,6 +48,8 @@ export function ProductCard({ product }: ProductCardProps) {
     ? Math.round((1 - product.price / product.compare_at_price) * 100)
     : null
 
+  const categoryLabel = CATEGORY_LABELS[product.category] ?? product.category
+
   return (
     <Link
       href={`/product/${product.slug}`}
@@ -44,156 +57,172 @@ export function ProductCard({ product }: ProductCardProps) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Full-bleed photo card — VibeVault style */}
       <div
-        className="relative overflow-hidden rounded-2xl"
-        style={{ aspectRatio: '3/4', background: '#1A1A17' }}
+        className="relative overflow-hidden rounded-[20px]"
+        style={{ aspectRatio: '3/4', background: '#141414' }}
       >
-        {/* Photo fills entire card */}
+        {/* Product photo */}
         <Image
           src={mainImage}
           alt={product.images[0]?.alt ?? product.name}
           fill
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+          className="object-cover transition-transform duration-700 group-hover:scale-[1.07]"
         />
 
-        {/* Dark gradient overlay — heavy bottom */}
+        {/* Gradient overlay — heavy bottom */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.45) 35%, rgba(0,0,0,0.1) 60%, transparent 80%)',
+              'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.1) 55%, transparent 75%)',
           }}
         />
 
-        {/* ── Top: badges + wishlist ──────────────────────── */}
+        {/* ── Top row: badges + wishlist ─────────────────── */}
         <div className="absolute top-3 left-3 right-3 flex items-start justify-between z-10">
           <div className="flex flex-col gap-1.5">
+            {/* Featured badge */}
             {product.is_featured && (
               <span
-                className="inline-block px-2 py-0.5 rounded-md text-[9px] font-black tracking-widest uppercase"
-                style={{ background: '#F5C542', color: '#0F0F0D' }}
+                className="inline-block px-2 py-0.5 rounded text-[8px] font-black tracking-[0.15em] uppercase"
+                style={{
+                  background: '#D4AF37',
+                  color: '#0A0A0A',
+                  fontFamily: 'var(--font-space-mono), monospace',
+                }}
               >
-                Top
+                TOP
               </span>
             )}
+            {/* Discount badge */}
             {discount && (
               <span
-                className="inline-block px-2 py-0.5 rounded-md text-[9px] font-black tracking-widest uppercase"
-                style={{ background: 'rgba(245,197,66,0.15)', color: '#F5C542', border: '1px solid rgba(245,197,66,0.25)' }}
+                className="inline-block px-2 py-0.5 rounded text-[8px] font-black tracking-[0.15em] uppercase"
+                style={{
+                  background: 'rgba(212,175,55,0.12)',
+                  color: '#D4AF37',
+                  border: '1px solid rgba(212,175,55,0.3)',
+                  fontFamily: 'var(--font-space-mono), monospace',
+                }}
               >
-                Promo
+                -{discount}%
               </span>
             )}
+            {/* Category label */}
             <span
-              className="inline-block px-2 py-0.5 rounded-md text-[9px] font-bold tracking-widest uppercase"
-              style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.65)' }}
+              className="inline-block px-2 py-0.5 rounded text-[8px] font-bold tracking-[0.12em] uppercase"
+              style={{
+                background: 'rgba(255,255,255,0.07)',
+                color: 'rgba(255,255,255,0.55)',
+                backdropFilter: 'blur(4px)',
+                fontFamily: 'var(--font-space-mono), monospace',
+              }}
             >
-              {product.category}
+              {categoryLabel}
             </span>
           </div>
 
+          {/* Wishlist button */}
           <button
             onClick={(e) => { e.preventDefault(); setLiked(!liked) }}
             className="w-8 h-8 rounded-full flex items-center justify-center transition-all"
             style={{
-              background: liked ? 'rgba(239,68,68,0.2)' : 'rgba(0,0,0,0.4)',
-              border: `1px solid ${liked ? 'rgba(239,68,68,0.35)' : 'rgba(255,255,255,0.15)'}`,
+              background: liked ? 'rgba(239,68,68,0.2)' : 'rgba(0,0,0,0.45)',
+              border: `1px solid ${liked ? 'rgba(239,68,68,0.4)' : 'rgba(255,255,255,0.12)'}`,
               backdropFilter: 'blur(8px)',
             }}
           >
             <Heart
-              style={{ width: 13, height: 13 }}
-              className={liked ? 'fill-red-400 text-red-400' : 'text-white/80'}
+              style={{ width: 12, height: 12 }}
+              className={liked ? 'fill-red-400 text-red-400' : 'text-white/70'}
             />
           </button>
         </div>
 
-        {/* Stock warning */}
+        {/* Low stock warning */}
         {product.stock <= 3 && product.stock > 0 && (
           <div className="absolute top-3 left-1/2 -translate-x-1/2 z-10">
             <span
-              className="text-[9px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 whitespace-nowrap"
-              style={{ background: 'rgba(245,158,11,0.2)', color: '#F59E0B', border: '1px solid rgba(245,158,11,0.25)', backdropFilter: 'blur(8px)' }}
+              className="text-[8px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1 whitespace-nowrap"
+              style={{
+                background: 'rgba(245,158,11,0.15)',
+                color: '#F59E0B',
+                border: '1px solid rgba(245,158,11,0.3)',
+                backdropFilter: 'blur(8px)',
+                fontFamily: 'var(--font-space-mono), monospace',
+              }}
             >
-              <Zap style={{ width: 8, height: 8 }} />
-              Plus que {product.stock}
+              <Zap style={{ width: 7, height: 7 }} />
+              Reste {product.stock}
             </span>
           </div>
         )}
 
-        {/* ── Bottom overlay — name + price ───────────────── */}
+        {/* ── Bottom: name + price ────────────────────────── */}
         <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
-          <div className="flex items-end justify-between gap-2 mb-2.5">
-            <div className="flex-1 min-w-0">
-              <h3
-                className="font-serif font-semibold text-white leading-snug line-clamp-1 text-sm mb-0.5"
+          {/* Product name */}
+          <h3 className="font-serif font-semibold text-white leading-snug line-clamp-1 text-sm mb-1">
+            {product.name}
+          </h3>
+
+          {/* Price row */}
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-2">
+              <span
+                className="text-base font-bold"
+                style={{
+                  color: '#D4AF37',
+                  fontFamily: 'var(--font-space-mono), monospace',
+                  letterSpacing: '-0.02em',
+                }}
               >
-                {product.name}
-              </h3>
-              <div className="flex items-center gap-2">
+                {formatPrice(product.price)}
+              </span>
+              {product.compare_at_price && product.compare_at_price > product.price && (
                 <span
-                  className="font-display font-black text-lg uppercase"
-                  style={{ color: '#F5C542' }}
+                  className="text-xs line-through"
+                  style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'var(--font-space-mono), monospace' }}
                 >
-                  {formatPrice(product.price)}
+                  {formatPrice(product.compare_at_price)}
                 </span>
-                {product.compare_at_price && product.compare_at_price > product.price && (
-                  <span className="text-xs line-through" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                    {formatPrice(product.compare_at_price)}
-                  </span>
-                )}
-              </div>
+              )}
             </div>
-            <div className="text-right flex-shrink-0">
-              <div className="flex gap-px mb-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} style={{ color: '#F5C542', fontSize: 9 }}>★</span>
-                ))}
-              </div>
-              <span className="text-[9px]" style={{ color: 'rgba(255,255,255,0.45)' }}>4.95</span>
+            {/* Stars */}
+            <div className="flex items-center gap-0.5">
+              {[...Array(5)].map((_, i) => (
+                <span key={i} style={{ color: '#D4AF37', fontSize: 8 }}>★</span>
+              ))}
             </div>
           </div>
 
-          {/* Add to cart — slides up on hover */}
+          {/* Add to cart — slides in on hover */}
           <motion.div
-            animate={{ y: hovered ? 0 : 10, opacity: hovered ? 1 : 0 }}
-            transition={{ duration: 0.22, ease: 'easeOut' }}
+            animate={{ y: hovered ? 0 : 8, opacity: hovered ? 1 : 0 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
           >
             <button
               onClick={handleAddToCart}
               className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl
-                         text-[#0F0F0D] text-[11px] font-black tracking-wider uppercase
-                         transition-all hover:brightness-110"
-              style={{ background: '#F5C542' }}
+                         text-[#0A0A0A] text-[10px] font-black tracking-wider uppercase
+                         transition-all hover:brightness-110 active:scale-[0.98]"
+              style={{
+                background: '#D4AF37',
+                fontFamily: 'var(--font-barlow), system-ui, sans-serif',
+              }}
             >
-              <ShoppingBag style={{ width: 12, height: 12 }} />
+              <ShoppingBag style={{ width: 11, height: 11 }} />
               Ajouter au panier
             </button>
           </motion.div>
         </div>
 
-        {/* "More info" arrow — top right of bottom area (always visible on hover) */}
-        <motion.div
-          animate={{ opacity: hovered ? 1 : 0 }}
-          transition={{ duration: 0.2 }}
-          className="absolute top-14 right-3 z-10"
-        >
-          <div
-            className="w-8 h-8 rounded-full flex items-center justify-center"
-            style={{ background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.15)', backdropFilter: 'blur(8px)' }}
-          >
-            <ArrowUpRight style={{ width: 13, height: 13 }} className="text-white" />
-          </div>
-        </motion.div>
-
-        {/* Yellow border glow on hover */}
+        {/* Gold border on hover */}
         <motion.div
           animate={{ opacity: hovered ? 1 : 0 }}
           transition={{ duration: 0.3 }}
-          className="absolute inset-0 pointer-events-none rounded-2xl"
-          style={{ boxShadow: 'inset 0 0 0 1.5px rgba(245,197,66,0.35)' }}
+          className="absolute inset-0 pointer-events-none rounded-[20px]"
+          style={{ boxShadow: 'inset 0 0 0 1.5px rgba(212,175,55,0.4)' }}
         />
       </div>
     </Link>
