@@ -99,7 +99,7 @@ export default function ResetPasswordPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full flex items-center justify-center gap-2.5 py-4 rounded-full bg-[#D4AF37] text-charcoal font-bold text-sm hover:bg-[#00EEFF] hover:shadow-[0_0_28px_rgba(212,175,55,0.5)] transition-all disabled:opacity-60"
+                  className="w-full flex items-center justify-center gap-2.5 py-4 rounded-full bg-[#D4AF37] text-white font-bold text-sm hover:bg-[#E8C572] hover:shadow-[0_0_28px_rgba(212,175,55,0.5)] transition-all disabled:opacity-60"
                 >
                   {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <>Envoyer le lien <ArrowRight className="w-4 h-4" /></>}
                 </button>
@@ -153,7 +153,7 @@ export default function ResetPasswordPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full flex items-center justify-center gap-2.5 py-4 rounded-full bg-[#D4AF37] text-charcoal font-bold text-sm hover:bg-[#00EEFF] hover:shadow-[0_0_28px_rgba(212,175,55,0.5)] transition-all disabled:opacity-60"
+                  className="w-full flex items-center justify-center gap-2.5 py-4 rounded-full bg-[#D4AF37] text-white font-bold text-sm hover:bg-[#E8C572] hover:shadow-[0_0_28px_rgba(212,175,55,0.5)] transition-all disabled:opacity-60"
                 >
                   {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <>Mettre à jour <ArrowRight className="w-4 h-4" /></>}
                 </button>

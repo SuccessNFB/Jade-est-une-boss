@@ -59,15 +59,15 @@ export default function SupportPage() {
               <div className="w-16 h-16 rounded-2xl bg-green-50 border border-green-200 flex items-center justify-center mx-auto mb-5">
                 <CheckCircle className="w-7 h-7 text-green-500" />
               </div>
-              <h1 className="font-serif text-3xl font-bold text-charcoal mb-3">Demande envoyée ✓</h1>
-              <p className="text-charcoal/60 text-sm mb-2">On revient vers toi sous <strong>24h ouvrées</strong>.</p>
-              <p className="text-charcoal/40 text-xs mb-8">Vérifie tes spams si tu ne reçois pas de réponse.</p>
+              <h1 className="font-serif text-3xl font-bold text-white mb-3">Demande envoyée ✓</h1>
+              <p className="text-white/60 text-sm mb-2">On revient vers toi sous <strong>24h ouvrées</strong>.</p>
+              <p className="text-white/40 text-xs mb-8">Vérifie tes spams si tu ne reçois pas de réponse.</p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Link href="/shop" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#D4AF37] text-charcoal font-bold text-sm hover:bg-[#00EEFF] transition-all">
+                <Link href="/shop" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#D4AF37] text-white font-bold text-sm hover:bg-[#E8C572] transition-all">
                   Retour à la boutique
                 </Link>
                 {user && (
-                  <Link href="/account" className="text-sm font-semibold text-charcoal/50 hover:text-charcoal transition-colors">
+                  <Link href="/account" className="text-sm font-semibold text-white/50 hover:text-white transition-colors">
                     Voir mes tickets →
                   </Link>
                 )}
@@ -77,15 +77,15 @@ export default function SupportPage() {
             <>
               <div className="mb-8">
                 <p className="text-xs font-bold tracking-widest uppercase text-[#D4AF37] mb-2">Support</p>
-                <h1 className="font-serif text-4xl font-bold text-charcoal mb-3">On est là pour toi</h1>
-                <p className="text-charcoal/55 text-sm">Dis-nous ce qui se passe, on répond sous 24h.</p>
+                <h1 className="font-serif text-4xl font-bold text-white mb-3">On est là pour toi</h1>
+                <p className="text-white/55 text-sm">Dis-nous ce qui se passe, on répond sous 24h.</p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-5">
 
                 {/* Category */}
                 <div>
-                  <label className="block text-xs font-semibold text-charcoal/50 mb-2 uppercase tracking-wider">
+                  <label className="block text-xs font-semibold text-white/50 mb-2 uppercase tracking-wider">
                     Sujet *
                   </label>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -96,11 +96,11 @@ export default function SupportPage() {
                         onClick={() => setCategory(value)}
                         className={`flex items-center gap-2 px-3 py-3 rounded-xl border text-sm font-semibold transition-all text-left ${
                           category === value
-                            ? 'border-[#D4AF37] bg-[#D4AF37]/10 text-charcoal'
-                            : 'border-gray-200 bg-white text-charcoal/60 hover:border-gray-300'
+                            ? 'border-[#D4AF37] bg-[#D4AF37]/10 text-white'
+                            : 'border-white/10 bg-white/5 text-white/60 hover:border-gray-300'
                         }`}
                       >
-                        <Icon className={`w-4 h-4 flex-shrink-0 ${category === value ? 'text-[#D4AF37]' : 'text-charcoal/30'}`} />
+                        <Icon className={`w-4 h-4 flex-shrink-0 ${category === value ? 'text-[#D4AF37]' : 'text-white/30'}`} />
                         <span className="text-xs leading-tight">{label}</span>
                       </button>
                     ))}
@@ -109,15 +109,15 @@ export default function SupportPage() {
 
                 {/* Order ID */}
                 <div>
-                  <label className="block text-xs font-semibold text-charcoal/50 mb-1.5 uppercase tracking-wider">
-                    Numéro de commande <span className="normal-case font-normal text-charcoal/30">(optionnel)</span>
+                  <label className="block text-xs font-semibold text-white/50 mb-1.5 uppercase tracking-wider">
+                    Numéro de commande <span className="normal-case font-normal text-white/30">(optionnel)</span>
                   </label>
                   <input
                     type="text"
                     value={orderId}
                     onChange={(e) => setOrderId(e.target.value)}
                     placeholder="ex: cs_live_..."
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-charcoal placeholder-charcoal/25 outline-none focus:border-[#D4AF37]/60 transition-all"
+                    className="w-full border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-charcoal/25 outline-none focus:border-[#D4AF37]/60 transition-all"
                   />
                 </div>
 
@@ -125,25 +125,25 @@ export default function SupportPage() {
                 {!user && (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-charcoal/50 mb-1.5 uppercase tracking-wider">Prénom *</label>
+                      <label className="block text-xs font-semibold text-white/50 mb-1.5 uppercase tracking-wider">Prénom *</label>
                       <input
                         type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         required
                         placeholder="Ton prénom"
-                        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-charcoal placeholder-charcoal/25 outline-none focus:border-[#D4AF37]/60 transition-all"
+                        className="w-full border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-charcoal/25 outline-none focus:border-[#D4AF37]/60 transition-all"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-charcoal/50 mb-1.5 uppercase tracking-wider">Email *</label>
+                      <label className="block text-xs font-semibold text-white/50 mb-1.5 uppercase tracking-wider">Email *</label>
                       <input
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                         placeholder="ton@email.com"
-                        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-charcoal placeholder-charcoal/25 outline-none focus:border-[#D4AF37]/60 transition-all"
+                        className="w-full border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-charcoal/25 outline-none focus:border-[#D4AF37]/60 transition-all"
                       />
                     </div>
                   </div>
@@ -151,7 +151,7 @@ export default function SupportPage() {
 
                 {/* Message */}
                 <div>
-                  <label className="block text-xs font-semibold text-charcoal/50 mb-1.5 uppercase tracking-wider">
+                  <label className="block text-xs font-semibold text-white/50 mb-1.5 uppercase tracking-wider">
                     Message *
                   </label>
                   <textarea
@@ -160,19 +160,19 @@ export default function SupportPage() {
                     required
                     rows={5}
                     placeholder="Décris ton problème en détail…"
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-charcoal placeholder-charcoal/25 outline-none focus:border-[#D4AF37]/60 transition-all resize-none"
+                    className="w-full border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-charcoal/25 outline-none focus:border-[#D4AF37]/60 transition-all resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading || !category || !message.trim()}
-                  className="w-full flex items-center justify-center gap-2 py-4 rounded-full bg-[#D4AF37] text-charcoal font-bold text-sm hover:bg-[#00EEFF] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all disabled:opacity-50"
+                  className="w-full flex items-center justify-center gap-2 py-4 rounded-full bg-[#D4AF37] text-white font-bold text-sm hover:bg-[#E8C572] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all disabled:opacity-50"
                 >
                   {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Envoyer ma demande'}
                 </button>
 
-                <p className="text-center text-xs text-charcoal/30">
+                <p className="text-center text-xs text-white/30">
                   Réponse sous 24h ouvrées · contact@icekey.shop
                 </p>
               </form>

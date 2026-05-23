@@ -63,7 +63,7 @@ export function UserMenu() {
     <div ref={ref} className="relative hidden sm:block">
       <button
         onClick={() => setOpen(!open)}
-        className="w-8 h-8 rounded-full bg-[#D4AF37] text-white/70 font-black text-xs flex items-center justify-center hover:bg-[#00EEFF] transition-colors"
+        className="w-8 h-8 rounded-full bg-[#D4AF37] text-white/70 font-black text-xs flex items-center justify-center hover:bg-[#E8C572] transition-colors"
         aria-label="Mon compte"
       >
         {initial}

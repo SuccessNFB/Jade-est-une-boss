@@ -56,23 +56,23 @@ export default function PrivacyPage() {
 
           <div className="mb-10">
             <p className="text-xs font-bold tracking-widest uppercase text-[#D4AF37] mb-3">Légal</p>
-            <h1 className="font-serif text-4xl font-bold text-charcoal mb-4">
+            <h1 className="font-serif text-4xl font-bold text-white mb-4">
               Politique de confidentialité
             </h1>
-            <p className="text-sm text-charcoal/50">Dernière mise à jour : mai 2025</p>
+            <p className="text-sm text-white/50">Dernière mise à jour : mai 2025</p>
           </div>
 
           <div className="space-y-8">
             {SECTIONS.map((s) => (
               <div key={s.title}>
-                <h2 className="font-serif text-lg font-bold text-charcoal mb-2">{s.title}</h2>
-                <p className="text-sm text-charcoal/70 leading-relaxed">{s.content}</p>
+                <h2 className="font-serif text-lg font-bold text-white mb-2">{s.title}</h2>
+                <p className="text-sm text-white/70 leading-relaxed">{s.content}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 p-6 rounded-2xl bg-gray-50 border border-gray-100 text-center">
-            <p className="text-sm text-charcoal/60 mb-2">Une question sur vos données ?</p>
+          <div className="mt-12 p-6 rounded-2xl bg-[#141414] border border-gray-100 text-center">
+            <p className="text-sm text-white/60 mb-2">Une question sur vos données ?</p>
             <a href="mailto:contact@icekey.shop" className="text-sm font-bold text-[#D4AF37] hover:underline">
               contact@icekey.shop
             </a>

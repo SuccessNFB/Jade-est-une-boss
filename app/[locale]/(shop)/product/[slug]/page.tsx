@@ -1,22 +1,23 @@
-import { createClient }            from '@/lib/supabase/server'
-import { notFound }                from 'next/navigation'
-import type { Metadata }           from 'next'
-import type { Product, Metal }     from '@/types'
-import { Header }                  from '@/components/layout/Header'
-import { Footer }                  from '@/components/layout/Footer'
-import { AnnouncementBar }         from '@/components/layout/AnnouncementBar'
-import { ProductCarousel }         from '@/components/product/ProductCarousel'
-import { ProductFeatureTiles }     from '@/components/product/ProductFeatureTiles'
-import { ProductAccordion }        from '@/components/product/ProductAccordion'
-import { ProductFAQ }              from '@/components/product/ProductFAQ'
-import { ProductReviews }          from '@/components/product/ProductReviews'
-import { RelatedProducts }         from '@/components/product/RelatedProducts'
-import { ProductPageClient }       from '@/components/product/ProductPageClient'
-import { TierBadge }               from '@/components/ui/Badge'
-import { formatPrice }             from '@/lib/utils/formatPrice'
-import { METALS, PRICE_TIERS }     from '@/types'
-import { Truck, CheckCircle }          from 'lucide-react'
-import { ProductViewTracker }          from '@/components/analytics/ProductViewTracker'
+import { createClient }        from '@/lib/supabase/server'
+import { notFound }            from 'next/navigation'
+import type { Metadata }       from 'next'
+import type { Product, Metal } from '@/types'
+import { Header }              from '@/components/layout/Header'
+import { Footer }              from '@/components/layout/Footer'
+import { AnnouncementBar }     from '@/components/layout/AnnouncementBar'
+import { ProductCarousel }     from '@/components/product/ProductCarousel'
+import { ProductFeatureTiles } from '@/components/product/ProductFeatureTiles'
+import { ProductAccordion }    from '@/components/product/ProductAccordion'
+import { ProductFAQ }          from '@/components/product/ProductFAQ'
+import { ProductReviews }      from '@/components/product/ProductReviews'
+import { RelatedProducts }     from '@/components/product/RelatedProducts'
+import { ProductPageClient }   from '@/components/product/ProductPageClient'
+import { TierBadge }           from '@/components/ui/Badge'
+import { formatPrice }         from '@/lib/utils/formatPrice'
+import { METALS }              from '@/types'
+import { Truck, CheckCircle }  from 'lucide-react'
+import { ProductViewTracker }  from '@/components/analytics/ProductViewTracker'
+import Link                    from 'next/link'
 
 export const revalidate = 3600
 
@@ -95,16 +96,30 @@ export default async function ProductPage({ params }: Props) {
 
       <ProductViewTracker id={p.id} name={p.name} price={p.price} category={p.category} />
       <main className="pt-[60px] lg:pt-[72px] pb-24" style={{ background: '#0A0A0A', minHeight: '100vh' }}>
-        <div className="section-container max-w-5xl py-10">
+        <div className="section-container max-w-6xl py-8 lg:py-12">
+
+          {/* Back breadcrumb */}
+          <Link
+            href="/shop"
+            className="inline-flex items-center gap-2 mb-8 text-sm transition-colors"
+            style={{ color: 'rgba(255,255,255,0.4)' }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.8)')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
+          >
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M9 11L5 7l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            Boutique
+          </Link>
 
           {/* ── TOP SECTION ──────────────────────────────── */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 mb-16 items-start">
 
             {/* LEFT — Carousel */}
             <ProductCarousel images={p.images} name={p.name} />
 
             {/* RIGHT — Product info */}
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-6 lg:sticky lg:top-24">
 
               {/* Badge + Name + Subheading */}
               <div>

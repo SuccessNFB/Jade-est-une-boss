@@ -27,7 +27,7 @@ export function AddToCartButton({ product }: { product: Product }) {
       {product.is_customizable && (
         <a
           href="/builder"
-          className="inline-flex items-center justify-center px-7 py-3.5 rounded-full text-sm font-semibold tracking-wide bg-gold-300 text-charcoal hover:bg-gold-400 transition-all duration-300"
+          className="inline-flex items-center justify-center px-7 py-3.5 rounded-full text-sm font-semibold tracking-wide bg-gold-300 text-white hover:bg-gold-400 transition-all duration-300"
         >
           Personnaliser
         </a>

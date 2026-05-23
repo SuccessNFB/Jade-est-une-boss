@@ -141,7 +141,7 @@ export function CartContent() {
                 <Sparkles className="w-4 h-4 text-[#D4AF37] flex-shrink-0" />
                 <div>
                   <p className="text-xs font-bold text-[#D4AF37]">Bienvenue ❄️ — -5% offerts</p>
-                  <p className="text-[10px] text-charcoal/50">Appliqués automatiquement sur votre 1ère commande</p>
+                  <p className="text-[10px] text-white/50">Appliqués automatiquement sur votre 1ère commande</p>
                 </div>
               </div>
             )}
@@ -218,14 +218,14 @@ export function CartContent() {
             <button
               onClick={handleCheckout}
               disabled={loading}
-              className="w-full flex items-center justify-center gap-2 py-4 rounded-full bg-[#D4AF37] text-charcoal font-bold text-sm hover:bg-[#00EEFF] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all disabled:opacity-60"
+              className="w-full flex items-center justify-center gap-2 py-4 rounded-full bg-[#D4AF37] text-white font-bold text-sm hover:bg-[#E8C572] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all disabled:opacity-60"
             >
               <Lock className="w-4 h-4" />
               {loading ? 'Redirection...' : 'Secure Checkout'}
               {!loading && <ArrowRight className="w-4 h-4" />}
             </button>
 
-            <p className="text-center text-[10px] text-charcoal/30">
+            <p className="text-center text-[10px] text-white/30">
               Paiement sécurisé SSL · Stripe
             </p>
           </div>

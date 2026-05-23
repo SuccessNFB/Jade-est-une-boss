@@ -201,7 +201,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
             <button
               type="submit"
               disabled={loading}
-              className="w-full flex items-center justify-center gap-2.5 py-4 rounded-full bg-[#D4AF37] text-white/70 font-bold text-sm tracking-wide hover:bg-[#00EEFF] hover:shadow-[0_0_28px_rgba(212,175,55,0.5)] transition-all disabled:opacity-60 mt-2"
+              className="w-full flex items-center justify-center gap-2.5 py-4 rounded-full bg-[#D4AF37] text-white/70 font-bold text-sm tracking-wide hover:bg-[#E8C572] hover:shadow-[0_0_28px_rgba(212,175,55,0.5)] transition-all disabled:opacity-60 mt-2"
             >
               {loading ? (
                 <Loader2 className="w-4 h-4 animate-spin" />

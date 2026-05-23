@@ -54,7 +54,7 @@ export function StickyAddToCart({ product, triggerRef }: Props) {
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-serif font-semibold text-white/70 truncate">{product.name}</p>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-sm font-bold text-charcoal">{formatPrice(product.price)}</span>
+                  <span className="text-sm font-bold text-white">{formatPrice(product.price)}</span>
                   {product.compare_at_price && (
                     <span className="text-xs text-white/70 line-through">{formatPrice(product.compare_at_price)}</span>
                   )}

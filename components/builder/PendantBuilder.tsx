@@ -117,7 +117,7 @@ export function PendantBuilder() {
           animate={{ scale: 1, opacity: 1 }}
           className="inline-flex items-baseline gap-2"
         >
-          <span className="font-serif text-5xl font-bold text-charcoal">{formatPrice(totalPrice)}</span>
+          <span className="font-serif text-5xl font-bold text-white">{formatPrice(totalPrice)}</span>
           <span className="text-sm text-white/70">prix estimé</span>
         </motion.div>
       </div>
@@ -196,7 +196,7 @@ export function PendantBuilder() {
                       style={{ background: c.hex, borderColor: c.border }}
                     />
                     <div className="text-sm">
-                      <span className="font-bold text-charcoal">{c.value}</span>
+                      <span className="font-bold text-white">{c.value}</span>
                       <span className="text-white/60 ml-1">{c.label.split('–')[1]}</span>
                     </div>
                   </button>
@@ -229,7 +229,7 @@ export function PendantBuilder() {
                     className="w-10 h-10 rounded-full mb-3 border-2"
                     style={{ background: val.color, borderColor: val.color }}
                   />
-                  <div className="font-semibold text-charcoal">{val.label}</div>
+                  <div className="font-semibold text-white">{val.label}</div>
                   {val.surcharge > 0
                     ? <div className="text-sm text-ice-500 font-medium mt-1">+{formatPrice(val.surcharge)}</div>
                     : <div className="text-sm text-white/70 mt-1">Inclus</div>
@@ -306,11 +306,11 @@ export function PendantBuilder() {
               ].map(([label, value]) => (
                 <div key={label} className="flex justify-between items-center py-3 border-b border-white/[0.06]">
                   <span className="text-sm text-white/60">{label}</span>
-                  <span className="text-sm font-semibold text-charcoal">{value}</span>
+                  <span className="text-sm font-semibold text-white">{value}</span>
                 </div>
               ))}
               <div className="flex justify-between items-center py-3">
-                <span className="font-bold text-charcoal">Total</span>
+                <span className="font-bold text-white">Total</span>
                 <span className="font-bold text-xl text-white/70 font-serif">{formatPrice(totalPrice)}</span>
               </div>
             </div>

@@ -128,7 +128,7 @@ export default function FAQPage() {
                 <div className="flex items-center gap-3 mb-6">
                   <span className="text-2xl">{cat.emoji}</span>
                   <div>
-                    <h2 className="font-serif text-2xl font-bold text-charcoal">{cat.category}</h2>
+                    <h2 className="font-serif text-2xl font-bold text-white">{cat.category}</h2>
                     <p className="text-ice-500 text-xs font-semibold tracking-widest uppercase">
                       {cat.tagline}
                     </p>

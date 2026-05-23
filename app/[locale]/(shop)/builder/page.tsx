@@ -19,10 +19,10 @@ export default function BuilderPage() {
             <p className="text-ice-500 text-xs tracking-[0.3em] uppercase font-semibold mb-3">
               Configurateur
             </p>
-            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-charcoal mb-4">
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-4">
               Votre bijou, vos règles
             </h1>
-            <p className="text-charcoal/50 max-w-lg mx-auto">
+            <p className="text-white/50 max-w-lg mx-auto">
               Composez un pendentif unique en choisissant la pierre, le métal et en ajoutant une gravure personnelle.
             </p>
           </div>

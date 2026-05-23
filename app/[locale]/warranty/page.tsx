@@ -38,10 +38,10 @@ export default function WarrantyPage() {
               <Shield className="w-7 h-7 text-[#D4AF37]" />
             </div>
             <p className="text-xs font-bold tracking-widest uppercase text-[#D4AF37] mb-3">Notre promesse</p>
-            <h1 className="font-serif text-4xl font-bold text-charcoal mb-4">
+            <h1 className="font-serif text-4xl font-bold text-white mb-4">
               Garantie à vie
             </h1>
-            <p className="text-charcoal/60 text-base max-w-xl mx-auto leading-relaxed">
+            <p className="text-white/60 text-base max-w-xl mx-auto leading-relaxed">
               Chaque pièce ICEKEY est garantie à vie contre les défauts de fabrication. Parce qu&apos;on construit pour durer.
             </p>
           </div>
@@ -49,13 +49,13 @@ export default function WarrantyPage() {
           {/* Coverage grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             <div className="rounded-2xl border border-green-100 bg-green-50/50 p-6">
-              <h2 className="font-serif text-lg font-bold text-charcoal mb-4 flex items-center gap-2">
+              <h2 className="font-serif text-lg font-bold text-white mb-4 flex items-center gap-2">
                 <CheckCircle className="w-5 h-5 text-green-500" />
                 Ce qui est couvert
               </h2>
               <ul className="space-y-2.5">
                 {COVERED.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm text-charcoal/70">
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-white/70">
                     <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
                     {item}
                   </li>
@@ -63,15 +63,15 @@ export default function WarrantyPage() {
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-gray-100 bg-gray-50/50 p-6">
-              <h2 className="font-serif text-lg font-bold text-charcoal mb-4 flex items-center gap-2">
-                <X className="w-5 h-5 text-charcoal/30" />
+            <div className="rounded-2xl border border-gray-100 bg-[#141414]/50 p-6">
+              <h2 className="font-serif text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <X className="w-5 h-5 text-white/30" />
                 Ce qui n&apos;est pas couvert
               </h2>
               <ul className="space-y-2.5">
                 {NOT_COVERED.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm text-charcoal/50">
-                    <X className="w-4 h-4 text-charcoal/20 flex-shrink-0 mt-0.5" />
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-white/50">
+                    <X className="w-4 h-4 text-white/20 flex-shrink-0 mt-0.5" />
                     {item}
                   </li>
                 ))}
@@ -81,7 +81,7 @@ export default function WarrantyPage() {
 
           {/* How to claim */}
           <div className="rounded-2xl border border-gray-100 p-8 mb-8">
-            <h2 className="font-serif text-xl font-bold text-charcoal mb-6">Comment faire jouer la garantie</h2>
+            <h2 className="font-serif text-xl font-bold text-white mb-6">Comment faire jouer la garantie</h2>
             <div className="space-y-5">
               {[
                 { step: '01', title: 'Contacte-nous', desc: 'Envoie un email à contact@icekey.shop avec ton numéro de commande et des photos du problème.' },
@@ -93,8 +93,8 @@ export default function WarrantyPage() {
                     <span className="text-[10px] font-black text-[#D4AF37]">{step}</span>
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-charcoal mb-0.5">{title}</p>
-                    <p className="text-sm text-charcoal/60">{desc}</p>
+                    <p className="text-sm font-bold text-white mb-0.5">{title}</p>
+                    <p className="text-sm text-white/60">{desc}</p>
                   </div>
                 </div>
               ))}
@@ -104,7 +104,7 @@ export default function WarrantyPage() {
           <div className="text-center">
             <a
               href="mailto:contact@icekey.shop"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#D4AF37] text-charcoal font-bold text-sm hover:bg-[#00EEFF] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#D4AF37] text-white font-bold text-sm hover:bg-[#E8C572] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all"
             >
               Contacter le support garantie
             </a>

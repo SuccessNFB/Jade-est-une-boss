@@ -82,7 +82,7 @@ export function ProductReviews() {
           <p className="text-[#D4AF37] text-xs tracking-[0.3em] uppercase font-semibold mb-1">
             Avis vérifiés
           </p>
-          <h2 className="font-serif text-2xl font-bold text-charcoal">
+          <h2 className="font-serif text-2xl font-bold text-white">
             Real Customers, Real Flex
           </h2>
         </div>
@@ -107,7 +107,7 @@ export function ProductReviews() {
       <div className="flex items-center gap-4 mb-8">
         <div className="flex items-center gap-1.5">
           <StarRating rating={5} />
-          <span className="text-sm font-bold text-charcoal">4.8/5</span>
+          <span className="text-sm font-bold text-white">4.8/5</span>
         </div>
         <span className="text-white/55">|</span>
         <span className="text-sm text-white/60">230+ avis</span>
@@ -147,7 +147,7 @@ export function ProductReviews() {
                   {review.initials}
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-charcoal">{review.name}</p>
+                  <p className="text-xs font-semibold text-white">{review.name}</p>
                   <div className="flex items-center gap-1">
                     <span className="text-[10px] text-[#D4AF37] font-medium">✓ Verified Purchase</span>
                   </div>
@@ -161,7 +161,7 @@ export function ProductReviews() {
 
       {/* CTA */}
       <div className="text-center mt-8">
-        <button className="inline-flex items-center gap-2 bg-[#D4AF37] text-white/70 font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#00EEFF] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all">
+        <button className="inline-flex items-center gap-2 bg-[#D4AF37] text-white/70 font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#E8C572] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all">
           📸 Share Your Moment
         </button>
         <p className="text-xs text-white/70 mt-2">

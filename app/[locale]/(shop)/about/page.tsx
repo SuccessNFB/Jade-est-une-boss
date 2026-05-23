@@ -108,7 +108,7 @@ export default function AboutPage() {
                 presque aussi dure, éthique par nature et accessible. Un game-changer.
               </p>
               <p className="text-white/65 leading-relaxed">
-                On a tout misé dessus. ICEKEY est né. <span className="text-charcoal font-semibold">Cold is the new gold.</span>
+                On a tout misé dessus. ICEKEY est né. <span className="text-white font-semibold">Cold is the new gold.</span>
               </p>
             </div>
             <div className="relative">
@@ -132,7 +132,7 @@ export default function AboutPage() {
               <p className="text-ice-500 text-xs tracking-[0.3em] uppercase font-semibold mb-3">
                 La vérité sur les pierres
               </p>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-charcoal">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
                 Pourquoi Moissanite ?
               </h2>
               <p className="text-white/60 mt-3 max-w-xl mx-auto">
@@ -155,7 +155,7 @@ export default function AboutPage() {
                 <tbody className="divide-y divide-gray-50">
                   {comparisonRows.map((row) => (
                     <tr key={row.label} className="hover:bg-[#121210] transition-colors">
-                      <td className="px-6 py-4 font-medium text-charcoal">{row.label}</td>
+                      <td className="px-6 py-4 font-medium text-white">{row.label}</td>
                       <td className="px-6 py-4 text-white/65 text-center">{row.diamond}</td>
                       <td className="px-6 py-4 text-ice-700 font-semibold text-center bg-[#E0F7FF]">
                         {row.moissanite}
@@ -179,7 +179,7 @@ export default function AboutPage() {
             <p className="text-ice-500 text-xs tracking-[0.3em] uppercase font-semibold mb-3">
               Ce qu&apos;on défend
             </p>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-charcoal">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
               Nos valeurs
             </h2>
           </div>

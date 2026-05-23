@@ -164,7 +164,7 @@ export default function ContactPage() {
                       <p className="text-xs font-semibold text-white/60 uppercase tracking-wider mb-0.5">Email</p>
                       <a
                         href="mailto:contact@icekey.shop"
-                        className="text-charcoal font-medium text-sm hover:text-ice-600 transition-colors"
+                        className="text-white/80 font-medium text-sm hover:text-ice-600 transition-colors"
                       >
                         contact@icekey.shop
                       </a>
@@ -175,7 +175,7 @@ export default function ContactPage() {
                     <span className="text-xl mt-0.5">⏱️</span>
                     <div>
                       <p className="text-xs font-semibold text-white/60 uppercase tracking-wider mb-0.5">Délai de réponse</p>
-                      <p className="text-charcoal font-medium text-sm">Sous 24h</p>
+                      <p className="text-white/80 font-medium text-sm">Sous 24h</p>
                     </div>
                   </div>
 
@@ -183,7 +183,7 @@ export default function ContactPage() {
                     <span className="text-xl mt-0.5">🕐</span>
                     <div>
                       <p className="text-xs font-semibold text-white/60 uppercase tracking-wider mb-0.5">Disponibilité</p>
-                      <p className="text-charcoal font-medium text-sm">Lun — Ven · 9h–18h</p>
+                      <p className="text-white/80 font-medium text-sm">Lun — Ven · 9h–18h</p>
                     </div>
                   </div>
                 </div>

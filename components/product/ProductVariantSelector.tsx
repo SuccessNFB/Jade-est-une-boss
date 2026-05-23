@@ -78,7 +78,7 @@ export function ProductVariantSelector({
                   className={cn(
                     'flex flex-col items-center px-4 py-2 rounded-xl text-sm border-2 transition-all',
                     selectedLength === l.value
-                      ? 'border-[#D4AF37] bg-[#E0F7FF] text-charcoal'
+                      ? 'border-[#D4AF37] bg-[#E0F7FF] text-white'
                       : 'border-white/[0.1] text-white/70 hover:border-[#D4AF37]/40'
                   )}
                 >
@@ -112,7 +112,7 @@ export function ProductVariantSelector({
                 className={cn(
                   'flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border-2 transition-all',
                   selectedMetal === m
-                    ? 'border-[#D4AF37] bg-[#E0F7FF] text-charcoal'
+                    ? 'border-[#D4AF37] bg-[#E0F7FF] text-white'
                     : 'border-white/[0.1] text-white/70 hover:border-[#D4AF37]/40'
                 )}
               >
@@ -170,7 +170,7 @@ export function ProductVariantSelector({
                   className={cn(
                     'flex flex-col items-center px-4 py-2 rounded-xl text-sm border-2 transition-all',
                     selectedSize === size
-                      ? 'border-[#D4AF37] bg-[#E0F7FF] text-charcoal'
+                      ? 'border-[#D4AF37] bg-[#E0F7FF] text-white'
                       : 'border-white/[0.1] text-white/70 hover:border-[#D4AF37]/40'
                   )}
                 >

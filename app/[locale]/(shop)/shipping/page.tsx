@@ -65,10 +65,10 @@ export default function ShippingPage() {
             <p className="text-ice-500 text-xs tracking-[0.35em] uppercase font-semibold mb-3">
               Transparent, comme on aime
             </p>
-            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-charcoal mb-3">
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-3">
               Livraison & Retours
             </h1>
-            <p className="text-charcoal/50 text-lg max-w-xl mx-auto">
+            <p className="text-white/50 text-lg max-w-xl mx-auto">
               Retour gratuit 30 jours · Livraison offerte dès 100 € · Suivi en temps réel.
               On s&apos;occupe de tout, de l&apos;atelier à ta porte.
             </p>
@@ -81,7 +81,7 @@ export default function ShippingPage() {
             <p className="text-ice-500 text-xs tracking-[0.3em] uppercase font-semibold mb-2">
               Livraison
             </p>
-            <h2 className="font-serif text-3xl font-bold text-charcoal">France métropolitaine</h2>
+            <h2 className="font-serif text-3xl font-bold text-white">France métropolitaine</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
@@ -95,19 +95,19 @@ export default function ShippingPage() {
                 }`}
               >
                 {option.highlight && (
-                  <span className="inline-block bg-[#D4AF37] text-charcoal text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-wide">
+                  <span className="inline-block bg-[#D4AF37] text-white text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-wide">
                     RECOMMANDÉ
                   </span>
                 )}
-                <h3 className="font-serif text-xl font-bold text-charcoal mb-1">{option.label}</h3>
+                <h3 className="font-serif text-xl font-bold text-white mb-1">{option.label}</h3>
                 <p className="text-2xl font-bold text-ice-600 mb-2">{option.price}</p>
-                <p className="text-charcoal/60 text-sm mb-1">{option.delay}</p>
-                <p className="text-charcoal/40 text-xs">{option.note}</p>
+                <p className="text-white/60 text-sm mb-1">{option.delay}</p>
+                <p className="text-white/40 text-xs">{option.note}</p>
               </div>
             ))}
           </div>
 
-          <p className="text-xs text-charcoal/40 bg-[#F5F5F5] rounded-xl px-5 py-3 inline-block">
+          <p className="text-xs text-white/40 bg-[#F5F5F5] rounded-xl px-5 py-3 inline-block">
             ✦ Colissimo / Chronopost · Numéro de suivi envoyé par email dès l&apos;expédition
           </p>
         </section>
@@ -119,29 +119,29 @@ export default function ShippingPage() {
               <p className="text-ice-500 text-xs tracking-[0.3em] uppercase font-semibold mb-2">
                 International
               </p>
-              <h2 className="font-serif text-3xl font-bold text-charcoal">Europe & reste du monde</h2>
+              <h2 className="font-serif text-3xl font-bold text-white">Europe & reste du monde</h2>
             </div>
             <div className="overflow-x-auto rounded-2xl shadow-product">
-              <table className="w-full bg-white text-sm">
+              <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-gray-100">
-                    <th className="text-left px-6 py-4 font-semibold text-charcoal/50">Zone</th>
-                    <th className="px-6 py-4 font-semibold text-charcoal text-center">Délai estimé</th>
-                    <th className="px-6 py-4 font-semibold text-charcoal text-center">Tarif</th>
+                    <th className="text-left px-6 py-4 font-semibold text-white/50">Zone</th>
+                    <th className="px-6 py-4 font-semibold text-white text-center">Délai estimé</th>
+                    <th className="px-6 py-4 font-semibold text-white text-center">Tarif</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-50">
                   {internationalShipping.map((row) => (
-                    <tr key={row.zone} className="hover:bg-gray-50 transition-colors">
-                      <td className="px-6 py-4 font-medium text-charcoal">{row.zone}</td>
-                      <td className="px-6 py-4 text-charcoal/60 text-center">{row.delay}</td>
+                    <tr key={row.zone} className="hover:bg-[#141414] transition-colors">
+                      <td className="px-6 py-4 font-medium text-white">{row.zone}</td>
+                      <td className="px-6 py-4 text-white/60 text-center">{row.delay}</td>
                       <td className="px-6 py-4 text-ice-700 font-semibold text-center">{row.price}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-charcoal/40 mt-3">
+            <p className="text-xs text-white/40 mt-3">
               Les délais sont indicatifs. Les droits de douane éventuels sont à la charge du destinataire.
             </p>
           </div>
@@ -154,7 +154,7 @@ export default function ShippingPage() {
               <p className="text-ice-500 text-xs tracking-[0.3em] uppercase font-semibold mb-2">
                 On a confiance en nos produits
               </p>
-              <h2 className="font-serif text-3xl font-bold text-charcoal mb-6">
+              <h2 className="font-serif text-3xl font-bold text-white mb-6">
                 Politique de retour
               </h2>
               <div className="space-y-5">
@@ -183,8 +183,8 @@ export default function ShippingPage() {
                   <div key={item.title} className="flex gap-4">
                     <span className="text-2xl mt-0.5">{item.icon}</span>
                     <div>
-                      <h3 className="font-semibold text-charcoal text-sm mb-1">{item.title}</h3>
-                      <p className="text-charcoal/60 text-sm">{item.body}</p>
+                      <h3 className="font-semibold text-white text-sm mb-1">{item.title}</h3>
+                      <p className="text-white/60 text-sm">{item.body}</p>
                     </div>
                   </div>
                 ))}
@@ -197,13 +197,13 @@ export default function ShippingPage() {
                 <p className="text-ice-500 text-xs tracking-[0.3em] uppercase font-semibold mb-2">
                   Nos garanties
                 </p>
-                <h2 className="font-serif text-3xl font-bold text-charcoal mb-6">Built to last.</h2>
+                <h2 className="font-serif text-3xl font-bold text-white mb-6">Built to last.</h2>
               </div>
               {guarantees.map((g) => (
                 <div key={g.title} className="bg-[#E0F7FF] rounded-2xl p-6">
                   <div className="text-3xl mb-3">{g.icon}</div>
-                  <h3 className="font-serif text-lg font-bold text-charcoal mb-2">{g.title}</h3>
-                  <p className="text-charcoal/60 text-sm leading-relaxed">{g.body}</p>
+                  <h3 className="font-serif text-lg font-bold text-white mb-2">{g.title}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed">{g.body}</p>
                 </div>
               ))}
             </div>
@@ -225,7 +225,7 @@ export default function ShippingPage() {
             </p>
             <Link
               href="/shop"
-              className="inline-flex items-center gap-2 px-10 py-4 bg-[#D4AF37] text-charcoal font-semibold text-sm tracking-wide rounded-full hover:scale-[1.03] hover:shadow-ice transition-all duration-300"
+              className="inline-flex items-center gap-2 px-10 py-4 bg-[#D4AF37] text-white font-semibold text-sm tracking-wide rounded-full hover:scale-[1.03] hover:shadow-ice transition-all duration-300"
             >
               Commander maintenant →
             </Link>

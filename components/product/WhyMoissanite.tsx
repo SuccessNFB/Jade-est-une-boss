@@ -46,7 +46,7 @@ export function WhyMoissanite() {
               </div>
             </div>
             <p className="font-serif font-semibold text-white/70 mb-2">{step.title}</p>
-            <p className="text-sm text-charcoal/55 leading-relaxed">{step.desc}</p>
+            <p className="text-sm text-white/55 leading-relaxed">{step.desc}</p>
           </div>
         ))}
       </div>

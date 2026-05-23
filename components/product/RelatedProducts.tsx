@@ -43,7 +43,7 @@ export function RelatedProducts({ currentId, category, priceTier }: Props) {
           <p className="text-[#D4AF37] text-xs tracking-[0.3em] uppercase font-semibold mb-1">
             Ensemble c&apos;est mieux
           </p>
-          <h2 className="font-serif text-2xl font-bold text-charcoal">
+          <h2 className="font-serif text-2xl font-bold text-white">
             Complete Your Look
           </h2>
         </div>
@@ -83,7 +83,7 @@ export function RelatedProducts({ currentId, category, priceTier }: Props) {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center text-charcoal/10 text-4xl">◆</div>
+                  <div className="w-full h-full flex items-center justify-center text-white/10 text-4xl">◆</div>
                 )}
               </Link>
 
@@ -94,13 +94,13 @@ export function RelatedProducts({ currentId, category, priceTier }: Props) {
                   {product.name}
                 </Link>
                 <div className="flex items-center justify-between mt-auto pt-1">
-                  <span className="text-sm font-bold text-charcoal">{formatPrice(product.price)}</span>
+                  <span className="text-sm font-bold text-white">{formatPrice(product.price)}</span>
                   <button
                     onClick={() => {
                       addItem(product, 1)
                       toast.success(`${product.name} ajouté ✓`)
                     }}
-                    className="w-7 h-7 rounded-full bg-[#D4AF37] text-white/70 flex items-center justify-center hover:bg-[#00EEFF] hover:shadow-[0_0_12px_rgba(212,175,55,0.4)] transition-all"
+                    className="w-7 h-7 rounded-full bg-[#D4AF37] text-white/70 flex items-center justify-center hover:bg-[#E8C572] hover:shadow-[0_0_12px_rgba(212,175,55,0.4)] transition-all"
                     title="Ajouter au panier"
                   >
                     <Plus className="w-3.5 h-3.5" />

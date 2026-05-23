@@ -103,10 +103,10 @@ export default function CareGuidePage() {
             <p className="text-ice-500 text-xs tracking-[0.35em] uppercase font-semibold mb-3">
               Prenez soin de votre éclat
             </p>
-            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-charcoal mb-4">
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-4">
               Guide d&apos;entretien
             </h1>
-            <p className="text-charcoal/50 text-lg max-w-xl mx-auto">
+            <p className="text-white/50 text-lg max-w-xl mx-auto">
               La moissanite est faite pour durer forever — à condition de lui donner un peu d&apos;amour.
               Voici comment garder ton bijou ICEKEY comme neuf, pour toujours.
             </p>
@@ -117,9 +117,9 @@ export default function CareGuidePage() {
         <section className="section-container py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {careSections.map((section) => (
-              <div key={section.title} className="bg-white rounded-2xl shadow-product p-8">
+              <div key={section.title} className="rounded-2xl shadow-product p-8">
                 <div className="text-4xl mb-4">{section.icon}</div>
-                <h2 className="font-serif text-2xl font-bold text-charcoal mb-1">{section.title}</h2>
+                <h2 className="font-serif text-2xl font-bold text-white mb-1">{section.title}</h2>
                 <p className="text-ice-500 text-xs font-semibold tracking-widest uppercase mb-5">
                   {section.tagline}
                 </p>
@@ -129,7 +129,7 @@ export default function CareGuidePage() {
                       <span className="flex-shrink-0 w-6 h-6 rounded-full bg-ice-100 text-ice-700 text-xs font-bold flex items-center justify-center">
                         {i + 1}
                       </span>
-                      <span className="text-charcoal/70 text-sm leading-relaxed">{step}</span>
+                      <span className="text-white/70 text-sm leading-relaxed">{step}</span>
                     </li>
                   ))}
                 </ol>
@@ -150,10 +150,10 @@ export default function CareGuidePage() {
               <p className="text-ice-500 text-xs tracking-[0.3em] uppercase font-semibold mb-3">
                 À éviter absolument
               </p>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-charcoal">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
                 Ce qui abîme tes bijoux
               </h2>
-              <p className="text-charcoal/50 mt-2 max-w-md mx-auto">
+              <p className="text-white/50 mt-2 max-w-md mx-auto">
                 La moissanite survit à tout — mais la monture, elle, mérite qu&apos;on fasse attention.
               </p>
             </div>
@@ -162,11 +162,11 @@ export default function CareGuidePage() {
               {avoidItems.map((item) => (
                 <div
                   key={item.label}
-                  className="bg-white rounded-2xl p-6 shadow-product hover:shadow-product-hover transition-all duration-300 hover:-translate-y-0.5"
+                  className="rounded-2xl p-6 shadow-product hover:shadow-product-hover transition-all duration-300 hover:-translate-y-0.5"
                 >
                   <div className="text-3xl mb-3">{item.icon}</div>
-                  <h3 className="font-semibold text-charcoal mb-2">{item.label}</h3>
-                  <p className="text-charcoal/55 text-sm leading-relaxed">{item.desc}</p>
+                  <h3 className="font-semibold text-white mb-2">{item.label}</h3>
+                  <p className="text-white/55 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -180,11 +180,11 @@ export default function CareGuidePage() {
               <p className="text-ice-500 text-xs tracking-[0.3em] uppercase font-semibold mb-3">
                 Questions fréquentes
               </p>
-              <h2 className="font-serif text-3xl font-bold text-charcoal">
+              <h2 className="font-serif text-3xl font-bold text-white">
                 FAQ entretien
               </h2>
             </div>
-            <div className="bg-white rounded-2xl shadow-product px-6">
+            <div className="rounded-2xl shadow-product px-6">
               <ProductAccordion items={careFAQItems} />
             </div>
           </div>
@@ -205,7 +205,7 @@ export default function CareGuidePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#D4AF37] text-charcoal font-semibold text-sm tracking-wide rounded-full hover:scale-[1.03] hover:shadow-ice transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#D4AF37] text-white font-semibold text-sm tracking-wide rounded-full hover:scale-[1.03] hover:shadow-ice transition-all duration-300"
               >
                 Nous contacter
               </Link>

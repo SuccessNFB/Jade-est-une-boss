@@ -104,8 +104,8 @@ export function CartSummary() {
           </span>
         </div>
         <div className="flex justify-between pt-3 border-t border-white/[0.1]">
-          <span className="font-bold text-charcoal">Total</span>
-          <span className="font-bold text-xl font-serif text-charcoal">
+          <span className="font-bold text-white">Total</span>
+          <span className="font-bold text-xl font-serif text-white">
             {formatPrice(subtotal >= 100 ? subtotal : subtotal + 9.90)}
           </span>
         </div>
