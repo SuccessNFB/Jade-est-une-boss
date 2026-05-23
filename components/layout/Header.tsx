@@ -2,13 +2,62 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
-import { ShoppingBag, Search, Menu, X, User } from 'lucide-react'
+import { ShoppingBag, Search, Menu, X, User, ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useCartStore } from '@/store/cartStore'
 import { IcekeyLogo } from '@/components/ui/IcekeyLogo'
 import { LocaleSwitcher } from '@/components/ui/LocaleSwitcher'
 import { UserMenu } from '@/components/auth/UserMenu'
 import { cn } from '@/lib/utils/cn'
+
+/* ── Announcement bar (embedded in header so it stays fixed) ── */
+const BAR_MESSAGES = [
+  '✦ Livré depuis la France en 4–7 jours · pas depuis la Chine',
+  '✦ Certifié GRA · Diamond test ✓ · prouvé à la réception',
+  '✦ Satisfait ou remboursé 30 jours · zéro question posée',
+  '✦ Paiement sécurisé Stripe · livraison offerte dès 100 €',
+]
+
+function AnnouncementBarInner() {
+  const [index, setIndex] = useState(0)
+  useEffect(() => {
+    const t = setInterval(() => setIndex((i) => (i + 1) % BAR_MESSAGES.length), 3500)
+    return () => clearInterval(t)
+  }, [])
+  return (
+    <div
+      className="relative text-white text-[10px] py-2 px-10 text-center font-semibold tracking-widest"
+      style={{ background: '#111111', borderBottom: '1px solid rgba(255,255,255,0.05)' }}
+    >
+      <button
+        onClick={() => setIndex((i) => (i - 1 + BAR_MESSAGES.length) % BAR_MESSAGES.length)}
+        className="absolute left-3 top-1/2 -translate-y-1/2 text-white/50 hover:text-white"
+        aria-label="Précédent"
+      >
+        <ChevronLeft className="w-3.5 h-3.5" />
+      </button>
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={index}
+          initial={{ opacity: 0, y: 4 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -4 }}
+          transition={{ duration: 0.25 }}
+          className="inline-block text-white/65"
+        >
+          {BAR_MESSAGES[index]}
+        </motion.span>
+      </AnimatePresence>
+      <button
+        onClick={() => setIndex((i) => (i + 1) % BAR_MESSAGES.length)}
+        className="absolute right-3 top-1/2 -translate-y-1/2 text-white/50 hover:text-white"
+        aria-label="Suivant"
+      >
+        <ChevronRight className="w-3.5 h-3.5" />
+      </button>
+    </div>
+  )
+}
 
 /* ── Megamenu data ──────────────────────────────────────────── */
 const MEGA: Record<string, {
@@ -149,7 +198,7 @@ export function Header() {
 
   return (
     <>
-      {/* ── Main header ──────────────────────────────────────── */}
+      {/* ── Main header (announcement bar + nav, both fixed) ─── */}
       <motion.header
         animate={{
           backgroundColor: scrolled
@@ -165,6 +214,7 @@ export function Header() {
           backdropFilter: 'blur(20px) saturate(180%)',
         }}
       >
+        <AnnouncementBarInner />
         <div className="section-container">
           <div className="flex items-center justify-between h-[60px] lg:h-[72px] gap-4">
 

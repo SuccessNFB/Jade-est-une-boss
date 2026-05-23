@@ -1,6 +1,5 @@
 'use client'
 
-import { AnnouncementBar } from '@/components/layout/AnnouncementBar'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { ProductAccordion } from '@/components/product/ProductAccordion'
@@ -93,9 +92,8 @@ const careFAQItems = [
 export default function CareGuidePage() {
   return (
     <>
-      <AnnouncementBar />
       <Header />
-      <main className="pt-20">
+      <main className="pt-28">
 
         {/* ── Hero ── */}
         <section className="relative overflow-hidden bg-gradient-to-br from-[#E0F7FF] via-white to-[#F5F5F5] py-20 text-center">

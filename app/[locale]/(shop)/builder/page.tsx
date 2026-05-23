@@ -12,7 +12,7 @@ export default function BuilderPage() {
   return (
     <>
       <Header />
-      <main className="pt-20">
+      <main className="pt-28">
         <div className="section-container py-12">
           {/* Hero */}
           <div className="text-center mb-14">

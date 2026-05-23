@@ -1,6 +1,5 @@
 import { Header }          from '@/components/layout/Header'
 import { Footer }          from '@/components/layout/Footer'
-import { AnnouncementBar } from '@/components/layout/AnnouncementBar'
 import { ProductGrid }     from '@/components/product/ProductGrid'
 import type { Metadata }   from 'next'
 
@@ -29,9 +28,8 @@ export default async function ShopPage({ searchParams }: ShopPageProps) {
 
   return (
     <>
-      <AnnouncementBar />
       <Header />
-      <main className="pt-[60px] lg:pt-[72px]" style={{ background: '#0A0A0A', minHeight: '100vh' }}>
+      <main className="pt-[96px] lg:pt-[108px]" style={{ background: '#0A0A0A', minHeight: '100vh' }}>
 
         {/* Page header */}
         <div className="py-10" style={{ background: '#121210', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>

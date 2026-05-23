@@ -206,26 +206,36 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.85, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display font-black text-white uppercase leading-[0.9] mb-10"
-              style={{ fontSize: 'clamp(54px, 8.5vw, 108px)' }}
+              className="font-serif font-bold text-white leading-tight mb-4"
+              style={{ fontSize: 'clamp(38px, 6vw, 80px)' }}
             >
               Brille avec<br />
               nos bijoux<br />
-              <span style={{ color: '#D4AF37' }}>moissanite</span>
+              <span style={{ color: '#D4AF37' }}>Moissanite</span>
             </motion.h1>
+
+            {/* Sub-headline */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.65 }}
+              className="text-base text-white/55 mb-8 leading-relaxed max-w-md"
+            >
+              Éclat de diamant, prix honnête. Certifié VVS · GRA · Livré en France.
+            </motion.p>
 
             {/* CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.85 }}
-              className="flex flex-wrap items-center gap-4"
+              className="flex flex-wrap items-center gap-3"
             >
               <Link href="/shop">
                 <motion.span
-                  className="inline-flex items-center gap-2 cursor-pointer px-7 py-3.5 rounded-full font-display font-black text-sm uppercase tracking-wider transition-all duration-300 text-white"
-                  style={{ border: '2px solid rgba(255,255,255,0.4)' }}
-                  whileHover={{ borderColor: 'rgba(255,255,255,0.9)', background: 'rgba(255,255,255,0.06)' }}
+                  className="inline-flex items-center gap-2 cursor-pointer px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 text-white"
+                  style={{ border: '1.5px solid rgba(255,255,255,0.3)' }}
+                  whileHover={{ borderColor: 'rgba(255,255,255,0.8)', background: 'rgba(255,255,255,0.05)' }}
                   whileTap={{ scale: 0.97 }}
                 >
                   La collection
@@ -234,9 +244,9 @@ export function HeroSection() {
 
               <Link href="/shop">
                 <motion.span
-                  className="inline-flex items-center gap-2 cursor-pointer px-7 py-3.5 rounded-full font-display font-black text-sm uppercase tracking-wider"
+                  className="inline-flex items-center gap-2 cursor-pointer px-6 py-3 rounded-full text-sm font-bold"
                   style={{ background: '#D4AF37', color: '#0A0A0A' }}
-                  whileHover={{ background: '#E8C572', boxShadow: '0 0 36px rgba(212,175,55,0.45)' }}
+                  whileHover={{ background: '#E8C572', boxShadow: '0 0 32px rgba(212,175,55,0.4)' }}
                   whileTap={{ scale: 0.97 }}
                 >
                   Acheter maintenant

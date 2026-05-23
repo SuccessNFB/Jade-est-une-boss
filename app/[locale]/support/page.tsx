@@ -2,7 +2,6 @@
 
 import { useState }        from 'react'
 import Link                from 'next/link'
-import { AnnouncementBar } from '@/components/layout/AnnouncementBar'
 import { Header }          from '@/components/layout/Header'
 import { Footer }          from '@/components/layout/Footer'
 import { useAuthGuard }    from '@/components/auth/useAuthGuard'
@@ -49,9 +48,8 @@ export default function SupportPage() {
 
   return (
     <>
-      <AnnouncementBar />
       <Header />
-      <main className="pt-20 pb-24">
+      <main className="pt-28 pb-24">
         <div className="section-container max-w-2xl py-12">
 
           {done ? (

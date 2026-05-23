@@ -1,5 +1,4 @@
 import type { Metadata }     from 'next'
-import { AnnouncementBar }   from '@/components/layout/AnnouncementBar'
 import { Header }            from '@/components/layout/Header'
 import { Footer }            from '@/components/layout/Footer'
 import { HeroSection }       from '@/components/home/HeroSection'
@@ -22,7 +21,6 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <AnnouncementBar />
       <Header />
       <main>
         <HeroSection />

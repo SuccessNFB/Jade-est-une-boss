@@ -1,6 +1,5 @@
 'use client'
 
-import { AnnouncementBar } from '@/components/layout/AnnouncementBar'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { ProductAccordion } from '@/components/product/ProductAccordion'
@@ -100,9 +99,8 @@ const faqCategories = [
 export default function FAQPage() {
   return (
     <>
-      <AnnouncementBar />
       <Header />
-      <main className="pt-20">
+      <main className="pt-28">
 
         {/* ── Hero ── */}
         <section className="bg-[#F5F5F5] py-16 text-center">

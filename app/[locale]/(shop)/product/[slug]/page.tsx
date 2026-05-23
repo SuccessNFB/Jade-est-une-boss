@@ -4,7 +4,6 @@ import type { Metadata }       from 'next'
 import type { Product, Metal } from '@/types'
 import { Header }              from '@/components/layout/Header'
 import { Footer }              from '@/components/layout/Footer'
-import { AnnouncementBar }     from '@/components/layout/AnnouncementBar'
 import { ProductCarousel }     from '@/components/product/ProductCarousel'
 import { ProductFeatureTiles } from '@/components/product/ProductFeatureTiles'
 import { ProductAccordion }    from '@/components/product/ProductAccordion'
@@ -91,11 +90,10 @@ export default async function ProductPage({ params }: Props) {
 
   return (
     <>
-      <AnnouncementBar />
       <Header />
 
       <ProductViewTracker id={p.id} name={p.name} price={p.price} category={p.category} />
-      <main className="pt-[60px] lg:pt-[72px] pb-24" style={{ background: '#0A0A0A', minHeight: '100vh' }}>
+      <main className="pt-[96px] lg:pt-[108px] pb-24" style={{ background: '#0A0A0A', minHeight: '100vh' }}>
         <div className="section-container max-w-6xl py-8 lg:py-12">
 
           {/* Back breadcrumb */}

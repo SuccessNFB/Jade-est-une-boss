@@ -1,4 +1,3 @@
-import { AnnouncementBar } from '@/components/layout/AnnouncementBar'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import Link from 'next/link'
@@ -68,9 +67,8 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <AnnouncementBar />
       <Header />
-      <main className="pt-20">
+      <main className="pt-28">
 
         {/* ── Hero ── */}
         <section className="relative overflow-hidden bg-gradient-to-br from-charcoal via-[#1a1a2e] to-[#16213e] min-h-[480px] flex items-center">

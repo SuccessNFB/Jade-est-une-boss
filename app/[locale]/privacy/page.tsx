@@ -1,5 +1,4 @@
 import type { Metadata }    from 'next'
-import { AnnouncementBar } from '@/components/layout/AnnouncementBar'
 import { Header }          from '@/components/layout/Header'
 import { Footer }          from '@/components/layout/Footer'
 
@@ -49,9 +48,8 @@ const SECTIONS = [
 export default function PrivacyPage() {
   return (
     <>
-      <AnnouncementBar />
       <Header />
-      <main className="pt-20 pb-24">
+      <main className="pt-28 pb-24">
         <div className="section-container max-w-3xl py-12">
 
           <div className="mb-10">

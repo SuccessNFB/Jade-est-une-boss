@@ -5,7 +5,6 @@ import { useRouter }             from 'next/navigation'
 import Link                      from 'next/link'
 import { motion }                from 'framer-motion'
 import { createClient }          from '@/lib/supabase/client'
-import { AnnouncementBar }       from '@/components/layout/AnnouncementBar'
 import { Header }                from '@/components/layout/Header'
 import { Footer }                from '@/components/layout/Footer'
 import { formatPrice }           from '@/lib/utils/formatPrice'
@@ -66,9 +65,8 @@ export default function AccountPage() {
   if (loading) {
     return (
       <>
-        <AnnouncementBar />
         <Header />
-        <main className="pt-24 pb-24 min-h-screen flex items-center justify-center" style={{ background: '#0A0A0A' }}>
+        <main className="pt-32 pb-24 min-h-screen flex items-center justify-center" style={{ background: '#0A0A0A' }}>
           <div className="w-8 h-8 rounded-full border-2 border-[#D4AF37] border-t-transparent animate-spin" />
         </main>
         <Footer />
@@ -80,9 +78,8 @@ export default function AccountPage() {
 
   return (
     <>
-      <AnnouncementBar />
       <Header />
-      <main className="pt-20 pb-24" style={{ background: '#0A0A0A' }}>
+      <main className="pt-28 pb-24" style={{ background: '#0A0A0A' }}>
         <div className="section-container max-w-3xl py-10">
 
           {/* Back button */}
