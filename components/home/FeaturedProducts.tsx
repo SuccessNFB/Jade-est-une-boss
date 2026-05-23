@@ -9,7 +9,7 @@ import { ProductCard } from '@/components/product/ProductCard'
 import type { Category } from '@/types'
 
 const TABS: { key: Category | undefined; label: string }[] = [
-  { key: undefined,  label: 'All' },
+  { key: undefined,  label: 'Tout' },
   { key: 'bracelet', label: 'Bracelets' },
   { key: 'pendant',  label: 'Pendentifs' },
   { key: 'ring',     label: 'Bagues' },
@@ -38,7 +38,7 @@ export function FeaturedProducts() {
                 className="font-display font-black text-white uppercase leading-[0.88]"
                 style={{ fontSize: 'clamp(52px, 7.5vw, 96px)' }}
               >
-                New Ice Jewelry<br />
+                Nos bijoux ice<br />
                 <span
                   style={{
                     WebkitTextStroke: '2px #F5C542',
@@ -46,7 +46,7 @@ export function FeaturedProducts() {
                     color: 'transparent',
                   }}
                 >
-                  By Type
+                  Par catégorie
                 </span>
               </h2>
             </div>
@@ -78,7 +78,7 @@ export function FeaturedProducts() {
                   whileHover={{ background: '#FAD555', boxShadow: '0 0 28px rgba(245,197,66,0.4)' }}
                   whileTap={{ scale: 0.97 }}
                 >
-                  Shop Now
+                  Voir la boutique
                   <ArrowUpRight className="w-4 h-4" />
                 </motion.span>
               </Link>
@@ -88,8 +88,8 @@ export function FeaturedProducts() {
           {/* Description + filter tabs */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <p className="text-sm max-w-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>
-              Unleash your inner style icon — whether a pendant, chain, or ring,
-              adorn yourself with confidence and swagger.
+              Pendentifs, chaînes, bagues, bracelets — toutes nos pièces
+              moissanite VVS certifiées GRA. Portez-vous avec éclat.
             </p>
 
             {/* Filter tabs */}

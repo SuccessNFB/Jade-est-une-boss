@@ -93,7 +93,7 @@ function HeroProductCard() {
               className="w-full flex items-center justify-between py-2 px-3 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all hover:brightness-110"
               style={{ background: '#F5C542', color: '#0F0F0D' }}
             >
-              Boost your style
+              Voir la pièce
               <ArrowUpRight style={{ width: 11, height: 11 }} />
             </button>
           </div>
@@ -180,7 +180,7 @@ export function HeroSection() {
                 className="text-[10px] font-semibold tracking-widest uppercase"
                 style={{ color: 'rgba(255,255,255,0.55)' }}
               >
-                Découvrez l'univers ICEKEY — Moissanite VVS · GRA Certified
+                Découvrez l'univers ICEKEY — Moissanite VVS · Certifié GRA
               </span>
             </motion.div>
 
@@ -192,9 +192,9 @@ export function HeroSection() {
               className="font-display font-black text-white uppercase leading-[0.9] mb-10"
               style={{ fontSize: 'clamp(54px, 8.5vw, 108px)' }}
             >
-              Spark your<br />
-              shine with<br />
-              <span style={{ color: '#F5C542' }}>jewelry</span>
+              Brille avec<br />
+              nos bijoux<br />
+              <span style={{ color: '#F5C542' }}>moissanite</span>
             </motion.h1>
 
             {/* CTAs */}
@@ -211,7 +211,7 @@ export function HeroSection() {
                   whileHover={{ borderColor: 'rgba(255,255,255,0.9)', background: 'rgba(255,255,255,0.06)' }}
                   whileTap={{ scale: 0.97 }}
                 >
-                  Collection
+                  La collection
                 </motion.span>
               </Link>
 
@@ -222,7 +222,7 @@ export function HeroSection() {
                   whileHover={{ background: '#FAD555', boxShadow: '0 0 36px rgba(245,197,66,0.45)' }}
                   whileTap={{ scale: 0.97 }}
                 >
-                  Shop Now
+                  Acheter maintenant
                   <ArrowUpRight className="w-4 h-4" />
                 </motion.span>
               </Link>

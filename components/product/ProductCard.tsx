@@ -75,7 +75,7 @@ export function ProductCard({ product }: ProductCardProps) {
                 className="inline-block px-2 py-0.5 rounded-md text-[9px] font-black tracking-widest uppercase"
                 style={{ background: '#F5C542', color: '#0F0F0D' }}
               >
-                Best
+                Top
               </span>
             )}
             {discount && (
@@ -83,7 +83,7 @@ export function ProductCard({ product }: ProductCardProps) {
                 className="inline-block px-2 py-0.5 rounded-md text-[9px] font-black tracking-widest uppercase"
                 style={{ background: 'rgba(245,197,66,0.15)', color: '#F5C542', border: '1px solid rgba(245,197,66,0.25)' }}
               >
-                Sale
+                Promo
               </span>
             )}
             <span
