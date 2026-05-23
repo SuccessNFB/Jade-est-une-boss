@@ -5,8 +5,6 @@
 @layer base {
   :root {
     --font-playfair:    'Playfair Display', Georgia, serif;
-    'Syne', system-ui, sans-serif;
-    'Syne', system-ui, sans-serif;
     --font-syne:       'Syne', system-ui, sans-serif;
     --font-space-mono:  'Space Mono', monospace;
 
