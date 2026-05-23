@@ -124,15 +124,33 @@ export default async function ProductPage({ params }: Props) {
 
               {/* Price */}
               <div className="flex items-baseline gap-3">
-                <span className="font-serif text-3xl font-bold text-white">
+                <span
+                  className="text-4xl font-bold"
+                  style={{
+                    color: '#D4AF37',
+                    fontFamily: 'var(--font-space-mono), monospace',
+                    letterSpacing: '-0.03em',
+                  }}
+                >
                   {formatPrice(p.price)}
                 </span>
                 {p.compare_at_price && p.compare_at_price > p.price && (
                   <>
-                    <span className="text-lg text-white/65 line-through">
+                    <span
+                      className="text-xl text-white/40 line-through"
+                      style={{ fontFamily: 'var(--font-space-mono), monospace' }}
+                    >
                       {formatPrice(p.compare_at_price)}
                     </span>
-                    <span className="text-sm font-bold px-2 py-0.5 rounded-full" style={{ background: 'rgba(212,175,55,0.12)', color: '#D4AF37' }}>
+                    <span
+                      className="text-xs font-bold px-2.5 py-1 rounded-full"
+                      style={{
+                        background: 'rgba(212,175,55,0.12)',
+                        color: '#D4AF37',
+                        border: '1px solid rgba(212,175,55,0.25)',
+                        fontFamily: 'var(--font-space-mono), monospace',
+                      }}
+                    >
                       -{Math.round((1 - p.price / p.compare_at_price) * 100)}%
                     </span>
                   </>

@@ -231,7 +231,7 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
               }}
             >
               <option value="new">Nouveautés</option>
-              <option value="popular">Best Sellers</option>
+              <option value="popular">Meilleures ventes</option>
               <option value="price-asc">Prix : croissant</option>
               <option value="price-desc">Prix : décroissant</option>
             </select>

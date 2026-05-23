@@ -36,7 +36,10 @@ export function BrandStory() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#D4AF37] mb-5">
+            <p
+              className="text-[10px] font-bold tracking-[0.3em] uppercase mb-5"
+              style={{ color: '#D4AF37', fontFamily: 'var(--font-space-mono), monospace' }}
+            >
               Notre histoire
             </p>
             <h2
@@ -90,14 +93,16 @@ export function BrandStory() {
                 }}
               >
                 <div
-                  className="font-serif text-4xl font-bold mb-2"
+                  className="text-4xl font-bold mb-2"
                   style={{
-                    color: f.accent === 'ice' ? '#D4AF37' : '#D4AF37',
+                    color: '#D4AF37',
+                    fontFamily: 'var(--font-space-mono), monospace',
+                    letterSpacing: '-0.03em',
                   }}
                 >
                   {f.value}
                 </div>
-                <p className="text-white/65 text-sm leading-snug">{f.label}</p>
+                <p className="text-white/70 text-sm leading-snug">{f.label}</p>
 
                 {/* Corner accent */}
                 <div

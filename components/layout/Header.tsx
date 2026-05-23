@@ -15,14 +15,14 @@ const MEGA: Record<string, {
   cols: { title: string; links: { label: string; href: string }[] }[]
   promo: { label: string; sub: string; href: string }
 }> = {
-  CHAINS: {
+  CHAÎNES: {
     cols: [
       {
         title: 'Style',
         links: [
           { label: 'Cuban Links',   href: '/shop?cat=chain&q=cuban' },
-          { label: 'Tennis Chains', href: '/shop?cat=chain&q=tennis' },
-          { label: 'Rope Chains',   href: '/shop?cat=chain&q=rope' },
+          { label: 'Chaînes Tennis', href: '/shop?cat=chain&q=tennis' },
+          { label: 'Chaînes Rope',   href: '/shop?cat=chain&q=rope' },
         ],
       },
       {
@@ -34,31 +34,31 @@ const MEGA: Record<string, {
         ],
       },
     ],
-    promo: { label: 'Best Seller', sub: 'Cuban 12mm · 16"', href: '/shop?cat=chain' },
+    promo: { label: 'Meilleure vente', sub: 'Cuban 12mm · 16"', href: '/shop?cat=chain' },
   },
-  PENDANTS: {
+  PENDENTIFS: {
     cols: [
       {
         title: 'Type',
         links: [
-          { label: 'Custom Pendants', href: '/builder' },
+          { label: 'Pendentifs custom', href: '/builder' },
           { label: 'Solitaire VVS',   href: '/shop?cat=pendant&q=solitaire' },
-          { label: 'Religious',       href: '/shop?cat=pendant&q=religious' },
-          { label: 'Hip-Hop Icons',   href: '/shop?cat=pendant&q=icon' },
+          { label: 'Religieux',        href: '/shop?cat=pendant&q=religious' },
+          { label: 'Icônes Hip-Hop',  href: '/shop?cat=pendant&q=icon' },
         ],
       },
       {
         title: 'Collection',
         links: [
           { label: 'Nouveautés',   href: '/shop?cat=pendant&sort=newest' },
-          { label: 'Best Sellers', href: '/shop?cat=pendant' },
+          { label: 'Meilleures ventes', href: '/shop?cat=pendant' },
           { label: 'Sur mesure',   href: '/builder' },
         ],
       },
     ],
-    promo: { label: 'Custom Pendant', sub: 'Crée ta pièce unique', href: '/builder' },
+    promo: { label: 'Pendentif sur mesure', sub: 'Crée ta pièce unique', href: '/builder' },
   },
-  MEN: {
+  HOMMES: {
     cols: [
       {
         title: 'Catégories',
@@ -71,9 +71,9 @@ const MEGA: Record<string, {
         ],
       },
     ],
-    promo: { label: 'Best Sellers Men', sub: 'Les plus portés', href: '/shop' },
+    promo: { label: 'Meilleures ventes', sub: 'Les plus portés', href: '/shop' },
   },
-  WOMEN: {
+  FEMMES: {
     cols: [
       {
         title: 'Catégories',
@@ -82,25 +82,25 @@ const MEGA: Record<string, {
           { label: 'Boucles',    href: '/shop?cat=earring' },
           { label: 'Bracelets',  href: '/shop?cat=bracelet' },
           { label: 'Pendentifs', href: '/shop?cat=pendant' },
-          { label: 'Sets',       href: '/shop?cat=set' },
+          { label: 'Coffrets',   href: '/shop?cat=set' },
         ],
       },
     ],
-    promo: { label: 'Curated for Her', sub: 'Sélection premium', href: '/shop' },
+    promo: { label: 'Pour elle', sub: 'Sélection premium', href: '/shop' },
   },
 }
 
 const NAV = [
-  { label: 'MEN',          href: '/shop',              hasMega: true,  accent: false },
-  { label: 'WOMEN',        href: '/shop',              hasMega: true,  accent: false },
-  { label: 'NEW DROPS',    href: '/shop?sort=newest',  hasMega: false, accent: false },
-  { label: 'CHAINS',       href: '/shop?cat=chain',    hasMega: true,  accent: false },
-  { label: 'PENDANTS',     href: '/shop?cat=pendant',  hasMega: true,  accent: false },
-  { label: 'RINGS',        href: '/shop?cat=ring',     hasMega: false, accent: false },
-  { label: 'BRACELETS',    href: '/shop?cat=bracelet', hasMega: false, accent: false },
-  { label: 'WATCHES',      href: '/shop?cat=watch',    hasMega: false, accent: false },
-  { label: 'CUSTOM',       href: '/builder',           hasMega: false, accent: false },
-  { label: 'SALE',         href: '/shop?tier=entry',   hasMega: false, accent: true  },
+  { label: 'HOMMES',       href: '/shop',              hasMega: true,  accent: false },
+  { label: 'FEMMES',        href: '/shop',              hasMega: true,  accent: false },
+  { label: 'NOUVEAUTÉS',   href: '/shop?sort=newest',  hasMega: false, accent: false },
+  { label: 'CHAÎNES',       href: '/shop?cat=chain',    hasMega: true,  accent: false },
+  { label: 'PENDENTIFS',    href: '/shop?cat=pendant',  hasMega: true,  accent: false },
+  { label: 'BAGUES',         href: '/shop?cat=ring',     hasMega: false, accent: false },
+  { label: 'BRACELETS',     href: '/shop?cat=bracelet', hasMega: false, accent: false },
+  { label: 'MONTRES',        href: '/shop?cat=watch',    hasMega: false, accent: false },
+  { label: 'SUR MESURE',    href: '/builder',           hasMega: false, accent: false },
+  { label: 'PROMO',          href: '/shop?tier=entry',   hasMega: false, accent: true  },
 ]
 
 export function Header() {

@@ -27,7 +27,10 @@ export function PriceTiers() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#D4AF37] mb-4">
+          <p
+            className="text-[10px] font-bold tracking-[0.3em] uppercase mb-4"
+            style={{ color: '#D4AF37', fontFamily: 'var(--font-space-mono), monospace' }}
+          >
             5 gammes
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
@@ -78,16 +81,23 @@ export function PriceTiers() {
                 >
                   {/* Number */}
                   <span
-                    className="text-[10px] font-black tracking-[0.3em] mb-4 block"
-                    style={{ color: 'rgba(255,255,255,0.15)' }}
+                    className="text-[10px] font-bold mb-4 block"
+                    style={{
+                      color: 'rgba(255,255,255,0.15)',
+                      fontFamily: 'var(--font-space-mono), monospace',
+                    }}
                   >
                     0{i + 1}
                   </span>
 
                   {/* Price range */}
                   <p
-                    className="text-sm font-black tracking-wide mb-1"
-                    style={{ color: accent.color }}
+                    className="text-sm font-bold mb-1"
+                    style={{
+                      color: accent.color,
+                      fontFamily: 'var(--font-space-mono), monospace',
+                      letterSpacing: '-0.02em',
+                    }}
                   >
                     {tier.range}
                   </p>

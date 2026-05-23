@@ -45,7 +45,10 @@ export function Testimonials() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#D4AF37] mb-4">
+          <p
+            className="text-[10px] font-bold tracking-[0.3em] uppercase mb-4"
+            style={{ color: '#D4AF37', fontFamily: 'var(--font-space-mono), monospace' }}
+          >
             Avis clients
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-5">

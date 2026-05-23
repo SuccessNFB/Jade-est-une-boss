@@ -62,23 +62,23 @@ function ReturnIcon() {
 const TRUST_BADGES = [
   {
     icon:    <GemIcon />,
-    label:   '100% VVS Certified',
-    tooltip: 'Very Very Slightly Included. Lab-certified purity.',
+    label:   'Certifié VVS',
+    tooltip: 'Moissanite de qualité VVS, certifiée en laboratoire.',
   },
   {
     icon:    <CheckIcon />,
     label:   'Diamond Test ✓',
-    tooltip: 'Passes all diamond tests. Real moissanite.',
+    tooltip: 'Passe tous les tests diamant. Vraie moissanite.',
   },
   {
     icon:    <ShieldIcon />,
-    label:   'Lifetime Warranty',
-    tooltip: 'Guaranteed for life. No questions.',
+    label:   'Garantie à vie',
+    tooltip: 'Garantie à vie, sans condition.',
   },
   {
     icon:    <ReturnIcon />,
-    label:   '30-Day Money Back',
-    tooltip: 'Not happy? Full refund, no hassle.',
+    label:   'Retour 30 jours',
+    tooltip: 'Pas satisfait ? Remboursement intégral.',
   },
 ]
 
@@ -189,7 +189,7 @@ export function ProductPageClient({ product }: Props) {
             onClick={handleAddToCart}
           >
             <ShoppingBag className="w-5 h-5" />
-            {product.stock === 0 ? 'Rupture de stock' : 'Secure Your Piece'}
+            {product.stock === 0 ? 'Rupture de stock' : 'Ajouter au panier'}
           </Button>
         </motion.div>
       </div>
