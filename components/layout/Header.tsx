@@ -308,7 +308,7 @@ export function Header() {
                 </AnimatePresence>
               </button>
 
-              <div className="hidden sm:block ml-1">
+              <div className="ml-1">
                 <LocaleSwitcher />
               </div>
 
@@ -484,7 +484,7 @@ export function Header() {
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Chains, pendants…"
+                    placeholder="Chaînes, pendentifs…"
                     className="flex-1 bg-transparent text-white text-sm placeholder-white/25 outline-none"
                   />
                 </form>
@@ -524,6 +524,10 @@ export function Header() {
                   <ShoppingBag style={{ width: 15, height: 15 }} />
                   Mon panier {count > 0 && `(${count})`}
                 </button>
+                <div className="flex items-center justify-between pt-1">
+                  <span className="text-xs text-white/35 uppercase tracking-widest">Langue</span>
+                  <LocaleSwitcher />
+                </div>
               </div>
             </motion.div>
           </>
