@@ -26,14 +26,14 @@ const STEPS = [
 
 export function WhyMoissanite() {
   return (
-    <section className="py-14 border-t border-gray-100">
-      <h2 className="font-serif text-2xl font-bold text-charcoal mb-10 text-center">
+    <section className="py-14 border-t border-white/[0.06]">
+      <h2 className="font-serif text-2xl font-bold text-white/70 mb-10 text-center">
         Pourquoi la moissanite ICEKEY ?
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
         {STEPS.map((step) => (
           <div key={step.num} className="text-center">
-            <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100 mb-5">
+            <div className="relative aspect-square rounded-2xl overflow-hidden bg-[#0E0F16] mb-5">
               <Image
                 src={step.img}
                 alt={step.alt}
@@ -45,7 +45,7 @@ export function WhyMoissanite() {
                 {step.num}
               </div>
             </div>
-            <p className="font-serif font-semibold text-charcoal mb-2">{step.title}</p>
+            <p className="font-serif font-semibold text-white/70 mb-2">{step.title}</p>
             <p className="text-sm text-charcoal/55 leading-relaxed">{step.desc}</p>
           </div>
         ))}

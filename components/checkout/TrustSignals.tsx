@@ -2,7 +2,7 @@ import { Lock, RefreshCw, Award } from 'lucide-react'
 
 export function TrustSignals() {
   return (
-    <div className="flex flex-wrap justify-center gap-6 text-sm text-charcoal/50">
+    <div className="flex flex-wrap justify-center gap-6 text-sm text-white/40">
       {[
         { icon: Lock,      text: 'Paiement SSL sécurisé' },
         { icon: RefreshCw, text: '30 jours · zéro question' },

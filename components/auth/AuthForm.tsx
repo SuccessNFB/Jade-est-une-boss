@@ -94,7 +94,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
         className="relative w-full max-w-md"
       >
         {/* Card */}
-        <div className="bg-white/[0.04] border border-white/10 rounded-3xl p-8 sm:p-10 backdrop-blur-sm">
+        <div className="bg-[#0E0F16]/[0.04] border border-white/10 rounded-3xl p-8 sm:p-10 backdrop-blur-sm">
 
           {/* Logo */}
           <div className="flex justify-center mb-8">
@@ -146,7 +146,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
                   onChange={(e) => setFirstName(e.target.value)}
                   placeholder="Ton prénom"
                   required
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm outline-none focus:border-[#00D9FF]/60 focus:bg-white/8 transition-all"
+                  className="w-full bg-[#0E0F16]/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm outline-none focus:border-[#00D9FF]/60 focus:bg-[#0E0F16]/8 transition-all"
                 />
               </div>
             )}
@@ -162,7 +162,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
                 placeholder="ton@email.com"
                 required
                 autoComplete="email"
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm outline-none focus:border-[#00D9FF]/60 focus:bg-white/8 transition-all"
+                className="w-full bg-[#0E0F16]/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm outline-none focus:border-[#00D9FF]/60 focus:bg-[#0E0F16]/8 transition-all"
               />
             </div>
 
@@ -179,7 +179,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
                   required
                   minLength={8}
                   autoComplete={isSignup ? 'new-password' : 'current-password'}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 pr-12 text-white placeholder-white/20 text-sm outline-none focus:border-[#00D9FF]/60 focus:bg-white/8 transition-all"
+                  className="w-full bg-[#0E0F16]/5 border border-white/10 rounded-xl px-4 py-3 pr-12 text-white placeholder-white/20 text-sm outline-none focus:border-[#00D9FF]/60 focus:bg-[#0E0F16]/8 transition-all"
                 />
                 <button
                   type="button"
@@ -201,7 +201,7 @@ export function AuthForm({ mode, redirectTo = '/' }: Props) {
             <button
               type="submit"
               disabled={loading}
-              className="w-full flex items-center justify-center gap-2.5 py-4 rounded-full bg-[#00D9FF] text-charcoal font-bold text-sm tracking-wide hover:bg-[#00EEFF] hover:shadow-[0_0_28px_rgba(0,217,255,0.5)] transition-all disabled:opacity-60 mt-2"
+              className="w-full flex items-center justify-center gap-2.5 py-4 rounded-full bg-[#00D9FF] text-white/70 font-bold text-sm tracking-wide hover:bg-[#00EEFF] hover:shadow-[0_0_28px_rgba(0,217,255,0.5)] transition-all disabled:opacity-60 mt-2"
             >
               {loading ? (
                 <Loader2 className="w-4 h-4 animate-spin" />

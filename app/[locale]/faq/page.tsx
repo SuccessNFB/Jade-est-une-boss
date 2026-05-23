@@ -110,10 +110,10 @@ export default function FAQPage() {
             <p className="text-ice-500 text-xs tracking-[0.35em] uppercase font-semibold mb-3">
               Toutes vos questions
             </p>
-            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-charcoal mb-4">
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white/70 mb-4">
               FAQ — On répond à tout.
             </h1>
-            <p className="text-charcoal/50 max-w-xl mx-auto text-lg">
+            <p className="text-white/40 max-w-xl mx-auto text-lg">
               Moissanite, livraison, entretien, retours — on n&apos;a rien à cacher.
               Your peace of mind, guaranteed.
             </p>
@@ -134,7 +134,7 @@ export default function FAQPage() {
                     </p>
                   </div>
                 </div>
-                <div className="bg-white rounded-2xl shadow-product px-6">
+                <div className="bg-[#0E0F16] rounded-2xl shadow-card px-6">
                   <ProductAccordion items={cat.items} />
                 </div>
               </div>
@@ -145,16 +145,16 @@ export default function FAQPage() {
         {/* ── Still got questions CTA ── */}
         <section className="bg-[#E0F7FF] py-16">
           <div className="section-container text-center">
-            <h2 className="font-serif text-3xl font-bold text-charcoal mb-3">
+            <h2 className="font-serif text-3xl font-bold text-white/70 mb-3">
               Toujours une question ?
             </h2>
-            <p className="text-charcoal/60 mb-8 max-w-md mx-auto">
+            <p className="text-white/45 mb-8 max-w-md mx-auto">
               Notre équipe répond sous 24h, du lundi au vendredi. On est là.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#00D9FF] text-charcoal font-semibold text-sm tracking-wide rounded-full hover:scale-[1.03] hover:shadow-ice transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-[#00D9FF] text-white/70 font-semibold text-sm tracking-wide rounded-full hover:scale-[1.03] hover:shadow-ice transition-all duration-300"
               >
                 Nous contacter
               </Link>

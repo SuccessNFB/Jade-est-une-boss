@@ -35,11 +35,11 @@ const FAQ_ITEMS = [
 
 export function ProductFAQ() {
   return (
-    <section className="py-12 border-t border-gray-100">
-      <h2 className="font-serif text-2xl font-bold text-charcoal mb-2">
+    <section className="py-12 border-t border-white/[0.06]">
+      <h2 className="font-serif text-2xl font-bold text-white/70 mb-2">
         Questions Fréquentes
       </h2>
-      <p className="text-sm text-charcoal/50 mb-6">Tout ce que tu dois savoir avant de sécuriser ta pièce.</p>
+      <p className="text-sm text-white/40 mb-6">Tout ce que tu dois savoir avant de sécuriser ta pièce.</p>
       <ProductAccordion items={FAQ_ITEMS} />
     </section>
   )

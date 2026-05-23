@@ -40,7 +40,7 @@ export function StickyAddToCart({ product, triggerRef }: Props) {
           <div className="section-container max-w-5xl py-3">
             <div className="flex items-center gap-4">
               {/* Thumbnail */}
-              <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
+              <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-[#0E0F16] flex-shrink-0">
                 <Image
                   src={product.images[0]?.url ?? '/images/placeholder.jpg'}
                   alt={product.name}
@@ -52,11 +52,11 @@ export function StickyAddToCart({ product, triggerRef }: Props) {
 
               {/* Name + price */}
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-serif font-semibold text-charcoal truncate">{product.name}</p>
+                <p className="text-sm font-serif font-semibold text-white/70 truncate">{product.name}</p>
                 <div className="flex items-baseline gap-2">
                   <span className="text-sm font-bold text-charcoal">{formatPrice(product.price)}</span>
                   {product.compare_at_price && (
-                    <span className="text-xs text-charcoal/40 line-through">{formatPrice(product.compare_at_price)}</span>
+                    <span className="text-xs text-white/30 line-through">{formatPrice(product.compare_at_price)}</span>
                   )}
                 </div>
               </div>
@@ -68,7 +68,7 @@ export function StickyAddToCart({ product, triggerRef }: Props) {
                   toast.success(`${product.name} ajouté au panier`)
                 }}
                 disabled={product.stock === 0}
-                className="flex items-center gap-2 px-6 py-3 rounded-full bg-gold-300 text-charcoal text-sm font-bold
+                className="flex items-center gap-2 px-6 py-3 rounded-full bg-gold-300 text-white/70 text-sm font-bold
                            hover:bg-gold-400 transition-colors disabled:opacity-50 flex-shrink-0"
               >
                 <ShoppingBag className="w-4 h-4" />

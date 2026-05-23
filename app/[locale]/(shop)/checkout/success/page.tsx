@@ -46,7 +46,7 @@ export default function CheckoutSuccessPage() {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-white rounded-3xl shadow-product p-10 max-w-md w-full text-center"
+        className="bg-[#0E0F16] rounded-3xl shadow-card p-10 max-w-md w-full text-center"
       >
         <motion.div
           initial={{ scale: 0 }}
@@ -61,13 +61,13 @@ export default function CheckoutSuccessPage() {
           <IcekeyLogo variant="full" height={56} color="#333333" />
         </div>
 
-        <h1 className="font-serif text-3xl font-bold text-charcoal mb-3">
+        <h1 className="font-serif text-3xl font-bold text-white/70 mb-3">
           Commande confirmée !
         </h1>
-        <p className="text-charcoal/60 mb-2">
+        <p className="text-white/45 mb-2">
           Merci pour votre confiance. Un email de confirmation vous a été envoyé.
         </p>
-        <p className="text-charcoal/40 text-sm mb-8">
+        <p className="text-white/30 text-sm mb-8">
           Votre bijou sera expédié sous 2–3 jours ouvrés avec suivi.
         </p>
 

@@ -1,8 +1,8 @@
-import { Header }      from '@/components/layout/Header'
-import { Footer }      from '@/components/layout/Footer'
+import { Header }          from '@/components/layout/Header'
+import { Footer }          from '@/components/layout/Footer'
 import { AnnouncementBar } from '@/components/layout/AnnouncementBar'
-import { ProductGrid } from '@/components/product/ProductGrid'
-import type { Metadata } from 'next'
+import { ProductGrid }     from '@/components/product/ProductGrid'
+import type { Metadata }   from 'next'
 
 export const revalidate = 60
 
@@ -14,7 +14,7 @@ const CAT_LABELS: Record<string, string> = {
   ring:     'Bagues',
   watch:    'Montres',
   bracelet: 'Bracelets',
-  earring:  'Boucles d\'oreilles',
+  earring:  "Boucles d'oreilles",
   buff:     'Iced Out Buffs',
   set:      'Sets',
 }
@@ -24,28 +24,28 @@ interface ShopPageProps {
 }
 
 export default async function ShopPage({ searchParams }: ShopPageProps) {
-  const params = await searchParams
+  const params   = await searchParams
   const catLabel = params.cat ? (CAT_LABELS[params.cat] ?? params.cat) : null
 
   return (
     <>
       <AnnouncementBar />
       <Header />
-      <main className="pt-20">
+      <main className="pt-[60px] lg:pt-[72px]" style={{ background: '#08090E', minHeight: '100vh' }}>
+
         {/* Page header */}
-        <div className="bg-charcoal text-white py-10">
+        <div className="py-10" style={{ background: '#0A0B12', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
           <div className="section-container">
-            <p className="text-[#00D9FF] text-xs tracking-[0.3em] uppercase font-semibold mb-2">
-              {catLabel ? `Catégorie` : 'Toute la collection'}
+            <p className="text-[11px] text-[#00D9FF] tracking-[0.3em] uppercase font-bold mb-2">
+              {catLabel ? 'Catégorie' : 'Toute la collection'}
             </p>
-            <h1 className="font-serif text-3xl sm:text-4xl font-bold">
+            <h1 className="font-serif text-3xl sm:text-4xl font-bold text-white">
               {catLabel ?? 'Bijoux Moissanite'}
             </h1>
             {params.q && (
-              <p className="text-white/50 text-sm mt-2">Résultats pour &ldquo;{params.q}&rdquo;</p>
+              <p className="text-white/35 text-sm mt-2">Résultats pour &ldquo;{params.q}&rdquo;</p>
             )}
-            {/* Breadcrumb */}
-            <p className="text-white/30 text-xs mt-3">
+            <p className="text-white/20 text-xs mt-3">
               Accueil{catLabel ? ` › ${catLabel}` : ' › Collection'}
             </p>
           </div>

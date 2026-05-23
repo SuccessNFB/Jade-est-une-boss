@@ -11,7 +11,7 @@ export default function CartPage() {
       <Header />
       <main className="pt-20">
         <div className="section-container py-12 max-w-4xl">
-          <h1 className="font-serif text-3xl font-bold text-charcoal mb-10">Mon Panier</h1>
+          <h1 className="font-serif text-3xl font-bold text-white/70 mb-10">Mon Panier</h1>
           <CartContent />
         </div>
       </main>

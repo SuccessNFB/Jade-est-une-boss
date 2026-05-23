@@ -15,14 +15,14 @@ export function ProductFeatureTiles() {
       {TILES.slice(0, 4).map(({ icon: Icon, label, sub }) => (
         <div
           key={label}
-          className="flex items-start gap-3 p-3.5 rounded-xl bg-gray-50 border border-gray-100"
+          className="flex items-start gap-3 p-3.5 rounded-xl bg-[#0A0B12] border border-white/[0.06]"
         >
-          <div className="w-8 h-8 rounded-lg bg-white shadow-sm flex items-center justify-center flex-shrink-0">
+          <div className="w-8 h-8 rounded-lg bg-[#0E0F16] shadow-sm flex items-center justify-center flex-shrink-0">
             <Icon className="w-4 h-4 text-ice-500" />
           </div>
           <div>
-            <p className="text-xs font-semibold text-charcoal leading-tight">{label}</p>
-            <p className="text-[11px] text-charcoal/50 mt-0.5 leading-tight">{sub}</p>
+            <p className="text-xs font-semibold text-white/70 leading-tight">{label}</p>
+            <p className="text-[11px] text-white/40 mt-0.5 leading-tight">{sub}</p>
           </div>
         </div>
       ))}

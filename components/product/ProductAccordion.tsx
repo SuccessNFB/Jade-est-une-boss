@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { Plus, Minus } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { cn } from '@/lib/utils/cn'
 
 interface AccordionItem {
   title:   string
@@ -19,22 +18,19 @@ export function ProductAccordion({ items, defaultOpen }: Props) {
   const [open, setOpen] = useState<number | null>(defaultOpen ?? null)
 
   return (
-    <div className="divide-y divide-gray-100">
+    <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
       {items.map((item, i) => (
-        <div key={i}>
+        <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
           <button
             onClick={() => setOpen(open === i ? null : i)}
             className="flex items-center justify-between w-full py-4 text-left"
           >
-            <span className={cn(
-              'text-sm font-semibold transition-colors',
-              open === i ? 'text-ice-600' : 'text-charcoal'
-            )}>
+            <span className="text-sm font-semibold text-white/70 hover:text-white transition-colors">
               {item.title}
             </span>
             {open === i
-              ? <Minus className="w-4 h-4 text-ice-500 flex-shrink-0" />
-              : <Plus  className="w-4 h-4 text-charcoal/40 flex-shrink-0" />
+              ? <Minus className="w-4 h-4 text-[#00D9FF] flex-shrink-0" />
+              : <Plus  className="w-4 h-4 text-white/25 flex-shrink-0" />
             }
           </button>
           <AnimatePresence initial={false}>
@@ -46,7 +42,7 @@ export function ProductAccordion({ items, defaultOpen }: Props) {
                 transition={{ duration: 0.25, ease: 'easeInOut' }}
                 className="overflow-hidden"
               >
-                <div className="pb-4 text-sm text-charcoal/60 leading-relaxed">
+                <div className="pb-4 text-sm text-white/40 leading-relaxed">
                   {item.content}
                 </div>
               </motion.div>

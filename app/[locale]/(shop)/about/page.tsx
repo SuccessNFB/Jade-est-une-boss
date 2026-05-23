@@ -96,18 +96,18 @@ export default function AboutPage() {
               <p className="text-ice-500 text-xs tracking-[0.3em] uppercase font-semibold mb-3">
                 2024 — Paris
               </p>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-charcoal mb-6 leading-snug">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white/70 mb-6 leading-snug">
                 On en avait marre du luxe inaccessible.
               </h2>
-              <p className="text-charcoal/60 leading-relaxed mb-4">
+              <p className="text-white/45 leading-relaxed mb-4">
                 L&apos;idée d&apos;ICEKEY est née dans un appartement parisien, en regardant les prix des bijoux de luxe
                 avec l&apos;impression que l&apos;éclat était réservé à ceux qui pouvaient se le permettre.
               </p>
-              <p className="text-charcoal/60 leading-relaxed mb-4">
+              <p className="text-white/45 leading-relaxed mb-4">
                 Puis on a découvert la moissanite — une pierre créée en laboratoire, plus brillante que le diamant,
                 presque aussi dure, éthique par nature et accessible. Un game-changer.
               </p>
-              <p className="text-charcoal/60 leading-relaxed">
+              <p className="text-white/45 leading-relaxed">
                 On a tout misé dessus. ICEKEY est né. <span className="text-charcoal font-semibold">Cold is the new gold.</span>
               </p>
             </div>
@@ -135,39 +135,39 @@ export default function AboutPage() {
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-charcoal">
                 Pourquoi Moissanite ?
               </h2>
-              <p className="text-charcoal/50 mt-3 max-w-xl mx-auto">
+              <p className="text-white/40 mt-3 max-w-xl mx-auto">
                 Les chiffres parlent d&apos;eux-mêmes. Compare et décide par toi-même.
               </p>
             </div>
 
-            <div className="overflow-x-auto rounded-2xl shadow-product">
-              <table className="w-full bg-white text-sm">
+            <div className="overflow-x-auto rounded-2xl shadow-card">
+              <table className="w-full bg-[#0E0F16] text-sm">
                 <thead>
-                  <tr className="border-b border-gray-100">
-                    <th className="text-left px-6 py-4 font-semibold text-charcoal/50 w-1/4">Critère</th>
-                    <th className="px-6 py-4 font-semibold text-charcoal text-center">Diamant</th>
+                  <tr className="border-b border-white/[0.06]">
+                    <th className="text-left px-6 py-4 font-semibold text-white/40 w-1/4">Critère</th>
+                    <th className="px-6 py-4 font-semibold text-white/70 text-center">Diamant</th>
                     <th className="px-6 py-4 font-bold text-ice-600 text-center bg-[#E0F7FF]">
                       Moissanite ✦
                     </th>
-                    <th className="px-6 py-4 font-semibold text-charcoal text-center">Or 9K</th>
+                    <th className="px-6 py-4 font-semibold text-white/70 text-center">Or 9K</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-50">
                   {comparisonRows.map((row) => (
-                    <tr key={row.label} className="hover:bg-gray-50 transition-colors">
+                    <tr key={row.label} className="hover:bg-[#0A0B12] transition-colors">
                       <td className="px-6 py-4 font-medium text-charcoal">{row.label}</td>
-                      <td className="px-6 py-4 text-charcoal/60 text-center">{row.diamond}</td>
+                      <td className="px-6 py-4 text-white/45 text-center">{row.diamond}</td>
                       <td className="px-6 py-4 text-ice-700 font-semibold text-center bg-[#E0F7FF]">
                         {row.moissanite}
                       </td>
-                      <td className="px-6 py-4 text-charcoal/60 text-center">{row.gold9k}</td>
+                      <td className="px-6 py-4 text-white/45 text-center">{row.gold9k}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
 
-            <p className="text-center text-xs text-charcoal/40 mt-4">
+            <p className="text-center text-xs text-white/30 mt-4">
               ✦ = meilleur de sa catégorie selon les critères objectifs du marché
             </p>
           </div>
@@ -188,14 +188,14 @@ export default function AboutPage() {
             {values.map((val) => (
               <div
                 key={val.title}
-                className="bg-white rounded-2xl p-8 shadow-product hover:shadow-product-hover transition-all duration-300 hover:-translate-y-1 text-center"
+                className="bg-[#0E0F16] rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 text-center"
               >
                 <div className="text-4xl mb-4">{val.icon}</div>
-                <h3 className="font-serif text-xl font-bold text-charcoal mb-1">{val.title}</h3>
+                <h3 className="font-serif text-xl font-bold text-white/70 mb-1">{val.title}</h3>
                 <p className="text-ice-500 text-xs font-semibold tracking-wider uppercase mb-4">
                   {val.tagline}
                 </p>
-                <p className="text-charcoal/60 text-sm leading-relaxed">{val.body}</p>
+                <p className="text-white/45 text-sm leading-relaxed">{val.body}</p>
               </div>
             ))}
           </div>
@@ -204,16 +204,16 @@ export default function AboutPage() {
         {/* ── CTA ── */}
         <section className="bg-[#E0F7FF] py-20">
           <div className="section-container text-center">
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-charcoal mb-4">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white/70 mb-4">
               Prêt à briller autrement ?
             </h2>
-            <p className="text-charcoal/60 mb-8 max-w-lg mx-auto">
+            <p className="text-white/45 mb-8 max-w-lg mx-auto">
               Explore notre collection et trouve la pièce qui te ressemble.
               Éthique, premium, accessible. Forever.
             </p>
             <Link
               href="/shop"
-              className="inline-flex items-center gap-2 px-10 py-4 bg-[#00D9FF] text-charcoal font-semibold text-sm tracking-wide rounded-full hover:scale-[1.03] hover:shadow-ice transition-all duration-300"
+              className="inline-flex items-center gap-2 px-10 py-4 bg-[#00D9FF] text-white/70 font-semibold text-sm tracking-wide rounded-full hover:scale-[1.03] hover:shadow-ice transition-all duration-300"
             >
               Découvrir la collection →
             </Link>

@@ -8,26 +8,23 @@ import { ProductCard } from '@/components/product/ProductCard'
 import type { Category, PriceTier, Metal } from '@/types'
 import { PRICE_TIERS, METALS } from '@/types'
 import { cn } from '@/lib/utils/cn'
-import { formatPrice } from '@/lib/utils/formatPrice'
 
-/* ── Types ──────────────────────────────────────────────────── */
 interface ProductGridProps {
   initialCategory?: Category
   initialTier?:     PriceTier
   initialSearch?:   string
 }
 
-/* ── Sidebar filter section wrapper ─────────────────────────── */
 function FilterSection({ title, children }: { title: string; children: React.ReactNode }) {
   const [open, setOpen] = useState(true)
   return (
-    <div className="border-b border-gray-100 pb-4 mb-4">
+    <div className="pb-4 mb-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
       <button
         onClick={() => setOpen(!open)}
         className="flex items-center justify-between w-full mb-3"
       >
-        <p className="text-xs font-bold uppercase tracking-widest text-charcoal">{title}</p>
-        <ChevronDown className={cn('w-3.5 h-3.5 text-charcoal/40 transition-transform', open && 'rotate-180')} />
+        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40">{title}</p>
+        <ChevronDown className={cn('w-3 h-3 text-white/25 transition-transform', open && 'rotate-180')} />
       </button>
       {open && children}
     </div>
@@ -36,12 +33,11 @@ function FilterSection({ title, children }: { title: string; children: React.Rea
 
 const COLOR_SWATCHES = [
   { value: 'silver', label: 'Argent',  bg: '#C0C0C0' },
-  { value: 'gold',   label: 'Or',      bg: '#FFD700' },
-  { value: 'rose',   label: 'Or Rose', bg: '#F4A29B' },
+  { value: 'gold',   label: 'Or',      bg: '#C9A84C' },
+  { value: 'rose',   label: 'Or Rose', bg: '#E8B4B8' },
 ]
 
 export function ProductGrid({ initialCategory, initialTier, initialSearch }: ProductGridProps) {
-  /* ── State ──────────────────────────────────────────────── */
   const [category,    setCategory]    = useState<Category | undefined>(initialCategory)
   const [tier,        setTier]        = useState<PriceTier | undefined>(initialTier)
   const [metal,       setMetal]       = useState<Metal | undefined>()
@@ -51,11 +47,10 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
   const [onSaleOnly,  setOnSaleOnly]  = useState(false)
   const [sortBy,      setSortBy]      = useState<'new' | 'price-asc' | 'price-desc' | 'popular'>('new')
   const [viewMode,    setViewMode]    = useState<'grid' | 'list'>('grid')
-  const [sidebarOpen, setSidebarOpen] = useState(false) // mobile
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const { products, loading } = useProducts({ category, priceTier: tier, search })
 
-  /* ── Client-side filtering & sorting ───────────────────── */
   let filtered = [...products]
   if (metal)       filtered = filtered.filter((p) => p.metal === metal)
   if (inStockOnly) filtered = filtered.filter((p) => p.stock > 0)
@@ -79,48 +74,44 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
 
   const hasActiveFilters = !!(category || tier || metal || color || inStockOnly || onSaleOnly || search)
 
-  /* ── Sidebar ─────────────────────────────────────────────── */
   function Sidebar() {
     return (
       <div className="space-y-0">
-        {/* Reset */}
         <div className="flex items-center justify-between mb-5">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-charcoal">Filtres</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40">Filtres</p>
           {hasActiveFilters && (
             <button
               onClick={resetFilters}
-              className="text-[10px] font-semibold text-[#00D9FF] hover:underline tracking-wide"
+              className="text-[10px] font-bold text-[#00D9FF] hover:underline tracking-wide"
             >
               Réinitialiser
             </button>
           )}
         </div>
 
-        {/* Tier */}
         <FilterSection title="Gamme de prix">
-          <div className="space-y-2">
+          <div className="space-y-2.5">
             {PRICE_TIERS.map((t) => (
               <label key={t.id} className="flex items-center justify-between cursor-pointer group">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2.5">
                   <input
                     type="checkbox"
                     checked={tier === t.id}
                     onChange={() => setTier(tier === t.id ? undefined : t.id)}
                     className="w-3.5 h-3.5 accent-[#00D9FF]"
                   />
-                  <span className="text-xs text-charcoal/70 group-hover:text-charcoal transition-colors">{t.label}</span>
+                  <span className="text-xs text-white/45 group-hover:text-white/80 transition-colors">{t.label}</span>
                 </div>
-                <span className="text-[10px] text-charcoal/40">{t.range}</span>
+                <span className="text-[10px] text-white/20">{t.range}</span>
               </label>
             ))}
           </div>
         </FilterSection>
 
-        {/* Metal */}
         <FilterSection title="Métal">
-          <div className="space-y-2">
+          <div className="space-y-2.5">
             {(Object.entries(METALS) as [Metal, { label: string; color: string; surcharge: number }][]).map(([key, val]) => (
-              <label key={key} className="flex items-center gap-2 cursor-pointer group">
+              <label key={key} className="flex items-center gap-2.5 cursor-pointer group">
                 <input
                   type="checkbox"
                   checked={metal === key}
@@ -128,16 +119,15 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
                   className="w-3.5 h-3.5 accent-[#00D9FF]"
                 />
                 <span
-                  className="w-3.5 h-3.5 rounded-full border border-black/10 flex-shrink-0"
-                  style={{ background: val.color }}
+                  className="w-3.5 h-3.5 rounded-full flex-shrink-0"
+                  style={{ background: val.color, border: '1px solid rgba(255,255,255,0.15)' }}
                 />
-                <span className="text-xs text-charcoal/70 group-hover:text-charcoal transition-colors">{val.label}</span>
+                <span className="text-xs text-white/45 group-hover:text-white/80 transition-colors">{val.label}</span>
               </label>
             ))}
           </div>
         </FilterSection>
 
-        {/* Color swatch */}
         <FilterSection title="Coloris">
           <div className="flex gap-2.5">
             {COLOR_SWATCHES.map((c) => (
@@ -145,51 +135,51 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
                 key={c.value}
                 onClick={() => setColor(color === c.value ? '' : c.value)}
                 title={c.label}
-                className={cn(
-                  'w-7 h-7 rounded-full border-2 transition-all hover:scale-110',
-                  color === c.value
-                    ? 'border-[#00D9FF] shadow-[0_0_0_2px_#00D9FF40]'
-                    : 'border-transparent'
-                )}
-                style={{ background: c.bg, outline: '2px solid rgba(0,0,0,0.08)' }}
+                className="w-7 h-7 rounded-full transition-all hover:scale-110"
+                style={{
+                  background: c.bg,
+                  border: color === c.value
+                    ? '2px solid #00D9FF'
+                    : '2px solid rgba(255,255,255,0.15)',
+                  boxShadow: color === c.value ? '0 0 0 2px rgba(0,217,255,0.25)' : 'none',
+                }}
               />
             ))}
           </div>
         </FilterSection>
 
-        {/* Availability */}
         <FilterSection title="Disponibilité">
-          <div className="space-y-2">
-            <label className="flex items-center gap-2 cursor-pointer">
+          <div className="space-y-2.5">
+            <label className="flex items-center gap-2.5 cursor-pointer">
               <input
                 type="checkbox"
                 checked={inStockOnly}
                 onChange={(e) => setInStockOnly(e.target.checked)}
                 className="w-3.5 h-3.5 accent-[#00D9FF]"
               />
-              <span className="text-xs text-charcoal/70">En stock uniquement</span>
+              <span className="text-xs text-white/45">En stock uniquement</span>
             </label>
-            <label className="flex items-center gap-2 cursor-pointer">
+            <label className="flex items-center gap-2.5 cursor-pointer">
               <input
                 type="checkbox"
                 checked={onSaleOnly}
                 onChange={(e) => setOnSaleOnly(e.target.checked)}
                 className="w-3.5 h-3.5 accent-[#00D9FF]"
               />
-              <span className="text-xs text-charcoal/70">En promotion</span>
+              <span className="text-xs text-white/45">En promotion</span>
             </label>
           </div>
         </FilterSection>
 
-        {/* Search */}
         <div>
-          <p className="text-xs font-bold uppercase tracking-widest text-charcoal mb-3">Recherche</p>
+          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 mb-3">Recherche</p>
           <input
             type="search"
             placeholder="Cuban, tennis, pendentif..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full px-3 py-2 rounded-xl border border-gray-200 text-xs focus:border-[#00D9FF] focus:outline-none"
+            className="w-full px-3 py-2.5 rounded-xl text-xs text-white placeholder-white/25 focus:outline-none focus:ring-1 focus:ring-[#00D9FF]/40"
+            style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
           />
         </div>
       </div>
@@ -199,41 +189,46 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
   return (
     <div className="flex gap-8 items-start">
 
-      {/* ── Desktop sidebar ─────────────────────────────────── */}
+      {/* Desktop sidebar */}
       <aside className="hidden lg:block w-52 flex-shrink-0 sticky top-28">
         <Sidebar />
       </aside>
 
-      {/* ── Main content ─────────────────────────────────────── */}
+      {/* Main content */}
       <div className="flex-1 min-w-0">
 
         {/* Sort bar */}
         <div className="flex items-center gap-3 mb-6 flex-wrap">
-          {/* Mobile filter toggle */}
           <button
             onClick={() => setSidebarOpen(true)}
-            className="lg:hidden flex items-center gap-2 px-4 py-2 rounded-full border-2 border-gray-200 text-xs font-semibold text-charcoal hover:border-[#00D9FF] transition-colors"
+            className="lg:hidden flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-white/50 hover:text-white transition-colors"
+            style={{ border: '1px solid rgba(255,255,255,0.1)' }}
           >
             <SlidersHorizontal className="w-3.5 h-3.5" />
             Filtres
             {hasActiveFilters && (
-              <span className="w-4 h-4 rounded-full bg-[#00D9FF] text-charcoal text-[9px] font-black flex items-center justify-center">
+              <span
+                className="w-4 h-4 rounded-full text-[#08090E] text-[9px] font-black flex items-center justify-center"
+                style={{ background: '#00D9FF' }}
+              >
                 !
               </span>
             )}
           </button>
 
-          {/* Result count */}
-          <span className="text-sm text-charcoal/40">
-            {loading ? '...' : `${sorted.length} bijou${sorted.length !== 1 ? 'x' : ''}`}
+          <span className="text-sm text-white/25">
+            {loading ? '…' : `${sorted.length} bijou${sorted.length !== 1 ? 'x' : ''}`}
           </span>
 
           <div className="flex items-center gap-2 ml-auto">
-            {/* Sort dropdown */}
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
-              className="px-3 py-2 rounded-xl border border-gray-200 text-xs text-charcoal focus:border-[#00D9FF] focus:outline-none"
+              className="px-3 py-2 rounded-xl text-xs text-white/60 focus:outline-none cursor-pointer"
+              style={{
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.08)',
+              }}
             >
               <option value="new">Nouveautés</option>
               <option value="popular">Best Sellers</option>
@@ -241,17 +236,27 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
               <option value="price-desc">Prix : décroissant</option>
             </select>
 
-            {/* View toggle */}
-            <div className="flex border border-gray-200 rounded-xl overflow-hidden">
+            <div
+              className="flex rounded-xl overflow-hidden"
+              style={{ border: '1px solid rgba(255,255,255,0.08)' }}
+            >
               <button
                 onClick={() => setViewMode('grid')}
-                className={cn('p-2 transition-colors', viewMode === 'grid' ? 'bg-charcoal text-white' : 'text-charcoal/40 hover:text-charcoal')}
+                className="p-2 transition-colors"
+                style={{
+                  background: viewMode === 'grid' ? 'rgba(0,217,255,0.15)' : 'transparent',
+                  color: viewMode === 'grid' ? '#00D9FF' : 'rgba(255,255,255,0.3)',
+                }}
               >
                 <Grid3X3 className="w-3.5 h-3.5" />
               </button>
               <button
                 onClick={() => setViewMode('list')}
-                className={cn('p-2 transition-colors', viewMode === 'list' ? 'bg-charcoal text-white' : 'text-charcoal/40 hover:text-charcoal')}
+                className="p-2 transition-colors"
+                style={{
+                  background: viewMode === 'list' ? 'rgba(0,217,255,0.15)' : 'transparent',
+                  color: viewMode === 'list' ? '#00D9FF' : 'rgba(255,255,255,0.3)',
+                }}
               >
                 <List className="w-3.5 h-3.5" />
               </button>
@@ -262,26 +267,30 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
         {/* Active filter chips */}
         {hasActiveFilters && (
           <div className="flex flex-wrap gap-2 mb-5">
-            {tier     && <Chip label={PRICE_TIERS.find((t) => t.id === tier)?.label ?? tier} onRemove={() => setTier(undefined)} />}
-            {metal    && <Chip label={METALS[metal]?.label} onRemove={() => setMetal(undefined)} />}
-            {color    && <Chip label={COLOR_SWATCHES.find((c) => c.value === color)?.label ?? color} onRemove={() => setColor('')} />}
+            {tier        && <Chip label={PRICE_TIERS.find((t) => t.id === tier)?.label ?? tier} onRemove={() => setTier(undefined)} />}
+            {metal       && <Chip label={METALS[metal]?.label} onRemove={() => setMetal(undefined)} />}
+            {color       && <Chip label={COLOR_SWATCHES.find((c) => c.value === color)?.label ?? color} onRemove={() => setColor('')} />}
             {inStockOnly && <Chip label="En stock" onRemove={() => setInStockOnly(false)} />}
             {onSaleOnly  && <Chip label="En promo"  onRemove={() => setOnSaleOnly(false)} />}
-            {search   && <Chip label={`"${search}"`} onRemove={() => setSearch('')} />}
+            {search      && <Chip label={`"${search}"`} onRemove={() => setSearch('')} />}
           </div>
         )}
 
         {/* Grid */}
         {loading ? (
-          <div className={cn('grid gap-5', viewMode === 'grid' ? 'grid-cols-2 sm:grid-cols-3' : 'grid-cols-1')}>
+          <div className={cn('grid gap-4', viewMode === 'grid' ? 'grid-cols-2 sm:grid-cols-3' : 'grid-cols-1')}>
             {Array.from({ length: 12 }).map((_, i) => (
-              <div key={i} className={cn('rounded-2xl bg-gray-100 animate-pulse', viewMode === 'grid' ? 'aspect-[3/4]' : 'h-28')} />
+              <div
+                key={i}
+                className={cn('rounded-2xl animate-pulse', viewMode === 'grid' ? 'aspect-[3/4]' : 'h-28')}
+                style={{ background: '#0E0F16' }}
+              />
             ))}
           </div>
         ) : sorted.length === 0 ? (
           <EmptyState onReset={resetFilters} />
         ) : (
-          <div className={cn('grid gap-5', viewMode === 'grid' ? 'grid-cols-2 sm:grid-cols-3' : 'grid-cols-1')}>
+          <div className={cn('grid gap-4', viewMode === 'grid' ? 'grid-cols-2 sm:grid-cols-3' : 'grid-cols-1')}>
             {sorted.map((product, i) => (
               <motion.div
                 key={product.id}
@@ -296,7 +305,7 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
         )}
       </div>
 
-      {/* ── Mobile sidebar drawer ────────────────────────────── */}
+      {/* Mobile sidebar drawer */}
       <AnimatePresence>
         {sidebarOpen && (
           <>
@@ -304,7 +313,8 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 bg-black/40 lg:hidden"
+              className="fixed inset-0 z-50 lg:hidden"
+              style={{ background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(4px)' }}
               onClick={() => setSidebarOpen(false)}
             />
             <motion.div
@@ -312,18 +322,23 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'tween', duration: 0.25 }}
-              className="fixed top-0 left-0 bottom-0 z-50 w-72 bg-white p-6 overflow-y-auto lg:hidden"
+              className="fixed top-0 left-0 bottom-0 z-50 w-72 p-6 overflow-y-auto lg:hidden"
+              style={{ background: '#0A0B12', borderRight: '1px solid rgba(255,255,255,0.06)' }}
             >
               <div className="flex items-center justify-between mb-6">
-                <h3 className="font-semibold text-charcoal">Filtres</h3>
-                <button onClick={() => setSidebarOpen(false)} className="text-charcoal/40 hover:text-charcoal">
+                <h3 className="font-semibold text-white text-sm">Filtres</h3>
+                <button
+                  onClick={() => setSidebarOpen(false)}
+                  className="text-white/30 hover:text-white transition-colors"
+                >
                   <X className="w-5 h-5" />
                 </button>
               </div>
               <Sidebar />
               <button
                 onClick={() => setSidebarOpen(false)}
-                className="mt-6 w-full bg-[#00D9FF] text-charcoal font-bold py-3 rounded-full text-sm hover:bg-[#00EEFF] transition-colors"
+                className="mt-6 w-full py-3 rounded-full text-[#08090E] font-bold text-sm transition-colors"
+                style={{ background: '#00D9FF' }}
               >
                 Voir {sorted.length} résultat{sorted.length !== 1 ? 's' : ''}
               </button>
@@ -335,12 +350,14 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
   )
 }
 
-/* ── Sub-components ─────────────────────────────────────────── */
 function Chip({ label, onRemove }: { label: string; onRemove: () => void }) {
   return (
-    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E0F7FF] border border-[#00D9FF]/30 text-xs font-semibold text-charcoal">
+    <span
+      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold text-[#00D9FF]"
+      style={{ background: 'rgba(0,217,255,0.08)', border: '1px solid rgba(0,217,255,0.2)' }}
+    >
       {label}
-      <button onClick={onRemove} className="text-charcoal/40 hover:text-charcoal transition-colors">
+      <button onClick={onRemove} className="text-[#00D9FF]/50 hover:text-[#00D9FF] transition-colors">
         <X className="w-3 h-3" />
       </button>
     </span>
@@ -350,16 +367,20 @@ function Chip({ label, onRemove }: { label: string; onRemove: () => void }) {
 function EmptyState({ onReset }: { onReset: () => void }) {
   return (
     <div className="text-center py-20">
-      <div className="w-16 h-16 rounded-2xl bg-gray-100 flex items-center justify-center mx-auto mb-4 text-2xl">
+      <div
+        className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl"
+        style={{ background: '#0E0F16', border: '1px solid rgba(255,255,255,0.06)' }}
+      >
         📦
       </div>
-      <h3 className="font-serif text-xl font-bold text-charcoal mb-2">Aucun produit trouvé</h3>
-      <p className="text-sm text-charcoal/50 mb-6">Essayez de modifier vos filtres pour plus de résultats.</p>
+      <h3 className="font-serif text-xl font-bold text-white mb-2">Aucun produit trouvé</h3>
+      <p className="text-sm text-white/35 mb-6">Modifiez vos filtres pour plus de résultats.</p>
       <button
         onClick={onReset}
-        className="px-6 py-3 rounded-full bg-[#00D9FF] text-charcoal font-semibold text-sm hover:bg-[#00EEFF] transition-colors"
+        className="px-6 py-3 rounded-full text-[#08090E] font-bold text-sm transition-colors"
+        style={{ background: '#00D9FF' }}
       >
-        Voir tout la collection
+        Voir toute la collection
       </button>
     </div>
   )

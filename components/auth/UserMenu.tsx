@@ -44,7 +44,7 @@ export function UserMenu() {
     return (
       <Link
         href="/auth/login"
-        className="p-2.5 text-white/60 hover:text-white transition-colors rounded-lg hover:bg-white/10 hidden sm:flex"
+        className="p-2.5 text-white/60 hover:text-white transition-colors rounded-lg hover:bg-[#0E0F16]/10 hidden sm:flex"
         aria-label="Mon compte"
       >
         <User style={{ width: 18, height: 18 }} />
@@ -63,7 +63,7 @@ export function UserMenu() {
     <div ref={ref} className="relative hidden sm:block">
       <button
         onClick={() => setOpen(!open)}
-        className="w-8 h-8 rounded-full bg-[#00D9FF] text-charcoal font-black text-xs flex items-center justify-center hover:bg-[#00EEFF] transition-colors"
+        className="w-8 h-8 rounded-full bg-[#00D9FF] text-white/70 font-black text-xs flex items-center justify-center hover:bg-[#00EEFF] transition-colors"
         aria-label="Mon compte"
       >
         {initial}
@@ -93,14 +93,14 @@ export function UserMenu() {
               <Link
                 href="/account"
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-[#0E0F16]/5 transition-colors"
               >
                 <Package className="w-3.5 h-3.5" />
                 Mes commandes
               </Link>
               <button
                 onClick={handleLogout}
-                className="w-full flex items-center gap-2.5 px-4 py-2.5 text-sm text-white/50 hover:text-white hover:bg-white/5 transition-colors"
+                className="w-full flex items-center gap-2.5 px-4 py-2.5 text-sm text-white/50 hover:text-white hover:bg-[#0E0F16]/5 transition-colors"
               >
                 <LogOut className="w-3.5 h-3.5" />
                 Se déconnecter

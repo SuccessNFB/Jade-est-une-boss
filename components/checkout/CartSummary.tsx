@@ -15,8 +15,8 @@ export function CartSummary() {
   if (!items.length) {
     return (
       <div className="text-center py-16">
-        <ShoppingBag className="w-12 h-12 text-charcoal/20 mx-auto mb-4" />
-        <p className="text-charcoal/50 mb-6">Votre panier est vide</p>
+        <ShoppingBag className="w-12 h-12 text-white/15 mx-auto mb-4" />
+        <p className="text-white/40 mb-6">Votre panier est vide</p>
         <Link href="/shop">
           <Button variant="primary">Découvrir la collection</Button>
         </Link>
@@ -33,10 +33,10 @@ export function CartSummary() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="flex gap-4 p-4 rounded-2xl border border-gray-100 bg-white"
+            className="flex gap-4 p-4 rounded-2xl border border-white/[0.06] bg-[#0E0F16]"
           >
             {/* Image */}
-            <div className="relative w-20 h-20 flex-shrink-0 rounded-xl overflow-hidden bg-gray-50">
+            <div className="relative w-20 h-20 flex-shrink-0 rounded-xl overflow-hidden bg-[#0A0B12]">
               <Image
                 src={item.product.images[0]?.url ?? '/images/placeholder.jpg'}
                 alt={item.product.name}
@@ -48,12 +48,12 @@ export function CartSummary() {
 
             {/* Details */}
             <div className="flex-1 min-w-0">
-              <p className="text-xs text-charcoal/40 uppercase tracking-wider">{item.product.category}</p>
-              <h4 className="font-serif font-semibold text-sm text-charcoal line-clamp-2 leading-snug">
+              <p className="text-xs text-white/30 uppercase tracking-wider">{item.product.category}</p>
+              <h4 className="font-serif font-semibold text-sm text-white/70 line-clamp-2 leading-snug">
                 {item.product.name}
               </h4>
               {item.customization && (
-                <p className="text-xs text-charcoal/50 mt-0.5">
+                <p className="text-xs text-white/40 mt-0.5">
                   {item.customization.metal} · {item.customization.stone_size}
                 </p>
               )}
@@ -62,25 +62,25 @@ export function CartSummary() {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => updateQty(item.product.id, item.quantity - 1)}
-                    className="w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center hover:border-ice-500 hover:text-ice-500 transition-colors"
+                    className="w-6 h-6 rounded-full border border-white/[0.1] flex items-center justify-center hover:border-ice-500 hover:text-ice-500 transition-colors"
                   >
                     <Minus className="w-3 h-3" />
                   </button>
                   <span className="text-sm font-semibold w-5 text-center">{item.quantity}</span>
                   <button
                     onClick={() => updateQty(item.product.id, item.quantity + 1)}
-                    className="w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center hover:border-ice-500 hover:text-ice-500 transition-colors"
+                    className="w-6 h-6 rounded-full border border-white/[0.1] flex items-center justify-center hover:border-ice-500 hover:text-ice-500 transition-colors"
                   >
                     <Plus className="w-3 h-3" />
                   </button>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="font-bold text-charcoal text-sm">
+                  <span className="font-bold text-white/70 text-sm">
                     {formatPrice(item.product.price * item.quantity)}
                   </span>
                   <button
                     onClick={() => removeItem(item.product.id)}
-                    className="text-charcoal/30 hover:text-red-400 transition-colors"
+                    className="text-white/20 hover:text-red-400 transition-colors"
                   >
                     <Trash2 className="w-4 h-4" />
                   </button>
@@ -92,18 +92,18 @@ export function CartSummary() {
       </AnimatePresence>
 
       {/* Totals */}
-      <div className="rounded-2xl bg-gray-50 p-5 space-y-3">
+      <div className="rounded-2xl bg-[#0A0B12] p-5 space-y-3">
         <div className="flex justify-between text-sm">
-          <span className="text-charcoal/60">Sous-total</span>
+          <span className="text-white/45">Sous-total</span>
           <span className="font-semibold">{formatPrice(subtotal)}</span>
         </div>
         <div className="flex justify-between text-sm">
-          <span className="text-charcoal/60">Livraison</span>
+          <span className="text-white/45">Livraison</span>
           <span className="font-semibold text-green-600">
             {subtotal >= 100 ? 'Offerte' : formatPrice(9.90)}
           </span>
         </div>
-        <div className="flex justify-between pt-3 border-t border-gray-200">
+        <div className="flex justify-between pt-3 border-t border-white/[0.1]">
           <span className="font-bold text-charcoal">Total</span>
           <span className="font-bold text-xl font-serif text-charcoal">
             {formatPrice(subtotal >= 100 ? subtotal : subtotal + 9.90)}

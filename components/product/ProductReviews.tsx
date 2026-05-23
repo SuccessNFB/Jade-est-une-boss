@@ -75,7 +75,7 @@ export function ProductReviews() {
   ]
 
   return (
-    <section className="py-14 border-t border-gray-100">
+    <section className="py-14 border-t border-white/[0.06]">
       {/* Header */}
       <div className="flex items-end justify-between mb-4">
         <div>
@@ -90,13 +90,13 @@ export function ProductReviews() {
         <div className="flex gap-2">
           <button
             onClick={() => setIdx((i) => (i - 1 + REVIEWS.length) % REVIEWS.length)}
-            className="w-9 h-9 rounded-full border-2 border-gray-200 flex items-center justify-center hover:border-[#00D9FF] hover:text-[#00D9FF] transition-all"
+            className="w-9 h-9 rounded-full border-2 border-white/[0.1] flex items-center justify-center hover:border-[#00D9FF] hover:text-[#00D9FF] transition-all"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
           <button
             onClick={() => setIdx((i) => (i + 1) % REVIEWS.length)}
-            className="w-9 h-9 rounded-full border-2 border-gray-200 flex items-center justify-center hover:border-[#00D9FF] hover:text-[#00D9FF] transition-all"
+            className="w-9 h-9 rounded-full border-2 border-white/[0.1] flex items-center justify-center hover:border-[#00D9FF] hover:text-[#00D9FF] transition-all"
           >
             <ChevronRight className="w-4 h-4" />
           </button>
@@ -109,10 +109,10 @@ export function ProductReviews() {
           <StarRating rating={5} />
           <span className="text-sm font-bold text-charcoal">4.8/5</span>
         </div>
-        <span className="text-charcoal/20">|</span>
-        <span className="text-sm text-charcoal/50">230+ avis</span>
-        <span className="text-charcoal/20">|</span>
-        <span className="text-sm text-charcoal/50">98% recommandent</span>
+        <span className="text-white/15">|</span>
+        <span className="text-sm text-white/40">230+ avis</span>
+        <span className="text-white/15">|</span>
+        <span className="text-sm text-white/40">98% recommandent</span>
       </div>
 
       {/* Cards carousel */}
@@ -125,21 +125,21 @@ export function ProductReviews() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.25, delay: i * 0.05 }}
-              className="bg-white border border-gray-100 rounded-2xl p-5 flex flex-col gap-3 hover:border-[#00D9FF]/20 hover:shadow-[0_0_16px_rgba(0,217,255,0.08)] transition-all"
+              className="bg-[#0E0F16] border border-white/[0.06] rounded-2xl p-5 flex flex-col gap-3 hover:border-[#00D9FF]/20 hover:shadow-[0_0_16px_rgba(0,217,255,0.08)] transition-all"
             >
               {/* Stars + rating */}
               <div className="flex items-center justify-between">
                 <StarRating rating={review.rating} />
-                <span className="text-[11px] font-bold text-charcoal/40">{review.rating}.0/5</span>
+                <span className="text-[11px] font-bold text-white/30">{review.rating}.0/5</span>
               </div>
 
               {/* Text */}
-              <p className="text-sm text-charcoal/70 leading-relaxed flex-1">
+              <p className="text-sm text-white/50 leading-relaxed flex-1">
                 &ldquo;{review.text}&rdquo;
               </p>
 
               {/* Customer */}
-              <div className="flex items-center gap-2.5 pt-1 border-t border-gray-50">
+              <div className="flex items-center gap-2.5 pt-1 border-t border-white/[0.04]">
                 <div
                   className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0"
                   style={{ background: review.color }}
@@ -152,7 +152,7 @@ export function ProductReviews() {
                     <span className="text-[10px] text-[#00D9FF] font-medium">✓ Verified Purchase</span>
                   </div>
                 </div>
-                <span className="ml-auto text-[10px] text-charcoal/30 italic">{review.product}</span>
+                <span className="ml-auto text-[10px] text-white/20 italic">{review.product}</span>
               </div>
             </motion.div>
           ))}
@@ -161,10 +161,10 @@ export function ProductReviews() {
 
       {/* CTA */}
       <div className="text-center mt-8">
-        <button className="inline-flex items-center gap-2 bg-[#00D9FF] text-charcoal font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#00EEFF] hover:shadow-[0_0_20px_rgba(0,217,255,0.4)] transition-all">
+        <button className="inline-flex items-center gap-2 bg-[#00D9FF] text-white/70 font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#00EEFF] hover:shadow-[0_0_20px_rgba(0,217,255,0.4)] transition-all">
           📸 Share Your Moment
         </button>
-        <p className="text-xs text-charcoal/40 mt-2">
+        <p className="text-xs text-white/30 mt-2">
           Bought ICEKEY? Show us your flex + get featured
         </p>
       </div>

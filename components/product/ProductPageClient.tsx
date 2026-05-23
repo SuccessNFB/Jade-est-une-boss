@@ -16,13 +16,13 @@ import toast                     from 'react-hot-toast'
 
 /* ── Payment icons ─────────────────────────────────────────────── */
 const PAYMENT_ICONS = [
-  { label: 'Visa',        src: 'https://cdn.simpleicons.org/visa/1A1F71' },
-  { label: 'Mastercard',  src: 'https://cdn.simpleicons.org/mastercard/EB001B' },
-  { label: 'Amex',        src: 'https://cdn.simpleicons.org/americanexpress/006FCF' },
-  { label: 'Apple Pay',   src: 'https://cdn.simpleicons.org/applepay/000000' },
-  { label: 'Google Pay',  src: 'https://cdn.simpleicons.org/googlepay/000000' },
-  { label: 'PayPal',      src: 'https://cdn.simpleicons.org/paypal/003087' },
-  { label: 'Klarna',      src: 'https://cdn.simpleicons.org/klarna/FFB3C7' },
+  { label: 'Visa',        src: 'https://cdn.simpleicons.org/visa/ffffff' },
+  { label: 'Mastercard',  src: 'https://cdn.simpleicons.org/mastercard/ffffff' },
+  { label: 'Amex',        src: 'https://cdn.simpleicons.org/americanexpress/ffffff' },
+  { label: 'Apple Pay',   src: 'https://cdn.simpleicons.org/applepay/ffffff' },
+  { label: 'Google Pay',  src: 'https://cdn.simpleicons.org/googlepay/ffffff' },
+  { label: 'PayPal',      src: 'https://cdn.simpleicons.org/paypal/ffffff' },
+  { label: 'Klarna',      src: 'https://cdn.simpleicons.org/klarna/ffffff' },
 ]
 
 /* ── Trust badges ──────────────────────────────────────────────── */
@@ -151,8 +151,8 @@ export function ProductPageClient({ product }: Props) {
 
       {/* Stock */}
       <div className="flex items-center gap-2">
-        <span className={`w-2 h-2 rounded-full ${product.stock > 0 ? 'bg-green-500' : 'bg-red-400'}`} />
-        <span className="text-sm text-charcoal/60">
+        <span className={`w-2 h-2 rounded-full ${product.stock > 0 ? 'bg-emerald-400' : 'bg-red-400'}`} />
+        <span className="text-sm text-white/45">
           {product.stock > 0
             ? product.stock <= 5
               ? `⚡ Plus que ${product.stock} en stock — commandez vite`
@@ -164,17 +164,17 @@ export function ProductPageClient({ product }: Props) {
       {/* Qty + Primary CTA */}
       <div ref={ctaRef} className="flex items-center gap-3">
         {/* Qty */}
-        <div className="flex items-center gap-1 border border-gray-200 rounded-full px-2 py-1">
+        <div className="flex items-center gap-1 rounded-full px-2 py-1" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
           <button
             onClick={() => setQty(Math.max(1, qty - 1))}
-            className="w-8 h-8 flex items-center justify-center text-charcoal/50 hover:text-charcoal transition-colors"
+            className="w-8 h-8 flex items-center justify-center text-white/35 hover:text-white transition-colors"
           >
             <Minus className="w-3.5 h-3.5" />
           </button>
-          <span className="w-6 text-center text-sm font-semibold text-charcoal">{qty}</span>
+          <span className="w-6 text-center text-sm font-semibold text-white">{qty}</span>
           <button
             onClick={() => setQty(Math.min(product.stock || 10, qty + 1))}
-            className="w-8 h-8 flex items-center justify-center text-charcoal/50 hover:text-charcoal transition-colors"
+            className="w-8 h-8 flex items-center justify-center text-white/35 hover:text-white transition-colors"
           >
             <Plus className="w-3.5 h-3.5" />
           </button>
@@ -198,26 +198,29 @@ export function ProductPageClient({ product }: Props) {
       <div className="flex items-center gap-3">
         <button
           onClick={() => { setWishlisted(!wishlisted); toast.success(wishlisted ? 'Retiré des favoris' : 'Ajouté aux favoris ♡') }}
-          className={cn(
-            'flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full border-2 transition-all',
-            wishlisted
-              ? 'border-rose-400 text-rose-500 bg-rose-50'
-              : 'border-gray-200 text-charcoal/60 hover:border-rose-300 hover:text-rose-400'
-          )}
+          className="flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full transition-all"
+          style={{
+            border: wishlisted ? '1px solid rgba(239,68,68,0.4)' : '1px solid rgba(255,255,255,0.1)',
+            color: wishlisted ? '#F87171' : 'rgba(255,255,255,0.45)',
+            background: wishlisted ? 'rgba(239,68,68,0.08)' : 'transparent',
+          }}
         >
-          <Heart className={cn('w-4 h-4', wishlisted && 'fill-rose-500')} />
+          <Heart className={cn('w-4 h-4', wishlisted && 'fill-red-400')} />
           Wishlist
         </button>
 
         <button
           onClick={handleShare}
-          className="flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full border-2 border-gray-200 text-charcoal/60 hover:border-[#00D9FF]/60 hover:text-[#00D9FF] transition-all"
+          className="flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full transition-all text-white/40 hover:text-[#00D9FF]"
+          style={{ border: '1px solid rgba(255,255,255,0.1)' }}
+          onMouseEnter={(e) => e.currentTarget.style.borderColor = 'rgba(0,217,255,0.3)'}
+          onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'}
         >
           <Share2 className="w-4 h-4" />
           Partager
         </button>
 
-        <div className="flex items-center gap-1.5 text-xs text-charcoal/50 ml-auto">
+        <div className="flex items-center gap-1.5 text-xs text-white/35 ml-auto">
           <ShieldCheck className="w-4 h-4 text-green-500" />
           Garantie 30 jours
         </div>
@@ -225,14 +228,15 @@ export function ProductPageClient({ product }: Props) {
 
       {/* Payment methods */}
       <div>
-        <p className="text-[10px] font-semibold text-charcoal/30 uppercase tracking-widest mb-2">
+        <p className="text-[10px] font-bold text-white/20 uppercase tracking-widest mb-2">
           Paiement sécurisé
         </p>
         <div className="flex items-center gap-2 flex-wrap">
           {PAYMENT_ICONS.map((icon) => (
             <div
               key={icon.label}
-              className="h-7 px-2.5 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center hover:border-gray-200 transition-colors"
+              className="h-7 px-2.5 rounded-lg flex items-center justify-center"
+              style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.07)' }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={icon.src} alt={icon.label} className="h-4 object-contain" />
@@ -250,9 +254,15 @@ export function ProductPageClient({ product }: Props) {
             onMouseEnter={() => setTooltipIdx(i)}
             onMouseLeave={() => setTooltipIdx(null)}
           >
-            <div className="flex items-center gap-2.5 p-3 rounded-xl bg-[#E0F7FF] border border-[#00D9FF]/20 cursor-default hover:shadow-[0_0_12px_rgba(0,217,255,0.15)] hover:scale-[1.03] transition-all">
+            <div
+              className="flex items-center gap-2.5 p-3 rounded-xl cursor-default hover:scale-[1.02] transition-all"
+              style={{
+                background: 'rgba(0,217,255,0.05)',
+                border: '1px solid rgba(0,217,255,0.12)',
+              }}
+            >
               <span className="text-[#00D9FF] flex-shrink-0">{badge.icon}</span>
-              <span className="text-xs font-semibold text-charcoal leading-tight">{badge.label}</span>
+              <span className="text-xs font-semibold text-white/70 leading-tight">{badge.label}</span>
             </div>
             {tooltipIdx === i && (
               <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-10 w-44 bg-charcoal text-white text-[11px] rounded-lg px-3 py-2 text-center shadow-xl pointer-events-none">
@@ -266,9 +276,9 @@ export function ProductPageClient({ product }: Props) {
 
       {/* Price summary if variants add cost */}
       {(metalSurcharge > 0 || lengthSurcharge > 0) && (
-        <p className="text-xs text-center text-charcoal/40">
+        <p className="text-xs text-center text-white/30">
           Prix total avec options sélectionnées :{' '}
-          <strong className="text-charcoal">{formatPrice(totalPrice)}</strong>
+          <strong className="text-white">{formatPrice(totalPrice)}</strong>
         </p>
       )}
 

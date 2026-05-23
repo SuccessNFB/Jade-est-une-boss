@@ -36,7 +36,7 @@ export function ProductCarousel({ images, name }: ProductCarouselProps) {
   return (
     <div className="space-y-4">
       {/* Main image */}
-      <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-50 group">
+      <div className="relative aspect-square rounded-2xl overflow-hidden group" style={{ background: '#0A0B12' }}>
         <div ref={emblaRef} className="overflow-hidden h-full">
           <div className="flex h-full">
             {images.map((img, i) => (
@@ -61,13 +61,13 @@ export function ProductCarousel({ images, name }: ProductCarouselProps) {
               onClick={prev}
               className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full glass flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              <ChevronLeft className="w-4 h-4 text-charcoal" />
+              <ChevronLeft className="w-4 h-4 text-white/70" />
             </button>
             <button
               onClick={next}
               className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full glass flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              <ChevronRight className="w-4 h-4 text-charcoal" />
+              <ChevronRight className="w-4 h-4 text-white/70" />
             </button>
           </>
         )}
@@ -77,7 +77,7 @@ export function ProductCarousel({ images, name }: ProductCarouselProps) {
           onClick={() => setZoomed(true)}
           className="absolute bottom-3 right-3 w-9 h-9 rounded-full glass flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
         >
-          <ZoomIn className="w-4 h-4 text-charcoal" />
+          <ZoomIn className="w-4 h-4 text-white/70" />
         </button>
 
         {/* Index indicator */}
@@ -88,7 +88,7 @@ export function ProductCarousel({ images, name }: ProductCarouselProps) {
               onClick={() => scrollTo(i)}
               className={cn(
                 'w-1.5 h-1.5 rounded-full transition-all',
-                i === selectedIndex ? 'bg-ice-500 w-4' : 'bg-white/60'
+                i === selectedIndex ? 'bg-ice-500 w-4' : 'bg-white/30'
               )}
             />
           ))}

@@ -79,8 +79,8 @@ export default async function ProductPage({ params }: Props) {
             ['SKU',              p.sku],
           ].map(([k, v]) => (
             <div key={k} className="flex justify-between text-sm">
-              <span className="text-charcoal/50">{k}</span>
-              <span className="font-medium text-charcoal">{v}</span>
+              <span className="text-white/35">{k}</span>
+              <span className="font-medium text-white/70">{v}</span>
             </div>
           ))}
         </div>
@@ -94,7 +94,7 @@ export default async function ProductPage({ params }: Props) {
       <Header />
 
       <ProductViewTracker id={p.id} name={p.name} price={p.price} category={p.category} />
-      <main className="pt-16 pb-24">
+      <main className="pt-[60px] lg:pt-[72px] pb-24" style={{ background: '#08090E', minHeight: '100vh' }}>
         <div className="section-container max-w-5xl py-10">
 
           {/* ── TOP SECTION ──────────────────────────────── */}
@@ -111,28 +111,28 @@ export default async function ProductPage({ params }: Props) {
                 <div className="flex items-center gap-2 mb-2">
                   <TierBadge tier={p.price_tier as any} />
                   {p.is_customizable && (
-                    <span className="badge-tier bg-charcoal text-white text-[10px]">Sur mesure</span>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-md" style={{ background: 'rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.5)' }}>Sur mesure</span>
                   )}
                 </div>
-                <h1 className="font-serif text-3xl sm:text-4xl font-bold text-charcoal leading-tight">
+                <h1 className="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
                   {p.name}
                 </h1>
-                <p className="text-sm text-charcoal/50 mt-1 font-medium">
+                <p className="text-sm text-white/40 mt-1 font-medium">
                   {buildSubheading(p)}
                 </p>
               </div>
 
               {/* Price */}
               <div className="flex items-baseline gap-3">
-                <span className="font-serif text-3xl font-bold text-charcoal">
+                <span className="font-serif text-3xl font-bold text-white">
                   {formatPrice(p.price)}
                 </span>
                 {p.compare_at_price && p.compare_at_price > p.price && (
                   <>
-                    <span className="text-lg text-charcoal/40 line-through">
+                    <span className="text-lg text-white/25 line-through">
                       {formatPrice(p.compare_at_price)}
                     </span>
-                    <span className="text-sm font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">
+                    <span className="text-sm font-bold px-2 py-0.5 rounded-full" style={{ background: 'rgba(0,217,255,0.12)', color: '#00D9FF' }}>
                       -{Math.round((1 - p.price / p.compare_at_price) * 100)}%
                     </span>
                   </>
@@ -140,7 +140,7 @@ export default async function ProductPage({ params }: Props) {
               </div>
 
               {/* Delivery badge */}
-              <div className="flex items-center gap-2 text-sm text-charcoal/70 bg-gray-50 px-4 py-2.5 rounded-xl">
+              <div className="flex items-center gap-2 text-sm text-white/50 px-4 py-2.5 rounded-xl" style={{ background: 'rgba(0,217,255,0.05)', border: '1px solid rgba(0,217,255,0.1)' }}>
                 <Truck className="w-4 h-4 text-[#00D9FF]" />
                 <span>Livraison <strong>offerte en France</strong> · FREE · 4–7 jours</span>
               </div>
@@ -152,7 +152,7 @@ export default async function ProductPage({ params }: Props) {
                   'Argent 925 finition main · qualité FR',
                   'Garantie à vie · retour 30 jours',
                 ].map((line) => (
-                  <li key={line} className="flex items-start gap-2 text-sm text-charcoal/70">
+                  <li key={line} className="flex items-start gap-2 text-sm text-white/50">
                     <CheckCircle className="w-4 h-4 text-[#00D9FF] flex-shrink-0 mt-0.5" />
                     {line}
                   </li>

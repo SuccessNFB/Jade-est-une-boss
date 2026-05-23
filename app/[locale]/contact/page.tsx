@@ -63,10 +63,10 @@ export default function ContactPage() {
             <p className="text-ice-500 text-xs tracking-[0.35em] uppercase font-semibold mb-3">
               On est là
             </p>
-            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-charcoal mb-3">
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white/70 mb-3">
               Contactez-nous
             </h1>
-            <p className="text-charcoal/50 text-lg max-w-md mx-auto">
+            <p className="text-white/40 text-lg max-w-md mx-auto">
               Une question, un doute, un projet ? Écris-nous. On répond vite — pour de vrai.
             </p>
           </div>
@@ -78,13 +78,13 @@ export default function ContactPage() {
 
             {/* ── Form ── */}
             <div className="lg:col-span-3">
-              <h2 className="font-serif text-2xl font-bold text-charcoal mb-6">
+              <h2 className="font-serif text-2xl font-bold text-white/70 mb-6">
                 Envoyer un message
               </h2>
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-semibold text-charcoal mb-1.5">
+                    <label className="block text-sm font-semibold text-white/70 mb-1.5">
                       Prénom & Nom
                     </label>
                     <input
@@ -93,11 +93,11 @@ export default function ContactPage() {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="Jade Dupont"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 text-charcoal text-sm placeholder:text-charcoal/30 focus:outline-none focus:ring-2 focus:ring-ice-500 transition"
+                      className="w-full px-4 py-3 rounded-xl border border-white/[0.1] text-white/70 text-sm placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-ice-500 transition"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-charcoal mb-1.5">
+                    <label className="block text-sm font-semibold text-white/70 mb-1.5">
                       Email
                     </label>
                     <input
@@ -106,20 +106,20 @@ export default function ContactPage() {
                       value={form.email}
                       onChange={handleChange}
                       placeholder="jade@email.com"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 text-charcoal text-sm placeholder:text-charcoal/30 focus:outline-none focus:ring-2 focus:ring-ice-500 transition"
+                      className="w-full px-4 py-3 rounded-xl border border-white/[0.1] text-white/70 text-sm placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-ice-500 transition"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-charcoal mb-1.5">
+                  <label className="block text-sm font-semibold text-white/70 mb-1.5">
                     Sujet
                   </label>
                   <select
                     name="subject"
                     value={form.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 text-charcoal text-sm focus:outline-none focus:ring-2 focus:ring-ice-500 transition bg-white appearance-none"
+                    className="w-full px-4 py-3 rounded-xl border border-white/[0.1] text-white/70 text-sm focus:outline-none focus:ring-2 focus:ring-ice-500 transition bg-[#0E0F16] appearance-none"
                   >
                     <option value="" disabled>Choisir un sujet…</option>
                     {subjects.map((s) => (
@@ -129,7 +129,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-charcoal mb-1.5">
+                  <label className="block text-sm font-semibold text-white/70 mb-1.5">
                     Message
                   </label>
                   <textarea
@@ -138,14 +138,14 @@ export default function ContactPage() {
                     onChange={handleChange}
                     rows={6}
                     placeholder="Dis-nous tout…"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 text-charcoal text-sm placeholder:text-charcoal/30 focus:outline-none focus:ring-2 focus:ring-ice-500 transition resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-white/[0.1] text-white/70 text-sm placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-ice-500 transition resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-4 bg-[#00D9FF] text-charcoal font-semibold text-sm tracking-wide rounded-full hover:scale-[1.02] hover:shadow-ice transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
+                  className="w-full py-4 bg-[#00D9FF] text-white/70 font-semibold text-sm tracking-wide rounded-full hover:scale-[1.02] hover:shadow-ice transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
                 >
                   {loading ? 'Envoi en cours…' : 'Envoyer le message →'}
                 </button>
@@ -155,13 +155,13 @@ export default function ContactPage() {
             {/* ── Sidebar ── */}
             <div className="lg:col-span-2 space-y-6">
               <div className="bg-[#F5F5F5] rounded-2xl p-7">
-                <h3 className="font-serif text-lg font-bold text-charcoal mb-5">Infos pratiques</h3>
+                <h3 className="font-serif text-lg font-bold text-white/70 mb-5">Infos pratiques</h3>
 
                 <div className="space-y-5">
                   <div className="flex items-start gap-3">
                     <span className="text-xl mt-0.5">✉️</span>
                     <div>
-                      <p className="text-xs font-semibold text-charcoal/50 uppercase tracking-wider mb-0.5">Email</p>
+                      <p className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-0.5">Email</p>
                       <a
                         href="mailto:contact@icekey.shop"
                         className="text-charcoal font-medium text-sm hover:text-ice-600 transition-colors"
@@ -174,7 +174,7 @@ export default function ContactPage() {
                   <div className="flex items-start gap-3">
                     <span className="text-xl mt-0.5">⏱️</span>
                     <div>
-                      <p className="text-xs font-semibold text-charcoal/50 uppercase tracking-wider mb-0.5">Délai de réponse</p>
+                      <p className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-0.5">Délai de réponse</p>
                       <p className="text-charcoal font-medium text-sm">Sous 24h</p>
                     </div>
                   </div>
@@ -182,7 +182,7 @@ export default function ContactPage() {
                   <div className="flex items-start gap-3">
                     <span className="text-xl mt-0.5">🕐</span>
                     <div>
-                      <p className="text-xs font-semibold text-charcoal/50 uppercase tracking-wider mb-0.5">Disponibilité</p>
+                      <p className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-0.5">Disponibilité</p>
                       <p className="text-charcoal font-medium text-sm">Lun — Ven · 9h–18h</p>
                     </div>
                   </div>
@@ -190,8 +190,8 @@ export default function ContactPage() {
               </div>
 
               <div className="bg-[#E0F7FF] rounded-2xl p-7">
-                <h3 className="font-serif text-lg font-bold text-charcoal mb-2">On est aussi là-bas</h3>
-                <p className="text-charcoal/60 text-sm mb-5">
+                <h3 className="font-serif text-lg font-bold text-white/70 mb-2">On est aussi là-bas</h3>
+                <p className="text-white/45 text-sm mb-5">
                   DM, story, tag — on répond sur les réseaux aussi.
                 </p>
                 <div className="space-y-3">
@@ -199,7 +199,7 @@ export default function ContactPage() {
                     href="https://instagram.com/icekey.shop"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-4 py-3 bg-white rounded-xl text-charcoal text-sm font-semibold hover:shadow-ice transition-all duration-200 hover:text-ice-600"
+                    className="flex items-center gap-3 px-4 py-3 bg-[#0E0F16] rounded-xl text-white/70 text-sm font-semibold hover:shadow-ice transition-all duration-200 hover:text-ice-600"
                   >
                     <span className="text-lg">📸</span>
                     @icekey.shop — Instagram
@@ -208,7 +208,7 @@ export default function ContactPage() {
                     href="https://tiktok.com/@icekey.shop"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-4 py-3 bg-white rounded-xl text-charcoal text-sm font-semibold hover:shadow-ice transition-all duration-200 hover:text-ice-600"
+                    className="flex items-center gap-3 px-4 py-3 bg-[#0E0F16] rounded-xl text-white/70 text-sm font-semibold hover:shadow-ice transition-all duration-200 hover:text-ice-600"
                   >
                     <span className="text-lg">🎵</span>
                     @icekey.shop — TikTok

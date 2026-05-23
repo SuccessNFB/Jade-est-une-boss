@@ -36,7 +36,7 @@ export function RelatedProducts({ currentId, category, priceTier }: Props) {
   if (!related.length) return null
 
   return (
-    <section className="py-14 border-t border-gray-100">
+    <section className="py-14 border-t border-white/[0.06]">
       {/* Header */}
       <div className="flex items-end justify-between mb-8">
         <div>
@@ -49,7 +49,7 @@ export function RelatedProducts({ currentId, category, priceTier }: Props) {
         </div>
         <Link
           href={`/shop?cat=${category}`}
-          className="text-sm font-medium text-charcoal/40 hover:text-[#00D9FF] transition-colors"
+          className="text-sm font-medium text-white/30 hover:text-[#00D9FF] transition-colors"
         >
           Tout voir →
         </Link>
@@ -66,15 +66,15 @@ export function RelatedProducts({ currentId, category, priceTier }: Props) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="group relative flex flex-col bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-[0_0_20px_rgba(0,217,255,0.12)] hover:border-[#00D9FF]/20 transition-all"
+              className="group relative flex flex-col bg-[#0E0F16] rounded-2xl border border-white/[0.06] overflow-hidden hover:shadow-[0_0_20px_rgba(0,217,255,0.12)] hover:border-[#00D9FF]/20 transition-all"
             >
               {/* Bundle badge */}
-              <div className="absolute top-2 left-2 z-10 bg-[#00D9FF] text-charcoal text-[10px] font-bold px-2 py-0.5 rounded-full">
+              <div className="absolute top-2 left-2 z-10 bg-[#00D9FF] text-white/70 text-[10px] font-bold px-2 py-0.5 rounded-full">
                 -{BUNDLE_DISCOUNT}% Bundle
               </div>
 
               {/* Image */}
-              <Link href={`/product/${product.slug}`} className="block aspect-square bg-gray-50 overflow-hidden relative">
+              <Link href={`/product/${product.slug}`} className="block aspect-square bg-[#0A0B12] overflow-hidden relative">
                 {img ? (
                   <Image
                     src={img.url}
@@ -90,7 +90,7 @@ export function RelatedProducts({ currentId, category, priceTier }: Props) {
               {/* Info */}
               <div className="p-3 flex flex-col gap-1.5 flex-1">
                 <TierBadge tier={product.price_tier as any} />
-                <Link href={`/product/${product.slug}`} className="text-sm font-semibold text-charcoal leading-tight hover:text-[#00D9FF] transition-colors line-clamp-2">
+                <Link href={`/product/${product.slug}`} className="text-sm font-semibold text-white/70 leading-tight hover:text-[#00D9FF] transition-colors line-clamp-2">
                   {product.name}
                 </Link>
                 <div className="flex items-center justify-between mt-auto pt-1">
@@ -100,7 +100,7 @@ export function RelatedProducts({ currentId, category, priceTier }: Props) {
                       addItem(product, 1)
                       toast.success(`${product.name} ajouté ✓`)
                     }}
-                    className="w-7 h-7 rounded-full bg-[#00D9FF] text-charcoal flex items-center justify-center hover:bg-[#00EEFF] hover:shadow-[0_0_12px_rgba(0,217,255,0.4)] transition-all"
+                    className="w-7 h-7 rounded-full bg-[#00D9FF] text-white/70 flex items-center justify-center hover:bg-[#00EEFF] hover:shadow-[0_0_12px_rgba(0,217,255,0.4)] transition-all"
                     title="Ajouter au panier"
                   >
                     <Plus className="w-3.5 h-3.5" />
@@ -113,7 +113,7 @@ export function RelatedProducts({ currentId, category, priceTier }: Props) {
       </div>
 
       {/* Vous apprécierez également label */}
-      <p className="text-center text-xs text-charcoal/30 mt-6 tracking-wide">
+      <p className="text-center text-xs text-white/20 mt-6 tracking-wide">
         Vous apprécierez également — sélection basée sur votre panier
       </p>
     </section>
