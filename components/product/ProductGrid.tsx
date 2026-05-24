@@ -298,7 +298,7 @@ export function ProductGrid({ initialCategory, initialTier, initialSearch }: Pro
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: Math.min(i * 0.04, 0.4) }}
               >
-                <ProductCard product={product} />
+                <ProductCard product={product} variant={viewMode} />
               </motion.div>
             ))}
           </div>

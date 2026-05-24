@@ -276,22 +276,27 @@ export function Header() {
             {/* Right actions */}
             <div className="flex items-center gap-0.5 flex-shrink-0">
 
+              {/* Search — hidden on smallest mobile to avoid clutter */}
               <button
                 onClick={() => setSearchOpen(!searchOpen)}
-                className="p-2.5 text-white/60 hover:text-white transition-colors rounded-lg"
+                className="hidden sm:block p-2.5 text-white/60 hover:text-white transition-colors rounded-lg"
                 aria-label="Recherche"
               >
                 <Search style={{ width: 17, height: 17 }} />
               </button>
 
-              <UserMenu />
+              {/* UserMenu — desktop only */}
+              <div className="hidden lg:block">
+                <UserMenu />
+              </div>
 
+              {/* Cart — always visible, prominent on mobile */}
               <button
                 onClick={toggleCart}
                 className="relative p-2.5 text-white/60 hover:text-white transition-colors rounded-lg"
                 aria-label="Panier"
               >
-                <ShoppingBag style={{ width: 17, height: 17 }} />
+                <ShoppingBag style={{ width: 19, height: 19 }} />
                 <AnimatePresence>
                   {count > 0 && (
                     <motion.span
@@ -308,10 +313,12 @@ export function Header() {
                 </AnimatePresence>
               </button>
 
-              <div className="ml-1">
+              {/* LocaleSwitcher — desktop only, in drawer on mobile */}
+              <div className="hidden lg:block ml-1">
                 <LocaleSwitcher />
               </div>
 
+              {/* Hamburger — mobile/tablet only */}
               <button
                 onClick={() => setMobileOpen(true)}
                 className="xl:hidden p-2.5 text-white/60 hover:text-white transition-colors rounded-lg ml-1"
@@ -464,70 +471,114 @@ export function Header() {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'tween', duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed top-0 left-0 bottom-0 z-50 w-[82vw] max-w-[320px] flex flex-col overflow-y-auto"
-              style={{ background: '#121210', borderRight: '1px solid rgba(255,255,255,0.06)' }}
+              className="fixed top-0 left-0 bottom-0 z-50 w-[88vw] max-w-[340px] flex flex-col overflow-y-auto"
+              style={{ background: '#0E0E0E', borderRight: '1px solid rgba(255,255,255,0.06)' }}
             >
-              <div className="flex items-center justify-between px-6 py-5 border-b border-white/[0.06]">
+              {/* Header */}
+              <div className="flex items-center justify-between px-5 py-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                 <IcekeyLogo variant="horizontal" height={22} color="#ffffff" />
                 <button
                   onClick={() => setMobileOpen(false)}
-                  className="p-1.5 text-white/60 hover:text-white transition-colors"
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-white/60 hover:text-white transition-colors"
+                  style={{ border: '1px solid rgba(255,255,255,0.08)' }}
                 >
-                  <X style={{ width: 18, height: 18 }} />
+                  <X style={{ width: 15, height: 15 }} />
                 </button>
               </div>
 
-              <div className="px-5 py-4 border-b border-white/[0.06]">
-                <form onSubmit={handleSearchSubmit} className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl" style={{ background: 'rgba(255,255,255,0.05)' }}>
-                  <Search style={{ width: 14, height: 14 }} className="text-white/70" />
+              {/* Search */}
+              <div className="px-4 py-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                <form onSubmit={handleSearchSubmit} className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl" style={{ background: 'rgba(255,255,255,0.05)' }}>
+                  <Search style={{ width: 13, height: 13 }} className="text-white/50" />
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Chaînes, pendentifs…"
+                    placeholder="Rechercher un bijou…"
                     className="flex-1 bg-transparent text-white text-sm placeholder-white/25 outline-none"
                   />
                 </form>
               </div>
 
-              <nav className="flex-1 px-5 py-3">
-                {NAV.map((item) => (
+              {/* Category grid — IceCartel style */}
+              <div className="px-4 py-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                <p className="text-[9px] font-black tracking-[0.25em] uppercase text-white/30 mb-3">Catégories</p>
+                <div className="grid grid-cols-2 gap-2">
+                  {[
+                    { label: 'Chaînes',     href: '/shop?cat=chain',    emoji: '⛓' },
+                    { label: 'Pendentifs',  href: '/shop?cat=pendant',  emoji: '◆' },
+                    { label: 'Bagues',      href: '/shop?cat=ring',     emoji: '○' },
+                    { label: 'Bracelets',   href: '/shop?cat=bracelet', emoji: '∞' },
+                    { label: 'Montres',     href: '/shop?cat=watch',    emoji: '◉' },
+                    { label: 'Sets',        href: '/shop?cat=set',      emoji: '▣' },
+                  ].map((cat) => (
+                    <Link
+                      key={cat.href}
+                      href={cat.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="flex items-center gap-2.5 px-3 py-3 rounded-xl transition-colors hover:bg-white/[0.05]"
+                      style={{ border: '1px solid rgba(255,255,255,0.06)' }}
+                    >
+                      <span className="text-[#D4AF37] text-base leading-none">{cat.emoji}</span>
+                      <span className="text-white/80 text-xs font-semibold">{cat.label}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Secondary nav */}
+              <nav className="px-4 py-3 flex-1" style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                {[
+                  { label: 'Nouveautés',    href: '/shop?sort=newest' },
+                  { label: 'Sur Mesure',    href: '/builder' },
+                  { label: 'Promo',         href: '/shop?tier=entry', accent: true },
+                  { label: 'Notre histoire', href: '/about' },
+                ].map((item) => (
                   <Link
                     key={item.label}
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
                     className={cn(
-                      'flex items-center justify-between py-3.5 border-b text-sm font-black tracking-[0.12em] transition-colors',
+                      'flex items-center justify-between py-3 border-b text-sm font-bold tracking-wide transition-colors',
                       'border-white/[0.04]',
-                      item.accent ? 'text-[#D4AF37]' : 'text-white/70 hover:text-white'
+                      'accent' in item && item.accent ? 'text-[#D4AF37]' : 'text-white/65 hover:text-white'
                     )}
                   >
                     {item.label}
-                    <span className="text-white/55">›</span>
+                    <span className="text-white/30 text-xs">›</span>
                   </Link>
                 ))}
               </nav>
 
-              <div className="px-5 py-5 border-t border-white/[0.06] space-y-3.5">
+              {/* Bottom actions */}
+              <div className="px-4 py-4 space-y-1">
+                {/* Language switcher — prominent */}
+                <div className="flex items-center justify-between px-3 py-3 rounded-xl mb-2" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}>
+                  <span className="text-xs font-semibold text-white/50 uppercase tracking-wider">Langue</span>
+                  <LocaleSwitcher />
+                </div>
+
                 <Link
                   href="/account"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-3 text-sm text-white/60 hover:text-white transition-colors"
+                  className="flex items-center gap-3 px-3 py-3 rounded-xl text-sm text-white/60 hover:text-white hover:bg-white/[0.04] transition-colors"
                 >
                   <User style={{ width: 15, height: 15 }} />
                   Mon compte
                 </Link>
                 <button
                   onClick={() => { setMobileOpen(false); toggleCart() }}
-                  className="flex items-center gap-3 text-sm text-white/60 hover:text-white transition-colors"
+                  className="w-full flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-bold text-white transition-colors hover:bg-white/[0.04]"
+                  style={{ color: count > 0 ? '#D4AF37' : undefined }}
                 >
                   <ShoppingBag style={{ width: 15, height: 15 }} />
-                  Mon panier {count > 0 && `(${count})`}
+                  Mon panier
+                  {count > 0 && (
+                    <span className="ml-auto px-2 py-0.5 rounded-full text-[10px] font-black text-[#0A0A0A]" style={{ background: '#D4AF37' }}>
+                      {count}
+                    </span>
+                  )}
                 </button>
-                <div className="flex items-center justify-between pt-1">
-                  <span className="text-xs text-white/35 uppercase tracking-widest">Langue</span>
-                  <LocaleSwitcher />
-                </div>
               </div>
             </motion.div>
           </>
