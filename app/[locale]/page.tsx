@@ -2,7 +2,8 @@ import type { Metadata }     from 'next'
 import { Header }            from '@/components/layout/Header'
 import { Footer }            from '@/components/layout/Footer'
 import { HeroSection }       from '@/components/home/HeroSection'
-import { PaymentBrands }     from '@/components/home/PaymentBrands'
+import { SocialProofBar }    from '@/components/home/SocialProofBar'
+import { CategoryNav }       from '@/components/home/CategoryNav'
 import { MarqueeBanner }     from '@/components/home/MarqueeBanner'
 import { FeaturedProducts }  from '@/components/home/FeaturedProducts'
 import { BrandStory }        from '@/components/home/BrandStory'
@@ -11,6 +12,7 @@ import { BuilderCTA }        from '@/components/home/BuilderCTA'
 import { Testimonials }      from '@/components/home/Testimonials'
 import { TrustBadges }       from '@/components/home/TrustBadges'
 import { NewsletterSection } from '@/components/home/NewsletterSection'
+import { PaymentBrands }     from '@/components/home/PaymentBrands'
 
 export const metadata: Metadata = {
   title:       'ICEKEY – Cold is the new gold | Bijoux Moissanite VVS Premium',
@@ -26,7 +28,6 @@ const jsonLd = {
   logo: 'https://icekey.shop/logo.png',
   description: 'Bijoux moissanite VVS certifiés GRA. Chaînes, pendentifs, bagues, bracelets.',
   priceRange: '€€',
-  servesCuisine: undefined,
   address: { '@type': 'PostalAddress', addressCountry: 'FR' },
   sameAs: ['https://www.instagram.com/icekey'],
   hasOfferCatalog: {
@@ -46,33 +47,40 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
       <main>
+        {/* 1 — Hero */}
         <HeroSection />
 
-        {/* Logos paiement animés */}
-        <PaymentBrands />
+        {/* 2 — Social proof stats bar */}
+        <SocialProofBar />
 
-        {/* Marquee */}
+        {/* 3 — Marquee */}
         <MarqueeBanner />
 
-        {/* 3 — Bestsellers avec onglets Chaînes / Pendentifs / Bagues / Montres */}
+        {/* 4 — Category circles navigation */}
+        <CategoryNav />
+
+        {/* 5 — Bestsellers avec onglets */}
         <FeaturedProducts />
 
-        {/* 4 — 3 personas + opportunité marché (dark) */}
+        {/* 6 — Brand story + stats */}
         <BrandStory />
 
-        {/* 5 — 5 tiers avec CTAs différenciées (dark) */}
+        {/* 7 — Price tiers */}
         <PriceTiers />
 
-        {/* 6 — Custom Pendant Builder (sur fond charcoal inset) */}
+        {/* 8 — Custom Builder CTA */}
         <BuilderCTA />
 
-        {/* 7 — 4 avis clients vérifiés */}
+        {/* 9 — Avis clients */}
         <Testimonials />
 
-        {/* 8 — 6 engagements : GRA · VVS · Livraison · Retour · Paiement */}
+        {/* 10 — 6 engagements */}
         <TrustBadges />
 
-        {/* 9 — Newsletter -10% first order */}
+        {/* 11 — Logos paiement */}
+        <PaymentBrands />
+
+        {/* 12 — Newsletter */}
         <NewsletterSection />
       </main>
       <Footer />

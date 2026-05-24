@@ -12,10 +12,10 @@ import { cn } from '@/lib/utils/cn'
 
 /* ── Announcement bar (embedded in header so it stays fixed) ── */
 const BAR_MESSAGES = [
-  '✦ Livré depuis la France en 4–7 jours · pas depuis la Chine',
+  '★★★★★  4.9/5 · Plus de 300 clients satisfaits · Noté Excellent',
+  '✦ Livré depuis la France en 4–7 jours · suivi en temps réel inclus',
   '✦ Certifié GRA · Diamond test ✓ · prouvé à la réception',
-  '✦ Satisfait ou remboursé 30 jours · zéro question posée',
-  '✦ Paiement sécurisé Stripe · livraison offerte dès 100 €',
+  '✦ Satisfait ou remboursé 30 jours · livraison offerte dès 100 €',
 ]
 
 function AnnouncementBarInner() {

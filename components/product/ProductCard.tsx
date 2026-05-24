@@ -77,25 +77,54 @@ export function ProductCard({ product }: ProductCardProps) {
         {/* ── Top row: badges left + wishlist right ──────── */}
         <div className="absolute top-3 left-3 right-3 flex items-start justify-between z-10">
           <div className="flex flex-col gap-1.5">
+            {/* EN STOCK / stock badges */}
+            <div className="flex items-center gap-1 flex-wrap">
+              {product.stock > 0 ? (
+                <span
+                  className="inline-block px-2 py-0.5 rounded-md text-[9px] font-black tracking-[0.1em] uppercase"
+                  style={{
+                    background: 'rgba(52,211,153,0.15)',
+                    color: '#34D399',
+                    border: '1px solid rgba(52,211,153,0.3)',
+                    backdropFilter: 'blur(6px)',
+                    fontFamily: 'var(--font-space-mono), monospace',
+                  }}
+                >
+                  En stock
+                </span>
+              ) : (
+                <span
+                  className="inline-block px-2 py-0.5 rounded-md text-[9px] font-black tracking-[0.1em] uppercase"
+                  style={{
+                    background: 'rgba(239,68,68,0.12)',
+                    color: '#EF4444',
+                    border: '1px solid rgba(239,68,68,0.25)',
+                    fontFamily: 'var(--font-space-mono), monospace',
+                  }}
+                >
+                  Rupture
+                </span>
+              )}
+              {discount && (
+                <span
+                  className="inline-block px-2 py-0.5 rounded-md text-[9px] font-black tracking-[0.1em]"
+                  style={{
+                    background: 'rgba(212,175,55,0.18)',
+                    color: '#D4AF37',
+                    border: '1px solid rgba(212,175,55,0.35)',
+                    fontFamily: 'var(--font-space-mono), monospace',
+                  }}
+                >
+                  -{discount}%
+                </span>
+              )}
+            </div>
             {product.is_featured && (
               <span
                 className="inline-block px-2 py-0.5 rounded-md text-[9px] font-black tracking-[0.12em] uppercase"
                 style={{ background: '#D4AF37', color: '#0A0A0A', fontFamily: 'var(--font-space-mono), monospace' }}
               >
-                Top
-              </span>
-            )}
-            {discount && (
-              <span
-                className="inline-block px-2 py-0.5 rounded-md text-[9px] font-black tracking-[0.1em]"
-                style={{
-                  background: 'rgba(212,175,55,0.12)',
-                  color: '#D4AF37',
-                  border: '1px solid rgba(212,175,55,0.3)',
-                  fontFamily: 'var(--font-space-mono), monospace',
-                }}
-              >
-                -{discount}%
+                Bestseller
               </span>
             )}
             {/* Category — French, no uppercase CSS to avoid breaking accents */}
@@ -180,25 +209,23 @@ export function ProductCard({ product }: ProductCardProps) {
             )}
           </div>
 
-          {/* CTA — slides up on hover */}
-          <motion.div
-            animate={{ y: hovered ? 0 : 10, opacity: hovered ? 1 : 0 }}
-            transition={{ duration: 0.18, ease: 'easeOut' }}
+          {/* CTA — always visible */}
+          <button
+            onClick={handleAddToCart}
+            className="w-full flex items-center justify-center gap-1.5 py-2.5 rounded-xl
+                       text-[#0A0A0A] text-[10px] font-black tracking-widest uppercase
+                       transition-all hover:brightness-110 active:scale-[0.98]"
+            style={{
+              background: product.stock > 0 ? '#D4AF37' : 'rgba(255,255,255,0.08)',
+              color: product.stock > 0 ? '#0A0A0A' : 'rgba(255,255,255,0.35)',
+              fontFamily: 'var(--font-space-mono), monospace',
+              cursor: product.stock > 0 ? 'pointer' : 'default',
+            }}
+            disabled={product.stock === 0}
           >
-            <button
-              onClick={handleAddToCart}
-              className="w-full flex items-center justify-center gap-1.5 py-2.5 rounded-xl
-                         text-[#0A0A0A] text-[10px] font-black tracking-widest uppercase
-                         transition-all hover:brightness-110 active:scale-[0.98]"
-              style={{
-                background: '#D4AF37',
-                fontFamily: 'var(--font-space-mono), monospace',
-              }}
-            >
-              <ShoppingBag style={{ width: 11, height: 11 }} />
-              Ajouter
-            </button>
-          </motion.div>
+            <ShoppingBag style={{ width: 11, height: 11 }} />
+            {product.stock > 0 ? 'Ajouter' : 'Indisponible'}
+          </button>
         </div>
 
         {/* Gold glow border on hover */}

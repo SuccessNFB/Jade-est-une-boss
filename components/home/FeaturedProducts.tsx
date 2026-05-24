@@ -31,58 +31,34 @@ export function FeaturedProducts() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          {/* Title row: big text left + CTA right */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+          {/* Title row */}
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-8">
             <div>
-              <h2
-                className="font-display font-black text-white uppercase leading-[0.88]"
-                style={{ fontSize: 'clamp(52px, 7.5vw, 96px)' }}
+              <p
+                className="text-[10px] font-bold tracking-[0.3em] uppercase mb-3"
+                style={{ color: '#D4AF37', fontFamily: 'var(--font-space-mono), monospace' }}
               >
-                Nos bijoux ice<br />
-                <span
-                  style={{
-                    WebkitTextStroke: '2px #D4AF37',
-                    WebkitTextFillColor: 'transparent',
-                    color: 'transparent',
-                  }}
-                >
-                  Par catégorie
-                </span>
+                Bestsellers
+              </p>
+              <h2
+                className="font-serif font-bold text-white leading-tight"
+                style={{ fontSize: 'clamp(28px, 4vw, 48px)' }}
+              >
+                Nos pièces les plus<br className="hidden sm:block" /> populaires
               </h2>
             </div>
 
-            {/* Right side: toggle + shop now — like VibeVault */}
-            <div className="flex items-center gap-3 flex-shrink-0 lg:mb-3">
-              {/* Decorative sun/sparkle */}
-              <div className="hidden lg:block">
-                <svg width="48" height="48" viewBox="0 0 48 48">
-                  <circle cx="24" cy="24" r="10" fill="none" stroke="rgba(212,175,55,0.4)" strokeWidth="1" />
-                  {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
-                    <line
-                      key={angle}
-                      x1={24 + 13 * Math.cos((angle * Math.PI) / 180)}
-                      y1={24 + 13 * Math.sin((angle * Math.PI) / 180)}
-                      x2={24 + 20 * Math.cos((angle * Math.PI) / 180)}
-                      y2={24 + 20 * Math.sin((angle * Math.PI) / 180)}
-                      stroke="rgba(212,175,55,0.35)"
-                      strokeWidth="1.5"
-                    />
-                  ))}
-                </svg>
-              </div>
-
-              <Link href="/shop">
-                <motion.span
-                  className="inline-flex items-center gap-2 cursor-pointer px-6 py-3 rounded-full font-display font-black text-sm uppercase tracking-wider"
-                  style={{ background: '#D4AF37', color: '#0A0A0A' }}
-                  whileHover={{ background: '#E8C572', boxShadow: '0 0 28px rgba(212,175,55,0.4)' }}
-                  whileTap={{ scale: 0.97 }}
-                >
-                  Voir la boutique
-                  <ArrowUpRight className="w-4 h-4" />
-                </motion.span>
-              </Link>
-            </div>
+            <Link href="/shop" className="flex-shrink-0">
+              <motion.span
+                className="inline-flex items-center gap-2 cursor-pointer px-6 py-3 rounded-full font-bold text-sm"
+                style={{ background: '#D4AF37', color: '#0A0A0A' }}
+                whileHover={{ background: '#E8C572', boxShadow: '0 0 28px rgba(212,175,55,0.4)' }}
+                whileTap={{ scale: 0.97 }}
+              >
+                Voir la boutique
+                <ArrowUpRight className="w-4 h-4" />
+              </motion.span>
+            </Link>
           </div>
 
           {/* Description + filter tabs */}
@@ -116,27 +92,6 @@ export function FeaturedProducts() {
 
       {/* ── Product grid ──────────────────────────────────── */}
       <div className="section-container pb-20">
-
-        {/* Counter */}
-        <div className="flex items-center justify-between mb-6">
-          <span className="text-xs font-bold tracking-wider uppercase" style={{ color: 'rgba(255,255,255,0.35)' }}>
-            1/{products.length || '—'}
-          </span>
-          <div className="flex items-center gap-2">
-            <div
-              className="w-8 h-8 rounded-full flex items-center justify-center cursor-pointer transition-all hover:scale-110"
-              style={{ border: '1px solid rgba(255,255,255,0.12)' }}
-            >
-              <span className="text-white/60 text-sm">←</span>
-            </div>
-            <div
-              className="w-8 h-8 rounded-full flex items-center justify-center cursor-pointer transition-all hover:scale-110"
-              style={{ border: '1px solid rgba(255,255,255,0.12)' }}
-            >
-              <span className="text-white/60 text-sm">→</span>
-            </div>
-          </div>
-        </div>
 
         {loading ? (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
